@@ -1,0 +1,8 @@
+_old_backup/
+.claude/
+.vscode/
+node_modules/
+backend/node_modules/
+*.log
+*.tmp
+*.bak

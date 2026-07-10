@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+
+# Environment files
+.env
+.env.*
+.env*
+*.env*
+!.env.example
+
+# Vercel / local deploy artifacts
+.vercel/
+
+# Editor and OS junk
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Backup / archive folders not needed for deployment
+_old_backup/
+LUFALIGHT INFOR.zip

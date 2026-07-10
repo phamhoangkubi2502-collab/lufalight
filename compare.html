@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Compare Devices | Lufalight</title>
+<meta name="description" content="Compare Lufalight red light therapy devices side-by-side — wavelengths, LEDs, irradiance, warranty and price. Find the right device for your goal."/>
+<link rel="canonical" href="https://www.lufalight.com/compare.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Lufalight"/>
+<meta property="og:title" content="Compare Devices | Lufalight"/>
+<meta property="og:description" content="Compare Lufalight red light therapy devices side-by-side — wavelengths, LEDs, irradiance, warranty and price."/>
+<meta property="og:image" content="https://www.lufalight.com/images/products/G15P-11.png"/>
+<meta property="og:url" content="https://www.lufalight.com/compare.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Compare Devices | Lufalight"/>
+<meta name="twitter:description" content="Compare Lufalight red light therapy devices side-by-side — wavelengths, LEDs, irradiance, warranty and price."/>
+<meta name="twitter:image" content="https://www.lufalight.com/images/products/G15P-11.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E82D2D;--redl:#F05555;--redd:#C91F1F;--bluel:#2E6FFF;--bg:#FFFFFF;--bg2:#F6F6F8;--card:#FFFFFF;--line:rgba(0,0,0,.1);--muted:#5C606B;--white:#14151A;--gold:#A8761E;--r:14px;--hd:"Inter Tight",sans-serif;--bd:"Plus Jakarta Sans",sans-serif;;--navbg:rgba(255,255,255,.82);--glass:rgba(255,255,255,.97);--text2:rgba(20,21,26,.62);--text3:rgba(20,21,26,.6);--text4:rgba(20,21,26,.78)}
+:root[data-theme="dark"]{--bg:#0B0B0F;--bg2:#15161C;--card:#1B1C24;--line:rgba(255,255,255,.12);--muted:#9A9DAA;--white:#F5F5F7;--gold:#D4A24E;--navbg:rgba(11,11,15,.82);--glass:rgba(20,21,27,.97);--text2:rgba(245,245,247,.62);--text3:rgba(245,245,247,.6);--text4:rgba(245,245,247,.78)}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:var(--bd);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:var(--bd)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}.sec{padding:56px 0 96px}
+.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.hl{height:2px;width:44px;background:linear-gradient(90deg,var(--red),var(--redl));margin-bottom:20px}
+h2{font-family:var(--hd);font-weight:800;font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.1;letter-spacing:-.025em}
+h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
+.sub{color:var(--muted);font-size:.975rem;max-width:560px;margin-top:12px;line-height:1.75}
+.red{color:var(--red)}
+.btn-r{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:14px 30px;border-radius:7px;border:none;transition:background .2s,transform .2s;white-space:nowrap;cursor:pointer}
+.btn-r:hover{background:var(--redl);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s;white-space:nowrap;cursor:pointer}
+.btn-g:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* TOPBAR + NAV (shared) */
+#topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
+#topbar span{margin:0 14px}
+nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
+.nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
+.sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
+.sun-rays{position:absolute;inset:0;animation:spin 10s linear infinite}
+.nav-brand{display:flex;flex-direction:column}
+.nav-wm{font-family:var(--hd);font-size:1.65rem;font-weight:900;letter-spacing:-.03em;line-height:1}
+.nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
+.nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.on{color:var(--white)}
+.nav-links a.on{color:var(--redl)}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:6px;border:none;transition:background .2s;cursor:pointer}
+.nav-cta:hover{background:var(--redl)}
+@media(min-width:861px){.nav-cta{display:none}}
+@media(max-width:860px){.nav-links{display:none}}
+.nav-ham{display:none;background:none;border:1px solid var(--line);color:var(--white);width:40px;height:40px;border-radius:8px;place-items:center;font-size:18px;cursor:pointer;margin-left:12px;flex-shrink:0}
+@media(max-width:860px){.nav-ham{display:grid}}
+#mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:none;justify-content:flex-end}
+#mob-overlay.open{display:flex}
+#mob-drawer{width:min(320px,90vw);background:var(--bg2);border-left:1px solid var(--line);height:100%;overflow-y:auto;display:flex;flex-direction:column;padding:22px 20px;animation:mobSlideIn .22s ease}
+@keyframes mobSlideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mob-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.mob-brand{font-family:var(--hd);font-size:1.3rem;font-weight:900;letter-spacing:-.02em}
+.mob-x{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white);width:34px;height:34px;border-radius:50%;font-size:14px;display:grid;place-items:center;cursor:pointer}
+.mob-x:hover{background:rgba(10,10,15,.14)}
+.mob-section{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.mob-sub{display:flex;flex-direction:column}
+.mob-sub a{padding:9px 0 9px 12px;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(10,10,15,.04);display:block;transition:color .15s}
+.mob-sub a:hover{color:var(--redl)}
+.mob-link{display:flex;align-items:center;gap:8px;padding:13px 0;font-size:14px;font-weight:600;color:var(--white);border-bottom:1px solid var(--line);transition:color .15s;text-decoration:none}
+.mob-link:hover{color:var(--redl)}
+.mob-cta{margin-top:auto;padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.mob-cta a{display:block;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;transition:background .15s}
+.mob-cta-shop{background:var(--red);color:#fff}
+.mob-cta-shop:hover{background:var(--redd)}
+.mob-cta-quiz{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white)}
+.mob-cta-quiz:hover{background:rgba(10,10,15,.12)}
+.cart-btn{position:relative;background:rgba(10,10,15,.06);border:1px solid var(--line);color:var(--white);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border-radius:6px;display:flex;align-items:center;gap:8px}
+.cart-btn:hover{border-color:var(--red)}
+.cart-count{background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:50px;padding:1px 6px;min-width:16px;text-align:center}
+/* PAGE HEADER */
+.pg-head{padding:48px 0 0;text-align:center}
+.pg-head h1{font-family:var(--hd);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
+.crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.crumb a{color:var(--muted)}.crumb a:hover{color:var(--redl)}
+/* PICKERS */
+.cmp-pickers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:36px auto 0}
+@media(max-width:760px){.cmp-pickers{grid-template-columns:1fr}}
+.cmp-pick{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.cmp-pick-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cmp-pick select{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--white);font-size:13px;font-weight:600;padding:10px 12px;border-radius:8px;font-family:var(--bd);cursor:pointer}
+.cmp-pick select:focus{outline:none;border-color:var(--red)}
+/* TABLE */
+.cmp-wrap{overflow-x:auto;margin-top:40px;border-radius:var(--r);border:1px solid var(--line)}
+.cmp-table{width:100%;border-collapse:collapse;min-width:680px}
+.cmp-table th,.cmp-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:center;vertical-align:top}
+.cmp-table th:first-child,.cmp-table td:first-child{text-align:left;background:var(--bg2);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;position:sticky;left:0}
+.cmp-table th{background:var(--card)}
+.cmp-th-img{width:84px;height:84px;object-fit:contain;background:rgba(10,10,15,.04);border-radius:9px;padding:6px;margin-bottom:10px}
+.cmp-th-name{font-size:13px;font-weight:800;line-height:1.3;margin-bottom:4px}
+.cmp-th-price{font-size:15px;font-weight:900;color:var(--gold)}
+.cmp-fda{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#0E7C66;margin-top:4px}
+.cmp-td-val{font-size:13px;color:var(--white)}
+.cmp-empty{color:var(--muted);font-size:13px}
+.cmp-actions{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+/* WINNER HIGHLIGHT */
+.cmp-best{color:var(--gold);font-weight:800}
+.cmp-best::after{content:" ✓";color:#0E7C66}
+.theme-toggle{background:none;border:1px solid var(--line);color:var(--white);width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-size:15px;cursor:pointer;margin-left:8px;flex-shrink:0;transition:border-color .2s,background .2s}.theme-toggle:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+</style>
+</head>
+<body>
+<div id="topbar"><span>🚚 Free Shipping — Canada &amp; USA</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 30-Day Free Trial Returns</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
+    <div class="nav-sun">
+      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-19" x2="0" y2="-13" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-19" y1="0" x2="-13" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="0" x2="19" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-13" y1="-13" x2="-9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="9" x2="13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="-13" x2="9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-9" y1="9" x2="-13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/></g></svg>
+      <div class="sun-core"></div>
+    </div>
+    <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a></div>
+    <a href="index.html#science">Science</a>
+    <a href="compare.html" class="on">⚖️ Compare</a>
+    <a href="quiz.html">🎯 Find My Device</a>
+    <a href="#" class="cart-btn" onclick="event.preventDefault();openLead()">📩 Free Consultation</a>
+  </div>
+  <button class="nav-cta" onclick="openLead()">📩 Consult</button>
+  
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button class="nav-ham" onclick="document.getElementById('mob-overlay').classList.add('open')" aria-label="Open menu">&#9776;</button>
+</nav>
+
+<div id="mob-overlay" onclick="if(event.target===this)closeMob()">
+  <div id="mob-drawer">
+    <div class="mob-top">
+      <div class="mob-brand"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div>
+      <button class="mob-x" onclick="closeMob()" aria-label="Close menu">&#10005;</button>
+    </div>
+    <div class="mob-section">Shop by Device</div>
+    <div class="mob-sub">
+      <a href="shop-all.html">&#128722; All Devices</a>
+      <a href="shop-all.html?coll=face-skin">&#10024; Face &amp; Skin</a>
+      <a href="shop-all.html?coll=body-recovery">&#128170; Body &amp; Recovery</a>
+      <a href="shop-all.html?coll=specialty">&#9889; Specialty</a>
+      <a href="shop-all.html?coll=full-body">&#127775; Full-Body Panels</a>
+      <a href="shop-all.html?coll=accessory">&#128268; Accessories</a>
+    </div>
+    <div class="mob-section">Explore</div>
+    <a href="compare.html" class="mob-link">&#9878;&#65039; Compare Devices</a>
+    <a href="quiz.html" class="mob-link">&#127919; Find My Device</a>
+    <a href="blog.html" class="mob-link">&#128218; Health Blog</a>
+    <a href="wholesale.html" class="mob-link">&#129309; Wholesale</a>
+    <div class="mob-cta">
+      <a href="shop-all.html" class="mob-cta-shop">Shop All Devices &#8594;</a>
+      <a href="quiz.html" class="mob-cta-quiz">&#127919; Find My Device</a>
+    </div>
+  </div>
+</div>
+
+<section class="pg-head wrap">
+  <div class="crumb"><a href="index.html">Home</a> / Compare</div>
+  <h1>Compare Devices</h1>
+  <p class="sub" style="margin:10px auto 0">Pick up to 3 Lufalight devices and compare wavelengths, LEDs, irradiance, warranty and price side-by-side.</p>
+</section>
+
+<section class="sec"><div class="wrap">
+  <div class="cmp-pickers">
+    <div class="cmp-pick">
+      <div class="cmp-pick-label">Device 1</div>
+      <select id="cmpA" onchange="renderCompare()"></select>
+    </div>
+    <div class="cmp-pick">
+      <div class="cmp-pick-label">Device 2</div>
+      <select id="cmpB" onchange="renderCompare()"></select>
+    </div>
+    <div class="cmp-pick">
+      <div class="cmp-pick-label">Device 3 (optional)</div>
+      <select id="cmpC" onchange="renderCompare()"></select>
+    </div>
+  </div>
+
+  <div class="cmp-wrap">
+    <table class="cmp-table" id="cmpTable"></table>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="ft-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px">
+    <div>
+      <div class="ft-brand" style="display:flex;align-items:center;gap:11px;margin-bottom:12px">
+        <div class="ft-sun" style="width:30px;height:30px;position:relative;flex-shrink:0"><svg class="ft-rays" viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%;animation:spin 10s linear infinite"><g transform="translate(16,16)"><line x1="0" y1="-14" x2="0" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="9" x2="0" y2="14" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-14" y1="0" x2="-9" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="0" x2="14" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/></g></svg><div style="position:absolute;inset:5px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%"></div></div>
+        <div class="ft-wm" style="font-family:var(--hd);font-size:1.25rem;font-weight:900;letter-spacing:-.02em"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);max-width:250px;line-height:1.7;margin-bottom:16px">Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery. Dedicated English-language support.</p>
+    </div>
+    <div><div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Shop</div><div style="display:flex;flex-direction:column;gap:8px">
+      <a href="shop-all.html" style="font-size:12px;color:var(--text2)">Shop All</a>
+      <a href="compare.html" style="font-size:12px;color:var(--text2)">Compare Devices</a>
+      <a href="quiz.html" style="font-size:12px;color:var(--text2)">Find My Device</a>
+    </div></div>
+    <div><div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Company</div><div style="display:flex;flex-direction:column;gap:8px"><a href="index.html#about" style="font-size:12px;color:var(--text2)">About Lufalight</a><a href="blog.html" style="font-size:12px;color:var(--text2)">Health Blog</a><a href="wholesale.html" style="font-size:12px;color:var(--text2)">Wholesale Partners</a></div></div>
+    <div><div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Support</div><div style="display:flex;flex-direction:column;gap:8px"><a href="mailto:lufalight@gmail.com" style="font-size:12px;color:var(--text2)">Contact Us</a><a href="shipping-returns.html" style="font-size:12px;color:var(--text2)">Shipping &amp; Returns</a><a href="warranty.html" style="font-size:12px;color:var(--text2)">Warranty</a></div></div>
+  </div>
+  <div style="padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:11px;color:var(--muted)">© 2025 Lufalight Inc. | Canada &amp; USA</div><div style="display:flex;gap:18px"><a href="privacy-policy.html" style="font-size:11px;color:var(--muted)">Privacy Policy</a><a href="terms.html" style="font-size:11px;color:var(--muted)">Terms of Service</a></div></div>
+</div></footer>
+
+<script>
+/* ── COMPARE DATA — mirrors product.html PRODUCTS/DETAILS/WARRANTY ── */
+const CMP = [
+  {id:'EM04',name:'GlowEM04',price:199,goal:'Sleep',waves:'630 · 660nm + 850nm NIR',leds:'108 chips',irr:'35+ mW/cm²',dim:'35×18×5cm',weight:'1 kg',warranty:1,fda:false,img:'images/products/EM04-9.png'},
+  {id:'G15P',name:'BeauMask + BeauNeck-Décolleté',price:599,goal:'Skin',waves:'415 · 590 · 660 · 850nm',leds:'744 chips (186 LEDs)',irr:'35+ mW/cm²',dim:'41×23×5cm',weight:'1.5 kg',warranty:1,fda:true,img:'images/products/G15P-11.png'},
+  {id:'G15',name:'BeauMask',price:499,goal:'Clear Skin',waves:'415 · 590 · 660 · 850nm',leds:'488 chips',irr:'35+ mW/cm²',dim:'41×23×5cm',weight:'1.5 kg',warranty:1,fda:true,img:'images/products/G15-1.jpg'},
+  {id:'P40B',name:'RecoverPro40B',price:209,goal:'Recovery',waves:'660nm + 850nm NIR',leds:'30 dual-chip LEDs',irr:'70+ mW/cm²',dim:'32×22×12cm',weight:'2 kg',warranty:1,fda:false,img:'images/products/P40B-3.jpg'},
+  {id:'MINI60PRO',name:'Glow60MiniPro',price:336,goal:'Targeted Relief',waves:'635 · 660 · 830 · 850nm',leds:'12 dual-chip LEDs',irr:'65+ mW/cm²',dim:'23×16×12cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/MINI60PRO-1.jpg'},
+  {id:'E300',name:'GlowE300',price:415,goal:'Brain & Recovery',waves:'630 · 660 · 810 · 830 · 850nm',leds:'60 dual-core LEDs',irr:'150+ mW/cm²',dim:'47×32×24cm',weight:'6 kg',warranty:2,fda:false,img:'images/products/E300-1.jpg'},
+  {id:'C01',name:'LUMENOVA PRO',price:499,goal:'Hair Growth',waves:'660nm + 830nm',leds:'120 LEDs',irr:'—',dim:'31×22×13cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/C01-1.jpg'},
+  {id:'G240',name:'AuraDome',price:1199,goal:'Hair Growth',waves:'415 · 590 · 660 · 850nm',leds:'960 chips',irr:'50+ mW/cm²',dim:'75×30×9cm',weight:'5 kg',warranty:1,fda:false,img:'images/products/G240-1.jpg'},
+  {id:'BK300',name:'Solaris9 BK300 Executive Edition',price:1399,goal:'Full-Body + UVB',waves:'415 · 630-660 · 810-1060nm + UVB',leds:'60 diodes',irr:'150 mW/cm²',dim:'36×22×6.5cm',weight:'3.8 kg',warranty:2,fda:true,img:'images/products/BK300-1.jpg'},
+  {id:'MAX1800',name:'LUFAMAX 1800',price:1942,goal:'Full-Body Recovery',waves:'660nm + 850nm NIR',leds:'360 dual-core LEDs',irr:'165+ mW/cm²',dim:'113×54×22cm',weight:'21 kg',warranty:2,fda:false,img:'images/products/MAX1800-1.jpg'},
+  {id:'MAX4800',name:'LUFAMAX 4800',price:4999,goal:'Full-Body Recovery',waves:'660nm + 850nm NIR',leds:'960 dual-core LEDs',irr:'—',dim:'206×75×28cm',weight:'55 kg',warranty:2,fda:false,img:'images/products/MAX4800-1.jpg'},
+  {id:'ESPRO3000',name:'LUFAESPRO 3000',price:5299,goal:'Clinic-Grade Recovery',waves:'630 · 660 · 810 · 830 · 850 · 1060nm',leds:'600 dual-chip LEDs',irr:'180+ mW/cm²',dim:'146×49×25cm',weight:'25 kg',warranty:2,fda:false,img:'images/products/ESPRO3000-1.jpg'},
+  {id:'PE01',name:'VitalityPro PEMF Mat',price:899,goal:'Whole-Body Relief',waves:'635nm + 850nm NIR + PEMF',leds:'3,780 chips',irr:'—',dim:'82×68×17cm',weight:'18 kg',warranty:1,fda:false,img:'images/products/PE01-1.jpg'},
+  {id:'MRS45',name:'ProStand',price:725,goal:'Accessory (Stand)',waves:'—',leds:'—',irr:'—',dim:'101×98×16cm',weight:'28 kg',warranty:1,fda:false,img:'images/products/MRS45-1.jpg'},
+];
+
+const params = new URLSearchParams(window.location.search);
+function populateSelects(){
+  ['cmpA','cmpB','cmpC'].forEach((id,idx)=>{
+    const sel = document.getElementById(id);
+    sel.innerHTML = '<option value="">' + (idx===2?'— None —':'Select a device') + '</option>' +
+      CMP.map(p=>`<option value="${p.id}">${p.name}</option>`).join('');
+  });
+  const a = params.get('a') || 'G15';
+  const b = params.get('b') || 'G15P';
+  const c = params.get('c') || '';
+  document.getElementById('cmpA').value = a;
+  document.getElementById('cmpB').value = b;
+  document.getElementById('cmpC').value = c;
+}
+
+function fmt(n){ return '$' + n.toLocaleString('en-CA') + ' CAD'; }
+
+function renderCompare(){
+  const ids = [document.getElementById('cmpA').value, document.getElementById('cmpB').value, document.getElementById('cmpC').value].filter(Boolean);
+  const devices = ids.map(id => CMP.find(p=>p.id===id)).filter(Boolean);
+  const table = document.getElementById('cmpTable');
+  if(!devices.length){ table.innerHTML = '<tr><td class="cmp-empty">Select at least one device above to compare.</td></tr>'; return; }
+
+  const rows = [
+    {k:'Goal', f:p=>p.goal},
+    {k:'Price', f:p=>fmt(p.price), best:'minPrice'},
+    {k:'Wavelengths', f:p=>p.waves},
+    {k:'LED Count', f:p=>p.leds},
+    {k:'Irradiance', f:p=>p.irr, best:'maxIrr'},
+    {k:'Warranty', f:p=>p.warranty+'-Year'},
+    {k:'FDA Status', f:p=>p.fda?'✅ FDA-Cleared':'🏭 FDA-Registered'},
+    {k:'Dimensions', f:p=>p.dim},
+    {k:'Weight', f:p=>p.weight},
+  ];
+
+  let bestPriceIdx = -1, bestIrrIdx = -1;
+  let minPrice = Infinity, maxIrr = -1;
+  devices.forEach((p,i)=>{
+    if(p.price < minPrice){ minPrice = p.price; bestPriceIdx = i; }
+    const irrNum = parseFloat((p.irr||'').replace(/[^\d.]/g,''));
+    if(!isNaN(irrNum) && irrNum > maxIrr){ maxIrr = irrNum; bestIrrIdx = i; }
+  });
+
+  let html = '<tr><th></th>' + devices.map(p=>`
+    <th>
+      <img class="cmp-th-img" src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">
+      <div class="cmp-th-name">${p.name}</div>
+      <div class="cmp-th-price">${p.originalPrice?`<span style="font-size:11px;color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:4px">${fmt(p.originalPrice)}</span>`:''}${fmt(p.price)}</div>
+      ${p.fda?'<div class="cmp-fda">✅ FDA-Cleared</div>':''}
+      <div class="cmp-actions">
+        <button class="btn-r lufa-buy-cart" style="padding:9px 14px;font-size:11px"
+          data-item-id="${p.id}" data-item-name="${p.name.replace(/"/g,'')}" data-item-price="${p.price}"
+          data-item-url="/product.html#${p.id}" data-item-image="${p.img||''}">+ Add to Inquiry List</button>
+        <button class="lufa-buy-btn lufa-add-cart" style="padding:9px 14px;font-size:11px"
+          data-item-id="${p.id}" data-item-name="${p.name.replace(/"/g,'')}" data-item-price="${p.price}"
+          data-item-url="/product.html#${p.id}" data-item-image="${p.img||''}">+ Add to Inquiry List</button>
+      </div>
+    </th>`).join('') + '</tr>';
+
+  rows.forEach(row=>{
+    html += `<tr><td>${row.k}</td>` + devices.map((p,i)=>{
+      let val = row.f(p);
+      let cls = 'cmp-td-val';
+      if(row.best==='minPrice' && i===bestPriceIdx && devices.length>1) cls += ' cmp-best';
+      if(row.best==='maxIrr' && i===bestIrrIdx && devices.length>1 && maxIrr>0) cls += ' cmp-best';
+      return `<td><span class="${cls}">${val}</span></td>`;
+    }).join('') + '</tr>';
+  });
+
+  table.innerHTML = html;
+}
+
+populateSelects();
+renderCompare();
+</script>
+<script src="theme.js"></script>
+<script src="chat.js"></script>
+<script src="promo.js"></script>
+<script src="lead-form.js"></script>
+
+<script>
+(function(){
+  function closeMob(){document.getElementById('mob-overlay').classList.remove('open');}
+  window.closeMob=closeMob;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMob();});
+  var links=document.querySelectorAll('#mob-drawer a');
+  for(var i=0;i<links.length;i++){links[i].addEventListener('click',closeMob);}
+})();
+</script>
+<script src="inquiry-cart.js"></script></body>
+</html>
+

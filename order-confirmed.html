@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Order Confirmed | Lufalight</title>
+<meta name="description" content="Your Lufalight order is confirmed."/>
+<meta name="robots" content="noindex"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E82D2D;--redl:#F05555;--redd:#C91F1F;--bg:#FFFFFF;--bg2:#F6F6F8;--card:#FFFFFF;--line:rgba(0,0,0,.1);--muted:#5C606B;--white:#14151A;--gold:#A8761E;--r:14px;--hd:"Inter Tight",sans-serif;--bd:"Plus Jakarta Sans",sans-serif;}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:var(--bd);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+#topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#fff}
+nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:14px}
+.nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
+.sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
+.sun-rays{position:absolute;inset:0;animation:spin 10s linear infinite}
+.nav-brand{display:flex;flex-direction:column}
+.nav-wm{font-family:var(--hd);font-size:1.65rem;font-weight:900;letter-spacing:-.03em;line-height:1}
+.nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
+.nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+.wrap{max-width:680px;margin:0 auto;padding:0 28px}
+.sec{padding:72px 0 96px;text-align:center}
+.check-circle{width:84px;height:84px;border-radius:50%;background:rgba(34,197,94,.12);border:2px solid #22C55E;display:grid;place-items:center;margin:0 auto 26px;font-size:40px}
+h1{font-family:var(--hd);font-weight:900;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.025em;margin-bottom:14px}
+.sub{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:8px}
+.session-box{margin:28px auto 0;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;font-size:12.5px;color:var(--muted);word-break:break-all}
+.session-box strong{color:var(--white)}
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.btn-r{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:14px 30px;border-radius:7px;border:none;transition:background .2s,transform .2s;white-space:nowrap;cursor:pointer}
+.btn-r:hover{background:var(--redl);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s;white-space:nowrap;cursor:pointer}
+.btn-g:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:32px 0;text-align:center}
+.ft-copy{font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="topbar">🚚 Free Shipping — Canada &amp; USA &nbsp;|&nbsp; 🛡️ 30-Day Free-Trial Returns</div>
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
+    <div class="nav-sun">
+      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-19" x2="0" y2="-13" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-19" y1="0" x2="-13" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="0" x2="19" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+      <div class="sun-core"></div>
+    </div>
+    <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
+  </a>
+</nav>
+
+<section class="sec wrap">
+  <div class="check-circle">✅</div>
+  <h1>Thank you — your order is confirmed!</h1>
+  <p class="sub">We've received your payment and your order is now being prepared for shipment.</p>
+  <p class="sub">A confirmation email with your order details and tracking information (once shipped) will be sent to the email address you provided at checkout.</p>
+
+  <div class="session-box" id="sessionBox" style="display:none">
+    <strong>Reference:</strong> <span id="sessionId"></span>
+  </div>
+
+  <div class="cta-row">
+    <a href="shop-all.html" class="btn-r">Continue Shopping →</a>
+    <a href="mailto:lufalight@gmail.com" class="btn-g">Contact Support</a>
+  </div>
+</section>
+
+<footer>
+  <p class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</p>
+</footer>
+
+<script>
+(function(){
+  var sessionId = new URLSearchParams(window.location.search).get('session_id');
+  if (sessionId) {
+    document.getElementById('sessionId').textContent = sessionId;
+    document.getElementById('sessionBox').style.display = '';
+  }
+})();
+</script>
+</body>
+</html>
