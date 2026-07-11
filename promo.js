@@ -1,4 +1,4 @@
-/* ── LUFALIGHT PROMO WIDGETS ── Social Proof Ticker + Exit Intent Popup ── */
+﻿/* ── LUFALIGHT PROMO WIDGETS ── Social Proof Ticker + Exit Intent Popup ── */
 (function(){
   /* inject self-contained CSS */
   var css = `
@@ -180,3 +180,4 @@
   // Delay soft opening popup so it doesn't collide with page render
   setTimeout(setupSoftOpeningPopup, 1800);
 })();
+

@@ -426,7 +426,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
         </div>
         <div class="mega-col">
           <div class="mega-h">Body &amp; Recovery</div>
-          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">Glow60MiniPro</a><a href="product.html#E300">GlowE300</a>
+          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a>
           <a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a>
         </div>
         <div class="mega-col">
@@ -688,7 +688,7 @@ const PRODUCTS = [
     name:'RecoverPro40B', price:209, waves:'660nm Red + 850nm NIR',
     img:'images/products/P40B-3.jpg', gallery:['images/products/P40B-3.jpg','images/products/P40B-1.jpg','images/products/P40B-2.jpg','images/products/P40B-4.jpg','images/products/P40B-5.jpg','images/products/P40B-6.jpg','images/products/P40B-7.jpg','images/products/P40B-8.jpg','images/products/P40B-9.jpg','images/products/P40B-10.jpg','images/products/P40B-11.jpg','images/products/P40B-12.jpg','images/products/P40B-13.jpg','images/products/P40B-14.jpg','images/products/P40B-15.png','images/products/P40B-16.png','images/products/P40B-17.png','images/products/P40B-18.png','images/products/P40B-19.png'] },
   { id:'MINI60PRO', coll:'body-recovery', goal:'RELIEF', icon:'🩹', badge:null, badgeClass:'',
-    name:'Glow60MiniPro', price:336, waves:'630 · 660 · 830 · 850nm | Red + NIR',
+    name:'GlowMini60Pro', price:349, waves:'630 · 660 · 830 · 850nm | Red + NIR',
     img:'images/products/MINI60PRO-1.jpg', gallery:['images/products/MINI60PRO-1.jpg','images/products/MINI60PRO-2.jpg','images/products/MINI60PRO-3.jpg','images/products/MINI60PRO-4.jpg','images/products/MINI60PRO-5.jpg','images/products/MINI60PRO-6.jpg','images/products/MINI60PRO-7.jpg','images/products/MINI60PRO-8.jpg','images/products/MINI60PRO-9.jpg','images/products/MINI60PRO-10.jpg','images/products/MINI60PRO-11.jpg','images/products/MINI60PRO-12.jpg','images/products/MINI60PRO-13.jpg'] },
   { id:'E300', coll:'body-recovery', goal:'MIND', icon:'🧠', badge:'Clinical Grade', badgeClass:'bo',
     name:'GlowE300', price:415, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
@@ -719,7 +719,7 @@ const PRODUCTS = [
     img:'images/products/MRS45-1.jpg', gallery:['images/products/MRS45-1.jpg','images/products/MRS45-2.jpg','images/products/MRS45-3.jpg','images/products/MRS45-4.jpg','images/products/MRS45-5.jpg','images/products/MRS45-6.jpg','images/products/MRS45-7.jpg','images/products/MRS45-8.jpg','images/products/MRS45-9.png','images/products/MRS45-10.png'] },
 
   { id:'BUNDLE-RECOVERY', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Recovery Essentials Bundle (RecoverPro40B + Glow60MiniPro)', price:479, originalPrice:545,
+    name:'Recovery Essentials Bundle (RecoverPro40B + GlowMini60Pro)', price:479, originalPrice:545,
     waves:'660nm Red + 850nm NIR Desktop Panel + 635 · 660 · 830 · 850nm Targeted Relief Device',
     img:'images/products/P40B-1.jpg', gallery:['images/products/P40B-1.jpg','images/products/MINI60PRO-1.jpg'] },
   { id:'BUNDLE-GLOW', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
@@ -918,14 +918,14 @@ const DETAILS = {
     included:[ ['🦯','MRS45 Adjustable Stand'],['⚙️','Base Plate &amp; Hardware'],['🧰','Assembly Tool Kit'],['📖','Assembly Instructions'] ],
   },
   'BUNDLE-RECOVERY': {
-    desc:'Two best-selling recovery devices in one discounted bundle — the RecoverPro40B Desktop Panel for larger muscle groups, plus the Glow60MiniPro for targeted joint, hand, and foot relief. Save $39 vs. buying separately at launch prices.',
+    desc:'Two best-selling recovery devices in one discounted bundle — the RecoverPro40B Desktop Panel for larger muscle groups, plus the GlowMini60Pro for targeted joint, hand, and foot relief. Save $39 vs. buying separately at launch prices.',
     wavelengths:[630,660,830,850],
     features:[
       { icon:'💪', t:'Full Coverage, Head to Toe', d:'The desktop panel handles back, shoulders, and legs while the mini device targets smaller joints and trigger points.' },
       { icon:'🎒', t:'Home + On-The-Go', d:'Keep the panel on your desk for daily sessions and take the portable device with you for travel or post-workout relief.' },
-      { icon:'💰', t:'Bundle Savings', d:'Save $39 compared to purchasing the RecoverPro40B and Glow60MiniPro separately at launch prices.' },
+      { icon:'💰', t:'Bundle Savings', d:'Save $39 compared to purchasing the RecoverPro40B and GlowMini60Pro separately at launch prices.' },
     ],
-    specs:[ ['Includes','RecoverPro40B Desktop Panel + Glow60MiniPro'],['Wavelengths','660 · 850nm (Panel) + 630 · 660 · 830 · 850nm (Mini)'],['Bundle Price','$349 CAD (save $39 vs. $388 CAD separately)'] ],
+    specs:[ ['Includes','RecoverPro40B Desktop Panel + GlowMini60Pro'],['Wavelengths','660 · 850nm (Panel) + 630 · 660 · 830 · 850nm (Mini)'],['Bundle Price','$349 CAD (save $39 vs. $388 CAD separately)'] ],
     included:[ ['📦','1x P40B RecoverPro Desktop Panel'],['📦','1x MINI60PRO PainRelief Mini Pro'],['🔌','Power Adapters &amp; Cables'],['📖','User Manuals'],['🛡️','Manufacturer Warranty (per device)'] ],
   },
   'BUNDLE-GLOW': {
@@ -1790,5 +1790,6 @@ init();
 </script>
 <script src="inquiry-cart.js"></script></body>
 </html>
+
 
 
