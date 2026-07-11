@@ -168,6 +168,8 @@
     var css=`
 #lc-cart-btn{position:relative;background:none;border:1.5px solid var(--line);color:var(--white);width:40px;height:40px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;transition:border-color .2s,background .2s;margin-right:4px;flex-shrink:0}
 #lc-cart-btn:hover{border-color:var(--red);background:rgba(232,45,45,.07)}
+@media(max-width:860px){#lc-cart-btn{width:34px;height:34px;font-size:14px;margin-right:2px}}
+@media(max-width:360px){#lc-cart-btn{width:30px;height:30px;font-size:13px;margin-right:0}}
 #lc-badge{position:absolute;top:-7px;right:-7px;background:var(--red);color:#fff;font-size:9px;font-weight:800;width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1;pointer-events:none}
 #lc-toast{position:fixed;top:84px;right:20px;z-index:2000;background:var(--card,#fff);color:var(--white);border:1.5px solid var(--red);border-radius:9px;padding:10px 16px;font-size:13px;font-weight:600;box-shadow:0 8px 28px rgba(0,0,0,.16);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .28s,transform .28s;max-width:290px;white-space:nowrap}
 #lc-toast.show{opacity:1;transform:none}
