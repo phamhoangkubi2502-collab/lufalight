@@ -108,9 +108,21 @@
     document.getElementById('leadEmail').classList.remove('lead-err');
     document.getElementById('leadPhone').classList.remove('lead-err');
     field.value = productName || '';
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px';
     ov.classList.add('open');
+    setTimeout(function(){
+      var firstInput = document.getElementById('leadName');
+      if(firstInput) firstInput.focus();
+      var modal = document.getElementById('lead-modal');
+      if(modal) modal.scrollTop = 0;
+    }, 50);
   }
-  function closeLead(){ ov.classList.remove('open'); }
+  function closeLead(){
+    ov.classList.remove('open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
   window.openLead = openLead;
   window.closeLead = closeLead;
 

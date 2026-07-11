@@ -54,6 +54,17 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .nav-links a:hover,.nav-links a.on{color:var(--white)}
 .nav-links a.on{color:var(--redl)}
+.nav-item{position:relative}
+.mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
+.mega-caret:hover{color:var(--white)}
+.nav-item.open .mega-menu{display:grid}
+.mega-menu{position:absolute;top:calc(100% + 14px);left:0;transform:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:none;grid-template-columns:repeat(5,168px);gap:20px;box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:300}
+.nav-item:hover .mega-menu{display:grid}
+.mega-h{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:10px;white-space:nowrap}
+.mega-menu a{display:block;font-size:12px;color:var(--muted);padding:4px 0;text-transform:none;letter-spacing:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-menu a:hover{color:var(--white)}
+.mega-all{color:var(--red)!important;font-weight:700;margin-top:6px}
+@media(max-width:1100px){.mega-menu{display:none!important}}
 .nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:6px;border:none;transition:background .2s;cursor:pointer}
 .nav-cta:hover{background:var(--redl)}
 @media(min-width:861px){.nav-cta{display:none}}
@@ -125,7 +136,33 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
     <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
   </a>
   <div class="nav-links">
-    <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a></div>
+    <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it)o.classList.remove('open')});it.classList.toggle('open')" role="button" aria-label="Toggle Shop All menu">&#9662;</span><div class="mega-menu">
+        <div class="mega-col">
+          <div class="mega-h">Face &amp; Skin</div>
+          <a href="product.html#EM04">GlowEM04 — Sleep Mask</a><a href="product.html#G15P">BeauMask + BeauNeck-Décolleté</a><a href="product.html#G15">BeauMask</a>
+          <a href="shop-all.html?coll=face-skin" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Body &amp; Recovery</div>
+          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">Glow60MiniPro</a><a href="product.html#E300">GlowE300</a>
+          <a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Specialty</div>
+          <a href="product.html#C01">LUMENOVA PRO</a><a href="product.html#G240">AuraDome</a>
+          <a href="shop-all.html?coll=specialty" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Full-Body Panels</div>
+          <a href="product.html#BK300">Solaris9 BK300 Executive Edition</a><a href="product.html#MAX1800">LUFAMAX 1800</a><a href="product.html#MAX4800">LUFAMAX 4800</a><a href="product.html#ESPRO3000">LUFAESPRO 3000</a>
+          <a href="shop-all.html?coll=full-body" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Accessories</div>
+          <a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a>
+          <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
+        </div>
+      </div></div>
     <a href="index.html#science">Science</a>
     <a href="compare.html" class="on">⚖️ Compare</a>
     <a href="quiz.html">🎯 Find My Device</a>
