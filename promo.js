@@ -41,10 +41,10 @@
     if(localStorage.getItem(KEY)) return;
 
     var css0 = `
-    #wip-badge{position:fixed;left:16px;bottom:16px;z-index:800;background:#1B1C24;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:10px 10px 10px 16px;display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;line-height:1.4;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:300px}
+    #wip-badge{position:fixed;left:16px;bottom:82px;z-index:960;background:#1B1C24;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:10px 10px 10px 16px;display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;line-height:1.4;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:300px}
     #wip-badge button{background:rgba(255,255,255,.14);border:none;color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;cursor:pointer;flex-shrink:0;display:grid;place-items:center}
     #wip-badge button:hover{background:rgba(255,255,255,.26)}
-    @media(max-width:480px){#wip-badge{left:10px;right:10px;bottom:10px;max-width:none}}
+    @media(max-width:480px){#wip-badge{left:10px;right:10px;bottom:140px;max-width:none}}
     `;
     var s0 = document.createElement('style'); s0.textContent = css0; document.head.appendChild(s0);
 
