@@ -708,7 +708,7 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
   </div>
   <div class="rv" style="transition-delay:.15s">
     <span class="tag">PBM Science</span><div class="hl"></div>
-    <h2>Light as <span class="red">Medicine</span></h2>
+    <h2>Light as <span class="red">Medicine</span> (Non-Invasive)</h2>
     <p class="sub">Over 5,000 peer-reviewed studies confirm the efficacy of Photobiomodulation (PBM).</p>
     <div class="sci-pts">
       <div class="sci-pt"><div class="sci-n">01</div><div class="sci-t"><h4>Mitochondrial Activation</h4><p>Red &amp; NIR light activates cytochrome c oxidase, increasing cellular ATP by 150%.</p></div></div>
@@ -809,7 +809,7 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
         </div>
       </div>
       <div class="m-btns">
-        
+        <a class="btn-g" id="mViewBtn" href="product.html" style="width:100%;justify-content:center;margin-bottom:10px">View Full Details →</a>
         <button class="lufa-interest-btn lufa-add-cart" id="mAddBtn" style="width:100%"
           data-item-id="" data-item-name="" data-item-price="" data-item-url="" data-item-image="">+ Add to Inquiry List</button>
         <button style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-align:left;padding:4px 0" onclick="document.getElementById('prod-ov').classList.remove('open')">← Back</button>
@@ -1068,8 +1068,11 @@ function openModal(key){
   `).join('');
   setModalImg(0);
 
-  // Buy Now / Add to Cart buttons — keep in sync with whichever product the modal is showing
-  [document.getElementById('mBuyBtn'), document.getElementById('mAddBtn')].forEach(btn => {
+  // View Full Details — link straight to the matching product page
+  document.getElementById('mViewBtn').href = `product.html#${sku}`;
+
+  // Add to Cart button — keep in sync with whichever product the modal is showing
+  [document.getElementById('mAddBtn')].forEach(btn => {
     btn.setAttribute('data-item-id', sku);
     btn.setAttribute('data-item-name', p.n);
     btn.setAttribute('data-item-price', p.price);
