@@ -1,4 +1,9 @@
-﻿/* ── LUFALIGHT PROMO WIDGETS ── Social Proof Ticker + Exit Intent Popup ── */
+﻿/* ── LUFALIGHT PROMO WIDGETS ── WIP Notice + Discount Popup + Exit Intent Popup ──
+   Timing/frequency notes (see conversation for full reasoning):
+   - WIP notice: small dismissible corner badge, shown until closed once (localStorage), never blocks the page.
+   - Discount popup: fires once ~2.5s after load, then stays quiet for 3 days (localStorage cooldown)
+     so repeat visits in the same week aren't nagged; extends to 14 days once the visitor clicks through.
+   - Exit-intent stays session-based (sessionStorage) since it's a last-chance nudge, not a landing offer. */
 (function(){
   /* inject self-contained CSS */
   var css = `
@@ -19,6 +24,39 @@
   var styleEl = document.createElement('style');
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
+
+  /* ── shared time-based cooldown (localStorage) ──
+     stores the timestamp a key is suppressed UNTIL, so "how many days" reads directly at the call site */
+  function isSuppressed(key){
+    var until = parseInt(localStorage.getItem(key), 10);
+    return !!until && Date.now() < until;
+  }
+  function suppressFor(key, days){
+    localStorage.setItem(key, String(Date.now() + days*86400000));
+  }
+
+  /* ── WORK-IN-PROGRESS NOTICE ── */
+  function setupWipBadge(){
+    var KEY = 'lufa_wip_dismissed';
+    if(localStorage.getItem(KEY)) return;
+
+    var css0 = `
+    #wip-badge{position:fixed;left:16px;bottom:16px;z-index:800;background:#1B1C24;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:10px 10px 10px 16px;display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;line-height:1.4;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:300px}
+    #wip-badge button{background:rgba(255,255,255,.14);border:none;color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;cursor:pointer;flex-shrink:0;display:grid;place-items:center}
+    #wip-badge button:hover{background:rgba(255,255,255,.26)}
+    @media(max-width:480px){#wip-badge{left:10px;right:10px;bottom:10px;max-width:none}}
+    `;
+    var s0 = document.createElement('style'); s0.textContent = css0; document.head.appendChild(s0);
+
+    var b = document.createElement('div');
+    b.id = 'wip-badge';
+    b.innerHTML = '<span>🚧 This site is a work in progress — some content is still being finalized.</span><button aria-label="Dismiss">✕</button>';
+    document.body.appendChild(b);
+    b.querySelector('button').onclick = function(){
+      localStorage.setItem(KEY, '1');
+      b.remove();
+    };
+  }
 
   /* ── EXIT INTENT POPUP ── */
   function buildExitPopup(){
@@ -72,10 +110,10 @@
     });
   }
 
-  /* ── SOFT OPENING POPUP ── */
+  /* ── DISCOUNT POPUP ── */
   function setupSoftOpeningPopup(){
-    var KEY = 'lufa_soft_shown';
-    if(sessionStorage.getItem(KEY)) return;
+    var KEY = 'lufa_soft_suppress_until';
+    if(isSuppressed(KEY)) return;
 
     var css2 = `
     #so-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1300;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
@@ -98,25 +136,27 @@
     ov.innerHTML =
       '<div id="so-card">' +
       '<button id="so-close" aria-label="Close">✕</button>' +
-      '<div id="so-badge">Soft Opening Special</div>' +
-      '<h2>Up to <span>40% Off</span><br>All Products</h2>' +
-      '<p>We\'re officially open! Celebrate with us — enjoy up to <strong>40% off</strong> our full range of red light therapy devices. Limited-time offer for early supporters.</p>' +
+      '<div id="so-badge">Big Summer Discount</div>' +
+      '<h2><span>20% Off</span></h2>' +
+      '<p>Our full range of red light therapy devices. Limited-time offer starts today!</p>' +
       '<a id="so-cta" href="shop-all.html">Shop All Deals &rarr;</a>' +
       '<button id="so-skip">Maybe later</button>' +
       '</div>';
     document.body.appendChild(ov);
 
     function close(){ ov.style.display='none'; }
-    document.getElementById('so-close').onclick = close;
-    document.getElementById('so-skip').onclick = close;
-    ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+    document.getElementById('so-close').onclick = function(){ suppressFor(KEY, 3); close(); };
+    document.getElementById('so-skip').onclick = function(){ suppressFor(KEY, 3); close(); };
+    document.getElementById('so-cta').onclick = function(){ suppressFor(KEY, 14); };
+    ov.addEventListener('click', function(e){ if(e.target===ov){ suppressFor(KEY, 3); close(); } });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ suppressFor(KEY, 3); close(); } });
 
-    sessionStorage.setItem(KEY,'1');
+    suppressFor(KEY, 3); // default cooldown the instant it's shown, in case the visitor navigates away without clicking anything
   }
 
+  setupWipBadge();
   setupExitIntent();
-  // Delay soft opening popup so it doesn't collide with page render
-  setTimeout(setupSoftOpeningPopup, 1800);
+  // Delay the discount popup so it doesn't collide with page render
+  setTimeout(setupSoftOpeningPopup, 2500);
 })();
 
