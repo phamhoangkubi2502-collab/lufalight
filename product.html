@@ -144,6 +144,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .bg{background:#16a34a;color:#fff}
 .gallery-fda{position:absolute;bottom:14px;left:14px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;background:#0E7C66;color:#fff;z-index:2}
 .pc-fda{position:absolute;bottom:10px;left:10px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:100px;background:#0E7C66;color:#fff;z-index:2}
+.gallery-fda-cleared{background:var(--red);box-shadow:0 0 0 2px rgba(232,45,45,.25),0 4px 14px rgba(232,45,45,.4)}
+.pc-fda-cleared{background:var(--red);box-shadow:0 0 0 2px rgba(232,45,45,.25),0 3px 10px rgba(232,45,45,.4)}
 .gallery-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:var(--red) transparent}
 .gallery-thumbs::-webkit-scrollbar{height:4px}.gallery-thumbs::-webkit-scrollbar-track{background:transparent}.gallery-thumbs::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
 .thumb{width:78px;height:78px;border-radius:9px;overflow:hidden;cursor:pointer;border:2px solid transparent;opacity:.55;transition:all .2s;flex-shrink:0;background:radial-gradient(circle at 50% 40%,#FAFAFB,#F0F0F3 65%,#E9E9ED);display:flex;align-items:center;justify-content:center;font-size:28px}
@@ -574,7 +576,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     <div class="hl"></div>
     <h2 id="brochureTitle">Product Brochure</h2>
     <p class="sub">Explore the full product brochure — detailed technology breakdown, clinical data, and complete specifications in one page.</p>
-    <div id="brochureGallery" style="display:flex;flex-direction:column;gap:16px;max-width:860px;margin:0 auto"></div>
+    <div id="brochureGallery" style="display:flex;flex-direction:column;gap:16px;max-width:1100px;margin:0 auto"></div>
   </section>
 
   <!-- SPECS -->
@@ -700,6 +702,7 @@ const WARRANTY = { EM04:1, G15P:1, G15:1, P40B:1, MINI60PRO:1, E300:2, C01:1, G2
 const RETURN_WINDOW = { EM04:30, G15P:30, G15:30, P40B:30, MINI60PRO:30, E300:30, C01:30, G240:30, BK300:30, MAX1800:30, MAX4800:30, ESPRO3000:30, PE01:30, MRS45:30, 'BUNDLE-RECOVERY':30, 'BUNDLE-GLOW':30, 'BUNDLE-FULLBODY':20 };
 
 /* ── PRODUCT CATALOG — same 14 SKUs as shop-all.html ── */
+const FDA_CLEARED_SKUS = new Set(['G15P','G15','BK300']);
 const PRODUCTS = [
   { id:'EM04', coll:'face-skin', goal:'SLEEP', icon:'😴', badge:'FDA-Registered', badgeClass:'bg',
     name:'GlowEM04', price:199, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
@@ -707,7 +710,7 @@ const PRODUCTS = [
   { id:'G15P', coll:'face-skin', goal:'SKIN', icon:'💆', badge:'Best Seller', badgeClass:'br', fda:true,
     name:'BeauMask + BeauNeck-Décolleté', price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/G15P-5.png','images/products/G15P-1.jpg','images/products/G15P-2.jpg','images/products/G15P-3.jpg','images/products/G15P-6.png','images/products/G15P-7.png','images/products/G15P-8.png','images/products/G15P-9.png','images/products/G15P-10.png','images/products/G15P-12.png'] },
-  { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:'FDA-Cleared', badgeClass:'bg', fda:true,
+  { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:null, badgeClass:'', fda:true,
     name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
     img:'images/products/G15-5.png', gallery:['images/products/G15-5.png','images/products/G15-11.png','images/products/G15-12.png','images/products/G15-1.jpg','images/products/G15-2.jpg','images/products/G15-3.jpg','images/products/G15-4.jpg','images/products/G15-6.png','images/products/G15-7.png','images/products/G15-8.jpg','images/products/G15-9.jpg','images/products/G15-10.jpg'] },
   { id:'P40B', coll:'body-recovery', goal:'RECOVER', icon:'💪', badge:'Flicker-Free', badgeClass:'bb',
@@ -725,7 +728,7 @@ const PRODUCTS = [
   { id:'G240', coll:'specialty', goal:'GROW', icon:'🪖', badge:null, badgeClass:'',
     name:'AuraDome', price:1199, waves:'415 · 590 · 630 · 850nm | Arch Dome Full Spectrum',
     img:'images/products/G240-1.jpg', gallery:['images/products/G240-1.jpg','images/products/G240-2.jpg','images/products/G240-3.jpg','images/products/G240-4.jpg','images/products/G240-5.jpg','images/products/G240-6.jpg','images/products/G240-7.png','images/products/G240-8.png','images/products/G240-9.png','images/products/G240-10.png','images/products/G240-11.jpg','images/products/G240-12.jpg','images/products/G240-13.jpg','images/products/G240-14.jpg','images/products/G240-15.jpg','images/products/G240-16.png','images/products/G240-17.png','images/products/G240-18.png','images/products/G240-19.png','images/products/G240-20.png'] },
-  { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'FDA-Registered', badgeClass:'bg', fda:true,
+  { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'Executive Edition', badgeClass:'bp', fda:true,
     name:'Solaris9 BK300 Executive Edition', price:1399, waves:'630 · 660 · 810 · 830 · 850 · 1060nm + 295/311nm UVB | 9-Wavelength Full Spectrum',
     img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-1.jpg','images/products/BK300-2.jpg','images/products/BK300-3.jpg','images/products/BK300-4.jpg','images/products/BK300-5.jpg','images/products/BK300-6.jpg','images/products/BK300-7.jpg','images/products/BK300-8.jpg','images/products/BK300-9.jpg','images/products/BK300-10.jpg','images/products/BK300-11.jpg','images/products/BK300-12.jpg'] },
   { id:'MAX1800', coll:'full-body', goal:'RECOVER', icon:'🟥', badge:'1,800W', badgeClass:'bb',
@@ -1282,7 +1285,7 @@ function init(){
   document.getElementById('pdpWarranty').textContent = `🛡️ ${warrantyYrs}-Year Warranty`;
   const returnDays = RETURN_WINDOW[product.id] || 30;
   document.getElementById('pdpReturn').textContent = `↩️ ${returnDays}-Day Free Trial`;
-  document.getElementById('pdpFdaTrust').textContent = product.fda ? '✅ FDA-Registered' : '🏭 FDA-Registered Facility';
+  document.getElementById('pdpFdaTrust').textContent = product.fda ? (FDA_CLEARED_SKUS.has(product.id) ? '✅ FDA-Cleared' : '✅ FDA-Registered') : '🏭 FDA-Registered Facility';
   document.getElementById('pageDesc').setAttribute('content', pageDesc);
   document.getElementById('canonicalLink').setAttribute('href', pageUrl);
   document.getElementById('ogTitle').setAttribute('content', pageTitle);
@@ -1476,7 +1479,7 @@ function renderGallery(i){
   const multi = product.gallery.length > 1;
   document.getElementById('galleryMain').innerHTML = `
     ${product.badge?`<span class="gallery-bdg ${product.badgeClass}">${product.badge}</span>`:''}
-    ${product.fda?`<span class="gallery-fda">✅ FDA-Registered</span>`:''}
+    ${product.fda?`<span class="gallery-fda${FDA_CLEARED_SKUS.has(product.id)?' gallery-fda-cleared':''}">✅ ${FDA_CLEARED_SKUS.has(product.id)?'FDA-Cleared':'FDA-Registered'}</span>`:''}
     ${multi?`<button class="gallery-nav gallery-prev" onclick="event.stopPropagation();navGallery(-1)" aria-label="Previous image">&#8249;</button>`:''}
     ${multi?`<button class="gallery-nav gallery-next" onclick="event.stopPropagation();navGallery(1)" aria-label="Next image">&#8250;</button>`:''}
     ${multi?`<span class="gallery-counter">${i+1} / ${product.gallery.length}</span>`:''}
@@ -1506,7 +1509,7 @@ function renderRelated(){
     <div class="pc" style="animation-delay:${(i*0.05).toFixed(2)}s" onclick="window.location.href='product.html#${p.id}'">
       <div class="pc-img">
         ${p.badge?`<span class="pc-bdg ${p.badgeClass}">${p.badge}</span>`:''}
-        ${p.fda?`<span class="pc-fda">✅ FDA-Registered</span>`:''}
+        ${p.fda?`<span class="pc-fda${FDA_CLEARED_SKUS.has(p.id)?' pc-fda-cleared':''}">✅ ${FDA_CLEARED_SKUS.has(p.id)?'FDA-Cleared':'FDA-Registered'}</span>`:''}
         ${p.img?`<img src="${p.img}" alt="${plainName(p.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:56px">${p.icon}</span>`:p.icon}
       </div>
       <div class="pc-body">
@@ -1575,7 +1578,7 @@ function renderPdfPages(pdfUrl, containerId){
     wrap.innerHTML = '';
     function renderPage(num){
       pdfDoc.getPage(num).then(function(page){
-        var vp = page.getViewport({ scale: 1.8 });
+        var vp = page.getViewport({ scale: 2.4 });
         var canvas = document.createElement('canvas');
         canvas.width = vp.width;
         canvas.height = vp.height;

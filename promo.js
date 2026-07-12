@@ -65,9 +65,9 @@
     ov.innerHTML = '<div id="ei-card">'+
       '<button id="ei-close" aria-label="Close">✕</button>'+
       '<div class="ei-ic">🎁</div>'+
-      '<h3>Wait — Don\'t Miss 10% Off!</h3>'+
-      '<p>Get <b>10% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
-      '<div id="ei-code"><span>WELCOME10</span><button id="ei-copy">Copy</button></div>'+
+      '<h3>Wait — Don\'t Miss 20% Off!</h3>'+
+      '<p>Get <b>20% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
+      '<div id="ei-code"><span>WELCOME20</span><button id="ei-copy">Copy</button></div>'+
       '<div id="ei-timer">Expires in <span id="ei-mm">09</span>:<span id="ei-ss">59</span></div>'+
       '<a id="ei-cta" href="shop-all.html">Shop Now &rarr;</a>'+
       '</div>';
@@ -95,7 +95,7 @@
       },1000);
       document.getElementById('ei-close').onclick = function(){ ov.classList.remove('open'); clearInterval(iv); };
       document.getElementById('ei-copy').onclick = function(){
-        navigator.clipboard && navigator.clipboard.writeText('WELCOME10');
+        navigator.clipboard && navigator.clipboard.writeText('WELCOME20');
         var b = document.getElementById('ei-copy'); b.textContent='Copied!'; setTimeout(function(){b.textContent='Copy';},1500);
       };
       ov.addEventListener('click', function(e){ if(e.target===ov) ov.classList.remove('open'); });
@@ -155,7 +155,7 @@
   }
 
   setupWipBadge();
-  setupExitIntent();
+  // setupExitIntent(); // disabled
   // Delay the discount popup so it doesn't collide with page render
   setTimeout(setupSoftOpeningPopup, 2500);
 })();

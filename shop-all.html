@@ -142,6 +142,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .bp{background:#7B2FBE;color:#fff}.bo{background:rgba(10,10,15,.1);color:var(--gold);border:1px solid rgba(201,153,58,.35)}
 .bg{background:#16a34a;color:#fff}
 .pc-fda{position:absolute;bottom:10px;left:10px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:100px;background:#0E7C66;color:#fff;z-index:2}
+.pc-fda-cleared{background:var(--red);box-shadow:0 0 0 2px rgba(232,45,45,.25),0 3px 10px rgba(232,45,45,.4)}
 .pc-coll{position:absolute;top:10px;right:10px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(0,0,0,.55);padding:4px 8px;border-radius:100px}
 .pc-body{padding:15px 16px}
 .pc-line{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:3px}
@@ -516,6 +517,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 <script>
 /* ── PRODUCT CATALOG — all 14 SKUs from LUFALIGHT_Catalog_v12.pdf, RETAIL prices (CAD) ── */
+const FDA_CLEARED_SKUS = new Set(['G15P','G15','BK300']);
 const PRODUCTS = [
   { id:'EM04', coll:'face-skin', goal:'SLEEP', icon:'😴', badge:'FDA-Registered', badgeClass:'bg',
     name:'GlowEM04', price:199, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
@@ -523,8 +525,8 @@ const PRODUCTS = [
   { id:'G15P', coll:'face-skin', goal:'SKIN', icon:'💆', badge:'Best Seller', badgeClass:'br', fda:true,
     name:'BeauMask + BeauNeck-Décolleté', price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/G15P-11.png','images/products/G15P-2.jpg','images/products/G15P-3.jpg'] },
-  { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:'Wireless', badgeClass:'bb', fda:true,
-    name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red &amp; NIR',
+  { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:null, badgeClass:'', fda:true,
+    name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
     img:'images/products/G15-1.jpg', gallery:['images/products/G15-1.jpg','images/products/G15-2.jpg','images/products/G15-3.jpg'] },
 
   { id:'P40B', coll:'body-recovery', goal:'RECOVER', icon:'💪', badge:'Flicker-Free', badgeClass:'bb',
@@ -544,7 +546,7 @@ const PRODUCTS = [
     name:'AuraDome', price:1199, waves:'415 · 590 · 660 · 850nm | Arch Dome Full Spectrum',
     img:'images/products/G240-1.jpg', gallery:['images/products/G240-1.jpg','images/products/G240-2.jpg','images/products/G240-3.jpg'] },
 
-  { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'FDA-Registered', badgeClass:'bg', fda:true,
+  { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'Executive Edition', badgeClass:'bp', fda:true,
     name:'Solaris9 BK300 Executive Edition', price:1399, waves:'415 · 630-660 · 810-1060nm + 295/311nm UVB | Full Spectrum',
     img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-1.jpg','images/products/BK300-2.jpg','images/products/BK300-3.jpg'] },
   { id:'MAX1800', coll:'full-body', goal:'RECOVER', icon:'🟥', badge:'1,800W', badgeClass:'bb',
@@ -643,7 +645,7 @@ function render(){
     <div class="pc" style="animation-delay:${(i*0.04).toFixed(2)}s" onclick="window.location.href='product.html#${p.id}'">
       <div class="pc-img">
         ${p.badge?`<span class="pc-bdg ${p.badgeClass}">${p.badge}</span>`:''}
-        ${p.fda?`<span class="pc-fda">✅ FDA-Registered</span>`:''}
+        ${p.fda?`<span class="pc-fda${FDA_CLEARED_SKUS.has(p.id)?' pc-fda-cleared':''}">✅ ${FDA_CLEARED_SKUS.has(p.id)?'FDA-Cleared':'FDA-Registered'}</span>`:''}
         <span class="pc-coll">${collLabel[p.coll]}</span>
         ${p.img?`<img src="${p.img}" alt="${p.name.replace(/&amp;/g,'&').replace(/"/g,'')}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:64px">${p.icon}</span>`:p.icon}
       </div>
