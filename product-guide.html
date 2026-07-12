@@ -296,7 +296,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   <div class="nav-links">
     <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it)o.classList.remove('open')});it.classList.toggle('open')" role="button" aria-label="Toggle Shop All menu">&#9662;</span><div class="mega-menu">
         <div class="mega-col"><div class="mega-h">Face &amp; Skin</div><a href="product.html#EM04">GlowEM04 — Sleep Mask</a><a href="product.html#G15P">BeauMask + BeauNeck-Décolleté</a><a href="product.html#G15">BeauMask</a><a href="shop-all.html?coll=face-skin" class="mega-all">View All →</a></div>
-        <div class="mega-col"><div class="mega-h">Body &amp; Recovery</div><a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">Glow60MiniPro</a><a href="product.html#E300">GlowE300</a><a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Body &amp; Recovery</div><a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a><a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Specialty</div><a href="product.html#C01">LUMENOVA PRO</a><a href="product.html#G240">AuraDome</a><a href="shop-all.html?coll=specialty" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Full-Body Panels</div><a href="product.html#BK300">Solaris9 BK300 Executive Edition</a><a href="product.html#MAX1800">LUFAMAX 1800</a><a href="product.html#MAX4800">LUFAMAX 4800</a><a href="product.html#ESPRO3000">LUFAESPRO 3000</a><a href="shop-all.html?coll=full-body" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Accessories</div><a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a><a href="shop-all.html?coll=accessory" class="mega-all">View All →</a></div>
@@ -404,7 +404,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 const GUIDE = [
   {
     id:'EM04', cat:'face-skin', icon:'😴', badge:'FDA-Registered', badgeClass:'bg', fda:false,
-    name:'GlowEM04 — SleepGlow Eye Mask', price:199, warranty:1, returnDays:30,
+    name:'GlowEM04', price:199, warranty:1, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A weighted, dual-mode sleep mask combining Surface Red and Deep NIR light to calm the mind and prepare the body for deeper, more restorative sleep.',
     features:[
@@ -421,8 +421,8 @@ const GUIDE = [
     img:'images/products/EM04-9.png',
   },
   {
-    id:'G15', cat:'face-skin', icon:'✨', badge:'Wireless', badgeClass:'bb', fda:true,
-    name:'BeauMask — ClearGlow Face Mask', price:499, warranty:1, returnDays:30,
+    id:'G15', cat:'face-skin', icon:'✨', badge:'FDA-Cleared', badgeClass:'bg', fda:true,
+    name:'BeauMask', price:499, warranty:1, returnDays:30,
     waves:[{nm:415,label:'Blue Light',color:'#2E6FFF'},{nm:590,label:'Amber/Yellow',color:'#C9993A'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A wireless, wearable LED face mask with 4 wavelengths — addressing fine lines, pigmentation, acne and dullness in one device.',
     features:[
@@ -458,7 +458,7 @@ const GUIDE = [
   },
   {
     id:'P40B', cat:'body-recovery', icon:'💪', badge:'Flicker-Free', badgeClass:'bb', fda:false,
-    name:'RecoverPro40B — Desktop Panel', price:209, warranty:1, returnDays:30,
+    name:'RecoverPro40B', price:209, warranty:1, returnDays:30,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A compact desktop red light therapy panel delivering clinical-strength Red + NIR output for targeted muscle recovery and joint pain relief.',
     features:[
@@ -475,8 +475,8 @@ const GUIDE = [
     img:'images/products/P40B-3.jpg',
   },
   {
-    id:'MINI60PRO', cat:'body-recovery', icon:'🩹', badge:null, badgeClass:'', fda:false,
-    name:'Glow60MiniPro — PainRelief Mini Pro', price:336, warranty:1, returnDays:30,
+    id:'MINI60PRO', cat:'body-recovery', icon:'🩹', badge:'Wireless', badgeClass:'bb', fda:false,
+    name:'GlowMini60Pro', price:349, warranty:1, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A wireless, rechargeable pain-relief panel built for joints, knees, back and muscle recovery — anywhere, anytime.',
     features:[
@@ -494,7 +494,7 @@ const GUIDE = [
   },
   {
     id:'E300', cat:'body-recovery', icon:'🧠', badge:'Clinical Grade', badgeClass:'bo', fda:false,
-    name:'GlowE300 — ClinicalEdge E300', price:499, warranty:2, returnDays:30,
+    name:'GlowE300', price:499, warranty:2, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A clinical-grade, full-spectrum panel with 5-channel dimming — built for athletes, clinics and chronic pain management.',
     features:[
@@ -512,7 +512,7 @@ const GUIDE = [
   },
   {
     id:'C01', cat:'specialty', icon:'👨‍🦲', badge:'New', badgeClass:'bg', fda:false,
-    name:'LUMENOVA PRO — HGrowCap Pro', price:449, warranty:1, returnDays:30,
+    name:'LUMENOVA PRO', price:449, warranty:1, returnDays:30,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'}],
     desc:'A full scalp wrap-around LED helmet using a 4-in-1 protocol to support hair regrowth and scalp health.',
     features:[
@@ -530,7 +530,7 @@ const GUIDE = [
   },
   {
     id:'G240', cat:'specialty', icon:'🪖', badge:null, badgeClass:'', fda:false,
-    name:'AuraDome — AuraDome G240', price:1199, warranty:1, returnDays:30,
+    name:'AuraDome', price:1199, warranty:1, returnDays:30,
     waves:[{nm:415,label:'Blue Light',color:'#2E6FFF'},{nm:590,label:'Amber/Yellow',color:'#C9993A'},{nm:630,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A hands-free arch-dome panel delivering full-spectrum light therapy to the scalp, face or back with memory-saved settings.',
     features:[
@@ -567,7 +567,7 @@ const GUIDE = [
   },
   {
     id:'MAX1800', cat:'full-body', icon:'🟥', badge:'1,800W', badgeClass:'bb', fda:false,
-    name:'LUFAMAX 1800 — Full-Body Panel', price:1942, warranty:2, returnDays:30,
+    name:'LUFAMAX 1800', price:1942, warranty:2, returnDays:30,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A full-size, full-body panel delivering 1,800W of dual-chip Red + NIR LED power across 91×41cm of coverage.',
     features:[
@@ -585,7 +585,7 @@ const GUIDE = [
   },
   {
     id:'MAX4800', cat:'full-body', icon:'🏋️', badge:'Flagship', badgeClass:'bp', fda:false,
-    name:'LUFAMAX 4800 — BodyMax 4800 Elite', price:4999, warranty:2, returnDays:30,
+    name:'LUFAMAX 4800', price:4999, warranty:2, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'The flagship of the lineup — a 1,832mm head-to-toe panel with 4,800W of dual-core LED power for full-body coverage.',
     features:[
@@ -603,7 +603,7 @@ const GUIDE = [
   },
   {
     id:'ESPRO3000', cat:'full-body', icon:'⚕️', badge:'Clinic Grade', badgeClass:'bo', fda:false,
-    name:'LUFAESPRO 3000 — ClinicalPro ESPRO 3000', price:5299, warranty:2, returnDays:30,
+    name:'LUFAESPRO 3000', price:5299, warranty:2, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'},{nm:1060,label:'Ultra-Deep NIR',color:'#5C1414'}],
     desc:'A clinic-grade, 6-wavelength panel with the rare 1060nm deep NIR channel — built for clinics, biohackers and serious recovery protocols.',
     features:[
@@ -621,7 +621,7 @@ const GUIDE = [
   },
   {
     id:'PE01', cat:'accessory', icon:'🧘', badge:'New', badgeClass:'bg', fda:false,
-    name:'VitalityPro PEMF Mat — ZenField PEMF Mat', price:899, warranty:1, returnDays:30,
+    name:'VitalityPro PEMF Mat', price:899, warranty:1, returnDays:30,
     waves:[],
     desc:'A full-body PEMF mat combining amethyst &amp; tourmaline crystal therapy with far-infrared heat and 5 pulse modes — no light/wavelength component. Supports cell regeneration, circulation and sleep quality, and helps calm the nervous system.',
     features:[
@@ -639,7 +639,7 @@ const GUIDE = [
   },
   {
     id:'MRS45', cat:'accessory', icon:'🦾', badge:null, badgeClass:'', fda:false,
-    name:'ProStand — Adjustable Stand MRS45', price:725, warranty:1, returnDays:30,
+    name:'ProStand', price:725, warranty:1, returnDays:30,
     waves:[],
     desc:'An adjustable vertical stand that turns your LUFAMAX 1800, LUFAMAX 4800 or LUFAESPRO 3000 panel into a hands-free, full-body treatment station.',
     features:[
