@@ -313,6 +313,16 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:60px 0 26p
 .nl-success{display:none;margin:18px auto 0;font-size:13.5px;color:var(--white);background:rgba(46,160,67,.12);border:1px solid rgba(46,160,67,.3);border-radius:7px;padding:12px;max-width:440px}
 .nl-success.show{display:block}
 .nl-box.subscribed .nl-form{display:none}
+.nl-dark{background:#0B0B0F;border:none;border-radius:20px;padding:36px 32px;max-width:620px;margin:36px auto 0;text-align:left}
+.nl-dark-h{color:#fff;font-family:var(--hd);font-weight:800;font-size:1.2rem;margin-bottom:8px}
+.nl-dark .sub{color:rgba(255,255,255,.62);margin:0 0 18px;font-size:13px;max-width:none}
+.nl-dark .nl-form{margin:0;justify-content:flex-start}
+.nl-dark .nl-form input{border-radius:100px;background:#fff;border:none;color:#14151A;padding:14px 22px}
+.nl-dark .nl-form input::placeholder{color:#8a8d99}
+.nl-dark .nl-form button{border-radius:100px;background:var(--red);color:#fff;border:none;padding:14px 28px;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em;white-space:nowrap;cursor:pointer;transition:background .2s}
+.nl-dark .nl-form button:hover{background:var(--redl)}
+.nl-dark .nl-success{color:#fff}
+@media(max-width:520px){.nl-dark{padding:28px 22px}.nl-dark .nl-form{flex-direction:column}.nl-dark .nl-form input,.nl-dark .nl-form button{width:100%}}
 /* ══ OVERLAYS ══ */
 .overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.82);backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px}
 .overlay.open{display:flex}
@@ -736,11 +746,12 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
 <div class="fi"><button class="fi-q" onclick="this.parentElement.classList.toggle('open')">Return Policy? <span class="fi-ic">+</span></button><div class="fi-a"><p>30-day free-trial money-back guarantee on all devices — no restocking fee.<a href="shipping-returns.html" style="color:var(--red)">Full policy →</a></p></div></div>
 </div><div style="text-align:center;margin-top:24px"><a href="warranty.html" class="btn-g" style="font-size:12px;padding:11px 22px">View Full FAQ &amp; Policies →</a></div></div></section>
 <section id="cta"><div class="wrap"><div class="cta-inner rv"><span class="tag">Start Today</span><div class="hl" style="margin:10px auto 14px"></div><h2>Which light is right<br/><span class="red">for you?</span></h2><p class="sub" style="margin:12px auto">Free consultation — let our experts match the right device to your health goal.</p><div class="cta-btns"><button class="btn-r" onclick="openLead()">Free Consultation →</button><button class="btn-g" onclick="window.location.href='shop-all.html'">View All Products</button></div>
-  <div style="margin-top:36px;padding-top:32px;border-top:1px solid var(--line);max-width:460px;margin-left:auto;margin-right:auto">
-    <p class="sub" style="margin:0 auto 14px;font-size:13px">Not ready yet? Get <strong style="color:var(--white)">10% off</strong> your first order — straight to your inbox.</p>
+  <div class="nl-box nl-dark">
+    <p class="nl-dark-h">Keep me notified</p>
+    <p class="sub">Not ready yet? Get <strong style="color:#fff">10% off</strong> your first order — straight to your inbox.</p>
     <form class="nl-form" id="newsletterForm">
-      <input type="email" id="nlEmail" placeholder="Enter your email" required/>
-      <button type="submit" class="btn-g">Get My Code</button>
+      <input type="email" id="nlEmail" placeholder="Your email" required/>
+      <button type="submit">Subscribe</button>
     </form>
     <div class="nl-success" id="nlSuccess">🎉 Thanks for subscribing! Use code <strong>WELCOME10</strong> at checkout for 10% off your first order.</div>
   </div>
