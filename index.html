@@ -550,11 +550,6 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
 .ck-txt{font-size:12px;color:var(--muted);max-width:540px}
 .ck-ok{padding:7px 16px;border-radius:5px;border:none;background:var(--red);color:#fff;font-size:11.5px;font-weight:700;cursor:pointer}
 .ck-no{padding:7px 16px;border-radius:5px;background:transparent;border:1px solid var(--line);color:var(--muted);font-size:11.5px;cursor:pointer}
-/* Float */
-.float{position:fixed;bottom:72px;right:18px;z-index:945;display:flex;flex-direction:column;gap:8px}
-.fb{width:46px;height:46px;border-radius:50%;border:none;font-size:18px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:transform .2s;display:grid;place-items:center}
-.fb:hover{transform:scale(1.1)}
-.fb-wa{background:#25d366}.fb-top{background:var(--red);font-size:14px}
 
 .nav-item{position:relative}
 
@@ -573,7 +568,6 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
 </head>
 <body>
 <div class="cookie" id="ck"><p class="ck-txt">We use cookies to improve your experience. <a href="#" style="color:var(--red)">Privacy Policy</a>.</p><div style="display:flex;gap:8px"><button class="ck-no" onclick="this.closest('.cookie').remove()">Decline</button><button class="ck-ok" onclick="this.closest('.cookie').remove()">Accept</button></div></div>
-<div class="float"><button class="fb fb-top" onclick="window.scrollTo({top:0,behavior:'smooth'}) " title="Back to top">↑</button></div>
 <div id="topbar"><span>🚚 Free Shipping — Canada &amp; USA</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 30-Day Free Trial Returns</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
 <nav>
   <a href="#" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">

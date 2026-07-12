@@ -2,14 +2,6 @@
 (function(){
   /* inject self-contained CSS */
   var css = `
-  #sp-toast{position:fixed;left:22px;bottom:96px;z-index:850;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:13px 16px;display:flex;align-items:center;gap:11px;max-width:300px;box-shadow:0 16px 40px rgba(0,0,0,.14);transform:translateY(16px) scale(.96);opacity:0;pointer-events:none;transition:transform .35s,opacity .35s;font-family:"Plus Jakarta Sans",sans-serif}
-  #sp-toast.show{transform:none;opacity:1}
-  .sp-ic{font-size:22px;line-height:1;flex-shrink:0}
-  .sp-txt{font-size:12px;color:#14151A;line-height:1.5}
-  .sp-txt b{color:#000}
-  .sp-time{font-size:10.5px;color:#5C606B;margin-top:2px}
-  @media(max-width:480px){#sp-toast{left:14px;right:14px;max-width:none;bottom:88px}}
-
   #ei-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
   #ei-ov.open{display:flex}
   #ei-card{background:#FFFFFF;border:1px solid rgba(0,0,0,.08);box-shadow:0 24px 60px rgba(0,0,0,.18);border-radius:18px;padding:36px 32px;max-width:420px;width:100%;text-align:center;position:relative;animation:eiPop .35s ease}
@@ -27,58 +19,6 @@
   var styleEl = document.createElement('style');
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
-
-  /* ── SOCIAL PROOF TICKER ── */
-  var NOTIFS = [
-    {n:'Sarah M.',l:'Toronto, ON',p:'G15P ClearGlow Pro',t:'2 minutes ago'},
-    {n:'David C.',l:'Winnipeg, MB',p:'EM04 SleepGlow Eye Mask',t:'4 minutes ago'},
-    {n:'Mike T.',l:'Saskatoon, SK',p:'P40B RecoverPro Panel',t:'6 minutes ago'},
-    {n:'Linh T.',l:'Vancouver, BC',p:'G15P ClearGlow Pro',t:'8 minutes ago'},
-    {n:'Brian C.',l:'Toronto, ON',p:'C01 HGrowCap Pro',t:'11 minutes ago'},
-    {n:'Angie W.',l:'Calgary, AB',p:'BK300 BioShield Standee',t:'13 minutes ago'},
-    {n:'Olivia S.',l:'London, ON',p:'Recovery Essentials Bundle',t:'15 minutes ago'},
-    {n:'Kim L.',l:'Edmonton, AB',p:'G15 ClearGlow Face Mask',t:'18 minutes ago'},
-    {n:'James O.',l:'Oakville, ON',p:'MAX1800 BodyMax Panel',t:'21 minutes ago'},
-    {n:'Tina S.',l:'Vancouver, BC',p:'Glow & Restore Bundle',t:'24 minutes ago'},
-    {n:'Karen M.',l:'Ottawa, ON',p:'P40B RecoverPro Panel',t:'27 minutes ago'},
-    {n:'Nina C.',l:'Toronto, ON',p:'G240 AuraDome',t:'30 minutes ago'},
-    {n:'Lucy T.',l:'Victoria, BC',p:'PE01 ZenField PEMF Mat',t:'33 minutes ago'},
-    {n:'Raj K.',l:'Calgary, AB',p:'BK300 BioShield Standee',t:'37 minutes ago'},
-    {n:'Mia R.',l:'Toronto, ON',p:'EM04 SleepGlow Eye Mask',t:'41 minutes ago'},
-    {n:'Theresa G.',l:'Kelowna, BC',p:'MINI60PRO PainRelief Mini',t:'45 minutes ago'},
-    {n:'Catherine M.',l:'Montréal, QC',p:'Glow & Restore Bundle',t:'49 minutes ago'},
-    {n:'Derek H.',l:'Edmonton, AB',p:'Full-Body Recovery Bundle',t:'53 minutes ago'},
-    {n:'Amanda K.',l:'Calgary, AB',p:'G15P ClearGlow Pro',t:'57 minutes ago'},
-    {n:'Robert F.',l:'Ottawa, ON',p:'MRS45 ProStand',t:'1 hour ago'},
-  ];
-
-  function buildToast(){
-    var t = document.createElement('div');
-    t.id = 'sp-toast';
-    t.innerHTML = '<div class="sp-ic">☀️</div><div><div class="sp-txt"></div><div class="sp-time"></div></div>';
-    document.body.appendChild(t);
-    return t;
-  }
-
-  function startTicker(){
-    if(document.getElementById('chat-fab')===null) return; // only on shop pages with chat widget present
-    var toast = buildToast();
-    var txt = toast.querySelector('.sp-txt');
-    var time = toast.querySelector('.sp-time');
-    var idx = Math.floor(Math.random()*NOTIFS.length);
-    function showNext(){
-      var item = NOTIFS[idx % NOTIFS.length];
-      idx++;
-      txt.innerHTML = '<b>'+item.n+'</b> from '+item.l+' just ordered<br><b>'+item.p+'</b>';
-      time.textContent = item.t;
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 5500);
-    }
-    setTimeout(function(){
-      showNext();
-      setInterval(showNext, 18000);
-    }, 4000);
-  }
 
   /* ── EXIT INTENT POPUP ── */
   function buildExitPopup(){
@@ -175,7 +115,6 @@
     sessionStorage.setItem(KEY,'1');
   }
 
-  startTicker();
   setupExitIntent();
   // Delay soft opening popup so it doesn't collide with page render
   setTimeout(setupSoftOpeningPopup, 1800);
