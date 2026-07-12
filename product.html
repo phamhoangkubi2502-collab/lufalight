@@ -715,7 +715,7 @@ const PRODUCTS = [
     name:'GlowE300', price:499, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
     img:'images/products/E300-1.jpg', gallery:['images/products/E300-1.jpg','images/products/E300-2.jpg','images/products/E300-3.jpg','images/products/E300-4.png','images/products/E300-5.jpg','images/products/E300-6.jpg','images/products/E300-7.jpg','images/products/E300-8.jpg','images/products/E300-9.jpg','images/products/E300-10.jpg','images/products/E300-11.jpg','images/products/E300-12.jpg','images/products/E300-13.jpg','images/products/E300-14.jpg','images/products/E300-15.png','images/products/E300-16.png','images/products/E300-17.png','images/products/E300-18.png','images/products/E300-19.png'] },
   { id:'C01', coll:'specialty', goal:'GROW', icon:'👨‍🦲', badge:'New', badgeClass:'bg',
-    name:'LUMENOVA PRO', price:499, waves:'660nm Follicle Red + 830nm Scalp NIR',
+    name:'LUMENOVA PRO', price:449, waves:'660nm Follicle Red + 830nm Scalp NIR',
     img:'images/products/C01-1.jpg', gallery:['images/products/C01-1.jpg','images/products/C01-2.jpg','images/products/C01-3.jpg','images/products/C01-4.jpg','images/products/C01-5.jpg','images/products/C01-6.jpg','images/products/C01-7.jpg','images/products/C01-8.jpg','images/products/C01-9.jpg','images/products/C01-10.jpg','images/products/C01-11.jpg','images/products/C01-12.jpg','images/products/C01-13.png','images/products/C01-14.jpg','images/products/C01-15.jpg','images/products/C01-16.jpg','images/products/C01-17.jpg','images/products/C01-18.jpg','images/products/C01-19.jpg','images/products/C01-20.jpg','images/products/C01-21.jpg','images/products/C01-22.jpg'] },
   { id:'G240', coll:'specialty', goal:'GROW', icon:'🪖', badge:null, badgeClass:'',
     name:'AuraDome', price:1199, waves:'415 · 590 · 630 · 850nm | Arch Dome Full Spectrum',
@@ -733,7 +733,7 @@ const PRODUCTS = [
     name:'LUFAESPRO 3000', price:5299, waves:'630 · 660 · 810 · 830 · 850 · 1060nm | Full Spectrum + Ultra-Deep NIR',
     img:'images/products/ESPRO3000-1.jpg', gallery:['images/products/ESPRO3000-1.jpg','images/products/ESPRO3000-2.jpg','images/products/ESPRO3000-3.jpg','images/products/ESPRO3000-4.jpg','images/products/ESPRO3000-5.jpg','images/products/ESPRO3000-6.jpg'] },
   { id:'PE01', coll:'accessory', goal:'RELIEF', icon:'🧘', badge:'New', badgeClass:'bg',
-    name:'VitalityPro PEMF Mat', price:899, waves:'PEMF + Red + NIR + Far-Infrared Heat',
+    name:'VitalityPro PEMF Mat', price:899, waves:'PEMF + Amethyst &amp; Far-Infrared Heat (No Light Wavelengths)',
     img:'images/products/PE01-1.jpg', gallery:['images/products/PE01-1.jpg','images/products/PE01-2.jpg','images/products/PE01-3.jpg','images/products/PE01-4.jpg','images/products/PE01-5.jpg','images/products/PE01-6.jpg','images/products/PE01-7.jpg','images/products/PE01-8.jpg'] },
   { id:'MRS45', coll:'accessory', goal:'ACCESSORY', icon:'🦾', badge:null, badgeClass:'',
     name:'ProStand', price:725, waves:'78–150cm Adjustable Stand for LUFAMAX 1800 / LUFAMAX 4800 / LUFAESPRO 3000',
@@ -917,14 +917,16 @@ const DETAILS = {
     included:[ ['📦','ESPRO3000 Panel'],['🦯','Floor Stand'],['🔌','Power Cable'],['📖','User Manual'] ],
   },
   PE01: {
-    desc:'A full-body PEMF mat combining Red + NIR light, pulsed electromagnetic field therapy and negative ion technology in an amethyst crystal matrix.',
-    wavelengths:[635,850],
+    desc:'A full-body PEMF mat combining amethyst &amp; tourmaline crystal therapy with far-infrared heat and 5 pulse modes — no light/wavelength component. Supports cell regeneration, circulation and sleep quality, and helps calm the nervous system.',
+    wavelengths:[],
+    noWaveLabel:'Mat Size',
+    noWaveMsg:"The VitalityPro Mat uses PEMF pulses, amethyst & tourmaline crystal therapy and far-infrared heat — it has no light/wavelength component.",
     features:[
-      { icon:'🧲', t:'PEMF + Red + NIR + Far-Infrared Heat', d:'Multi-technology mat — 260W, with 10-70°C adjustable heat.' },
-      { icon:'💎', t:'Amethyst + Tourmaline Crystal Matrix', d:'PU leather surface boosts circulation and sleep quality.' },
-      { icon:'🧘', t:'Office · Joint · Sleep · Recovery', d:'9 pulse modes, 1-8h timer, foldable design for everyday use.' },
+      { icon:'🧲', t:'PEMF + Amethyst + Far-Infrared Heat', d:'260W multi-technology mat with 10–70°C adjustable heat and auto shut-off timer.' },
+      { icon:'💎', t:'Amethyst, Tourmaline &amp; PU Leather', d:'Natural crystal matrix boosts circulation, cell regeneration and sleep quality.' },
+      { icon:'🧘', t:'5 Pulse Modes, 1–9h Timer', d:'P1–P5 brainwave-frequency pulse modes; foldable design for easy portability.' },
     ],
-    specs:[ ['Total Chips','3,780 chips'],['Technology','PEMF + Red + NIR + Far-Infrared Heat'],['Power','260W'],['Voltage','110/220V'],['Temp Range','10–70°C'],['Timer','1–8 hours'],['Dimensions','190 × 80 cm'],['Weight','18 kg'] ],
+    specs:[ ['Size','190 × 80 cm'],['Application Area','Back &amp; Full Body'],['Color','Black'],['Materials','PU Leather, Amethyst, Tourmaline Crystal'],['Voltage','110V/220V, 50–60Hz'],['Timer Setting','1–9 hours (adjustable)'],['Temperature Range','10°C–70°C (auto shut-off)'],['Rated Power','260W'],['Pulse Modes','P1 3Hz · P2 7.8Hz + Schumann · P3 10Hz Alpha · P4 Beta · P5 Off (20-min cycle + 100-min rest, auto-off after 4 cycles)'] ],
     included:[ ['🧘','PE01 PEMF Mat'],['🎮','Controller Unit'],['🔌','Power Adapter'],['👜','Carry Bag'],['📖','User Manual'] ],
   },
   MRS45: {
@@ -1384,10 +1386,10 @@ function init(){
   } else {
     document.getElementById('waveGrid').innerHTML = `<div class="wave-chip" style="border-left-color:var(--bluel)">
       <div class="wave-nm" style="color:var(--bluel)">Accessory</div>
-      <div class="wave-label">Compatible Devices</div>
+      <div class="wave-label">${detail.noWaveLabel || 'Compatible Devices'}</div>
       <div class="wave-desc">${detail.specs && detail.specs[0] ? detail.specs[0][1] : ''}</div>
     </div>`;
-    document.getElementById('howItWorksIntro').textContent = "This accessory doesn't emit light itself — it's designed to work alongside compatible Lufalight full-body panels for hands-free sessions.";
+    document.getElementById('howItWorksIntro').textContent = detail.noWaveMsg || "This accessory doesn't emit light itself — it's designed to work alongside compatible Lufalight full-body panels for hands-free sessions.";
     document.getElementById('depthDiagram').style.display = 'none';
   }
 
@@ -1519,6 +1521,8 @@ function renderBrochure(){
   if (!pdf || !sec || !gallery) { if(sec) sec.style.display='none'; return; }
   const pName = plainName(product.name).split('—')[0].trim();
   document.getElementById('brochureTitle').textContent = pName + ' — Official Brochure';
+  const absUrl = new URL(pdf, location.href).href;
+  const viewerUrl = 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(absUrl);
   gallery.innerHTML = `
     <div style="background:linear-gradient(135deg,#1a0a0a 0%,#2d0808 50%,#1a0a0a 100%);border-radius:20px;padding:28px;box-shadow:0 12px 60px rgba(232,45,45,.18)">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px">
@@ -1534,17 +1538,13 @@ function renderBrochure(){
         </a>
       </div>
       <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.4);background:#fff">
-        <iframe src="${pdf}#toolbar=0&view=FitH"
+        <iframe src="${viewerUrl}"
           style="width:100%;height:680px;border:none;display:block"
           title="${pName} Brochure"
           loading="lazy">
-          <div style="padding:32px;text-align:center;color:#555">
-            <p>Your browser cannot display PDF inline.</p>
-            <a href="${pdf}" download style="color:var(--red);font-weight:700">Click to download the brochure</a>
-          </div>
         </iframe>
       </div>
-      <p style="color:rgba(255,255,255,.4);font-size:11px;margin-top:12px;text-align:center">Scroll inside the viewer to see all pages · Click Download to save</p>
+      <p style="color:rgba(255,255,255,.5);font-size:11px;margin-top:12px;text-align:center">Preview not loading? <a href="${pdf}" download style="color:var(--redl);font-weight:700">Download the PDF</a> instead.</p>
     </div>`;
   sec.style.display = 'block';
 }
