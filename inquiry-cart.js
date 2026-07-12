@@ -54,7 +54,7 @@
   }
 
   /* ── DRAWER ── */
-  function openDrawer(){ var ov=document.getElementById('lc-drawer-ov'); if(ov) ov.classList.add('open'); }
+  function openDrawer(){ renderItems(); var ov=document.getElementById('lc-drawer-ov'); if(ov) ov.classList.add('open'); }
   function closeDrawer(){ var ov=document.getElementById('lc-drawer-ov'); if(ov) ov.classList.remove('open'); }
 
   function fmtPrice(n){ return '$'+(n||0).toLocaleString('en-CA')+' CAD'; }
