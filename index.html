@@ -57,6 +57,7 @@ h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
 /* TOPBAR */
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 #topbar span{margin:0 14px}
+#topbar span:last-child{white-space:nowrap;display:inline-block}
 /* NAV */
 nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
 .nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
@@ -295,6 +296,13 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:60px 0 26p
 .ft-copy{font-size:11px;color:var(--muted)}.ft-leg{display:flex;gap:18px}
 .ft-leg a{font-size:11px;color:var(--muted)}.ft-leg a:hover{color:var(--white)}
 .disclaimer{font-size:10px;color:var(--text3);max-width:820px;margin:12px auto 0;line-height:1.6;text-align:center}
+.disc-acc{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);max-width:820px;margin-left:auto;margin-right:auto}
+.disc-acc summary{display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.disc-acc summary::-webkit-details-marker{display:none}
+.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
+.disc-acc[open] summary::after{content:'\2212'}
+.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:center}
+
 /* ══ NEWSLETTER ══ */
 .nl-box{background:linear-gradient(135deg,rgba(232,45,45,.12),rgba(46,111,255,.08));border:1px solid var(--line);border-radius:var(--r);padding:48px 28px;text-align:center}
 .nl-box h2{margin:0}
@@ -752,7 +760,14 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
     <div><div class="ft-col-t">Support</div><div class="ft-links"><a href="mailto:lufalight@gmail.com">Contact Us</a><a href="#faq">FAQ</a><a href="shipping-returns.html">Shipping &amp; Returns</a><a href="warranty.html">Warranty</a></div></div>
   </div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</div><div class="ft-leg"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
-  <p class="disclaimer">⚕️ <strong>Medical Disclaimer:</strong> Lufalight devices are wellness products and are not intended to diagnose, treat, cure, or prevent any disease. Percentage figures are from independent PBM research, not device-specific claims. The BK300-UVB contains a regulated UVB lamp — follow all exposure guidelines. Consult a physician before use if you have a medical condition.Lufalight products support general wellness and do not replace medical treatment. UVB The SHIELD BK300-UVB complies with FDA/Health Canada exposure limits.</p>
+<details class="disc-acc">
+    <summary>Disclaimer</summary>
+    <p>LufaLight&reg; red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness, temporary muscle relaxation, and temporary relief of minor muscle and joint discomfort. These products may also support temporary increases in local circulation associated with topical heating and promote relaxation.</p>
+    <p>LufaLight products are not intended to diagnose, treat, cure, or prevent any disease, illness, or medical condition. Individual results may vary.</p>
+    <p>The information provided on the LufaLight website, product literature, brochures, and other materials is intended solely for informational and educational purposes and should not be considered medical advice or a substitute for consultation with a qualified physician or other licensed healthcare professional.</p>
+    <p>Use LufaLight products only as directed in the applicable user manual and safety instructions.</p>
+    <p>&copy; 2026 LufaLight. All rights reserved.</p>
+  </details>
 </div></footer>
 
 <!-- PRODUCT MODAL -->
@@ -886,7 +901,7 @@ const PD  = {
 },
 "MIND": {
   "l":"MIND","n":"GlowE300 — ClinicalEdge E300","dev":"Model: E300 | Lufalight",
-  "price":415,"ps":"$415 CAD",
+  "price":499,"ps":"$499 CAD",
   "pill":"🧠 Supports +25% Brain Blood Flow",
   "specs":["630 · 660 · 810 · 830 · 850nm","Full Spectrum NIR","5–7cm penetration","LCD Timer","300W","Adjustable Stand"],
   "sk":["Wavelength","LED Type","Penetration","Display","Power","Stand"],
@@ -1184,7 +1199,7 @@ function showMiniToast(msg){
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Lufalight","url":"https://www.lufalight.com","description":"Red light therapy devices for Canada and USA","brand":{"@type":"Brand","name":"Lufalight","slogan":"REVIVE. RESTORE. RADIATE."}}
 </script>
-<script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});document.querySelectorAll('.nav-item').forEach(function(it){it.addEventListener('mouseenter',function(){it.classList.add('open')});it.addEventListener('mouseleave',function(){it.classList.remove('open')})});</script>
+<script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});function positionMegaMenu(it){var m=it.querySelector('.mega-menu');if(!m)return;m.style.left='0px';var r=m.getBoundingClientRect();var shift=0;var overflowRight=r.right-(window.innerWidth-16);if(overflowRight>0)shift=-overflowRight;var newLeft=r.left+shift;if(newLeft<16)shift+=(16-newLeft);m.style.left=shift+'px'}document.querySelectorAll('.nav-item').forEach(function(it){let ct;it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');positionMegaMenu(it)});it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)})});document.addEventListener('click',function(e){var car=e.target.closest('.mega-caret');if(car){var it=car.closest('.nav-item');if(it&&it.classList.contains('open'))positionMegaMenu(it)}});window.addEventListener('resize',function(){document.querySelectorAll('.nav-item.open').forEach(positionMegaMenu)});</script>
 <script>
 (function(){
   function closeMob(){document.getElementById('mob-overlay').classList.remove('open');}

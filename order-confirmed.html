@@ -37,6 +37,12 @@ h1{font-family:var(--hd);font-weight:900;font-size:clamp(1.9rem,4vw,2.6rem);lett
 .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s;white-space:nowrap;cursor:pointer}
 .btn-g:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
 footer{background:var(--bg2);border-top:1px solid var(--line);padding:32px 0;text-align:center}
+.disc-acc{margin:18px auto 0;padding-top:18px;border-top:1px solid var(--line);max-width:600px}
+.disc-acc summary{display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.disc-acc summary::-webkit-details-marker{display:none}
+.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
+.disc-acc[open] summary::after{content:'\2212'}
+.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:center}
 .ft-copy{font-size:11px;color:var(--muted)}
 </style>
 </head>
@@ -70,6 +76,14 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:32px 0;tex
 
 <footer>
   <p class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</p>
+  <details class="disc-acc">
+    <summary>Disclaimer</summary>
+    <p>LufaLight&reg; red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness, temporary muscle relaxation, and temporary relief of minor muscle and joint discomfort. These products may also support temporary increases in local circulation associated with topical heating and promote relaxation.</p>
+    <p>LufaLight products are not intended to diagnose, treat, cure, or prevent any disease, illness, or medical condition. Individual results may vary.</p>
+    <p>The information provided on the LufaLight website, product literature, brochures, and other materials is intended solely for informational and educational purposes and should not be considered medical advice or a substitute for consultation with a qualified physician or other licensed healthcare professional.</p>
+    <p>Use LufaLight products only as directed in the applicable user manual and safety instructions.</p>
+    <p>&copy; 2026 LufaLight. All rights reserved.</p>
+  </details>
 </footer>
 
 <script>
