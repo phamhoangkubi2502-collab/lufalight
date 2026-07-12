@@ -395,6 +395,98 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 <script src="lead-form.js"></script>
 
 <script>
+/* ── FIND MY DEVICE QUIZ ── */
+(function(){
+  var answers = {};
+  var TOTAL_STEPS = 3;
+
+  var QUIZ_PRODUCTS = {
+    EM04:{name:'GlowEM04',price:199,img:'images/products/EM04-9.png',why:'A compact eye mask purpose-built for winding down before bed — 630/660nm surface red plus 850nm deep NIR to support natural melatonin and deeper sleep.'},
+    G15P:{name:'BeauMask + BeauNeck-Décolleté',price:599,img:'images/products/G15P-11.png',why:'Full face + neck coverage in medical-grade silicone — targets fine lines, firmness and skin tone with four synchronized wavelengths.'},
+    G15:{name:'BeauMask',price:499,img:'images/products/G15-1.jpg',why:'Blue light (415nm) targets acne-causing bacteria while red (660nm) calms inflammation — a wireless, full-face option for clearer skin.'},
+    P40B:{name:'RecoverPro40B',price:209,img:'images/products/P40B-3.jpg',why:'A flicker-free desktop panel sized for one muscle group at a time — an affordable way to speed up post-workout recovery.'},
+    MINI60PRO:{name:'GlowMini60Pro',price:349,img:'images/products/MINI60PRO-1.jpg',why:'Portable and precise — built for joints, hands and smaller trouble spots that need focused red + NIR relief.'},
+    E300:{name:'GlowE300',price:499,img:'images/products/E300-1.jpg',why:'A clinical-grade full-spectrum NIR panel designed to support cerebral circulation and mental focus.'},
+    C01:{name:'LUMENOVA PRO',price:449,img:'images/products/C01-1.jpg',why:'A wearable scalp cap combining 660nm follicle-stimulating red with 830nm NIR — built specifically for hair regrowth.'},
+    G240:{name:'AuraDome',price:1199,img:'images/products/G240-1.jpg',why:'Hands-free full-scalp dome coverage with four wavelengths — for a more thorough, higher-powered regrowth protocol.'},
+    MAX1800:{name:'LUFAMAX 1800',price:1942,img:'images/products/MAX1800-1.jpg',why:'A full-body 1,800W panel that treats large muscle groups at once — built for serious, whole-body recovery.'},
+    MAX4800:{name:'LUFAMAX 4800',price:4999,img:'images/products/MAX4800-1.jpg',why:'Our flagship head-to-toe panel — maximum coverage and power for daily full-body recovery.'},
+    PE01:{name:'VitalityPro PEMF Mat',price:899,img:'images/products/PE01-1.jpg',why:'A full-body PEMF + far-infrared heat mat — whole-body relief without needing to reposition a panel.'}
+  };
+
+  function pickProduct(a){
+    switch(a.goal){
+      case 'SLEEP': return 'EM04';
+      case 'SKIN': return 'G15P';
+      case 'CLEAR': return 'G15';
+      case 'MIND': return 'E300';
+      case 'GROW': return (a.budget==='under300'||a.budget==='300-800') ? 'C01' : 'G240';
+      case 'RELIEF': return a.area==='full' ? 'PE01' : 'MINI60PRO';
+      case 'RECOVER':
+        if(a.area!=='full') return 'P40B';
+        return a.budget==='2000plus' ? 'MAX4800' : 'MAX1800';
+      default: return 'EM04';
+    }
+  }
+
+  function showStep(n){
+    document.querySelectorAll('.quiz-step').forEach(function(el){ el.classList.remove('active'); });
+    var el = document.getElementById('qstep'+n);
+    if(el) el.classList.add('active');
+  }
+
+  function setProgress(step, pct){
+    var bar = document.getElementById('qp'+step);
+    if(bar) bar.style.width = pct+'%';
+  }
+
+  function showResult(){
+    var sku = pickProduct(answers);
+    var p = QUIZ_PRODUCTS[sku] || QUIZ_PRODUCTS.EM04;
+    document.querySelectorAll('.quiz-step').forEach(function(el){ el.classList.remove('active'); });
+
+    document.getElementById('qrImg').src = p.img;
+    document.getElementById('qrImg').alt = p.name;
+    document.getElementById('qrName').textContent = p.name;
+    document.getElementById('qrPrice').textContent = '$'+p.price.toLocaleString('en-CA')+' CAD';
+    document.getElementById('qrWhy').textContent = p.why;
+    document.getElementById('qrDetails').href = 'product.html#'+sku;
+
+    var addBtn = document.getElementById('qrAdd');
+    addBtn.removeAttribute('onclick');
+    addBtn.classList.add('lufa-add-cart');
+    addBtn.setAttribute('data-item-id', sku);
+    addBtn.setAttribute('data-item-name', p.name);
+    addBtn.setAttribute('data-item-price', p.price);
+    addBtn.setAttribute('data-item-image', p.img);
+
+    document.getElementById('quizResult').classList.add('active');
+  }
+
+  window.quizSelect = function(step, key, value){
+    answers[key] = value;
+    setProgress(step, 100);
+    if(step < TOTAL_STEPS){
+      showStep(step+1);
+    } else {
+      showResult();
+    }
+  };
+
+  window.quizBack = function(step){
+    setProgress(step+1, 0);
+    showStep(step);
+  };
+
+  window.quizRestart = function(){
+    answers = {};
+    for(var i=1;i<=TOTAL_STEPS;i++) setProgress(i, 0);
+    document.getElementById('quizResult').classList.remove('active');
+    showStep(1);
+  };
+})();
+</script>
+<script>
 (function(){
   var btn=document.getElementById('back-to-top');
   if(!btn)return;
