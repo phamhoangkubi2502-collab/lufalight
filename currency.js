@@ -75,21 +75,23 @@
     #currency-btn:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
     #currency-btn .cy-car{font-size:9px;opacity:.6;transition:transform .2s}
     #currency-toggle.open #currency-btn .cy-car{transform:rotate(180deg)}
+    #currency-btn .cy-sym{display:none;font-size:14px}
     #currency-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25);min-width:170px;padding:6px;display:none;z-index:1100}
     #currency-toggle.open #currency-menu{display:block}
     .cy-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;background:none;border:none;color:var(--white);padding:9px 10px;border-radius:7px;cursor:pointer;font-size:12.5px;text-align:left}
     .cy-opt:hover{background:rgba(232,45,45,.08)}
     .cy-opt.active{color:var(--red);font-weight:700}
     .cy-opt .cy-name{color:var(--muted);font-size:11px}
-    @media(max-width:860px){#currency-btn{height:34px;padding:0 8px;font-size:11px}}
-    @media(max-width:360px){#currency-toggle{margin-left:4px}#currency-btn{height:30px;padding:0 6px}}
+    @media(max-width:860px){#currency-btn{height:34px;padding:0 8px;font-size:11px}nav{gap:6px}}
+    @media(max-width:480px){nav{gap:3px;padding-left:12px!important;padding-right:12px!important}.nav-sun{width:28px!important;height:28px!important}.nav-wm{font-size:1.05rem!important}.nav-tl{font-size:.44rem!important}#currency-toggle{margin-left:2px}#currency-btn{height:30px;padding:0 5px;font-size:10px;gap:3px}#currency-btn .cy-car{font-size:7px}}
+    @media(max-width:360px){#currency-btn{width:30px;padding:0;justify-content:center}#currency-btn .cy-code,#currency-btn .cy-car{display:none}#currency-btn .cy-sym{display:inline}}
     `;
     document.head.appendChild(css);
 
     var cur = getCurrency();
     var wrap = document.createElement('div');
     wrap.id = 'currency-toggle';
-    wrap.innerHTML = '<button id="currency-btn" aria-haspopup="true" aria-expanded="false">'+cur+' <span class="cy-car">▾</span></button>'+
+    wrap.innerHTML = '<button id="currency-btn" aria-haspopup="true" aria-expanded="false"><span class="cy-code">'+cur+'</span><span class="cy-sym">'+CURRENCIES[cur].symbol+'</span> <span class="cy-car">▾</span></button>'+
       '<div id="currency-menu" role="menu">'+
       ORDER.map(function(code){
         var info = CURRENCIES[code];
