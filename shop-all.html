@@ -158,6 +158,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .pc-name{font-family:var(--hd);font-weight:700;font-size:.93rem;margin-bottom:2px;line-height:1.3;min-height:2.4em}
 .pc-price{font-size:13px;font-weight:800;color:var(--gold);margin-bottom:4px;display:flex;gap:8px;align-items:baseline}
 .pc-price .orig{font-size:11px;color:var(--muted);text-decoration:line-through;font-weight:600}
+.pc-save-badge{background:#E82D2D;color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;align-self:center}
 .pc-waves{font-size:11px;color:var(--muted);margin-bottom:11px}
 .pc-act{display:grid;grid-template-columns:1fr auto;gap:6px}
 .pc-detail{background:rgba(232,45,45,.1);border:1px solid rgba(232,45,45,.25);border-radius:7px;color:var(--redl);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:9px 6px;transition:all .2s;cursor:pointer}
@@ -395,7 +396,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">RECOVERY + RELIEF</div>
         <div class="pc-name">Recovery Essentials Bundle</div>
-        <div class="pc-price"><span data-cad="479">$479 CAD</span><span class="orig" data-cad="545">$545 CAD</span></div>
+        <div class="pc-price"><span class="orig">$479 CAD</span>$383 CAD<span class="pc-save-badge">-20%</span></div>
         <div class="pc-waves">RecoverPro40B Desktop Panel + GlowMini60Pro</div>
         <div class="pc-act">
           
@@ -418,7 +419,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">SKIN + SLEEP</div>
         <div class="pc-name">Glow &amp; Restore Bundle</div>
-        <div class="pc-price"><span data-cad="699">$699 CAD</span><span class="orig" data-cad="798">$798 CAD</span></div>
+        <div class="pc-price"><span class="orig">$699 CAD</span>$559 CAD<span class="pc-save-badge">-20%</span></div>
         <div class="pc-waves">BeauMask+BeauNeck Face &amp; Neck Set + GlowEM04 Sleep Mask</div>
         <div class="pc-act">
           
@@ -441,7 +442,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">FULL-BODY RECOVERY</div>
         <div class="pc-name">Full-Body Recovery Bundle</div>
-        <div class="pc-price"><span data-cad="2399">$2,399 CAD</span><span class="orig" data-cad="2667">$2,667 CAD</span></div>
+        <div class="pc-price"><span class="orig">$2,399 CAD</span>$1,919 CAD<span class="pc-save-badge">-20%</span></div>
         <div class="pc-waves">LUFAMAX 1800 Full-Body Panel + ProStand Adjustable Stand</div>
         <div class="pc-act">
           
@@ -545,6 +546,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 <script src="currency.js"></script>
 <script>
+/* promo.js loads after this block — define the config early so card rendering can read it */
+if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
+if(!window.salePrice) window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
 /* ── PRODUCT CATALOG — all 14 SKUs from LUFALIGHT_Catalog_v12.pdf, RETAIL prices (CAD) ── */
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
 const PRODUCTS = [
@@ -681,7 +685,7 @@ function render(){
       <div class="pc-body">
         <div class="pc-line">${p.goal}</div>
         <div class="pc-name">${p.name}</div>
-        <div class="pc-price">${fmt(p.price)}${p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:''}</div>
+        <div class="pc-price">${(window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span class="orig">${fmt(p.price)}</span>${fmt(window.salePrice(p.price))}<span class="pc-save-badge">-20%</span>`:fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:'')}</div>
         <div class="pc-waves">${p.waves}</div>
         <div class="pc-act">
           

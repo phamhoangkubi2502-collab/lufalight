@@ -694,6 +694,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 <script src="currency.js"></script>
 <script>
+if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
+if(!window.salePrice) window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
 /* ── PRODUCT BROCHURES — per-SKU PDF brochure path ── */
 const BROCHURES = {
   G240:      'brochures/G240-brochure.pdf',
@@ -1355,16 +1357,26 @@ function init(){
   document.getElementById('pdpColl').textContent = collLabel[product.coll] + (product.badge ? ` · ${product.badge}` : '');
   document.getElementById('pdpName').innerHTML = product.name;
   document.getElementById('pdpWaves').textContent = product.waves;
-  document.getElementById('pdpPrice').textContent = fmt(product.price);
-  document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Retail';
   const origEl = document.getElementById('pdpOriginalPrice');
   const saveEl = document.getElementById('pdpSaveBadge');
-  if (product.originalPrice && product.originalPrice > product.price) {
+  if (window.LUFA_PROMO && window.LUFA_PROMO.active) {
+    const sale = window.salePrice(product.price);
+    document.getElementById('pdpPrice').textContent = fmt(sale);
+    document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Sale Price';
+    origEl.textContent = fmt(product.price);
+    origEl.style.display = '';
+    saveEl.textContent = `Save ${fmt(product.price - sale)} (20% Off)`;
+    saveEl.style.display = '';
+  } else if (product.originalPrice && product.originalPrice > product.price) {
+    document.getElementById('pdpPrice').textContent = fmt(product.price);
+    document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Retail';
     origEl.textContent = fmt(product.originalPrice);
     origEl.style.display = '';
     saveEl.textContent = `Save ${fmt(product.originalPrice - product.price)}`;
     saveEl.style.display = '';
   } else {
+    document.getElementById('pdpPrice').textContent = fmt(product.price);
+    document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Retail';
     origEl.style.display = 'none';
     saveEl.style.display = 'none';
   }

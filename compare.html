@@ -281,6 +281,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 
 <script src="currency.js"></script>
 <script>
+if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
+if(!window.salePrice) window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
 /* ── COMPARE DATA — mirrors product.html PRODUCTS/DETAILS/WARRANTY ── */
 const CMP = [
   {id:'EM04',name:'GlowEM04',price:199,goal:'Sleep',waves:'630 · 660nm + 850nm NIR',leds:'108 chips',irr:'35+ mW/cm²',dim:'35×18×5cm',weight:'1 kg',warranty:1,fda:false,img:'images/products/EM04-9.png'},
@@ -324,7 +326,7 @@ function renderCompare(){
 
   const rows = [
     {k:'Goal', f:p=>p.goal},
-    {k:'Price', f:p=>fmt(p.price), best:'minPrice'},
+    {k:'Price', f:p=>(window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span style="font-size:11px;color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:4px">${fmt(p.price)}</span>${fmt(window.salePrice(p.price))} <span style="background:#E82D2D;color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;vertical-align:middle">-20%</span>`:fmt(p.price), best:'minPrice'},
     {k:'Wavelengths', f:p=>p.waves},
     {k:'LED Count', f:p=>p.leds},
     {k:'Irradiance', f:p=>p.irr, best:'maxIrr'},

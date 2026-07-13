@@ -1,4 +1,8 @@
-﻿/* ── LUFALIGHT PROMO WIDGETS ── WIP Notice + Discount Popup + Exit Intent Popup ──
+﻿/* ── SUMMER PROMO CONFIG — set before any page JS runs card rendering ── */
+window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
+window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+
+/* ── LUFALIGHT PROMO WIDGETS ── WIP Notice + Discount Popup + Exit Intent Popup ──
    Timing/frequency notes (see conversation for full reasoning):
    - WIP notice: small dismissible corner badge, shown until closed once (localStorage), never blocks the page.
    - Discount popup: fires once ~2.5s after load, then stays quiet for 3 days (localStorage cooldown)
@@ -154,7 +158,26 @@
     suppressFor(KEY, 3); // default cooldown the instant it's shown, in case the visitor navigates away without clicking anything
   }
 
+  /* ── SUMMER PROMO CONFIG ── toggle active:false to turn off sitewide */
+  window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
+  window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+
+  /* ── inject promo into existing topbar ── */
+  function setupPromoBar(){
+    if(!window.LUFA_PROMO.active) return;
+    var tb = document.getElementById('topbar');
+    if(!tb) return;
+    tb.style.background = '#C52222';
+    tb.innerHTML =
+      '<span>🔥 <strong>Big Summer Deal</strong> — 20% Off All Devices</span>' +
+      '<span class="tb-sep">|</span>' +
+      '<span>Add to inquiry list &amp; receive your <strong>20%-off quote</strong> within 24 h</span>' +
+      '<span class="tb-sep">|</span>' +
+      '<span>🚚 Free Shipping on Canada orders CA$300+</span>';
+  }
+
   setupWipBadge();
+  setupPromoBar();
   // setupExitIntent(); // disabled
   // Delay the discount popup so it doesn't collide with page render
   setTimeout(setupSoftOpeningPopup, 2500);
