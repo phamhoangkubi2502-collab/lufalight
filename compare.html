@@ -42,6 +42,7 @@ h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
 /* TOPBAR + NAV (shared) */
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 #topbar span{margin:0 14px}
+#topbar span:last-child{white-space:nowrap;display:inline-block}
 nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
 .nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
 .sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
@@ -51,9 +52,19 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
 .nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
 .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
+@media(max-width:960px){.nav-links{gap:16px}.cart-btn{display:none}}
 .nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .nav-links a:hover,.nav-links a.on{color:var(--white)}
 .nav-links a.on{color:var(--redl)}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+.disc-acc{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);max-width:820px}
+.disc-acc summary{display:flex;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.disc-acc summary::-webkit-details-marker{display:none}
+.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
+.disc-acc[open] summary::after{content:'\2212'}
+.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:left}
 .nav-item{position:relative}
 .mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
 .mega-caret:hover{color:var(--white)}
@@ -71,6 +82,9 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 @media(max-width:860px){.nav-links{display:none}}
 .nav-ham{display:none;background:none;border:1px solid var(--line);color:var(--white);width:40px;height:40px;border-radius:8px;place-items:center;font-size:18px;cursor:pointer;margin-left:12px;flex-shrink:0}
 @media(max-width:860px){.nav-ham{display:grid}}
+@media(max-width:860px){nav{padding:0 16px;gap:8px}.nav-sun{width:34px;height:34px}.nav-wm{font-size:1.25rem}.nav-tl{font-size:.5rem}.nav-cta{padding:8px 12px;font-size:10.5px;white-space:nowrap}.theme-toggle{width:34px!important;height:34px!important;font-size:13px!important;margin-left:2px!important}.nav-ham{width:34px!important;height:34px!important;font-size:15px!important;margin-left:4px!important}}
+@media(max-width:480px){.nav-cta{display:none}}
+@media(max-width:360px){nav{padding:0 10px;gap:4px}.nav-sun{width:28px;height:28px}.nav-wm{font-size:1.05rem}.theme-toggle,.nav-ham{width:30px!important;height:30px!important;margin-left:0!important}}
 #mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:none;justify-content:flex-end}
 #mob-overlay.open{display:flex}
 #mob-drawer{width:min(320px,90vw);background:var(--bg2);border-left:1px solid var(--line);height:100%;overflow-y:auto;display:flex;flex-direction:column;padding:22px 20px;animation:mobSlideIn .22s ease}
@@ -96,7 +110,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .cart-count{background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:50px;padding:1px 6px;min-width:16px;text-align:center}
 /* PAGE HEADER */
 .pg-head{padding:48px 0 0;text-align:center}
-.pg-head h1{font-family:var(--hd);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
+.pg-head h1{font-family:var(--hd);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em;overflow-wrap:break-word}
 .crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .crumb a{color:var(--muted)}.crumb a:hover{color:var(--redl)}
 /* PICKERS */
@@ -126,7 +140,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 </style>
 </head>
 <body>
-<div id="topbar"><span>🚚 Free Shipping — Canada &amp; USA</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 30-Day Free Trial Returns</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
+<div id="topbar"><span>🚚 Free Shipping — Canada Orders CA$300+</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 60-Day Returns on Eligible Devices</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
 <nav>
   <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
     <div class="nav-sun">
@@ -144,7 +158,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
         </div>
         <div class="mega-col">
           <div class="mega-h">Body &amp; Recovery</div>
-          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">Glow60MiniPro</a><a href="product.html#E300">GlowE300</a>
+          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a>
           <a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a>
         </div>
         <div class="mega-col">
@@ -229,7 +243,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 </div></section>
 
 <footer><div class="wrap">
-  <div class="ft-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px">
+  <div class="ft-grid">
     <div>
       <div class="ft-brand" style="display:flex;align-items:center;gap:11px;margin-bottom:12px">
         <div class="ft-sun" style="width:30px;height:30px;position:relative;flex-shrink:0"><svg class="ft-rays" viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%;animation:spin 10s linear infinite"><g transform="translate(16,16)"><line x1="0" y1="-14" x2="0" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="9" x2="0" y2="14" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-14" y1="0" x2="-9" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="0" x2="14" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/></g></svg><div style="position:absolute;inset:5px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%"></div></div>
@@ -246,6 +260,14 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
     <div><div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Support</div><div style="display:flex;flex-direction:column;gap:8px"><a href="mailto:lufalight@gmail.com" style="font-size:12px;color:var(--text2)">Contact Us</a><a href="shipping-returns.html" style="font-size:12px;color:var(--text2)">Shipping &amp; Returns</a><a href="warranty.html" style="font-size:12px;color:var(--text2)">Warranty</a></div></div>
   </div>
   <div style="padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:11px;color:var(--muted)">© 2025 Lufalight Inc. | Canada &amp; USA</div><div style="display:flex;gap:18px"><a href="privacy-policy.html" style="font-size:11px;color:var(--muted)">Privacy Policy</a><a href="terms.html" style="font-size:11px;color:var(--muted)">Terms of Service</a></div></div>
+  <details class="disc-acc">
+    <summary>Disclaimer</summary>
+    <p>LufaLight&reg; red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness, temporary muscle relaxation, and temporary relief of minor muscle and joint discomfort. These products may also support temporary increases in local circulation associated with topical heating and promote relaxation.</p>
+    <p>LufaLight products are not intended to diagnose, treat, cure, or prevent any disease, illness, or medical condition. Individual results may vary.</p>
+    <p>The information provided on the LufaLight website, product literature, brochures, and other materials is intended solely for informational and educational purposes and should not be considered medical advice or a substitute for consultation with a qualified physician or other licensed healthcare professional.</p>
+    <p>Use LufaLight products only as directed in the applicable user manual and safety instructions.</p>
+    <p>&copy; 2026 LufaLight. All rights reserved.</p>
+  </details>
 </div></footer>
 
 <script>
@@ -255,15 +277,15 @@ const CMP = [
   {id:'G15P',name:'BeauMask + BeauNeck-Décolleté',price:599,goal:'Skin',waves:'415 · 590 · 660 · 850nm',leds:'744 chips (186 LEDs)',irr:'35+ mW/cm²',dim:'41×23×5cm',weight:'1.5 kg',warranty:1,fda:true,img:'images/products/G15P-11.png'},
   {id:'G15',name:'BeauMask',price:499,goal:'Clear Skin',waves:'415 · 590 · 660 · 850nm',leds:'488 chips',irr:'35+ mW/cm²',dim:'41×23×5cm',weight:'1.5 kg',warranty:1,fda:true,img:'images/products/G15-1.jpg'},
   {id:'P40B',name:'RecoverPro40B',price:209,goal:'Recovery',waves:'660nm + 850nm NIR',leds:'30 dual-chip LEDs',irr:'70+ mW/cm²',dim:'32×22×12cm',weight:'2 kg',warranty:1,fda:false,img:'images/products/P40B-3.jpg'},
-  {id:'MINI60PRO',name:'GlowMini60Pro',price:336,goal:'Targeted Relief',waves:'635 · 660 · 830 · 850nm',leds:'12 dual-chip LEDs',irr:'65+ mW/cm²',dim:'23×16×12cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/MINI60PRO-1.jpg'},
-  {id:'E300',name:'GlowE300',price:415,goal:'Brain & Recovery',waves:'630 · 660 · 810 · 830 · 850nm',leds:'60 dual-core LEDs',irr:'150+ mW/cm²',dim:'47×32×24cm',weight:'6 kg',warranty:2,fda:false,img:'images/products/E300-1.jpg'},
-  {id:'C01',name:'LUMENOVA PRO',price:499,goal:'Hair Growth',waves:'660nm + 830nm',leds:'120 LEDs',irr:'—',dim:'31×22×13cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/C01-1.jpg'},
+  {id:'MINI60PRO',name:'GlowMini60Pro',price:349,goal:'Targeted Relief',waves:'635 · 660 · 830 · 850nm',leds:'12 dual-chip LEDs',irr:'65+ mW/cm²',dim:'23×16×12cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/MINI60PRO-1.jpg'},
+  {id:'E300',name:'GlowE300',price:499,goal:'Brain & Recovery',waves:'630 · 660 · 810 · 830 · 850nm',leds:'60 dual-core LEDs',irr:'150+ mW/cm²',dim:'47×32×24cm',weight:'6 kg',warranty:2,fda:false,img:'images/products/E300-1.jpg'},
+  {id:'C01',name:'LUMENOVA PRO',price:449,goal:'Hair Growth',waves:'660nm + 830nm',leds:'120 LEDs',irr:'—',dim:'31×22×13cm',weight:'1.5 kg',warranty:1,fda:false,img:'images/products/C01-1.jpg'},
   {id:'G240',name:'AuraDome',price:1199,goal:'Hair Growth',waves:'415 · 590 · 660 · 850nm',leds:'960 chips',irr:'50+ mW/cm²',dim:'75×30×9cm',weight:'5 kg',warranty:1,fda:false,img:'images/products/G240-1.jpg'},
   {id:'BK300',name:'Solaris9 BK300 Executive Edition',price:1399,goal:'Full-Body + UVB',waves:'415 · 630-660 · 810-1060nm + UVB',leds:'60 diodes',irr:'150 mW/cm²',dim:'36×22×6.5cm',weight:'3.8 kg',warranty:2,fda:true,img:'images/products/BK300-1.jpg'},
   {id:'MAX1800',name:'LUFAMAX 1800',price:1942,goal:'Full-Body Recovery',waves:'660nm + 850nm NIR',leds:'360 dual-core LEDs',irr:'165+ mW/cm²',dim:'113×54×22cm',weight:'21 kg',warranty:2,fda:false,img:'images/products/MAX1800-1.jpg'},
   {id:'MAX4800',name:'LUFAMAX 4800',price:4999,goal:'Full-Body Recovery',waves:'660nm + 850nm NIR',leds:'960 dual-core LEDs',irr:'—',dim:'206×75×28cm',weight:'55 kg',warranty:2,fda:false,img:'images/products/MAX4800-1.jpg'},
   {id:'ESPRO3000',name:'LUFAESPRO 3000',price:5299,goal:'Clinic-Grade Recovery',waves:'630 · 660 · 810 · 830 · 850 · 1060nm',leds:'600 dual-chip LEDs',irr:'180+ mW/cm²',dim:'146×49×25cm',weight:'25 kg',warranty:2,fda:false,img:'images/products/ESPRO3000-1.jpg'},
-  {id:'PE01',name:'VitalityPro PEMF Mat',price:899,goal:'Whole-Body Relief',waves:'635nm + 850nm NIR + PEMF',leds:'3,780 chips',irr:'—',dim:'82×68×17cm',weight:'18 kg',warranty:1,fda:false,img:'images/products/PE01-1.jpg'},
+  {id:'PE01',name:'VitalityPro PEMF Mat',price:899,goal:'Whole-Body Relief',waves:'PEMF + Amethyst + Far-Infrared Heat',leds:'—',irr:'—',dim:'190×80cm',weight:'18 kg',warranty:1,fda:false,img:'images/products/PE01-1.jpg'},
   {id:'MRS45',name:'ProStand',price:725,goal:'Accessory (Stand)',waves:'—',leds:'—',irr:'—',dim:'101×98×16cm',weight:'28 kg',warranty:1,fda:false,img:'images/products/MRS45-1.jpg'},
 ];
 
@@ -317,9 +339,6 @@ function renderCompare(){
       <div class="cmp-th-price">${p.originalPrice?`<span style="font-size:11px;color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:4px">${fmt(p.originalPrice)}</span>`:''}${fmt(p.price)}</div>
       ${p.fda?'<div class="cmp-fda">✅ FDA-Cleared</div>':''}
       <div class="cmp-actions">
-        <button class="btn-r lufa-buy-cart" style="padding:9px 14px;font-size:11px"
-          data-item-id="${p.id}" data-item-name="${p.name.replace(/"/g,'')}" data-item-price="${p.price}"
-          data-item-url="/product.html#${p.id}" data-item-image="${p.img||''}">+ Add to Inquiry List</button>
         <button class="lufa-buy-btn lufa-add-cart" style="padding:9px 14px;font-size:11px"
           data-item-id="${p.id}" data-item-name="${p.name.replace(/"/g,'')}" data-item-price="${p.price}"
           data-item-url="/product.html#${p.id}" data-item-image="${p.img||''}">+ Add to Inquiry List</button>
@@ -356,6 +375,7 @@ renderCompare();
   for(var i=0;i<links.length;i++){links[i].addEventListener('click',closeMob);}
 })();
 </script>
+<script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});function positionMegaMenu(it){var m=it.querySelector('.mega-menu');if(!m)return;m.style.left='0px';var r=m.getBoundingClientRect();var shift=0;var overflowRight=r.right-(window.innerWidth-16);if(overflowRight>0)shift=-overflowRight;var newLeft=r.left+shift;if(newLeft<16)shift+=(16-newLeft);m.style.left=shift+'px'}document.querySelectorAll('.nav-item').forEach(function(it){let ct;it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');positionMegaMenu(it)});it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)})});document.addEventListener('click',function(e){var car=e.target.closest('.mega-caret');if(car){var it=car.closest('.nav-item');if(it&&it.classList.contains('open'))positionMegaMenu(it)}});window.addEventListener('resize',function(){document.querySelectorAll('.nav-item.open').forEach(positionMegaMenu)});</script>
 <script src="inquiry-cart.js"></script></body>
 </html>
 

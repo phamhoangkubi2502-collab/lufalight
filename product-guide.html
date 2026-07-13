@@ -42,6 +42,7 @@ h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
 /* ── TOPBAR + NAV ── */
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 #topbar span{margin:0 14px}
+#topbar span:last-child{white-space:nowrap;display:inline-block}
 nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
 .nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
 .sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
@@ -60,6 +61,9 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 @media(max-width:860px){.nav-links{display:none}}
 .nav-ham{display:none;background:none;border:1px solid var(--line);color:var(--white);width:40px;height:40px;border-radius:8px;place-items:center;font-size:18px;cursor:pointer;margin-left:12px;flex-shrink:0}
 @media(max-width:860px){.nav-ham{display:grid}}
+@media(max-width:860px){nav{padding:0 16px;gap:8px}.nav-sun{width:34px;height:34px}.nav-wm{font-size:1.25rem}.nav-tl{font-size:.5rem}.nav-cta{padding:8px 12px;font-size:10.5px;white-space:nowrap}.theme-toggle{width:34px!important;height:34px!important;font-size:13px!important;margin-left:2px!important}.nav-ham{width:34px!important;height:34px!important;font-size:15px!important;margin-left:4px!important}}
+@media(max-width:480px){.nav-cta{display:none}}
+@media(max-width:360px){nav{padding:0 10px;gap:4px}.nav-sun{width:28px;height:28px}.nav-wm{font-size:1.05rem}.theme-toggle,.nav-ham{width:30px!important;height:30px!important;margin-left:0!important}}
 #mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:none;justify-content:flex-end}
 #mob-overlay.open{display:flex}
 #mob-drawer{width:min(320px,90vw);background:var(--bg2);border-left:1px solid var(--line);height:100%;overflow-y:auto;display:flex;flex-direction:column;padding:22px 20px;animation:mobSlideIn .22s ease}
@@ -239,12 +243,20 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .ft-copy{font-size:11px;color:var(--muted)}.ft-leg{display:flex;gap:18px}
 .ft-leg a{font-size:11px;color:var(--muted)}.ft-leg a:hover{color:var(--white)}
 .disclaimer{font-size:10px;color:var(--text3);max-width:820px;margin:12px auto 0;line-height:1.6;text-align:center}
+.disc-acc{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);max-width:820px}
+.disc-acc summary{display:flex;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.disc-acc summary::-webkit-details-marker{display:none}
+.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
+.disc-acc[open] summary::after{content:'\2212'}
+.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:left}
+
 
 /* ── CHAT ── */
-#chat-fab{position:fixed;bottom:28px;left:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
+#chat-fab{position:fixed;bottom:90px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
 #chat-fab:hover{background:var(--redl);transform:translateY(-3px)}
-#chat-panel{position:fixed;bottom:90px;left:22px;width:300px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:901;display:none;flex-direction:column;overflow:hidden;height:420px}
+#chat-panel{position:fixed;bottom:160px;right:22px;width:300px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:901;display:none;flex-direction:column;overflow:hidden;height:420px}
 #chat-panel.open{display:flex}
+@media(max-width:480px){#chat-fab{right:14px;bottom:210px}#chat-panel{right:14px;bottom:270px}}
 .chat-head{background:var(--red);padding:16px 18px;display:flex;align-items:center;gap:10px}
 .chat-head-ic{font-size:22px}.chat-head-t{font-size:13.5px;font-weight:800;color:#fff}
 .chat-head-s{font-size:11px;color:rgba(255,255,255,.85)}
@@ -272,7 +284,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 </head>
 <body>
 
-<div id="topbar"><span>🚚 Free Shipping — Canada &amp; USA</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 30-Day Free Trial Returns</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
+<div id="topbar"><span>🚚 Free Shipping — Canada Orders CA$300+</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 60-Day Returns on Eligible Devices</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
 
 <nav>
   <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
@@ -285,7 +297,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   <div class="nav-links">
     <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it)o.classList.remove('open')});it.classList.toggle('open')" role="button" aria-label="Toggle Shop All menu">&#9662;</span><div class="mega-menu">
         <div class="mega-col"><div class="mega-h">Face &amp; Skin</div><a href="product.html#EM04">GlowEM04 — Sleep Mask</a><a href="product.html#G15P">BeauMask + BeauNeck-Décolleté</a><a href="product.html#G15">BeauMask</a><a href="shop-all.html?coll=face-skin" class="mega-all">View All →</a></div>
-        <div class="mega-col"><div class="mega-h">Body &amp; Recovery</div><a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">Glow60MiniPro</a><a href="product.html#E300">GlowE300</a><a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Body &amp; Recovery</div><a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a><a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Specialty</div><a href="product.html#C01">LUMENOVA PRO</a><a href="product.html#G240">AuraDome</a><a href="shop-all.html?coll=specialty" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Full-Body Panels</div><a href="product.html#BK300">Solaris9 BK300 Executive Edition</a><a href="product.html#MAX1800">LUFAMAX 1800</a><a href="product.html#MAX4800">LUFAMAX 4800</a><a href="product.html#ESPRO3000">LUFAESPRO 3000</a><a href="shop-all.html?coll=full-body" class="mega-all">View All →</a></div>
         <div class="mega-col"><div class="mega-h">Accessories</div><a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a><a href="shop-all.html?coll=accessory" class="mega-all">View All →</a></div>
@@ -360,7 +372,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
           <div class="ft-wm"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div>
         </div>
         <p class="ft-desc">Premium red &amp; near-infrared light therapy devices for Canada &amp; USA. FDA-registered. Clinically-studied wavelengths.</p>
-        <div class="ft-social"><a href="#" class="soc">📸</a><a href="#" class="soc">🎵</a><a href="#" class="soc">▶️</a><a href="#" class="soc">📘</a></div>
+        <div class="ft-social"><a class="soc" href="https://www.facebook.com/profile.php?id=61591770831140" target="_blank" rel="noopener noreferrer" aria-label="Lufalight on Facebook"><svg viewBox="0 0 24 24" width="17" height="17" fill="#1877F2"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33v7.03C18.343 21.243 22 17.079 22 12.06z"/></svg></a><a class="soc" href="https://www.instagram.com/lufalight/" target="_blank" rel="noopener noreferrer" aria-label="Lufalight on Instagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a><a class="soc" href="https://www.tiktok.com/@hughlu1" target="_blank" rel="noopener noreferrer" aria-label="Lufalight on TikTok"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a></div>
       </div>
       <div><div class="ft-col-t">Shop</div><div class="ft-links"><a href="shop-all.html">All Devices</a><a href="shop-all.html?coll=face-skin">Face &amp; Skin</a><a href="shop-all.html?coll=body-recovery">Body &amp; Recovery</a><a href="shop-all.html?coll=specialty">Specialty</a><a href="shop-all.html?coll=full-body">Full-Body Panels</a><a href="compare.html">Compare Devices</a></div></div>
       <div><div class="ft-col-t">Learn</div><div class="ft-links"><a href="quiz.html">Find My Device</a><a href="product-guide.html">Product Guide</a><a href="blog.html">Health Blog</a><a href="index.html#science">The Science</a><a href="index.html#faq">FAQ</a><a href="wholesale.html">Wholesale</a></div></div>
@@ -370,11 +382,17 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <span class="ft-copy">© 2025 Lufalight Inc. All rights reserved.</span>
       <div class="ft-leg"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="shipping-returns.html">Shipping</a></div>
     </div>
-    <p class="disclaimer">These statements have not been evaluated by Health Canada or the FDA. Lufalight devices are not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before use if you have a medical condition. Individual results may vary.</p>
+    <details class="disc-acc">
+    <summary>Disclaimer</summary>
+    <p>LufaLight&reg; red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness, temporary muscle relaxation, and temporary relief of minor muscle and joint discomfort. These products may also support temporary increases in local circulation associated with topical heating and promote relaxation.</p>
+    <p>LufaLight products are not intended to diagnose, treat, cure, or prevent any disease, illness, or medical condition. Individual results may vary.</p>
+    <p>The information provided on the LufaLight website, product literature, brochures, and other materials is intended solely for informational and educational purposes and should not be considered medical advice or a substitute for consultation with a qualified physician or other licensed healthcare professional.</p>
+    <p>Use LufaLight products only as directed in the applicable user manual and safety instructions.</p>
+    <p>&copy; 2026 LufaLight. All rights reserved.</p>
+  </details>
   </div>
 </footer>
 
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 <button id="chat-fab" onclick="document.getElementById('chat-panel').classList.toggle('open')" aria-label="Open chat">💬</button>
 <div id="chat-panel">
   <div class="chat-head"><span class="chat-head-ic">☀️</span><div><div class="chat-head-t">Lufalight Support</div><div class="chat-head-s">● Reply instantly</div></div><button class="chat-close" onclick="document.getElementById('chat-panel').classList.remove('open')" aria-label="Close chat">✕</button></div>
@@ -384,10 +402,12 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 <script>
 /* ── PRODUCT DATA ── */
+/* Category B — hygiene/personal-contact items, final sale once opened (no free-trial return window) */
+const CATEGORY_B_SKUS = new Set(['EM04','G15P','G15','C01','G240','PE01','MRS45']);
 const GUIDE = [
   {
     id:'EM04', cat:'face-skin', icon:'😴', badge:'FDA-Registered', badgeClass:'bg', fda:false,
-    name:'GlowEM04 — SleepGlow Eye Mask', price:199, warranty:1, returnDays:30,
+    name:'GlowEM04', price:199, warranty:1, returnDays:30,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A weighted, dual-mode sleep mask combining Surface Red and Deep NIR light to calm the mind and prepare the body for deeper, more restorative sleep.',
     features:[
@@ -404,8 +424,8 @@ const GUIDE = [
     img:'images/products/EM04-9.png',
   },
   {
-    id:'G15', cat:'face-skin', icon:'✨', badge:'Wireless', badgeClass:'bb', fda:true,
-    name:'BeauMask — ClearGlow Face Mask', price:499, warranty:1, returnDays:30,
+    id:'G15', cat:'face-skin', icon:'✨', badge:'FDA-Cleared', badgeClass:'bg', fda:true,
+    name:'BeauMask', price:499, warranty:1, returnDays:30,
     waves:[{nm:415,label:'Blue Light',color:'#2E6FFF'},{nm:590,label:'Amber/Yellow',color:'#C9993A'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A wireless, wearable LED face mask with 4 wavelengths — addressing fine lines, pigmentation, acne and dullness in one device.',
     features:[
@@ -441,7 +461,7 @@ const GUIDE = [
   },
   {
     id:'P40B', cat:'body-recovery', icon:'💪', badge:'Flicker-Free', badgeClass:'bb', fda:false,
-    name:'RecoverPro40B — Desktop Panel', price:209, warranty:1, returnDays:30,
+    name:'RecoverPro40B', price:209, warranty:1, returnDays:60,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A compact desktop red light therapy panel delivering clinical-strength Red + NIR output for targeted muscle recovery and joint pain relief.',
     features:[
@@ -458,8 +478,8 @@ const GUIDE = [
     img:'images/products/P40B-3.jpg',
   },
   {
-    id:'MINI60PRO', cat:'body-recovery', icon:'🩹', badge:null, badgeClass:'', fda:false,
-    name:'Glow60MiniPro — PainRelief Mini Pro', price:336, warranty:1, returnDays:30,
+    id:'MINI60PRO', cat:'body-recovery', icon:'🩹', badge:'Wireless', badgeClass:'bb', fda:false,
+    name:'GlowMini60Pro', price:349, warranty:1, returnDays:60,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A wireless, rechargeable pain-relief panel built for joints, knees, back and muscle recovery — anywhere, anytime.',
     features:[
@@ -477,7 +497,7 @@ const GUIDE = [
   },
   {
     id:'E300', cat:'body-recovery', icon:'🧠', badge:'Clinical Grade', badgeClass:'bo', fda:false,
-    name:'GlowE300 — ClinicalEdge E300', price:415, warranty:2, returnDays:30,
+    name:'GlowE300', price:499, warranty:2, returnDays:60,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A clinical-grade, full-spectrum panel with 5-channel dimming — built for athletes, clinics and chronic pain management.',
     features:[
@@ -495,7 +515,7 @@ const GUIDE = [
   },
   {
     id:'C01', cat:'specialty', icon:'👨‍🦲', badge:'New', badgeClass:'bg', fda:false,
-    name:'LUMENOVA PRO — HGrowCap Pro', price:499, warranty:1, returnDays:30,
+    name:'LUMENOVA PRO', price:449, warranty:1, returnDays:30,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'}],
     desc:'A full scalp wrap-around LED helmet using a 4-in-1 protocol to support hair regrowth and scalp health.',
     features:[
@@ -513,7 +533,7 @@ const GUIDE = [
   },
   {
     id:'G240', cat:'specialty', icon:'🪖', badge:null, badgeClass:'', fda:false,
-    name:'AuraDome — AuraDome G240', price:1199, warranty:1, returnDays:30,
+    name:'AuraDome', price:1199, warranty:1, returnDays:30,
     waves:[{nm:415,label:'Blue Light',color:'#2E6FFF'},{nm:590,label:'Amber/Yellow',color:'#C9993A'},{nm:630,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A hands-free arch-dome panel delivering full-spectrum light therapy to the scalp, face or back with memory-saved settings.',
     features:[
@@ -531,7 +551,7 @@ const GUIDE = [
   },
   {
     id:'BK300', cat:'full-body', icon:'🛡️', badge:'⚠️ UVB Exclusive', badgeClass:'bo', fda:true,
-    name:'Solaris9 BK300 Executive Edition', price:1399, warranty:2, returnDays:30,
+    name:'Solaris9 BK300 Executive Edition', price:1399, warranty:2, returnDays:60,
     waves:[{nm:295,label:'UVB',color:'#7B2FBE'},{nm:311,label:'Narrowband UVB',color:'#7B2FBE'},{nm:415,label:'Blue Light',color:'#2E6FFF'},{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'},{nm:1060,label:'Ultra-Deep NIR',color:'#5C1414'}],
     desc:'The only device of its kind — a 7-wavelength standee combining Red, NIR, Blue and dual-certified UVB for full-spectrum light therapy and immune support.',
     features:[
@@ -550,7 +570,7 @@ const GUIDE = [
   },
   {
     id:'MAX1800', cat:'full-body', icon:'🟥', badge:'1,800W', badgeClass:'bb', fda:false,
-    name:'LUFAMAX 1800 — Full-Body Panel', price:1942, warranty:2, returnDays:30,
+    name:'LUFAMAX 1800', price:1942, warranty:2, returnDays:60,
     waves:[{nm:660,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'A full-size, full-body panel delivering 1,800W of dual-chip Red + NIR LED power across 91×41cm of coverage.',
     features:[
@@ -568,7 +588,7 @@ const GUIDE = [
   },
   {
     id:'MAX4800', cat:'full-body', icon:'🏋️', badge:'Flagship', badgeClass:'bp', fda:false,
-    name:'LUFAMAX 4800 — BodyMax 4800 Elite', price:4999, warranty:2, returnDays:30,
+    name:'LUFAMAX 4800', price:4999, warranty:2, returnDays:60,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
     desc:'The flagship of the lineup — a 1,832mm head-to-toe panel with 4,800W of dual-core LED power for full-body coverage.',
     features:[
@@ -586,7 +606,7 @@ const GUIDE = [
   },
   {
     id:'ESPRO3000', cat:'full-body', icon:'⚕️', badge:'Clinic Grade', badgeClass:'bo', fda:false,
-    name:'LUFAESPRO 3000 — ClinicalPro ESPRO 3000', price:5299, warranty:2, returnDays:30,
+    name:'LUFAESPRO 3000', price:5299, warranty:2, returnDays:60,
     waves:[{nm:630,label:'Red Light',color:'#E82D2D'},{nm:660,label:'Red Light',color:'#E82D2D'},{nm:810,label:'Near-Infrared',color:'#8B2E2E'},{nm:830,label:'Near-Infrared',color:'#8B2E2E'},{nm:850,label:'Deep NIR',color:'#8B2E2E'},{nm:1060,label:'Ultra-Deep NIR',color:'#5C1414'}],
     desc:'A clinic-grade, 6-wavelength panel with the rare 1060nm deep NIR channel — built for clinics, biohackers and serious recovery protocols.',
     features:[
@@ -604,25 +624,25 @@ const GUIDE = [
   },
   {
     id:'PE01', cat:'accessory', icon:'🧘', badge:'New', badgeClass:'bg', fda:false,
-    name:'VitalityPro PEMF Mat — ZenField PEMF Mat', price:899, warranty:1, returnDays:30,
-    waves:[{nm:635,label:'Red Light',color:'#E82D2D'},{nm:850,label:'Deep NIR',color:'#8B2E2E'}],
-    desc:'A full-body PEMF mat combining Red + NIR light, pulsed electromagnetic field therapy, far-infrared heat and negative ions in an amethyst crystal matrix.',
+    name:'VitalityPro PEMF Mat', price:899, warranty:1, returnDays:30,
+    waves:[],
+    desc:'A full-body PEMF mat combining amethyst &amp; tourmaline crystal therapy with far-infrared heat and 5 pulse modes — no light/wavelength component. Supports cell regeneration, circulation and sleep quality, and helps calm the nervous system.',
     features:[
-      {ic:'🧲',t:'PEMF + Red + NIR + Far-Infrared Heat',d:'4 complementary technologies in one mat — 9 pulse modes, 10–70°C adjustable heat.'},
+      {ic:'🧲',t:'PEMF + Amethyst + Far-Infrared Heat',d:'260W multi-technology mat — 5 pulse modes, 10–70°C adjustable heat with auto shut-off.'},
       {ic:'💎',t:'Amethyst & Tourmaline Crystal Matrix',d:'Natural crystals amplify far-infrared heat emission for deeper penetration.'},
-      {ic:'🧘',t:'Office · Joint · Sleep · Recovery',d:'Foldable design for home, office and travel. Built-in 1–8 hour timer.'},
+      {ic:'🧘',t:'Office · Joint · Sleep · Recovery',d:'Foldable design for home, office and travel. Built-in 1–9 hour timer.'},
     ],
     howToUse:'Lay the mat flat on a firm surface (floor or bed). Lie down on top of it — do not fold while in use. Start with lower heat settings (40–50°C). Use 20–60 minutes per session. The PEMF function works independently of heat — use at any intensity level comfortable for you.',
     session:'20–60 min per session',
     freq:'Daily or as needed',
     results:'Relaxation and sleep improvement from first use. Joint and recovery benefits in 2–4 weeks.',
-    specs:[['Total Chips','3,780 chips'],['Technologies','PEMF + Red + NIR + Far-Infrared Heat + Negative Ions'],['Power','260W'],['Voltage','110/220V'],['Temp Range','10–70°C'],['Timer','1–8 hours'],['Dimensions','190 × 80 cm'],['Weight','18 kg']],
+    specs:[['Size','190 × 80 cm'],['Application Area','Back & Full Body'],['Color','Black'],['Materials','PU Leather, Amethyst, Tourmaline Crystal'],['Voltage','110V/220V, 50–60Hz'],['Timer Setting','1–9 hours (adjustable)'],['Temperature Range','10°C–70°C (auto shut-off)'],['Rated Power','260W'],['Pulse Modes','P1 3Hz · P2 7.8Hz + Schumann · P3 10Hz Alpha · P4 Beta · P5 Off (20-min cycle + 100-min rest, auto-off after 4 cycles)']],
     included:['🧘 PE01 PEMF Mat','🎮 Controller Unit','🔌 Power Adapter','👜 Carry Bag','📖 User Manual'],
     img:'images/products/PE01-1.jpg',
   },
   {
     id:'MRS45', cat:'accessory', icon:'🦾', badge:null, badgeClass:'', fda:false,
-    name:'ProStand — Adjustable Stand MRS45', price:725, warranty:1, returnDays:30,
+    name:'ProStand', price:725, warranty:1, returnDays:30,
     waves:[],
     desc:'An adjustable vertical stand that turns your LUFAMAX 1800, LUFAMAX 4800 or LUFAESPRO 3000 panel into a hands-free, full-body treatment station.',
     features:[
@@ -685,7 +705,7 @@ function renderGuide(){
             <div class="gc-meta">
               <span class="gc-sku">${p.id}</span>
               <span class="gc-warranty">🛡️ ${p.warranty}-Year Warranty</span>
-              <span class="gc-return">✅ ${p.returnDays}-Day Returns</span>
+              <span class="gc-return">${CATEGORY_B_SKUS.has(p.id) ? '⚠️ Final Sale (Opened)' : `✅ ${p.returnDays}-Day Returns`}</span>
             </div>
             <div class="gc-name">${p.name}</div>
             <div class="gc-desc">${p.desc}</div>
@@ -762,7 +782,7 @@ renderGuide();
 </script>
 
 <!-- MEGA MENU HOVER -->
-<script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});document.querySelectorAll('.nav-item').forEach(function(it){it.addEventListener('mouseenter',function(){it.classList.add('open')});it.addEventListener('mouseleave',function(){it.classList.remove('open')})});</script>
+<script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});function positionMegaMenu(it){var m=it.querySelector('.mega-menu');if(!m)return;m.style.left='0px';var r=m.getBoundingClientRect();var shift=0;var overflowRight=r.right-(window.innerWidth-16);if(overflowRight>0)shift=-overflowRight;var newLeft=r.left+shift;if(newLeft<16)shift+=(16-newLeft);m.style.left=shift+'px'}document.querySelectorAll('.nav-item').forEach(function(it){let ct;it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');positionMegaMenu(it)});it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)})});document.addEventListener('click',function(e){var car=e.target.closest('.mega-caret');if(car){var it=car.closest('.nav-item');if(it&&it.classList.contains('open'))positionMegaMenu(it)}});window.addEventListener('resize',function(){document.querySelectorAll('.nav-item.open').forEach(positionMegaMenu)});</script>
 
 <!-- BACK TO TOP -->
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>

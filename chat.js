@@ -79,23 +79,23 @@
 
     /* ── RETURNS ── */
     {k:['return','refund','exchange','money.?back','60.day','30.day','restock','satisfaction','not happy','try'],
-     r:'<b>↩️ 30–60 Day Free-Trial Returns</b><br>Not satisfied? Return within your device\'s trial window for a full refund of the purchase price — <b>no restocking fee</b>. Most devices (GlowEM04, RecoverPro40B, LUMENOVA PRO, VitalityPro PEMF Mat, ProStand, GlowE300, Glow60MiniPro, BeauMask, BeauMask+BeauNeck-Décolleté, AuraDome) get <b>30 days</b>; our largest full-body panels (LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000) and the Solaris9 BK300 Executive Edition get <b>60 days</b>. Device must be in like-new condition and original packaging with all accessories. (Return shipping is the customer\'s responsibility for change-of-mind returns; we cover it if the item is defective, damaged in transit, or incorrect.)<br>Email: <a href="mailto:support@lufalight.com">support@lufalight.com</a> to start.<br><a href="shipping-returns.html">Full Return Policy →</a>'},
+     r:'<b>↩️ Returns Policy</b><br>Our devices fall into two categories:<br><br><b>Category A — 60-Day Return</b> (RecoverPro40B, GlowMini60Pro, GlowE300, Solaris9 BK300 Executive Edition, LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000, and other full-body panels): return within 60 days of delivery in like-new condition with all original accessories/packaging. A <b>15% restocking fee</b> applies (covers inspection, sanitization &amp; refurbishment), and return shipping is the customer\'s responsibility.<br><br><b>Category B — Final Sale Once Opened</b> (GlowEM04, BeauMask, BeauMask+BeauNeck-Décolleté, VitalityPro PEMF Mat, LUMENOVA PRO, AuraDome, ProStand): due to skin/scalp contact, these cannot be returned once the box is opened for change-of-mind — but the manufacturer\'s warranty still fully applies if the unit is defective.<br><br>Defective, damaged-in-transit, or incorrect items: free replacement or repair, no restocking fee, no return shipping cost to you.<br>An RMA is required before shipping any return. Email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> to start.<br><a href="shipping-returns.html">Full Return Policy →</a>'},
 
     /* ── WARRANTY ── */
     {k:['warrant','guarantee','broken','defect','cover','repair','replace'],
-     r:'<b>🛡️ Warranty</b><br>Warranty by device:<br>&bull; <b>2-Year:</b> GlowE300, LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000, Solaris9 BK300 Executive Edition<br>&bull; <b>1-Year:</b> all other models (BeauMask+BeauNeck, BeauMask, RecoverPro40B, GlowEM04, Glow60MiniPro, LUMENOVA PRO, AuraDome, VitalityPro PEMF Mat, ProStand)<br><br>Covers manufacturing defects. Claim: email <a href="mailto:warranty@lufalight.com">warranty@lufalight.com</a> with order # + photos.<br><a href="warranty.html">Full Warranty →</a>'},
+     r:'<b>🛡️ Warranty</b><br>Warranty by device:<br>&bull; <b>2-Year:</b> GlowE300, LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000, Solaris9 BK300 Executive Edition<br>&bull; <b>1-Year:</b> all other models (BeauMask+BeauNeck, BeauMask, RecoverPro40B, GlowEM04, Glow60MiniPro, LUMENOVA PRO, AuraDome, VitalityPro PEMF Mat, ProStand)<br><br>Covers manufacturing defects. Claim: email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> with order # + photos.<br><a href="warranty.html">Full Warranty →</a>'},
 
     /* ── WARRANTY CLAIM ── */
     {k:['claim.*warrant','warrant.*claim','how.*warrant','broken.*what','not work','not turn'],
-     r:'<b>🛡️ Warranty Claim</b><br>1. Email <a href="mailto:warranty@lufalight.com">warranty@lufalight.com</a> with order number + photos/video<br>2. Team responds within 2 business days<br>3. If valid: prepaid return label sent (Canada & USA)<br>4. Replacement/repair shipped within 5–10 business days<br><br>⚡ First: check power connection, try different outlet, re-seat the adapter.'},
+     r:'<b>🛡️ Warranty Claim</b><br>1. Email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> with order number + photos/video<br>2. Team responds within 2 business days<br>3. If valid: prepaid return label sent (Canada & USA)<br>4. Replacement/repair shipped within 5–10 business days<br><br>⚡ First: check power connection, try different outlet, re-seat the adapter.'},
 
     /* ── SHIPPING DAMAGE ── */
     {k:['damage.*ship','ship.*damage','arrived.*broken','package.*damage'],
-     r:'<b>📦 Shipping Damage</b><br>Document damage immediately with photos (outer box + device). Contact us within <b>48 hours</b> at <a href="mailto:support@lufalight.com">support@lufalight.com</a>. We\'ll file a carrier claim and send a replacement at no cost.'},
+     r:'<b>📦 Shipping Damage</b><br>Document damage immediately with photos (outer box + device). Contact us within <b>48 hours</b> at <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a>. We\'ll file a carrier claim and send a replacement at no cost.'},
 
     /* ── ORDER / CANCEL ── */
     {k:['order','cancel','modif','change.*order','cancel.*order'],
-     r:'<b>📋 Orders</b><br>Orders can be modified or cancelled within <b>24 hours</b> of placement. After 24 hours it may already be in fulfillment. Contact <a href="mailto:support@lufalight.com">support@lufalight.com</a> ASAP.<br><br>To place an order: browse products → add to cart → checkout (Visa, MC, Amex, PayPal accepted).'},
+     r:'<b>📋 Orders</b><br>Orders can be modified or cancelled within <b>24 hours</b> of placement. After 24 hours it may already be in fulfillment. Contact <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> ASAP.<br><br>To place an order: browse products → add to cart → checkout (Visa, MC, Amex, PayPal accepted).'},
 
     /* ── PAYMENT ── */
     {k:['pay','payment','paypal','stripe','card','credit','debit','apple pay','google pay','currency','cad','dollar'],
@@ -103,7 +103,7 @@
 
     /* ── FINANCING ── */
     {k:['financ','afterpay','affirm','pay later','installment','monthly','split'],
-     r:'<b>💳 Financing</b><br>We are working on integrating Afterpay/Affirm buy-now-pay-later options. Check our website or contact <a href="mailto:support@lufalight.com">support@lufalight.com</a> for latest availability.'},
+     r:'<b>💳 Financing</b><br>We are working on integrating Afterpay/Affirm buy-now-pay-later options. Check our website or contact <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> for latest availability.'},
 
     /* ── CUSTOMS / DUTIES ── */
     {k:['custom','duty','duties','import','tax.*us','border'],
@@ -139,11 +139,11 @@
 
     /* ── REPLACEMENT PARTS ── */
     {k:['part','accessory','accessories','replace.*part','adapter','strap','stand.*replace','spare'],
-     r:'<b>🔧 Replacement Parts</b><br>Replacement stands, power adapters, eye protection and straps are available. Contact <a href="mailto:support@lufalight.com">support@lufalight.com</a> or check the Accessories section on our website.'},
+     r:'<b>🔧 Replacement Parts</b><br>Replacement stands, power adapters, eye protection and straps are available. Contact <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> or check the Accessories section on our website.'},
 
     /* ── WHOLESALE ── */
     {k:['wholesale','bulk','clinic','spa','business','partner','b2b','gym','physiother'],
-     r:'<b>🤝 Wholesale / B2B</b><br>Volume pricing for licensed clinics, spas, physiotherapy centers, and wellness studios. Email <a href="mailto:b2b@lufalight.com">b2b@lufalight.com</a> for a custom quote.<br><a href="wholesale.html">Wholesale Page →</a>'},
+     r:'<b>🤝 Wholesale / B2B</b><br>Volume pricing for licensed clinics, spas, physiotherapy centers, and wellness studios. Email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> for a custom quote.<br><a href="wholesale.html">Wholesale Page →</a>'},
 
     /* ── PRICE / BUDGET ── */
     {k:['price','cost','how much','budget','afford','cheap','expens'],
@@ -159,7 +159,7 @@
 
     /* ── CONTACT ── */
     {k:['contact','email','phone','call','human','speak','agent','support','help'],
-     r:'<b>📞 Contact Lufalight</b><br>📧 <a href="mailto:support@lufalight.com">support@lufalight.com</a><br>🏢 B2B/Wholesale: <a href="mailto:b2b@lufalight.com">b2b@lufalight.com</a><br>🛡️ Warranty: <a href="mailto:warranty@lufalight.com">warranty@lufalight.com</a><br>Hours: Mon–Fri 9am–5pm PST/EST. Replies within a few hours.'}
+     r:'<b>📞 Contact Lufalight</b><br>📧 <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a><br>🏢 B2B/Wholesale: <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a><br>🛡️ Warranty: <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a><br>Hours: Mon–Fri 9am–5pm PST/EST. Replies within a few hours.'}
   ];
 
   var HELLO="👋 Hi! I'm the Lufalight assistant — trained on 47 FAQs. Ask me anything or tap a topic:";
@@ -196,7 +196,7 @@
       }
     }
     setTimeout(function(){
-      addMsg('Not sure about that — reach our team directly:<br>📧 <a href="mailto:support@lufalight.com">support@lufalight.com</a>','bot');
+      addMsg('Not sure about that — reach our team directly:<br>📧 <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a>','bot');
     },350);
   }
   function sendChatMsg(){

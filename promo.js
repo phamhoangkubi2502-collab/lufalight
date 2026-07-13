@@ -1,15 +1,12 @@
-﻿/* ── LUFALIGHT PROMO WIDGETS ── Social Proof Ticker + Exit Intent Popup ── */
+﻿/* ── LUFALIGHT PROMO WIDGETS ── WIP Notice + Discount Popup + Exit Intent Popup ──
+   Timing/frequency notes (see conversation for full reasoning):
+   - WIP notice: small dismissible corner badge, shown until closed once (localStorage), never blocks the page.
+   - Discount popup: fires once ~2.5s after load, then stays quiet for 3 days (localStorage cooldown)
+     so repeat visits in the same week aren't nagged; extends to 14 days once the visitor clicks through.
+   - Exit-intent stays session-based (sessionStorage) since it's a last-chance nudge, not a landing offer. */
 (function(){
   /* inject self-contained CSS */
   var css = `
-  #sp-toast{position:fixed;left:22px;bottom:96px;z-index:850;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:13px 16px;display:flex;align-items:center;gap:11px;max-width:300px;box-shadow:0 16px 40px rgba(0,0,0,.14);transform:translateY(16px) scale(.96);opacity:0;pointer-events:none;transition:transform .35s,opacity .35s;font-family:"Plus Jakarta Sans",sans-serif}
-  #sp-toast.show{transform:none;opacity:1}
-  .sp-ic{font-size:22px;line-height:1;flex-shrink:0}
-  .sp-txt{font-size:12px;color:#14151A;line-height:1.5}
-  .sp-txt b{color:#000}
-  .sp-time{font-size:10.5px;color:#5C606B;margin-top:2px}
-  @media(max-width:480px){#sp-toast{left:14px;right:14px;max-width:none;bottom:88px}}
-
   #ei-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
   #ei-ov.open{display:flex}
   #ei-card{background:#FFFFFF;border:1px solid rgba(0,0,0,.08);box-shadow:0 24px 60px rgba(0,0,0,.18);border-radius:18px;padding:36px 32px;max-width:420px;width:100%;text-align:center;position:relative;animation:eiPop .35s ease}
@@ -28,56 +25,37 @@
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
-  /* ── SOCIAL PROOF TICKER ── */
-  var NOTIFS = [
-    {n:'Sarah M.',l:'Toronto, ON',p:'G15P ClearGlow Pro',t:'2 minutes ago'},
-    {n:'David C.',l:'Winnipeg, MB',p:'EM04 SleepGlow Eye Mask',t:'4 minutes ago'},
-    {n:'Mike T.',l:'Saskatoon, SK',p:'P40B RecoverPro Panel',t:'6 minutes ago'},
-    {n:'Linh T.',l:'Vancouver, BC',p:'G15P ClearGlow Pro',t:'8 minutes ago'},
-    {n:'Brian C.',l:'Toronto, ON',p:'C01 HGrowCap Pro',t:'11 minutes ago'},
-    {n:'Angie W.',l:'Calgary, AB',p:'BK300 BioShield Standee',t:'13 minutes ago'},
-    {n:'Olivia S.',l:'London, ON',p:'Recovery Essentials Bundle',t:'15 minutes ago'},
-    {n:'Kim L.',l:'Edmonton, AB',p:'G15 ClearGlow Face Mask',t:'18 minutes ago'},
-    {n:'James O.',l:'Oakville, ON',p:'MAX1800 BodyMax Panel',t:'21 minutes ago'},
-    {n:'Tina S.',l:'Vancouver, BC',p:'Glow & Restore Bundle',t:'24 minutes ago'},
-    {n:'Karen M.',l:'Ottawa, ON',p:'P40B RecoverPro Panel',t:'27 minutes ago'},
-    {n:'Nina C.',l:'Toronto, ON',p:'G240 AuraDome',t:'30 minutes ago'},
-    {n:'Lucy T.',l:'Victoria, BC',p:'PE01 ZenField PEMF Mat',t:'33 minutes ago'},
-    {n:'Raj K.',l:'Calgary, AB',p:'BK300 BioShield Standee',t:'37 minutes ago'},
-    {n:'Mia R.',l:'Toronto, ON',p:'EM04 SleepGlow Eye Mask',t:'41 minutes ago'},
-    {n:'Theresa G.',l:'Kelowna, BC',p:'MINI60PRO PainRelief Mini',t:'45 minutes ago'},
-    {n:'Catherine M.',l:'Montréal, QC',p:'Glow & Restore Bundle',t:'49 minutes ago'},
-    {n:'Derek H.',l:'Edmonton, AB',p:'Full-Body Recovery Bundle',t:'53 minutes ago'},
-    {n:'Amanda K.',l:'Calgary, AB',p:'G15P ClearGlow Pro',t:'57 minutes ago'},
-    {n:'Robert F.',l:'Ottawa, ON',p:'MRS45 ProStand',t:'1 hour ago'},
-  ];
-
-  function buildToast(){
-    var t = document.createElement('div');
-    t.id = 'sp-toast';
-    t.innerHTML = '<div class="sp-ic">☀️</div><div><div class="sp-txt"></div><div class="sp-time"></div></div>';
-    document.body.appendChild(t);
-    return t;
+  /* ── shared time-based cooldown (localStorage) ──
+     stores the timestamp a key is suppressed UNTIL, so "how many days" reads directly at the call site */
+  function isSuppressed(key){
+    var until = parseInt(localStorage.getItem(key), 10);
+    return !!until && Date.now() < until;
+  }
+  function suppressFor(key, days){
+    localStorage.setItem(key, String(Date.now() + days*86400000));
   }
 
-  function startTicker(){
-    if(document.getElementById('chat-fab')===null) return; // only on shop pages with chat widget present
-    var toast = buildToast();
-    var txt = toast.querySelector('.sp-txt');
-    var time = toast.querySelector('.sp-time');
-    var idx = Math.floor(Math.random()*NOTIFS.length);
-    function showNext(){
-      var item = NOTIFS[idx % NOTIFS.length];
-      idx++;
-      txt.innerHTML = '<b>'+item.n+'</b> from '+item.l+' just ordered<br><b>'+item.p+'</b>';
-      time.textContent = item.t;
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 5500);
-    }
-    setTimeout(function(){
-      showNext();
-      setInterval(showNext, 18000);
-    }, 4000);
+  /* ── WORK-IN-PROGRESS NOTICE ── */
+  function setupWipBadge(){
+    var KEY = 'lufa_wip_dismissed';
+    if(localStorage.getItem(KEY)) return;
+
+    var css0 = `
+    #wip-badge{position:fixed;left:16px;bottom:82px;z-index:960;background:#1B1C24;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:10px 10px 10px 16px;display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;line-height:1.4;box-shadow:0 10px 28px rgba(0,0,0,.3);max-width:300px}
+    #wip-badge button{background:rgba(255,255,255,.14);border:none;color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;cursor:pointer;flex-shrink:0;display:grid;place-items:center}
+    #wip-badge button:hover{background:rgba(255,255,255,.26)}
+    @media(max-width:480px){#wip-badge{left:10px;right:10px;bottom:140px;max-width:none}}
+    `;
+    var s0 = document.createElement('style'); s0.textContent = css0; document.head.appendChild(s0);
+
+    var b = document.createElement('div');
+    b.id = 'wip-badge';
+    b.innerHTML = '<span>🚧 This site is a work in progress — some content is still being finalized.</span><button aria-label="Dismiss">✕</button>';
+    document.body.appendChild(b);
+    b.querySelector('button').onclick = function(){
+      localStorage.setItem(KEY, '1');
+      b.remove();
+    };
   }
 
   /* ── EXIT INTENT POPUP ── */
@@ -87,9 +65,9 @@
     ov.innerHTML = '<div id="ei-card">'+
       '<button id="ei-close" aria-label="Close">✕</button>'+
       '<div class="ei-ic">🎁</div>'+
-      '<h3>Wait — Don\'t Miss 10% Off!</h3>'+
-      '<p>Get <b>10% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
-      '<div id="ei-code"><span>WELCOME10</span><button id="ei-copy">Copy</button></div>'+
+      '<h3>Wait — Don\'t Miss 20% Off!</h3>'+
+      '<p>Get <b>20% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
+      '<div id="ei-code"><span>WELCOME20</span><button id="ei-copy">Copy</button></div>'+
       '<div id="ei-timer">Expires in <span id="ei-mm">09</span>:<span id="ei-ss">59</span></div>'+
       '<a id="ei-cta" href="shop-all.html">Shop Now &rarr;</a>'+
       '</div>';
@@ -117,7 +95,7 @@
       },1000);
       document.getElementById('ei-close').onclick = function(){ ov.classList.remove('open'); clearInterval(iv); };
       document.getElementById('ei-copy').onclick = function(){
-        navigator.clipboard && navigator.clipboard.writeText('WELCOME10');
+        navigator.clipboard && navigator.clipboard.writeText('WELCOME20');
         var b = document.getElementById('ei-copy'); b.textContent='Copied!'; setTimeout(function(){b.textContent='Copy';},1500);
       };
       ov.addEventListener('click', function(e){ if(e.target===ov) ov.classList.remove('open'); });
@@ -132,10 +110,10 @@
     });
   }
 
-  /* ── SOFT OPENING POPUP ── */
+  /* ── DISCOUNT POPUP ── */
   function setupSoftOpeningPopup(){
-    var KEY = 'lufa_soft_shown';
-    if(sessionStorage.getItem(KEY)) return;
+    var KEY = 'lufa_soft_suppress_until';
+    if(isSuppressed(KEY)) return;
 
     var css2 = `
     #so-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1300;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
@@ -158,26 +136,27 @@
     ov.innerHTML =
       '<div id="so-card">' +
       '<button id="so-close" aria-label="Close">✕</button>' +
-      '<div id="so-badge">Soft Opening Special</div>' +
-      '<h2>Up to <span>40% Off</span><br>All Products</h2>' +
-      '<p>We\'re officially open! Celebrate with us — enjoy up to <strong>40% off</strong> our full range of red light therapy devices. Limited-time offer for early supporters.</p>' +
+      '<div id="so-badge">Big Summer Discount</div>' +
+      '<h2><span>20% Off</span></h2>' +
+      '<p>Our full range of red light therapy devices. Limited-time offer starts today!</p>' +
       '<a id="so-cta" href="shop-all.html">Shop All Deals &rarr;</a>' +
       '<button id="so-skip">Maybe later</button>' +
       '</div>';
     document.body.appendChild(ov);
 
     function close(){ ov.style.display='none'; }
-    document.getElementById('so-close').onclick = close;
-    document.getElementById('so-skip').onclick = close;
-    ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+    document.getElementById('so-close').onclick = function(){ suppressFor(KEY, 3); close(); };
+    document.getElementById('so-skip').onclick = function(){ suppressFor(KEY, 3); close(); };
+    document.getElementById('so-cta').onclick = function(){ suppressFor(KEY, 14); };
+    ov.addEventListener('click', function(e){ if(e.target===ov){ suppressFor(KEY, 3); close(); } });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ suppressFor(KEY, 3); close(); } });
 
-    sessionStorage.setItem(KEY,'1');
+    suppressFor(KEY, 3); // default cooldown the instant it's shown, in case the visitor navigates away without clicking anything
   }
 
-  startTicker();
-  setupExitIntent();
-  // Delay soft opening popup so it doesn't collide with page render
-  setTimeout(setupSoftOpeningPopup, 1800);
+  setupWipBadge();
+  // setupExitIntent(); // disabled
+  // Delay the discount popup so it doesn't collide with page render
+  setTimeout(setupSoftOpeningPopup, 2500);
 })();
 

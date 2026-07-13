@@ -52,7 +52,7 @@
       <h3>Interested in this product?</h3>
       <p class="lead-sub">Leave your info and the <b>Lufalight</b> team will reach out with a free consultation within 24 hours — no payment required.</p>
       <div id="leadProductPill" class="lead-product-pill" style="display:none">🛍️ <span id="leadProductName"></span></div>
-      <div id="leadError">⚠️ Something went wrong. Please try again or email us directly at support@lufalight.com</div>
+      <div id="leadError">⚠️ Something went wrong. Please try again or email us directly at lufalight@gmail.com</div>
       <form id="leadForm">
         <input type="hidden" name="product" id="leadProductField" value=""/>
         <input type="hidden" name="_subject" id="leadSubjectField" value="Lufalight — New Lead"/>
@@ -163,7 +163,7 @@
         throw new Error('submit failed');
       }
     }).catch(function(){
-      errEl.textContent = '⚠️ Something went wrong. Please try again or email us directly at support@lufalight.com';
+      errEl.textContent = '⚠️ Something went wrong. Please try again or email us directly at lufalight@gmail.com';
       errEl.style.display = 'block';
     }).finally(function(){
       btn.disabled = false;
