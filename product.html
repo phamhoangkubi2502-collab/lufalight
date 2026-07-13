@@ -525,7 +525,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pdp-coll" id="pdpColl">COLLECTION</div>
       <h1 class="pdp-name" id="pdpName">Product Name</h1>
       <div class="pdp-waves" id="pdpWaves"></div>
-      <div class="pdp-price-row"><span class="pdp-original-price" id="pdpOriginalPrice"></span><span class="pdp-price" id="pdpPrice"></span><span class="cad">CAD · Retail</span><span class="pdp-save-badge" id="pdpSaveBadge"></span></div>
+      <div class="pdp-price-row"><span class="pdp-original-price" id="pdpOriginalPrice"></span><span class="pdp-price" id="pdpPrice"></span><span class="cad" id="pdpCurLabel">CAD · Retail</span><span class="pdp-save-badge" id="pdpSaveBadge"></span></div>
       <div class="pdp-urgency" id="pdpUrgency"></div>
       <p class="pdp-desc" id="pdpDesc"></p>
 
@@ -700,6 +700,7 @@ const BROCHURES = {
   MAX4800:   'brochures/MAX4800-brochure.pdf',
   C01:       'brochures/C01-brochure.pdf',
   EM04:      'brochures/EM04-brochure.pdf',
+  P40B:      'brochures/P40B-brochure.pdf',
 };
 
 /* ── PER-SKU WARRANTY (years) ── */
@@ -719,7 +720,7 @@ const PRODUCTS = [
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/G15P-5.png','images/products/G15P-1.jpg','images/products/G15P-2.jpg','images/products/G15P-3.jpg','images/products/G15P-6.png','images/products/G15P-7.png','images/products/G15P-8.png','images/products/G15P-9.png','images/products/G15P-10.png','images/products/G15P-12.png'] },
   { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:null, badgeClass:'', fda:true,
     name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
-    img:'images/products/G15-5.png', gallery:['images/products/G15-5.png','images/products/G15-11.png','images/products/G15-12.png','images/products/G15-1.jpg','images/products/G15-2.jpg','images/products/G15-3.jpg','images/products/G15-4.jpg','images/products/G15-6.png','images/products/G15-7.png','images/products/G15-8.jpg','images/products/G15-9.jpg','images/products/G15-10.jpg'] },
+    img:'images/products/G15-5.png', gallery:['images/products/G15-5.png','images/products/G15-11.png','images/products/G15-12.png','images/products/G15-1.jpg','images/products/G15-2.jpg','images/products/G15-3.jpg','images/products/G15-4.jpg','images/products/G15-6.png','images/products/G15-8.jpg','images/products/G15-10.jpg'] },
   { id:'P40B', coll:'body-recovery', goal:'RECOVER', icon:'💪', badge:'Flicker-Free', badgeClass:'bb',
     name:'RecoverPro40B', price:209, waves:'660nm Red + 850nm NIR',
     img:'images/products/P40B-3.jpg', gallery:['images/products/P40B-3.jpg','images/products/P40B-1.jpg','images/products/P40B-2.jpg','images/products/P40B-4.jpg','images/products/P40B-5.jpg','images/products/P40B-6.jpg','images/products/P40B-7.jpg','images/products/P40B-10.jpg','images/products/P40B-11.jpg','images/products/P40B-15.png','images/products/P40B-16.png','images/products/P40B-17.png','images/products/P40B-18.png','images/products/P40B-19.png'] },
@@ -862,7 +863,7 @@ const DETAILS = {
       { icon:'🏃', t:'Ideal for Athletes & Chronic Pain', d:'Built for post-injury rehab and performance recovery protocols.' },
     ],
     specs:[ ['Wavelengths','630 · 660 · 810 · 850nm'],['LEDs','60 high-density LEDs'],['Irradiance','150+ mW/cm²'],['Dimming Channels','5 independent channels'],['Power','300W'],['Beam Angle','30°'],['Dimensions','47 × 32 × 24 cm'],['Weight','3.3 kg'] ],
-    included:[ ['📦','E300 ClinicalEdge Panel'],['🦯','Folding Stand'],['🔌','Power Cable'],['📖','User Manual'] ],
+    included:[ ['📦','E300 ClinicalEdge Panel'],['🦯','Folding Stand'],['🔌','Power Cable'],['🥽','Protective Eyewear'],['📖','User Manual'] ],
   },
   C01: {
     desc:'A full scalp wrap-around LED helmet using a 4-in-1 protocol to support hair regrowth and scalp health.',
@@ -1345,6 +1346,7 @@ function init(){
   document.getElementById('pdpName').innerHTML = product.name;
   document.getElementById('pdpWaves').textContent = product.waves;
   document.getElementById('pdpPrice').textContent = fmt(product.price);
+  document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Retail';
   const origEl = document.getElementById('pdpOriginalPrice');
   const saveEl = document.getElementById('pdpSaveBadge');
   if (product.originalPrice && product.originalPrice > product.price) {
