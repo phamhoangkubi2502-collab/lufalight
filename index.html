@@ -1069,9 +1069,16 @@ setInterval(()=>goSlide((cur+1)%SS.length),4000);
   const vid=document.getElementById('flagshipVid');
   const unmuteBtn=document.getElementById('flagshipUnmute');
   if(!vid||!unmuteBtn)return;
+  vid.muted=true;
+  vid.setAttribute('muted','');
+  vid.playsInline=true;
+  vid.setAttribute('playsinline','');
   new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting) vid.play().catch(()=>{});
-    else vid.pause();
+    if(e.isIntersecting){
+      vid.muted=true;
+      vid.playsInline=true;
+      vid.play().catch(()=>{});
+    } else vid.pause();
   }),{threshold:.4}).observe(vid);
   unmuteBtn.onclick=function(){
     vid.muted=!vid.muted;
