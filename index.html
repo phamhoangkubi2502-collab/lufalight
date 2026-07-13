@@ -58,6 +58,9 @@ h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 #topbar span{margin:0 14px}
 #topbar span:last-child{white-space:nowrap;display:inline-block}
+@media(max-width:860px){#topbar{display:flex;flex-direction:column;gap:6px;padding:12px 16px;font-size:11.5px;letter-spacing:.01em}#topbar span{margin:0}#topbar span.tb-sep{display:none}}
+@media(max-width:380px){#topbar{font-size:10px;padding:12px 10px}}
+@media(max-width:340px){#topbar{font-size:9px}}
 /* NAV */
 nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
 .nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
@@ -568,7 +571,7 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
 </head>
 <body>
 <div class="cookie" id="ck"><p class="ck-txt">We use cookies to improve your experience. <a href="#" style="color:var(--red)">Privacy Policy</a>.</p><div style="display:flex;gap:8px"><button class="ck-no" onclick="this.closest('.cookie').remove()">Decline</button><button class="ck-ok" onclick="this.closest('.cookie').remove()">Accept</button></div></div>
-<div id="topbar"><span>🚚 Free Shipping — Canada Orders CA$300+</span><span>|</span><span>🛡️ Up to 2-Year Warranty · 60-Day Returns on Eligible Devices</span><span>|</span><span>✉️ lufalight@gmail.com</span></div>
+<div id="topbar"><span>🚚 Free Shipping — Canada Orders CA$300+</span><span class="tb-sep">|</span><span>🛡️ Up to 2-Year Warranty · 60-Day Returns on Eligible Devices</span><span class="tb-sep">|</span><span>✉️ lufalight@gmail.com</span></div>
 <nav>
   <a href="#" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
     <div class="nav-sun">
