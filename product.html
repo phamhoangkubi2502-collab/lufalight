@@ -1291,7 +1291,7 @@ function init(){
   const pName = plainName(product.name);
   const pageTitle = `${pName} — Lufalight`;
   const pageDesc = detail.desc || '';
-  const pageUrl = `https://www.lufalight.com/product.html#${product.id}`;
+  const pageUrl = `https://www.lufalight.com/product.html?sku=${product.id}`;
   const pageImg = `https://www.lufalight.com/${product.img}`;
 
   document.title = pageTitle;
@@ -1804,9 +1804,9 @@ function renderUpsell(){
       <div class="upsell-hl">${u.headline}</div>
       <div class="upsell-sub">${u.sub}</div>
       <div class="upsell-row">
-        <img class="upsell-img" src="${product.img}" alt="">
+        <img class="upsell-img" src="${product.img}" alt="${plainName(product.name)}">
         <div class="upsell-sep">+</div>
-        <img class="upsell-img" src="${up.img}" alt="">
+        <img class="upsell-img" src="${up.img}" alt="${plainName(up.name)}">
         <div class="upsell-info">
           <strong>${plainName(up.name)}</strong>
           ${bp ? `<span class="upsell-save">${u.bundleSave}</span>` : `<span style="font-size:12px;color:var(--muted)">${combinedPrice} combined</span>`}
@@ -1824,6 +1824,7 @@ function setupStickyATC(){
   const anchor = document.querySelector('.pdp-actions');
   if(!satc || !anchor) return;
   document.getElementById('satcImg').src = product.img;
+  document.getElementById('satcImg').alt = plainName(product.name);
   document.getElementById('satcName').textContent = plainName(product.name);
   document.getElementById('satcPrice').textContent = fmt(product.price);
   const satcBuyBtn = document.getElementById('satcBuyBtn');

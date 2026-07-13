@@ -5,17 +5,17 @@
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Lufalight — Red Light Therapy Devices | Canada &amp; USA</title>
-<meta name="description" content="Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery."/>
+<meta name="description" content="Shop FDA-registered red &amp; near-infrared light therapy devices for pain relief, skin health, recovery &amp; sleep. 14+ products, fast Canada &amp; USA shipping."/>
 <link rel="canonical" href="https://www.lufalight.com/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Lufalight"/>
 <meta property="og:title" content="Lufalight — Red Light Therapy Devices | Canada &amp; USA"/>
-<meta property="og:description" content="Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery."/>
+<meta property="og:description" content="Shop FDA-registered red &amp; near-infrared light therapy devices for pain relief, skin health, recovery &amp; sleep. 14+ products, fast Canada &amp; USA shipping."/>
 <meta property="og:image" content="https://www.lufalight.com/images/products/G15P-11.png"/>
 <meta property="og:url" content="https://www.lufalight.com/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Lufalight — Red Light Therapy Devices | Canada &amp; USA"/>
-<meta name="twitter:description" content="Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery."/>
+<meta name="twitter:description" content="Shop FDA-registered red &amp; near-infrared light therapy devices for pain relief, skin health, recovery &amp; sleep. 14+ products, fast Canada &amp; USA shipping."/>
 <meta name="twitter:image" content="https://www.lufalight.com/images/products/G15P-11.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -1158,7 +1158,7 @@ function setModalImg(i){
     ${multi?`<button class="modal-nav modal-prev" onclick="event.stopPropagation();navModalGallery(-1)" aria-label="Previous image">&#8249;</button>`:''}
     ${multi?`<button class="modal-nav modal-next" onclick="event.stopPropagation();navModalGallery(1)" aria-label="Next image">&#8250;</button>`:''}
     ${multi?`<span class="modal-counter">${i+1} / ${gal.length}</span>`:''}
-    <img id="m-img" src="${gal[i]}" alt=""/>
+    <img id="m-img" src="${gal[i]}" alt="${PD[modalGalKey]?PD[modalGalKey].n.replace(/&amp;/g,'&'):''}"/>
   `;
   document.querySelectorAll('#modalThumbs .m-thumb').forEach((t,idx)=>{
     t.classList.toggle('active', idx===i);
