@@ -167,7 +167,7 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
     if(!window.LUFA_PROMO.active) return;
     var tb = document.getElementById('topbar');
     if(!tb) return;
-    tb.style.background = '#C52222';
+    tb.style.background = '#E82D2D';
     tb.innerHTML =
       '<span>🔥 <strong>Big Summer Deal</strong> — 20% Off All Devices</span>' +
       '<span class="tb-sep">|</span>' +
