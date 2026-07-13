@@ -878,6 +878,7 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
   </div>
 </div>
 <script src="theme.js"></script>
+<script src="currency.js"></script>
 <script src="chat.js"></script>
 <script src="promo.js"></script>
 <script src="lead-form.js"></script>
@@ -899,6 +900,7 @@ function sendToFormspree(fields){
 }
 
 /* ── DATA ── */
+const fmt = n => window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD';
 const PD  = {
 "SKIN": {
   "l":"SKIN","n":"BeauMask + BeauNeck-Décolleté — ClearGlow Pro Face & Neck Set","dev":"Model: G15P | Lufalight",
@@ -1050,7 +1052,7 @@ function openModal(key){
   document.getElementById('m-line').textContent=p.l;
   document.getElementById('m-name').textContent=p.n;
   document.getElementById('m-dev').textContent=p.dev;
-  document.getElementById('m-price').textContent=p.ps;
+  document.getElementById('m-price').textContent=fmt(p.price);
   document.getElementById('m-pill').textContent=p.pill;
   document.getElementById('m-desc').innerHTML=p.desc;
   document.getElementById('m-specs').innerHTML=p.specs.map((v,i)=>
@@ -1139,7 +1141,7 @@ function renderCmpBar(){
     else{
       const p=PD[k];
       slot.className='cmp-slot';
-      slot.innerHTML=`<img src="${IMG[k]}" alt="${p.n}"/><span class="cmp-sname">${p.l} — ${p.ps}</span><button class="cmp-srm" onclick="toggleCmp('${k}',event)">✕</button>`;
+      slot.innerHTML=`<img src="${IMG[k]}" alt="${p.n}"/><span class="cmp-sname">${p.l} — ${fmt(p.price)}</span><button class="cmp-srm" onclick="toggleCmp('${k}',event)">✕</button>`;
     }
   }
 }
@@ -1156,11 +1158,11 @@ function buildCmpTable(){
     {label:'LED Type',   fn:(p)=>p.specs[1]},
     {label:'Area / Type',fn:(p)=>p.specs[2]},
     {label:'Power',  fn:(p)=>p.specs[4]},
-    {label:'Price',        fn:(p)=>`<strong style="color:var(--gold)">${p.ps}</strong>`},
+    {label:'Price',        fn:(p)=>`<strong style="color:var(--gold)">${fmt(p.price)}</strong>`},
     {label:'Description', fn:(p)=>p.desc.replace(/<[^>]*>/g,'').substring(0,90)+'...'},
   ];
   let head='<tr><th class="rh">Specs</th>';
-  CMP.forEach(k=>{const p=PD[k];head+=`<th><img class="th-img" src="${IMG[k]}" alt="${p.n}"/><div class="th-line">${p.l}</div><div class="th-name">${p.n}</div><div class="th-price">${p.ps}</div></th>`;});
+  CMP.forEach(k=>{const p=PD[k];head+=`<th><img class="th-img" src="${IMG[k]}" alt="${p.n}"/><div class="th-line">${p.l}</div><div class="th-name">${p.n}</div><div class="th-price">${fmt(p.price)}</div></th>`;});
   head+='</tr>';
   let body='';
   rows.forEach(r=>{

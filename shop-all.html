@@ -379,7 +379,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">RECOVERY + RELIEF</div>
         <div class="pc-name">Recovery Essentials Bundle</div>
-        <div class="pc-price">$479 CAD<span class="orig">$545 CAD</span></div>
+        <div class="pc-price"><span data-cad="479">$479 CAD</span><span class="orig" data-cad="545">$545 CAD</span></div>
         <div class="pc-waves">RecoverPro40B Desktop Panel + GlowMini60Pro</div>
         <div class="pc-act">
           
@@ -398,7 +398,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">SKIN + SLEEP</div>
         <div class="pc-name">Glow &amp; Restore Bundle</div>
-        <div class="pc-price">$699 CAD<span class="orig">$798 CAD</span></div>
+        <div class="pc-price"><span data-cad="699">$699 CAD</span><span class="orig" data-cad="798">$798 CAD</span></div>
         <div class="pc-waves">BeauMask+BeauNeck Face &amp; Neck Set + GlowEM04 Sleep Mask</div>
         <div class="pc-act">
           
@@ -417,7 +417,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">FULL-BODY RECOVERY</div>
         <div class="pc-name">Full-Body Recovery Bundle</div>
-        <div class="pc-price">$2,399 CAD<span class="orig">$2,667 CAD</span></div>
+        <div class="pc-price"><span data-cad="2399">$2,399 CAD</span><span class="orig" data-cad="2667">$2,667 CAD</span></div>
         <div class="pc-waves">LUFAMAX 1800 Full-Body Panel + ProStand Adjustable Stand</div>
         <div class="pc-act">
           
@@ -519,6 +519,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   </details>
 </div></footer>
 
+<script src="currency.js"></script>
 <script>
 /* ── PRODUCT CATALOG — all 14 SKUs from LUFALIGHT_Catalog_v12.pdf, RETAIL prices (CAD) ── */
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
@@ -584,7 +585,7 @@ const PRODUCTS = [
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MRS45-1.jpg'] },
 ];
 
-const fmt = n => '$' + n.toLocaleString('en-CA') + ' CAD';
+const fmt = n => window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD';
 
 /* ── FILTER / SORT / RENDER ── */
 function activeValues(selector){
@@ -673,6 +674,7 @@ setupGroup('.f-coll');
 setupGroup('.f-goal');
 document.querySelectorAll('.f-price').forEach(b=>b.addEventListener('change',render));
 render();
+document.querySelectorAll('[data-cad]').forEach(el=>{ el.textContent = fmt(parseFloat(el.getAttribute('data-cad'))); });
 
 const _coll = new URLSearchParams(window.location.search).get('coll');
 if(_coll) filterCollection(_coll);

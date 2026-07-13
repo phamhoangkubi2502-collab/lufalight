@@ -686,6 +686,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   </div>
 </div>
 
+<script src="currency.js"></script>
 <script>
 /* ── PRODUCT BROCHURES — per-SKU PDF brochure path ── */
 const BROCHURES = {
@@ -1236,7 +1237,7 @@ const UPSELL = {
   'BUNDLE-FULLBODY':{sku:'BK300',headline:'Complete the full-body protocol',sub:'Your full-body panel pairs perfectly with the BK300\'s unique UVB + exclusive 1060nm Ultra-Deep NIR capabilities.'},
 };
 
-const fmt = n => '$' + n.toLocaleString('en-CA') + ' CAD';
+const fmt = n => window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD';
 
 /* ── PAGE RENDER ── */
 const params = new URLSearchParams(window.location.search);

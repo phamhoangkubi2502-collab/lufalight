@@ -273,6 +273,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
   </details>
 </div></footer>
 
+<script src="currency.js"></script>
 <script>
 /* ── COMPARE DATA — mirrors product.html PRODUCTS/DETAILS/WARRANTY ── */
 const CMP = [
@@ -307,7 +308,7 @@ function populateSelects(){
   document.getElementById('cmpC').value = c;
 }
 
-function fmt(n){ return '$' + n.toLocaleString('en-CA') + ' CAD'; }
+function fmt(n){ return window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD'; }
 
 function renderCompare(){
   const ids = [document.getElementById('cmpA').value, document.getElementById('cmpB').value, document.getElementById('cmpC').value].filter(Boolean);

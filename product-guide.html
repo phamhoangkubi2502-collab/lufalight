@@ -404,10 +404,12 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   <div class="chat-input-row"><input class="chat-inp" id="chatInp" type="text" placeholder="Ask anything…" autocomplete="off" onkeydown="if(event.key==='Enter')sendChatMsg()"/><button class="chat-send" onclick="sendChatMsg()" aria-label="Send">&#10148;</button></div>
 </div>
 
+<script src="currency.js"></script>
 <script>
 /* ── PRODUCT DATA ── */
 /* Category B — hygiene/personal-contact items, final sale once opened (no free-trial return window) */
 const CATEGORY_B_SKUS = new Set(['EM04','G15P','G15','C01','G240','PE01','MRS45']);
+const fmt = n => window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD';
 const GUIDE = [
   {
     id:'EM04', cat:'face-skin', icon:'😴', badge:'FDA-Registered', badgeClass:'bg', fda:false,
@@ -714,7 +716,7 @@ function renderGuide(){
             <div class="gc-name">${p.name}</div>
             <div class="gc-desc">${p.desc}</div>
             <div class="gc-price-row">
-              <div class="gc-price">$${p.price.toLocaleString('en-CA')} <span style="font-size:.8rem;font-weight:600;color:var(--muted)">CAD</span></div>
+              <div class="gc-price">${fmt(p.price)}</div>
             </div>
             ${p.waves.length ? `<div class="gc-waves-row">${waveChips}</div>` : '<div class="gc-waves-row"><span class="wave-chip" style="color:var(--muted);border-color:var(--line);background:transparent">No wavelengths — accessory only</span></div>'}
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
