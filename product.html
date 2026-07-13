@@ -744,7 +744,7 @@ const PRODUCTS = [
     img:'images/products/G240-1.jpg', gallery:['images/products/G240-1.jpg','images/products/G240-2.jpg','images/products/G240-3.jpg','images/products/G240-4.jpg','images/products/G240-5.jpg','images/products/G240-6.jpg','images/products/G240-7.png','images/products/G240-8.png','images/products/G240-9.png','images/products/G240-10.png','images/products/G240-11.jpg','images/products/G240-12.jpg','images/products/G240-13.jpg','images/products/G240-14.jpg','images/products/G240-15.jpg','images/products/G240-16.png','images/products/G240-17.png','images/products/G240-18.png','images/products/G240-19.png','images/products/G240-20.png'] },
   { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'Executive Edition', badgeClass:'bp', fda:true,
     name:'Solaris9 BK300 Executive Edition', price:1399, waves:'630 · 660 · 810 · 830 · 850 · 1060nm + 295/311nm UVB | 9-Wavelength Full Spectrum',
-    img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-1.jpg','images/products/BK300-2.jpg','images/products/BK300-3.jpg','images/products/BK300-4.jpg','images/products/BK300-5.jpg','images/products/BK300-6.jpg','images/products/BK300-7.jpg','images/products/BK300-8.jpg','images/products/BK300-9.jpg','images/products/BK300-10.jpg','images/products/BK300-11.jpg','images/products/BK300-12.jpg'] },
+    img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-video.mp4','images/products/BK300-1.jpg','images/products/BK300-2.jpg','images/products/BK300-3.jpg','images/products/BK300-4.jpg','images/products/BK300-5.jpg','images/products/BK300-6.jpg','images/products/BK300-7.jpg','images/products/BK300-8.jpg','images/products/BK300-9.jpg','images/products/BK300-10.jpg','images/products/BK300-11.jpg','images/products/BK300-12.jpg'] },
   { id:'MAX1800', coll:'full-body', goal:'RECOVER', icon:'🟥', badge:'1,800W', badgeClass:'bb',
     name:'LUFAMAX 1800', price:1942, waves:'660nm Red + 850nm NIR',
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MAX1800-2.jpg','images/products/MAX1800-3.jpg','images/products/MAX1800-4.jpg','images/products/MAX1800-5.jpg','images/products/MAX1800-6.jpg','images/products/MAX1800-7.jpg','images/products/MAX1800-8.jpg','images/products/MAX1800-9.jpg','images/products/MAX1800-10.jpg','images/products/MAX1800-11.jpg'] },
@@ -1344,7 +1344,11 @@ function init(){
   // gallery
   renderGallery(0);
   document.getElementById('galleryThumbs').innerHTML = product.gallery.map((src,i)=>`
-    <div class="thumb ${i===0?'active':''}" onclick="renderGallery(${i})"><img src="${src}" alt="" onerror="this.parentElement.style.display='none'"></div>
+    <div class="thumb ${i===0?'active':''}" onclick="renderGallery(${i})" style="position:relative">
+      ${isVideo(src)
+        ? `<img src="${product.img}" alt="Video"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.38);border-radius:4px"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>`
+        : `<img src="${src}" alt="" onerror="this.parentElement.style.display='none'">`}
+    </div>
   `).join('');
 
   // info
@@ -1488,17 +1492,21 @@ function renderRecentlyViewed(){
 }
 
 let galleryIdx = 0;
+function isVideo(src){ return src && src.endsWith('.mp4'); }
 function renderGallery(i){
   galleryIdx = i;
   const src = product.gallery[i];
   const multi = product.gallery.length > 1;
+  const mediaHtml = isVideo(src)
+    ? `<video autoplay muted loop playsinline controls style="width:100%;height:100%;object-fit:contain;display:block"><source src="${src}" type="video/mp4"></video>`
+    : `<img src="${src}" alt="${plainName(product.name)}" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>${product.icon}</span>')">`;
   document.getElementById('galleryMain').innerHTML = `
     ${product.badge?`<span class="gallery-bdg ${product.badgeClass}">${product.badge}</span>`:''}
     ${product.fda?`<span class="gallery-fda${FDA_CLEARED_SKUS.has(product.id)?' gallery-fda-cleared':''}">✅ ${FDA_CLEARED_SKUS.has(product.id)?'FDA-Cleared':'FDA-Registered'}</span>`:''}
     ${multi?`<button class="gallery-nav gallery-prev" onclick="event.stopPropagation();navGallery(-1)" aria-label="Previous image">&#8249;</button>`:''}
     ${multi?`<button class="gallery-nav gallery-next" onclick="event.stopPropagation();navGallery(1)" aria-label="Next image">&#8250;</button>`:''}
     ${multi?`<span class="gallery-counter">${i+1} / ${product.gallery.length}</span>`:''}
-    <img src="${src}" alt="${plainName(product.name)}" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>${product.icon}</span>')">
+    ${mediaHtml}
   `;
   document.querySelectorAll('.thumb').forEach((t,idx)=>{
     t.classList.toggle('active', idx===i);

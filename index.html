@@ -706,7 +706,13 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
   </div>
 </section>
 <section id="flagship" class="sec"><div class="wrap"><div class="flagship-grid">
-  <div class="flagship-img rv"><img src="images/products/BK300-1.jpg" alt="Solaris9 BK300 Executive Edition" loading="lazy"/></div>
+  <div class="flagship-img rv">
+    <video id="flagshipVid" muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit" poster="images/products/BK300-1.jpg">
+      <source src="images/products/BK300-video.mp4" type="video/mp4">
+      <img src="images/products/BK300-1.jpg" alt="Solaris9 BK300 Executive Edition" loading="lazy"/>
+    </video>
+    <button id="flagshipUnmute" aria-label="Unmute video" style="position:absolute;bottom:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:15px;display:grid;place-items:center;cursor:pointer;z-index:2">🔇</button>
+  </div>
   <div class="rv">
     <span class="flagship-eyebrow">⚡ Flagship</span>
     <div class="hl"></div>
@@ -1056,6 +1062,21 @@ setInterval(()=>goSlide((cur+1)%SS.length),4000);
   const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})
     ,{threshold:.08});
   document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+})();
+
+/* ── FLAGSHIP VIDEO — autoplay muted on scroll-into-view, pause off-screen, manual unmute ── */
+(function(){
+  const vid=document.getElementById('flagshipVid');
+  const unmuteBtn=document.getElementById('flagshipUnmute');
+  if(!vid||!unmuteBtn)return;
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting) vid.play().catch(()=>{});
+    else vid.pause();
+  }),{threshold:.4}).observe(vid);
+  unmuteBtn.onclick=function(){
+    vid.muted=!vid.muted;
+    unmuteBtn.textContent=vid.muted?'🔇':'🔊';
+  };
 })();
 
 /* ── STICKY BAR ── */
