@@ -155,6 +155,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .gc-icon{font-size:32px;margin-bottom:10px;display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}.gc:hover .gc-icon{transform:scale(1.22) rotate(-8deg)}.gc-title{font-family:var(--hd);font-weight:700;font-size:1rem;margin-bottom:5px}
 .gc-metric{font-size:11.5px;color:var(--redl);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
 .gc-desc{font-size:12px;color:var(--muted);line-height:1.55}
+.gc-shop{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.05em;margin-top:10px;opacity:0;transition:opacity .2s}
+.gc:hover .gc-shop{opacity:1}
 /* PRODUCTS */
 #products{background:var(--bg2)}
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
@@ -727,14 +729,14 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
   </div>
 </div></div></section>
 <section id="goals" class="sec"><div class="wrap"><div class="rv"><span class="tag">Shop by Goal</span><div class="hl"></div><h2>What do you want to <span class="red">improve</span>?</h2></div><div class="goals-grid">
-<div class="gc rv" onclick="openModal('SKIN')" ><div class="gc-icon">✨</div><div class="gc-title">Skin Health</div><div class="gc-metric">+200% Collagen</div><div class="gc-desc">Reduce wrinkles, brighten skin</div></div>
-<div class="gc rv" onclick="openModal('RECOVER')" style="transition-delay:0.07s"><div class="gc-icon">💪</div><div class="gc-title">Athletic Recovery</div><div class="gc-metric">-55% Muscle Pain</div><div class="gc-desc">Faster post-workout recovery</div></div>
-<div class="gc rv" onclick="openModal('SLEEP')" style="transition-delay:0.14s"><div class="gc-icon">🌙</div><div class="gc-title">Better Sleep</div><div class="gc-metric">+58% Melatonin</div><div class="gc-desc">Deeper sleep, sharper mornings</div></div>
-<div class="gc rv" onclick="openModal('RELIEF')" style="transition-delay:0.21s"><div class="gc-icon">🩹</div><div class="gc-title">Pain Relief</div><div class="gc-metric">-70% Pain</div><div class="gc-desc">Joints, back, neck & shoulder pain</div></div>
-<div class="gc rv" onclick="openModal('GROW')" style="transition-delay:0.00s"><div class="gc-icon">💆</div><div class="gc-title">Hair Growth</div><div class="gc-metric">+39% Hair Density</div><div class="gc-desc">Stimulate hair follicles</div></div>
-<div class="gc rv" onclick="openModal('CLEAR')" style="transition-delay:0.07s"><div class="gc-icon">🌿</div><div class="gc-title">Acne Treatment</div><div class="gc-metric">-76% Acne</div><div class="gc-desc">Regulate sebum production</div></div>
-<div class="gc rv" onclick="openModal('MIND')" style="transition-delay:0.14s"><div class="gc-icon">🧠</div><div class="gc-title">Brain Performance</div><div class="gc-metric">+25% Blood Flow</div><div class="gc-desc">Focus & reduce brain fog</div></div>
-<div class="gc rv" onclick="openModal('SHIELD')" style="transition-delay:0.21s"><div class="gc-icon">🛡️</div><div class="gc-title">Immune System</div><div class="gc-metric">+40% NK Cells*</div><div class="gc-desc">Natural Vitamin D synthesis</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=SKIN'" style="cursor:pointer"><div class="gc-icon">✨</div><div class="gc-title">Skin Health</div><div class="gc-metric">+200% Collagen</div><div class="gc-desc">Reduce wrinkles, brighten skin</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=RECOVER'" style="cursor:pointer;transition-delay:0.07s"><div class="gc-icon">💪</div><div class="gc-title">Athletic Recovery</div><div class="gc-metric">-55% Muscle Pain</div><div class="gc-desc">Faster post-workout recovery</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=SLEEP'" style="cursor:pointer;transition-delay:0.14s"><div class="gc-icon">🌙</div><div class="gc-title">Better Sleep</div><div class="gc-metric">+58% Melatonin</div><div class="gc-desc">Deeper sleep, sharper mornings</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=RELIEF'" style="cursor:pointer;transition-delay:0.21s"><div class="gc-icon">🩹</div><div class="gc-title">Pain Relief</div><div class="gc-metric">-70% Pain</div><div class="gc-desc">Joints, back, neck & shoulder pain</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=GROW'" style="cursor:pointer;transition-delay:0.00s"><div class="gc-icon">💆</div><div class="gc-title">Hair Growth</div><div class="gc-metric">+39% Hair Density</div><div class="gc-desc">Stimulate hair follicles</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=CLEAR'" style="cursor:pointer;transition-delay:0.07s"><div class="gc-icon">🌿</div><div class="gc-title">Acne Treatment</div><div class="gc-metric">-76% Acne</div><div class="gc-desc">Regulate sebum production</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=MIND'" style="cursor:pointer;transition-delay:0.14s"><div class="gc-icon">🧠</div><div class="gc-title">Brain Performance</div><div class="gc-metric">+25% Blood Flow</div><div class="gc-desc">Focus & reduce brain fog</div><div class="gc-shop">Shop top 3 →</div></div>
+<div class="gc rv" onclick="window.location.href='shop-all.html#benefit=SHIELD'" style="cursor:pointer;transition-delay:0.21s"><div class="gc-icon">🛡️</div><div class="gc-title">Immune System</div><div class="gc-metric">+40% NK Cells*</div><div class="gc-desc">Natural Vitamin D synthesis</div><div class="gc-shop">Shop top 3 →</div></div>
 </div></div></section>
 <section id="science" class="sec"><div class="wrap"><div class="sci-grid">
   <div class="rv">

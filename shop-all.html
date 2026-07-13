@@ -126,6 +126,14 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 /* TOOLBAR */
 .shop-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:24px}
 #resultCount{font-size:13px;color:var(--muted)}
+#benefit-banner{display:none;background:linear-gradient(135deg,rgba(232,45,45,.08),rgba(232,45,45,.04));border:1.5px solid rgba(232,45,45,.22);border-radius:12px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#benefit-banner.show{display:flex}
+#benefit-banner .bb-icon{font-size:22px;flex-shrink:0}
+#benefit-banner .bb-text{flex:1;min-width:0}
+#benefit-banner .bb-title{font-family:var(--hd);font-size:.95rem;font-weight:800;color:var(--white)}
+#benefit-banner .bb-sub{font-size:12px;color:var(--muted);margin-top:2px}
+#benefit-banner .bb-clear{background:none;border:1.5px solid rgba(232,45,45,.4);color:#E82D2D;font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap;letter-spacing:.04em}
+#benefit-banner .bb-clear:hover{background:#E82D2D;color:#fff}
 #sortSelect{background:var(--card);border:1px solid var(--line);color:var(--white);font-size:12.5px;padding:10px 14px;border-radius:7px;font-family:var(--bd)}
 .shop-search{background:var(--card);border:1px solid var(--line);color:var(--white);font-size:12.5px;padding:10px 14px;border-radius:7px;font-family:var(--bd);flex:1;min-width:160px;max-width:280px}
 .shop-search:focus{outline:none;border-color:var(--red)}
@@ -497,6 +505,14 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
     <!-- PRODUCTS -->
     <main>
+      <div id="benefit-banner">
+        <span class="bb-icon" id="bb-icon"></span>
+        <div class="bb-text">
+          <div class="bb-title" id="bb-title"></div>
+          <div class="bb-sub">Showing the 3 best-matched devices for your goal</div>
+        </div>
+        <button class="bb-clear" onclick="clearBenefitFilter()">✕ Show All Devices</button>
+      </div>
       <div class="shop-toolbar">
         <span id="resultCount"></span>
         <input type="search" id="searchInput" class="shop-search" placeholder="🔍 Search products…" oninput="render()"/>
@@ -634,7 +650,48 @@ function setupGroup(selector){
   }));
 }
 
+/* ── BENEFIT → TOP-3 SKU MAP (based on therapeutic coverage matrix) ── */
+const BENEFIT_MAP = {
+  SKIN:    { icon:'✨', label:'Skin Health',        skus:['G15P','G15','C01'] },
+  RECOVER: { icon:'💪', label:'Athletic Recovery',   skus:['P40B','ESPRO3000','MAX1800'] },
+  SLEEP:   { icon:'🌙', label:'Better Sleep',        skus:['EM04','MINI60PRO','G240'] },
+  RELIEF:  { icon:'🩹', label:'Pain Relief',         skus:['MINI60PRO','P40B','PE01'] },
+  GROW:    { icon:'💆', label:'Hair Growth',         skus:['G240','C01','G15P'] },
+  CLEAR:   { icon:'🌿', label:'Acne Treatment',      skus:['G15P','G15','C01'] },
+  MIND:    { icon:'🧠', label:'Brain Performance',   skus:['G240','ESPRO3000','BK300'] },
+  SHIELD:  { icon:'🛡️', label:'Immune System',      skus:['BK300','MAX4800','ESPRO3000'] },
+};
+
+let _benefitKey = null;
+
+function filterBenefit(key){
+  _benefitKey = key && BENEFIT_MAP[key] ? key : null;
+  const b = BENEFIT_MAP[_benefitKey];
+  const banner = document.getElementById('benefit-banner');
+  if(b){
+    document.getElementById('bb-icon').textContent = b.icon;
+    document.getElementById('bb-title').textContent = 'Top 3 Devices for ' + b.label;
+    banner.classList.add('show');
+    // reset other filters so nothing conflicts
+    document.querySelectorAll('.f-coll,.f-goal').forEach(x=>x.checked = x.value==='all');
+    document.querySelector('.f-price[value="all"]').checked = true;
+    document.getElementById('sortSelect').value='featured';
+    document.getElementById('searchInput').value='';
+  } else {
+    banner.classList.remove('show');
+  }
+  render();
+  document.querySelector('.shop-layout').scrollIntoView({behavior:'smooth'});
+}
+
+function clearBenefitFilter(){
+  history.replaceState(null,'',window.location.pathname);
+  filterBenefit(null);
+}
+
 function filterCollection(coll){
+  _benefitKey = null;
+  document.getElementById('benefit-banner').classList.remove('show');
   document.querySelectorAll('.f-coll').forEach(b=>b.checked = (b.value===coll));
   render();
   document.querySelector('.shop-layout').scrollIntoView({behavior:'smooth'});
@@ -655,14 +712,20 @@ function render(){
   const sort = document.getElementById('sortSelect').value;
   const search = (document.getElementById('searchInput').value||'').trim().toLowerCase();
 
-  let list = PRODUCTS.filter(p=>{
-    const collMatch = p.coll!=='bundle' && (colls.includes('all') || colls.includes(p.coll));
-    const goalMatch = goals.includes('all') || goals.includes(p.goal);
-    let priceMatch = true;
-    if(priceRange!=='all'){ const [lo,hi]=priceRange.split('-').map(Number); priceMatch = p.price>=lo && p.price<=hi; }
-    const searchMatch = !search || p.name.toLowerCase().includes(search) || p.id.toLowerCase().includes(search) || p.waves.toLowerCase().includes(search);
-    return collMatch && goalMatch && priceMatch && searchMatch;
-  });
+  let list;
+  if(_benefitKey && BENEFIT_MAP[_benefitKey]){
+    const skus = BENEFIT_MAP[_benefitKey].skus;
+    list = skus.map(sku=>PRODUCTS.find(p=>p.id===sku)).filter(Boolean);
+  } else {
+    list = PRODUCTS.filter(p=>{
+      const collMatch = p.coll!=='bundle' && (colls.includes('all') || colls.includes(p.coll));
+      const goalMatch = goals.includes('all') || goals.includes(p.goal);
+      let priceMatch = true;
+      if(priceRange!=='all'){ const [lo,hi]=priceRange.split('-').map(Number); priceMatch = p.price>=lo && p.price<=hi; }
+      const searchMatch = !search || p.name.toLowerCase().includes(search) || p.id.toLowerCase().includes(search) || p.waves.toLowerCase().includes(search);
+      return collMatch && goalMatch && priceMatch && searchMatch;
+    });
+  }
 
   if(sort==='price-asc') list.sort((a,b)=>a.price-b.price);
   else if(sort==='price-desc') list.sort((a,b)=>b.price-a.price);
@@ -705,7 +768,9 @@ render();
 document.querySelectorAll('[data-cad]').forEach(el=>{ el.textContent = fmt(parseFloat(el.getAttribute('data-cad'))); });
 
 const _coll = new URLSearchParams(window.location.search).get('coll');
-if(_coll) filterCollection(_coll);
+const _hash = window.location.hash; // e.g. "#benefit=SKIN"
+if(_hash.startsWith('#benefit=')) filterBenefit(_hash.slice(9).toUpperCase());
+else if(_coll) filterCollection(_coll);
 </script>
 <script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});function positionMegaMenu(it){var m=it.querySelector('.mega-menu');if(!m)return;m.style.left='0px';var r=m.getBoundingClientRect();var shift=0;var overflowRight=r.right-(window.innerWidth-16);if(overflowRight>0)shift=-overflowRight;var newLeft=r.left+shift;if(newLeft<16)shift+=(16-newLeft);m.style.left=shift+'px'}document.querySelectorAll('.nav-item').forEach(function(it){let ct;it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');positionMegaMenu(it)});it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)})});document.addEventListener('click',function(e){var car=e.target.closest('.mega-caret');if(car){var it=car.closest('.nav-item');if(it&&it.classList.contains('open'))positionMegaMenu(it)}});window.addEventListener('resize',function(){document.querySelectorAll('.nav-item.open').forEach(positionMegaMenu)});</script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
