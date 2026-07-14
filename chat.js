@@ -123,7 +123,7 @@
 
     /* ── WHY BUY DIRECT / AMAZON ── */
     {k:['amazon','third.party','resell','authentic','counterfeit','fake','buy.*direct','where.*buy'],
-     r:'<b>🛒 Buy Direct from lufalight.com</b><br>Direct purchase guarantees:<br>&bull; Genuine, warranty-covered products<br>&bull; Full 1–2 year warranty protection<br>&bull; Direct manufacturer support<br>&bull; Certified authenticity<br>Amazon third-party sellers may carry grey-market units without warranty coverage.'},
+     r:'<b>🛒 Buy Direct from lufalight.com</b><br>Direct purchase guarantees:<br>&bull; Genuine, warranty-covered products<br>&bull; Full 1–3 year warranty protection<br>&bull; Direct manufacturer support<br>&bull; Certified authenticity<br>Amazon third-party sellers may carry grey-market units without warranty coverage.'},
 
     /* ── MADE IN CANADA ── */
     {k:['made in','canada.*made','canadian','where.*manufactur','origin'],
