@@ -329,6 +329,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
           <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
         </div>
       </div></div>
+    <a href="our-story.html">Our Story</a>
     <a href="index.html#science">Science</a>
     <a href="index.html#faq">FAQ</a>
     <a href="compare.html">⚖️ Compare</a>
@@ -364,6 +365,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <a href="shop-all.html?coll=accessory">&#128268; Accessories</a>
     </div>
     <div class="mob-section">Explore</div>
+    <a href="our-story.html" class="mob-link">&#128218; Our Story</a>
     <a href="quiz.html" class="mob-link">&#127919; Find My Device</a>
     <a href="blog.html" class="mob-link">&#128218; Health Blog</a>
     <a href="wholesale.html" class="mob-link">&#129309; Wholesale</a>
@@ -546,7 +548,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <a href="#" onclick="filterCollection('body-recovery')">Body &amp; Pain Recovery</a>
       <a href="#" onclick="filterCollection('specialty')">Specialty Devices</a>
     </div></div>
-    <div><div class="ft-col-t">Company</div><div class="ft-links"><a href="index.html#about">About Lufalight</a><a href="index.html#science">PBM Science</a><a href="blog.html">Health Blog</a><a href="wholesale.html">Wholesale Partners</a></div></div>
+    <div><div class="ft-col-t">Company</div><div class="ft-links"><a href="our-story.html">Our Story</a><a href="index.html#science">PBM Science</a><a href="blog.html">Health Blog</a><a href="wholesale.html">Wholesale Partners</a></div></div>
     <div><div class="ft-col-t">Support</div><div class="ft-links"><a href="mailto:lufalight@gmail.com">Contact Us</a><a href="index.html#faq">FAQ</a><a href="shipping-returns.html">Shipping &amp; Returns</a><a href="warranty.html">Warranty</a></div></div>
   </div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</div><div class="ft-leg"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
@@ -732,6 +734,33 @@ function render(){
   else if(sort==='name') list.sort((a,b)=>a.name.localeCompare(b.name));
 
   document.getElementById('resultCount').textContent = `${list.length} product${list.length!==1?'s':''}`;
+
+  // ItemList schema — update on every render so Google sees the current filtered set
+  (function(items){
+    var ld = document.getElementById('itemListLd');
+    if(!ld){ ld = document.createElement('script'); ld.type='application/ld+json'; ld.id='itemListLd'; document.head.appendChild(ld); }
+    ld.textContent = JSON.stringify({
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "name":"Lufalight Red Light Therapy Devices",
+      "url":"https://www.lufalight.com/shop-all.html",
+      "numberOfItems": items.length,
+      "itemListElement": items.map(function(p,i){
+        var price = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(p.price) : p.price;
+        return {
+          "@type":"ListItem",
+          "position": i+1,
+          "item":{
+            "@type":"Product",
+            "name": p.name.replace(/&amp;/g,'&'),
+            "url":"https://www.lufalight.com/product.html?sku="+p.id,
+            "image": p.img ? "https://www.lufalight.com/"+p.img : "",
+            "offers":{"@type":"Offer","priceCurrency":"CAD","price":String(price),"availability":"https://schema.org/InStock"}
+          }
+        };
+      })
+    });
+  })(list);
 
   const grid = document.getElementById('grid');
   if(!list.length){ grid.innerHTML = '<div class="no-results">No products match these filters.</div>'; return; }

@@ -18,6 +18,7 @@
 <meta name="twitter:description" id="twDesc" content="Lufalight red &amp; near-infrared light therapy device. Canada &amp; USA Delivery."/>
 <meta name="twitter:image" id="twImage" content="https://www.lufalight.com/images/products/EM04-9.png"/>
 <script type="application/ld+json" id="productLd"></script>
+<script type="application/ld+json" id="crumbLd"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -465,6 +466,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
           <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
         </div>
       </div></div>
+    <a href="our-story.html">Our Story</a>
     <a href="index.html#science">Science</a>
     <a href="index.html#faq">FAQ</a>
     <a href="compare.html">⚖️ Compare</a>
@@ -500,6 +502,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <a href="shop-all.html?coll=accessory">&#128268; Accessories</a>
     </div>
     <div class="mob-section">Explore</div>
+    <a href="our-story.html" class="mob-link">&#128218; Our Story</a>
     <a href="quiz.html" class="mob-link">&#127919; Find My Device</a>
     <a href="blog.html" class="mob-link">&#128218; Health Blog</a>
     <a href="wholesale.html" class="mob-link">&#129309; Wholesale</a>
@@ -665,7 +668,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <a href="shop-all.html">Body &amp; Pain Recovery</a>
       <a href="shop-all.html">Specialty Devices</a>
     </div></div>
-    <div><div class="ft-col-t">Company</div><div class="ft-links"><a href="index.html#about">About Lufalight</a><a href="index.html#science">PBM Science</a><a href="blog.html">Health Blog</a><a href="wholesale.html">Wholesale Partners</a></div></div>
+    <div><div class="ft-col-t">Company</div><div class="ft-links"><a href="our-story.html">Our Story</a><a href="index.html#science">PBM Science</a><a href="blog.html">Health Blog</a><a href="wholesale.html">Wholesale Partners</a></div></div>
     <div><div class="ft-col-t">Support</div><div class="ft-links"><a href="mailto:lufalight@gmail.com">Contact Us</a><a href="index.html#faq">FAQ</a><a href="shipping-returns.html">Shipping &amp; Returns</a><a href="warranty.html">Warranty</a></div></div>
   </div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</div><div class="ft-leg"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
@@ -1313,11 +1316,38 @@ function init(){
   document.getElementById('twImage').setAttribute('content', pageImg);
 
   const rd = RATING_DATA[product.id] || {r:4.8,n:50};
+  const offerPrice = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(product.price) : product.price;
+  const isFinalSale = CATEGORY_B_SKUS.has(product.id);
+  const offerObj = {
+    "@type":"Offer",
+    "url":pageUrl,
+    "priceCurrency":"CAD",
+    "price":String(offerPrice),
+    "priceValidUntil":"2026-12-31",
+    "availability":"https://schema.org/InStock",
+    "seller":{"@type":"Organization","name":"Lufalight","url":"https://www.lufalight.com"},
+    "shippingDetails":{
+      "@type":"OfferShippingDetails",
+      "shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"CAD"},
+      "shippingDestination":[{"@type":"DefinedRegion","addressCountry":"CA"},{"@type":"DefinedRegion","addressCountry":"US"}],
+      "deliveryTime":{"@type":"ShippingDeliveryTime","transitTime":{"@type":"QuantitativeValue","minValue":5,"maxValue":14,"unitCode":"DAY"}}
+    }
+  };
+  if(!isFinalSale){
+    offerObj["hasMerchantReturnPolicy"] = {
+      "@type":"MerchantReturnPolicy",
+      "applicableCountry":["CA","US"],
+      "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays":returnDays,
+      "returnMethod":"https://schema.org/ReturnByMail",
+      "returnFees":"https://schema.org/FreeReturn"
+    };
+  }
   document.getElementById('productLd').textContent = JSON.stringify({
     "@context":"https://schema.org",
     "@type":"Product",
     "name":pName,
-    "image":pageImg,
+    "image":[pageImg],
     "description":pageDesc,
     "sku":product.id,
     "brand":{"@type":"Brand","name":"Lufalight"},
@@ -1328,13 +1358,16 @@ function init(){
       "bestRating":"5",
       "worstRating":"1"
     },
-    "offers":{
-      "@type":"Offer",
-      "url":pageUrl,
-      "priceCurrency":"CAD",
-      "price":product.price,
-      "availability":"https://schema.org/InStock"
-    }
+    "offers":offerObj
+  });
+  document.getElementById('crumbLd').textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.lufalight.com/"},
+      {"@type":"ListItem","position":2,"name":"Shop All","item":"https://www.lufalight.com/shop-all.html"},
+      {"@type":"ListItem","position":3,"name":pName,"item":pageUrl}
+    ]
   });
 
   // breadcrumb

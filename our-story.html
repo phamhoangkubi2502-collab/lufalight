@@ -1,22 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Shipping &amp; Returns | Lufalight</title>
-<meta name="description" content="Lufalight shipping policy, 60-day returns on eligible devices, and manufacturer's warranty for Canada and the USA."/>
-<link rel="canonical" href="https://www.lufalight.com/shipping-returns.html"/>
+<title>Our Story — From Pain to Purpose | Lufalight</title>
+<meta name="description" content="The real story behind Lufalight: how one founder's chronic pain, burnout &amp; sleepless nights led him to red light therapy — and why he built a device for everyone else."/>
+<link rel="canonical" href="https://www.lufalight.com/our-story.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Lufalight"/>
-<meta property="og:title" content="Shipping &amp; Returns | Lufalight"/>
-<meta property="og:description" content="Lufalight shipping policy, 60-day returns on eligible devices, and manufacturer's warranty for Canada and the USA."/>
-<meta property="og:image" content="https://www.lufalight.com/images/products/G15P-1.jpg"/>
-<meta property="og:url" content="https://www.lufalight.com/shipping-returns.html"/>
+<meta property="og:title" content="Our Story — From Pain to Purpose | Lufalight"/>
+<meta property="og:description" content="The real story behind Lufalight: how one founder's chronic pain, burnout &amp; sleepless nights led him to red light therapy — and why he built a device for everyone else."/>
+<meta property="og:image" content="https://www.lufalight.com/images/story/hugh-with-device.jpg"/>
+<meta property="og:url" content="https://www.lufalight.com/our-story.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Shipping &amp; Returns | Lufalight"/>
-<meta name="twitter:description" content="Lufalight shipping policy, 60-day returns on eligible devices, and manufacturer's warranty for Canada and the USA."/>
-<meta name="twitter:image" content="https://www.lufalight.com/images/products/G15P-1.jpg"/>
+<meta name="twitter:title" content="Our Story — From Pain to Purpose | Lufalight"/>
+<meta name="twitter:description" content="The real story behind Lufalight: how one founder's chronic pain, burnout &amp; sleepless nights led him to red light therapy — and why he built a device for everyone else."/>
+<meta name="twitter:image" content="https://www.lufalight.com/images/story/hugh-with-device.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -27,7 +27,7 @@
 html{scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:var(--bd);overflow-x:hidden;line-height:1.6}
 a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:var(--bd)}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
-.wrap{max-width:1220px;margin:0 auto;padding:0 28px}.sec{padding:56px 0 96px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}.sec{padding:96px 0}
 .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
 .hl{height:2px;width:44px;background:linear-gradient(90deg,var(--red),var(--redl));margin-bottom:20px}
 h2{font-family:var(--hd);font-weight:800;font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.1;letter-spacing:-.025em}
@@ -38,7 +38,9 @@ h3{font-family:var(--hd);font-weight:700;font-size:1.2rem}
 .btn-r:hover{background:var(--redl);transform:translateY(-2px)}
 .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s;white-space:nowrap;cursor:pointer}
 .btn-g:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}.rv.on{opacity:1;transform:none}
 @keyframes spin{to{transform:rotate(360deg)}}
+@keyframes halo{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.12);opacity:1}}
 /* TOPBAR + NAV (shared) */
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 #topbar span{margin:0 14px}
@@ -87,34 +89,87 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .mob-cta-shop:hover{background:var(--redd)}
 .mob-cta-quiz{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white)}
 .mob-cta-quiz:hover{background:rgba(10,10,15,.12)}
-.cart-btn{position:relative;background:rgba(10,10,15,.06);border:1px solid var(--line);color:var(--white);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border-radius:6px;display:flex;align-items:center;gap:8px}
-.cart-btn:hover{border-color:var(--red)}
-.cart-count{background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:50px;padding:1px 6px;min-width:16px;text-align:center}
-/* PAGE HEADER */
-.pg-head{padding:48px 0 0;text-align:center}
-.pg-head h1{font-family:var(--hd);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em;overflow-wrap:break-word}
-.crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.crumb a{color:var(--muted)}.crumb a:hover{color:var(--redl)}
-/* LEGAL CONTENT */
-.legal{max-width:760px;margin:48px auto 0}
-.legal h3{margin:32px 0 12px;color:var(--white)}
-.legal h3:first-child{margin-top:0}
-.legal p,.legal li{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:10px}
-.legal ul{padding-left:22px;margin-bottom:14px}
-.legal .upd{font-size:12px;color:var(--muted);margin-bottom:32px}
-.legal strong{color:var(--white)}
-.legal table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:13px}
-.legal th,.legal td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);color:var(--muted);line-height:1.6}
-.legal th{color:var(--white);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.legal ol{padding-left:22px;margin-bottom:14px}
-.legal ol li{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:8px}
-.policy-hl{display:grid;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:38px}
-.policy-hl-row{display:flex;gap:14px;align-items:flex-start}
-.policy-hl-ic{font-size:22px;line-height:1.25;flex-shrink:0}
-.policy-hl-row strong{color:var(--white);font-size:14px}
-.policy-hl-row span.txt{font-size:13px;color:var(--muted);line-height:1.6;display:block;margin-top:2px}
-.policy-note{background:rgba(232,45,45,.06);border:1px solid rgba(232,45,45,.18);border-radius:9px;padding:13px 16px;font-size:13px;color:var(--muted);line-height:1.75;margin:16px 0}
-.policy-note strong{color:var(--white)}
+.theme-toggle{background:none;border:1px solid var(--line);color:var(--white);width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-size:15px;cursor:pointer;margin-left:8px;flex-shrink:0;transition:border-color .2s,background .2s}.theme-toggle:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+.nav-item{position:relative}
+.mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
+.mega-caret:hover{color:var(--white)}
+.nav-item.open .mega-menu{display:grid}
+.mega-menu{position:absolute;top:calc(100% + 14px);left:0;transform:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:none;grid-template-columns:repeat(5,168px);gap:20px;box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:300}
+.nav-item:hover .mega-menu{display:grid}
+.mega-h{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:10px;white-space:nowrap}
+.mega-menu a{display:block;font-size:12px;color:var(--muted);padding:4px 0;text-transform:none;letter-spacing:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-menu a:hover{color:var(--white)}
+.mega-all{color:var(--red)!important;font-weight:700;margin-top:6px}
+@media(max-width:1100px){.mega-menu{display:none!important}}
+
+/* STORY HERO */
+#story-hero{padding:64px 0 20px;position:relative;overflow:hidden}
+#story-hero::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.1),transparent 70%);pointer-events:none}
+.story-crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;position:relative;z-index:1}
+.story-crumb a{color:var(--muted)}.story-crumb a:hover{color:var(--redl)}
+.story-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:1}
+@media(max-width:900px){.story-hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}}
+.story-h1{font-family:var(--hd);font-weight:900;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:18px}
+.story-hero-desc{color:var(--muted);font-size:1.02rem;max-width:520px;line-height:1.8}
+@media(max-width:900px){.story-hero-desc{margin:0 auto}}
+.founder-frame{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#1c1c22,#0a0a0d)}
+.founder-frame::before{content:"";position:absolute;top:50%;left:50%;width:130%;height:130%;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.28),transparent 65%);animation:halo 4.5s ease-in-out infinite;transform:translate(-50%,-50%);pointer-events:none}
+.founder-frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.founder-cap{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(12,6,6,.85);backdrop-filter:blur(14px);border:1px solid rgba(232,45,45,.24);border-radius:12px;padding:14px 16px;z-index:2}
+.founder-cap-n{font-family:var(--hd);font-size:.95rem;font-weight:800;color:#fff}
+.founder-cap-r{font-size:11px;color:rgba(255,255,255,.72);margin-top:2px}
+
+/* NARRATIVE */
+#narrative{background:var(--bg2)}
+.narr-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+@media(max-width:900px){.narr-grid{grid-template-columns:1fr}}
+.narr-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4}
+.narr-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.narr-text p{color:var(--muted);font-size:.98rem;line-height:1.85;margin-bottom:16px}
+.narr-pull{font-family:var(--hd);font-style:italic;font-weight:700;font-size:1.4rem;color:var(--redl);line-height:1.4;margin:24px 0;padding-left:18px;border-left:3px solid var(--red)}
+
+/* BENEFIT GRID */
+#benefits{background:var(--bg)}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media(max-width:760px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ben-grid{grid-template-columns:1fr}}
+.ben-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;transition:border-color .25s,transform .25s}
+.ben-card:hover{border-color:rgba(232,45,45,.4);transform:translateY(-4px)}
+.ben-ic{font-size:26px;margin-bottom:10px;display:inline-block}
+.ben-t{font-family:var(--hd);font-weight:800;font-size:1.02rem;margin-bottom:5px}
+.ben-p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* MISSION / CERTS */
+#mission{background:var(--bg2)}
+.mission-text{max-width:760px;margin:0 auto;text-align:center}
+.mission-text p{color:var(--muted);font-size:1rem;line-height:1.85;margin-bottom:16px}
+.cert-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:44px;max-width:900px;margin-left:auto;margin-right:auto}
+@media(max-width:760px){.cert-strip{grid-template-columns:repeat(2,1fr)}}
+.cert-i{background:var(--card);padding:26px 14px;text-align:center}
+.cert-ic{font-size:24px;margin-bottom:8px;display:inline-block}
+.cert-t{font-size:12.5px;font-weight:700;margin-bottom:3px}
+.cert-s{font-size:10.5px;color:var(--muted)}
+
+/* QUOTE */
+#story-quote{background:var(--bg);padding:80px 0}
+.quote-card{max-width:720px;margin:0 auto;text-align:center;position:relative}
+.quote-mark{font-family:var(--hd);font-size:5rem;color:rgba(232,45,45,.18);line-height:1;margin-bottom:-14px}
+.quote-txt{font-family:var(--hd);font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.3;letter-spacing:-.01em}
+.quote-auth{margin-top:16px;font-size:12.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* TAGLINE BANNER */
+#tagline-band{background:linear-gradient(135deg,#1c1c22,#0a0a0d);padding:70px 0;text-align:center;position:relative;overflow:hidden}
+#tagline-band::before{content:"";position:absolute;top:50%;left:50%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.16),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.tagline-txt{position:relative;z-index:1;font-family:var(--hd);font-weight:900;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:.04em;color:#fff}
+.tagline-txt span{color:var(--redl)}
+
+/* CTA */
+#cta{background:linear-gradient(135deg,#FFF6F6,#FFFFFF 60%,#F5F7FF);padding:96px 0;text-align:center;position:relative;overflow:hidden}
+:root[data-theme="dark"] #cta{background:linear-gradient(135deg,#1A0F0F,#0B0B0F 60%,#0D0D14)}
+#cta::before{content:"";position:absolute;top:-280px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.09),transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+
 /* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24px}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
@@ -136,7 +191,6 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .ft-bottom{padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .ft-copy{font-size:11px;color:var(--muted)}.ft-leg{display:flex;gap:18px}
 .ft-leg a{font-size:11px;color:var(--muted)}.ft-leg a:hover{color:var(--white)}
-.disclaimer{font-size:10px;color:var(--text3);max-width:820px;margin:12px auto 0;line-height:1.6;text-align:center}
 .disc-acc{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);max-width:820px}
 .disc-acc summary{display:flex;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .disc-acc summary::-webkit-details-marker{display:none}
@@ -144,27 +198,13 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .disc-acc[open] summary::after{content:'\2212'}
 .disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:left}
 
-
-.nav-item{position:relative}
-
-.mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
-.mega-caret:hover{color:var(--white)}
-.nav-item.open .mega-menu{display:grid}
-.mega-menu{position:absolute;top:calc(100% + 14px);left:0;transform:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:none;grid-template-columns:repeat(5,168px);gap:20px;box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:300}
-.nav-item:hover .mega-menu{display:grid}
-.mega-h{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:10px;white-space:nowrap}
-.mega-menu a{display:block;font-size:12px;color:var(--muted);padding:4px 0;text-transform:none;letter-spacing:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mega-menu a:hover{color:var(--white)}
-.mega-all{color:var(--red)!important;font-weight:700;margin-top:6px}
-@media(max-width:1100px){.mega-menu{display:none!important}}
-
 /* Back to top */
 #back-to-top{position:fixed;bottom:28px;right:22px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--white);font-size:16px;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s,background .2s}
 #back-to-top.show{opacity:1;transform:none;pointer-events:auto}
 #back-to-top:hover{border-color:var(--red);background:rgba(232,45,45,.12);transform:translateY(-3px)}
 #back-to-top:active{transform:scale(.92)}
 
-/* ══ CHAT WIDGET ══ */
+/* CHAT WIDGET */
 #chat-fab{position:fixed;bottom:90px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
 #chat-fab:hover{background:var(--redl);transform:translateY(-3px)}
 #chat-fab:active{transform:scale(.92)}
@@ -175,12 +215,6 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .chat-head-t{font-size:13.5px;font-weight:800;color:#fff}
 .chat-head-s{font-size:11px;color:rgba(255,255,255,.85)}
 .chat-close{margin-left:auto;background:none;border:none;color:#fff;font-size:18px;cursor:pointer;line-height:1;padding:4px}
-.chat-body{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
-.chat-msg{background:rgba(10,10,15,.04);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--muted);line-height:1.6}
-.chat-links{display:flex;flex-direction:column;gap:6px;margin-top:4px}
-.chat-link{display:flex;align-items:center;gap:8px;background:rgba(10,10,15,.03);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12.5px;font-weight:600;color:var(--white);transition:all .2s}
-.chat-link:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
-@media(max-width:480px){#chat-fab{right:14px;bottom:210px}#chat-panel{right:14px;bottom:270px}}
 #chat-panel{height:420px}
 .chat-msgs{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
 .msg-row-bot{display:flex;justify-content:flex-start}
@@ -197,7 +231,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .chat-inp::placeholder{color:var(--muted)}
 .chat-send{background:var(--red);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;display:grid;place-items:center;transition:background .2s;flex-shrink:0}
 .chat-send:hover{background:var(--redl)}
-.theme-toggle{background:none;border:1px solid var(--line);color:var(--white);width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-size:15px;cursor:pointer;margin-left:8px;flex-shrink:0;transition:border-color .2s,background .2s}.theme-toggle:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+@media(max-width:480px){#chat-fab{right:14px;bottom:210px}#chat-panel{right:14px;bottom:270px}}
 </style>
 </head>
 <body>
@@ -238,12 +272,12 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
           <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
         </div>
       </div></div>
-    <a href="our-story.html">Our Story</a>
+    <a href="our-story.html" class="on">Our Story</a>
     <a href="index.html#science">Science</a>
     <a href="index.html#faq">FAQ</a>
     <a href="quiz.html">🎯 Find My Device</a>
   </div>
-  
+
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   <button class="nav-ham" onclick="document.getElementById('mob-overlay').classList.add('open')" aria-label="Open menu">&#9776;</button>
 </nav>
@@ -281,91 +315,96 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     </div>
   </div>
 </div>
-<section class="pg-head wrap">
-  <div class="crumb"><a href="index.html">Home</a> / Shipping &amp; Returns</div>
-  <h1>Shipping &amp; Returns</h1>
-</section>
-<section class="sec"><div class="wrap">
-<div class="legal">
-  <p class="upd">Last updated: July 2026</p>
 
-  <div class="policy-hl">
-    <div class="policy-hl-row"><span class="policy-hl-ic">🛡️</span><div><strong>60-Day Return Window — Category A Devices</strong><span class="txt">Panels and full-body devices may be returned within 60 days of delivery. A 15% restocking fee applies to approved returns.</span></div></div>
-    <div class="policy-hl-row"><span class="policy-hl-ic">🚚</span><div><strong>Free Shipping on Canadian Orders CA$300+</strong><span class="txt">Orders under CA$300 and all U.S. orders: shipping calculated at checkout. Tracking provided on every shipment.</span></div></div>
-    <div class="policy-hl-row"><span class="policy-hl-ic">🔧</span><div><strong>1–2 Year Manufacturer's Warranty</strong><span class="txt">All products covered against manufacturing defects — no registration required. Coverage begins on your purchase date.</span></div></div>
+<section id="story-hero" class="wrap">
+  <div class="story-crumb"><a href="index.html">Home</a> / Our Story</div>
+  <div class="story-hero-grid">
+    <div class="rv">
+      <span class="tag">The Story Behind Lufalight</span>
+      <h1 class="story-h1">Founded in <span class="red">Pain.</span><br/>Purpose. <span class="red">Light.</span></h1>
+      <p class="story-hero-desc">For over twenty years, our founder lived the life the world called success — boardrooms, international travel, long hours, endless pressure. Behind it came chronic pain, poor sleep, inflammation, and the quiet toll no résumé shows. This is the story of how that changed.</p>
+    </div>
+    <div class="rv">
+      <div class="founder-frame">
+        <img src="images/story/hugh-founder.jpg" alt="Hugh, founder of Lufalight" loading="eager"/>
+        <div class="founder-cap">
+          <div class="founder-cap-n">Hugh</div>
+          <div class="founder-cap-r">Founder, Lufalight</div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <h3>Shipping</h3>
-  <p>All orders are processed within <strong>1–3 business days</strong> (Monday–Friday, excluding holidays). Once your order ships, you will receive a confirmation email with tracking information.</p>
-  <table>
-    <tr><th>Destination</th><th>Shipping Cost</th><th>Estimated Delivery</th></tr>
-    <tr><td><strong>Canada — orders CA$300+</strong></td><td>Free</td><td>3–7 business days</td></tr>
-    <tr><td><strong>Canada — orders under CA$300</strong></td><td>Calculated at checkout</td><td>3–7 business days</td></tr>
-    <tr><td><strong>United States (contiguous)</strong></td><td>Calculated at checkout</td><td>5–10 business days</td></tr>
-  </table>
-  <p>Risk of loss and title pass to you upon delivery of the item to the carrier. LUFALIGHT is not responsible for delays caused by the carrier, incorrect shipping addresses provided by the customer, or customs processing on future international orders.</p>
-
-  <h3>Return &amp; Refund Policy</h3>
-  <p>Because our products fall into two categories — general-use devices and personal-contact wellness items — two different return paths apply.</p>
-
-  <h3>Category A — Eligible for 60-Day Return</h3>
-  <p><strong>Applies to:</strong> RecoverPro40B, GlowMini60Pro, GlowE300, Solaris9 BK300 Executive Edition, LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000, and any other full-body panel not listed under Category B.</p>
-  <ul>
-    <li><strong>60 days</strong> from the date of delivery to request a return.</li>
-    <li><strong>Like-new condition required:</strong> unmarked, fully functional, with all original accessories, cables, manuals, and packaging.</li>
-    <li>A <strong>15% restocking fee</strong> applies to approved returns, deducted from the refund. This fee covers inspection, sanitization, and refurbishment so the returned unit meets the same standard as new.</li>
-    <li><strong>Return shipping is the customer's responsibility.</strong> Use a trackable, insured method — LUFALIGHT is not responsible for items lost or damaged in transit back to us.</li>
-    <li><strong>RMA required.</strong> A Return Merchandise Authorization must be issued before shipping any item back; returns received without a prior RMA will not be accepted.</li>
-    <li>Refunds are issued to the original payment method within <strong>5–7 business days</strong> of the return passing inspection.</li>
-  </ul>
-
-  <h3>Category B — Final Sale Once Opened</h3>
-  <p><strong>Hygiene &amp; personal-contact items. Applies to:</strong> GlowEM04, BeauMask, BeauMask + BeauNeck-Décolleté, VitalityPro PEMF Mat, LUMENOVA PRO, AuraDome, and ProStand.</p>
-  <div class="policy-note"><strong>Due to direct skin/scalp contact</strong> and the nature of these products, items in this category cannot be returned once the box has been opened — no exceptions for change of mind. <strong>This does not affect your warranty:</strong> a defective unit in this category is still fully covered under the manufacturer's warranty below.</div>
-
-  <h3>Order Cancellations</h3>
-  <p>Orders may be cancelled free of charge <strong>within 24 hours of purchase</strong>, provided the order has not yet shipped. Contact us immediately at <a href="mailto:lufalight@gmail.com" style="color:var(--red)">lufalight@gmail.com</a> with your order number.</p>
-
-  <h3>Exchanges</h3>
-  <p>We do not process direct exchanges. To exchange a product, return your eligible item under the Category A process above and place a new order for the item you'd like instead.</p>
-
-  <h3>Damaged or Defective on Arrival</h3>
-  <p>If your item arrives damaged or with a manufacturing defect, contact us <strong>within 7 days of delivery</strong> at <a href="mailto:lufalight@gmail.com" style="color:var(--red)">lufalight@gmail.com</a> with photos or video of the issue. We will arrange a <strong>free replacement or repair</strong> at no cost to you — no restocking fee applies to verified defects.</p>
-
-  <h3>How to Start a Return</h3>
-  <ol>
-    <li>Email <a href="mailto:lufalight@gmail.com" style="color:var(--red)">lufalight@gmail.com</a> with your order number and reason for return.</li>
-    <li>We'll confirm eligibility and issue your <strong>RMA (Return Merchandise Authorization)</strong> with return shipping instructions.</li>
-    <li>Ship the item back within <strong>14 days</strong> of receiving your RMA using a trackable, insured carrier.</li>
-    <li>Once received and inspected, we'll process your refund within <strong>5–7 business days</strong>.</li>
-  </ol>
-  <p>Questions about a specific product's return eligibility? Contact us at <a href="mailto:lufalight@gmail.com" style="color:var(--red)">lufalight@gmail.com</a> — we're happy to help before you buy.</p>
-
-  <h3>Warranty</h3>
-  <p>All LUFALIGHT products carry a manufacturer's warranty against defects in materials or workmanship under normal use. No registration required — coverage begins automatically on the purchase date. Warranty length varies by product:</p>
-  <table>
-    <tr><th>Product</th><th>Warranty</th></tr>
-    <tr><td>GlowEM04</td><td>1 Year</td></tr>
-    <tr><td>RecoverPro40B</td><td>1 Year</td></tr>
-    <tr><td>BeauMask</td><td>1 Year</td></tr>
-    <tr><td>GlowMini60Pro</td><td>1 Year</td></tr>
-    <tr><td>BeauMask + BeauNeck-Décolleté</td><td>1 Year</td></tr>
-    <tr><td>GlowE300</td><td>2 Years</td></tr>
-    <tr><td>LUMENOVA PRO</td><td>1 Year</td></tr>
-    <tr><td>AuraDome</td><td>1 Year</td></tr>
-    <tr><td>Solaris9 BK300 Executive Edition</td><td>2 Years</td></tr>
-    <tr><td>LUFAMAX 1800</td><td>2 Years</td></tr>
-    <tr><td>LUFAMAX 4800</td><td>2 Years</td></tr>
-    <tr><td>LUFAESPRO 3000</td><td>2 Years</td></tr>
-    <tr><td>VitalityPro PEMF Mat</td><td>1 Year</td></tr>
-    <tr><td>ProStand</td><td>1 Year</td></tr>
-  </table>
-  <p>The warranty does not cover damage from misuse, unauthorized modification, or normal wear and tear. To file a warranty claim, contact us with your order number and a description (plus photos, if applicable) of the issue.</p>
-
-  <h3>Questions?</h3>
-  <p>Our support team is happy to help with any shipping, return, or warranty question. Reach us at <a href="mailto:lufalight@gmail.com" style="color:var(--red)">lufalight@gmail.com</a>, Monday–Friday.</p>
-</div>
+<section id="narrative" class="sec"><div class="wrap">
+  <div class="narr-grid">
+    <div class="narr-photo rv">
+      <img src="images/story/hugh-with-device.jpg" alt="Hugh using a Lufalight red light therapy mask at home" loading="lazy"/>
+    </div>
+    <div class="narr-text rv">
+      <span class="tag">The Turning Point</span>
+      <div class="hl"></div>
+      <p>By his late-40s, Hugh no longer felt like himself. He was beginning to get hooked onto sleeping pills and painkillers. Rather than accepting this as inevitable, he searched for a science-backed solution to reclaim his health — not a quick fix, something real, backed by evidence. That search led him to red and near-infrared light therapy.</p>
+      <p>He approached it the way he approached everything in business: rigorously. He studied the research, tested devices, tracked his own results week over week.</p>
+      <div class="narr-pull">What happened next changed everything.</div>
+      <p>The pain that had shadowed his mornings began to lift. Sleep returned — deep, restorative sleep. His energy came back. His skin began to change. The transformation wasn't just physical — it was a reclaiming of self. And Hugh thought: if this worked for me, it has to reach more people.</p>
+    </div>
+  </div>
 </div></section>
+
+<section id="benefits" class="sec"><div class="wrap">
+  <div style="text-align:center">
+    <span class="tag">Where He Is Today</span>
+    <h2>Now in his mid-50s, Hugh is experiencing</h2>
+  </div>
+  <div class="ben-grid">
+    <div class="ben-card rv"><span class="ben-ic">💪</span><div class="ben-t">Better Recovery</div><div class="ben-p">Faster muscle &amp; tissue repair after long days on his feet.</div></div>
+    <div class="ben-card rv"><span class="ben-ic">🩹</span><div class="ben-t">Reduced Pain</div><div class="ben-p">The chronic aches that once ran his mornings no longer do.</div></div>
+    <div class="ben-card rv"><span class="ben-ic">😴</span><div class="ben-t">Improved Sleep</div><div class="ben-p">Deeper, more restorative rest — without relying on pills.</div></div>
+    <div class="ben-card rv"><span class="ben-ic">⚡</span><div class="ben-t">More Energy</div><div class="ben-p">Consistent energy through the day instead of the mid-afternoon crash.</div></div>
+    <div class="ben-card rv"><span class="ben-ic">✨</span><div class="ben-t">Healthier Skin</div><div class="ben-p">Visible collagen renewal and a healthier, more even complexion.</div></div>
+    <div class="ben-card rv"><span class="ben-ic">🙌</span><div class="ben-t">Renewed Confidence</div><div class="ben-p">The quiet confidence that comes from feeling like himself again.</div></div>
+  </div>
+</div></section>
+
+<section id="mission" class="sec"><div class="wrap">
+  <div class="mission-text rv">
+    <span class="tag">Why Lufalight Exists</span>
+    <h2>Not a marketing brief. A journey.</h2>
+    <p style="margin-top:20px">LUFALIGHT was born from that journey — from lived pain, real healing, and an unshakeable belief in what light, the right wavelengths applied with precision and regularity, can do for the human body.</p>
+    <p>Hugh set out sourcing the most advanced manufacturing partners, demanding the highest certifications from every one of them, and spent the next five years in prototyping and testing until the science and the product were both undeniable.</p>
+    <p>Today, LUFALIGHT exists to give families, friends, and customers the same springboard Hugh found: a comprehensive, integrated line of science-backed light therapy devices designed to support recovery, healthy aging, and long-term vitality.</p>
+  </div>
+  <div class="cert-strip">
+    <div class="cert-i rv"><span class="cert-ic">🏭</span><div class="cert-t">FDA-Registered</div><div class="cert-s">Manufacturing Facility</div></div>
+    <div class="cert-i rv"><span class="cert-ic">📋</span><div class="cert-t">ISO 13485</div><div class="cert-s">Quality Management</div></div>
+    <div class="cert-i rv"><span class="cert-ic">🩺</span><div class="cert-t">IEC 60601</div><div class="cert-s">Medical Safety Standard</div></div>
+    <div class="cert-i rv"><span class="cert-ic">🔬</span><div class="cert-t">5 Years</div><div class="cert-s">Prototyping &amp; Testing</div></div>
+  </div>
+</div></section>
+
+<section id="story-quote"><div class="wrap">
+  <div class="quote-card rv">
+    <div class="quote-mark">"</div>
+    <div class="quote-txt">The first wealth is health.</div>
+    <div class="quote-auth">— Ralph Waldo Emerson</div>
+  </div>
+</div></section>
+
+<div id="tagline-band">
+  <div class="tagline-txt">Revive. <span>Restore.</span> Radiate.</div>
+</div>
+
+<section id="cta"><div class="wrap cta-inner rv">
+  <span class="tag">Your Story Starts Here</span>
+  <h2>Ready to begin your own recovery?</h2>
+  <p class="sub" style="margin:14px auto 0">Explore the same FDA-registered devices Hugh built for himself — now available for yours.</p>
+  <div class="cta-btns">
+    <a href="shop-all.html" class="btn-r">Shop All Devices →</a>
+    <a href="quiz.html" class="btn-g">🎯 Find My Device</a>
+  </div>
+</div></section>
+
 <footer><div class="wrap">
   <div class="ft-grid">
     <div>
@@ -395,6 +434,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     <p>&copy; 2026 LufaLight. All rights reserved.</p>
   </details>
 </div></footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+
 <script src="theme.js"></script>
 <script src="currency.js"></script>
 <script src="chat.js"></script>
@@ -418,5 +460,13 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 })();
 </script>
 <script>document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))}});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});function positionMegaMenu(it){var m=it.querySelector('.mega-menu');if(!m)return;m.style.left='0px';var r=m.getBoundingClientRect();var shift=0;var overflowRight=r.right-(window.innerWidth-16);if(overflowRight>0)shift=-overflowRight;var newLeft=r.left+shift;if(newLeft<16)shift+=(16-newLeft);m.style.left=shift+'px'}document.querySelectorAll('.nav-item').forEach(function(it){let ct;it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');positionMegaMenu(it)});it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)})});document.addEventListener('click',function(e){var car=e.target.closest('.mega-caret');if(car){var it=car.closest('.nav-item');if(it&&it.classList.contains('open'))positionMegaMenu(it)}});window.addEventListener('resize',function(){document.querySelectorAll('.nav-item.open').forEach(positionMegaMenu)});</script>
-<script src="inquiry-cart.js"></script></body>
+<script src="inquiry-cart.js"></script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
 </html>
