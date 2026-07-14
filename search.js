@@ -30,7 +30,6 @@
     { id:'MRS45', name:'ProStand', price:725, img:'images/products/MRS45-1.jpg', coll:'accessory',
       tags:['stand','accessory','mount','adjustable'] }
   ];
-  var DEFAULT_IDS = ['BK300','G240','G15P','MINI60PRO'];
   var byId = {};
   PRODUCTS.forEach(function(p){ byId[p.id] = p; });
 
@@ -75,7 +74,9 @@
   .sr-img img{width:100%;height:100%;object-fit:contain;padding:10px}
   .sr-body{padding:12px 14px}
   .sr-name{font-family:var(--hd);font-weight:700;font-size:.88rem;line-height:1.3;margin-bottom:4px}
+  .sr-price-row{display:flex;align-items:baseline;gap:6px}
   .sr-price{font-size:12.5px;font-weight:800;color:var(--gold)}
+  .sr-price-was{font-size:11px;font-weight:600;color:var(--muted);text-decoration:line-through}
   #search-empty{color:var(--muted);font-size:13px;padding:12px 2px}
   `;
   var styleEl = document.createElement('style');
@@ -107,6 +108,7 @@
   var input = document.getElementById('search-input');
 
   function fmt(n){ return window.lufaFmt ? window.lufaFmt(n) : ('$' + n.toLocaleString('en-CA') + ' CAD'); }
+  function priceOf(p){ return window.salePrice ? window.salePrice(p.price) : p.price; }
 
   function render(list){
     if(!list.length){
@@ -115,10 +117,14 @@
       return;
     }
     empty.style.display = 'none';
+    var onSale = window.LUFA_PROMO && window.LUFA_PROMO.active;
     grid.innerHTML = list.map(function(p){
+      var priceHtml = onSale
+        ? '<span class="sr-price-was">' + fmt(p.price) + '</span> <span class="sr-price">' + fmt(priceOf(p)) + '</span>'
+        : '<span class="sr-price">' + fmt(p.price) + '</span>';
       return '<div class="sr-card" data-sku="' + p.id + '">' +
         '<div class="sr-img"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy"/></div>' +
-        '<div class="sr-body"><div class="sr-name">' + p.name + '</div><div class="sr-price">' + fmt(p.price) + '</div></div>' +
+        '<div class="sr-body"><div class="sr-name">' + p.name + '</div><div class="sr-price-row">' + priceHtml + '</div></div>' +
         '</div>';
     }).join('');
   }
@@ -131,9 +137,8 @@
   function renderCurrent(){
     var q = input.value.trim().toLowerCase();
     if(!q){
-      /* no search text: "All" shows the 4 featured picks, a category chip shows everything in it */
-      if(activeFilter === 'all'){ render(DEFAULT_IDS.map(function(id){ return byId[id]; }).filter(Boolean)); }
-      else { render(byFilter(PRODUCTS)); }
+      /* no search text: show every product in the active category ("All" = everything) */
+      render(byFilter(PRODUCTS));
       return;
     }
     var words = q.split(/\s+/).filter(Boolean);

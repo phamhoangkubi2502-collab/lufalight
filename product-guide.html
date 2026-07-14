@@ -258,11 +258,11 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 
 /* ── CHAT ── */
-#chat-fab{position:fixed;bottom:90px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
+#chat-fab{position:fixed;bottom:28px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
 #chat-fab:hover{background:var(--redl);transform:translateY(-3px)}
-#chat-panel{position:fixed;bottom:160px;right:22px;width:300px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:901;display:none;flex-direction:column;overflow:hidden;height:420px}
+#chat-panel{position:fixed;bottom:98px;right:22px;width:300px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:901;display:none;flex-direction:column;overflow:hidden;max-height:min(420px,calc(100vh - 180px));height:auto}
 #chat-panel.open{display:flex}
-@media(max-width:480px){#chat-fab{right:14px;bottom:210px}#chat-panel{right:14px;bottom:270px}}
+@media(max-width:480px){#chat-fab{right:14px;bottom:28px}#chat-panel{right:14px;bottom:98px}}
 .chat-head{background:var(--red);padding:16px 18px;display:flex;align-items:center;gap:10px}
 .chat-head-ic{font-size:22px}.chat-head-t{font-size:13.5px;font-weight:800;color:#fff}
 .chat-head-s{font-size:11px;color:rgba(255,255,255,.85)}
@@ -280,7 +280,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .chat-send:hover{background:var(--redl)}
 
 /* ── BACK TO TOP ── */
-#back-to-top{position:fixed;bottom:28px;right:22px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--white);font-size:16px;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s}
+#back-to-top{position:fixed;bottom:90px;right:22px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--white);font-size:16px;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s}
 #back-to-top.show{opacity:1;transform:none;pointer-events:auto}
 #back-to-top:hover{border-color:var(--red);background:rgba(232,45,45,.12);transform:translateY(-3px)}
 
@@ -309,7 +309,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
         <div class="mega-col"><div class="mega-h">Accessories</div><a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a><a href="shop-all.html?coll=accessory" class="mega-all">View All →</a></div>
       </div></div>
     <a href="our-story.html">Our Story</a>
-    <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a></div></div>
+    <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a><a href="blog.html">📰 Health Blog</a></div></div>
     <div class="nav-item"><a href="quiz.html">🎯 Find My Device</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it2=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it2)o.classList.remove('open')});it2.classList.toggle('open')" role="button" aria-label="Toggle Find My Device menu">&#9662;</span><div class="mega-menu mini-menu"><a href="quiz.html">🎯 Take the Quiz</a><a href="compare.html">⚖️ Compare Devices</a></div></div>
     <a href="product-guide.html" class="on">📖 Product Guide</a>
   </div>
