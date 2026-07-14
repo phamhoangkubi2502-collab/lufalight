@@ -73,6 +73,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .mega-caret:hover{color:var(--white)}
 .nav-item.open .mega-menu{display:grid}
 .mega-menu{position:absolute;top:calc(100% + 14px);left:0;transform:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:none;grid-template-columns:repeat(5,168px);gap:20px;box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:300}
+.mega-menu.mini-menu{grid-template-columns:1fr;min-width:200px;padding:14px}
+.mini-menu a{padding:9px 8px!important}
 .nav-item:hover .mega-menu{display:grid}
 .mega-h{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:10px;white-space:nowrap}
 .mega-menu a{display:block;font-size:12px;color:var(--muted);padding:4px 0;text-transform:none;letter-spacing:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -181,9 +183,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
         </div>
       </div></div>
     <a href="our-story.html">Our Story</a>
-    <a href="index.html#science">Science</a>
-    <a href="compare.html" class="on">⚖️ Compare</a>
-    <a href="quiz.html">🎯 Find My Device</a>
+    <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a></div></div>
+    <div class="nav-item"><a href="quiz.html">🎯 Find My Device</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it2=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it2)o.classList.remove('open')});it2.classList.toggle('open')" role="button" aria-label="Toggle Find My Device menu">&#9662;</span><div class="mega-menu mini-menu"><a href="quiz.html">🎯 Take the Quiz</a><a href="compare.html" class="on">⚖️ Compare Devices</a></div></div>
     <a href="#" class="cart-btn" onclick="event.preventDefault();openLead()">📩 Consult</a>
   </div>
   <button class="nav-cta" onclick="openLead()">📩 Consult</button>
@@ -376,6 +377,7 @@ populateSelects();
 renderCompare();
 </script>
 <script src="theme.js"></script>
+<script src="search.js"></script>
 <script src="chat.js"></script>
 <script src="promo.js"></script>
 <script src="lead-form.js"></script>
