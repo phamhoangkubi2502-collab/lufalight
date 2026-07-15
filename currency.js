@@ -83,8 +83,8 @@
     .cy-opt.active{color:var(--red);font-weight:700}
     .cy-opt .cy-name{color:var(--muted);font-size:11px}
     @media(max-width:860px){#currency-btn{height:34px;padding:0 8px;font-size:11px}nav{gap:6px}}
-    @media(max-width:480px){nav{gap:3px;padding-left:12px!important;padding-right:12px!important}.nav-sun{width:28px!important;height:28px!important}.nav-wm{font-size:1.05rem!important}.nav-tl{font-size:.44rem!important}#currency-toggle{margin-left:2px}#currency-btn{height:30px;padding:0 5px;font-size:10px;gap:3px}#currency-btn .cy-car{font-size:7px}}
-    @media(max-width:360px){#currency-btn{width:30px;padding:0;justify-content:center}#currency-btn .cy-code,#currency-btn .cy-car{display:none}#currency-btn .cy-sym{display:inline}}
+    @media(max-width:480px){nav{gap:3px;padding-left:12px!important;padding-right:12px!important}.nav-sun{width:28px!important;height:28px!important}.nav-wm{font-size:1.05rem!important}.nav-tl{font-size:.44rem!important;letter-spacing:.08em!important}#currency-toggle{margin-left:2px}#currency-btn{height:30px;padding:0 5px;font-size:10px;gap:3px}#currency-btn .cy-car{font-size:7px}}
+    @media(max-width:480px){#currency-btn{width:30px;padding:0;justify-content:center}#currency-btn .cy-code,#currency-btn .cy-car{display:none}#currency-btn .cy-sym{display:inline}}
     `;
     document.head.appendChild(css);
 
