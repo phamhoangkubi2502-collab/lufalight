@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Lufalight"/>
 <meta property="og:title" content="Ambassador Program — Win the Audi R8 | Lufalight"/>
 <meta property="og:description" content="Top 3 Ambassadors in sales by December 31, 2027 win an all-expenses-paid Vancouver experience and drive the Boss' Audi R8 V10."/>
-<meta property="og:image" content="https://www.lufalight.com/images/products/BK300-1.jpg"/>
+<meta property="og:image" content="https://www.lufalight.com/images/ambassador/audi-r8-flyer.jpg"/>
 <meta property="og:url" content="https://www.lufalight.com/ambassador.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Ambassador Program — Win the Audi R8 | Lufalight"/>
@@ -316,6 +316,53 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .result-next ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .result-next li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:9px;line-height:1.55}
 .result-next li::before{content:'→';color:var(--red);font-weight:700;flex-shrink:0}
+
+/* ── FEATURED AMBASSADORS ── */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+@media(max-width:860px){.feat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.feat-grid{grid-template-columns:1fr}}
+.feat-card{background:var(--card);border:1px dashed var(--line);border-radius:var(--r);padding:32px 24px;text-align:center;position:relative;overflow:hidden;transition:border-color .2s,transform .22s}
+.feat-card:hover{border-color:rgba(232,45,45,.35);transform:translateY(-4px)}
+.feat-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(232,45,45,.12),rgba(168,118,30,.12));border:2px dashed var(--line);margin:0 auto 16px;display:grid;place-items:center;font-size:32px}
+.feat-name{font-family:"Inter Tight",sans-serif;font-size:1rem;font-weight:800;color:var(--white);margin-bottom:4px}
+.feat-role{font-size:11.5px;color:var(--muted);margin-bottom:12px}
+.feat-tier-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 12px;border-radius:20px;margin-bottom:14px}
+.feat-tier-badge.dia{background:linear-gradient(135deg,rgba(212,162,78,.2),rgba(168,118,30,.1));border:1px solid rgba(168,118,30,.4);color:#D4A24E}
+.feat-cta-txt{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.feat-apply-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--red);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:gap .2s}
+.feat-apply-link:hover{gap:10px}
+.feat-card-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(232,45,45,.015) 10px,rgba(232,45,45,.015) 20px)}
+
+/* ── FAQ ── */
+.amb-faq{max-width:760px;margin:0 auto;margin-top:48px}
+.faq-item{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px;transition:border-color .2s}
+.faq-item.open{border-color:rgba(232,45,45,.35)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;cursor:pointer;user-select:none;list-style:none;font-size:14px;font-weight:700;color:var(--white);line-height:1.45;background:var(--card);transition:background .15s}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{background:rgba(232,45,45,.04)}
+.faq-q .faq-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;font-weight:400;color:var(--muted);transition:all .25s;line-height:1}
+.faq-item.open .faq-q .faq-icon{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;padding:0 22px 18px;display:none}
+.faq-a a{color:var(--redl);text-decoration:underline}
+.faq-item.open .faq-a{display:block;animation:fpIn .22s ease}
+
+/* ── STICKY APPLY BAR ── */
+#mob-apply-bar{
+  display:block;
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:linear-gradient(135deg,#D4A24E 0%,#A8761E 100%);
+  padding:14px 20px;
+  box-shadow:0 -4px 24px rgba(0,0,0,.35);
+  transform:translateY(100%);
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+#mob-apply-bar.visible{transform:translateY(0)}
+#mob-apply-bar .bar-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:640px;margin:0 auto}
+#mob-apply-bar .bar-text{flex:1;min-width:0}
+#mob-apply-bar .bar-t{font-family:"Inter Tight",sans-serif;font-size:13px;font-weight:800;color:#fff;line-height:1.2}
+#mob-apply-bar .bar-s{font-size:11px;color:rgba(255,255,255,.78);margin-top:2px}
+#mob-apply-bar .bar-btn{flex-shrink:0;background:#fff;color:#A8761E;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:11px 20px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .15s}
+#mob-apply-bar .bar-btn:hover{background:rgba(255,255,255,.9)}
 </style>
 </head>
 <body>
@@ -462,6 +509,10 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     <a href="images/ambassador/audi-r8-flyer.jpg" target="_blank" rel="noopener" style="display:inline-block;max-width:380px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
       <img src="images/ambassador/audi-r8-flyer.jpg" alt="LufaLight Ambassador Program — Earn the Keys to the Boss' Audi R8" style="width:100%;display:block" loading="lazy"/>
     </a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+      <a href="images/ambassador/audi-r8-flyer.jpg" download="LufaLight-Ambassador-Flyer.jpg" class="btn-r">⬇️ Download Image</a>
+      <a href="images/ambassador/audi-r8-flyer.pdf" download="LufaLight-Ambassador-Flyer.pdf" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s">⬇️ Download PDF</a>
+    </div>
   </div>
 </section>
 
@@ -526,6 +577,48 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   </div>
 </section>
 
+<!-- ══ FEATURED AMBASSADORS ══ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="tag">Featured Ambassadors</span>
+      <div class="hl" style="margin:10px auto 14px"></div>
+      <h2>Our <span class="red">Champions</span></h2>
+      <p class="sub" style="margin:12px auto 0;text-align:center">The program is live and growing. Apply now — be one of our first featured ambassadors on this page.</p>
+    </div>
+    <div class="feat-grid">
+
+      <div class="feat-card feat-card-placeholder">
+        <div class="feat-avatar">🌟</div>
+        <div class="feat-name">Your Name Here</div>
+        <div class="feat-role">Health Influencer · Canada</div>
+        <span class="feat-tier-badge dia">💎 Diamond</span>
+        <p class="feat-cta-txt">Apply today and become one of the first Lufalight ambassadors featured on this page — your photo, your story, your audience.</p>
+        <a href="#apply-section" class="feat-apply-link" onclick="event.preventDefault();document.getElementById('apply-section').scrollIntoView({behavior:'smooth'})">Apply Now →</a>
+      </div>
+
+      <div class="feat-card feat-card-placeholder">
+        <div class="feat-avatar">💪</div>
+        <div class="feat-name">Could Be You</div>
+        <div class="feat-role">Physiotherapist · USA</div>
+        <span class="feat-tier-badge dia" style="background:rgba(255,200,0,.1);border-color:rgba(255,200,0,.3);color:#E0B030">🥇 Gold</span>
+        <p class="feat-cta-txt">Top ambassadors get featured here with their social links, professional bio, and referral achievements — in front of thousands of visitors.</p>
+        <a href="#apply-section" class="feat-apply-link" onclick="event.preventDefault();document.getElementById('apply-section').scrollIntoView({behavior:'smooth'})">Apply Now →</a>
+      </div>
+
+      <div class="feat-card feat-card-placeholder">
+        <div class="feat-avatar">✨</div>
+        <div class="feat-name">First Mover Wins</div>
+        <div class="feat-role">Wellness Coach · UK</div>
+        <span class="feat-tier-badge dia" style="background:rgba(180,180,180,.1);border-color:rgba(180,180,180,.3);color:#AAA">🥈 Silver</span>
+        <p class="feat-cta-txt">Early ambassadors build their reputation with us from day one — and are first in line for the Audi R8 competition leaderboard.</p>
+        <a href="#apply-section" class="feat-apply-link" onclick="event.preventDefault();document.getElementById('apply-section').scrollIntoView({behavior:'smooth'})">Apply Now →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ HOW IT WORKS ══ -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
@@ -561,6 +654,77 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
         <div class="hiw-t">Official Welcome</div>
         <div class="hiw-d">Our team reviews your profile and reaches out within 2–5 business days with your welcome package.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="tag">FAQ</span>
+      <div class="hl" style="margin:10px auto 14px"></div>
+      <h2>Common <span class="red">Questions</span></h2>
+      <p class="sub" style="margin:12px auto 0;text-align:center">Everything you need to know before applying.</p>
+    </div>
+    <div class="amb-faq">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How does referral tracking work?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Each approved ambassador receives a unique referral link and promo code. Every order placed through your link is automatically attributed to your account. You can monitor your clicks, conversions, and commission balance at any time through your personal ambassador dashboard.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          When and how are commissions paid out?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Commissions are calculated monthly and paid on the 15th of the following month via Interac e-Transfer (Canada) or PayPal (international). There is a 30-day order hold before commissions are released — this aligns with our 30-day return window. Minimum payout threshold is CA$50.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I apply if I live outside Canada or the USA?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes — the Ambassador Program is open internationally. Our LPQS scoring system already accounts for 30+ countries. Commissions are paid in CAD via PayPal for international ambassadors. Note that the Audi R8 prize experience takes place in Vancouver, Canada; travel logistics will be arranged for international winners.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What happens if my score is below 50 (Waitlist)?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">A Waitlist result means your profile is not quite ready yet — typically due to audience size or engagement rate. You are welcome to grow your platform and re-apply after 6 months. Our team will send you specific feedback on which scoring categories to focus on. Many of our strongest ambassadors started on the Waitlist.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I move up to a higher tier after joining?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Absolutely. All ambassador tiers are reviewed annually. If your platform has grown significantly — more followers, higher engagement, or stronger sales performance — you can request a re-evaluation at any time. Tier upgrades are automatic for top performers at each annual review.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I be both a Wholesale Partner and an Ambassador?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes, the two programs are separate and compatible. Wholesale Partners purchase inventory at volume pricing for resale, while Ambassadors earn referral commissions on sales through their unique link — no inventory required. Many clinic owners and practitioners participate in both. Apply to whichever fits your business model, or both.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is there a minimum sales requirement to stay active?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">There is no hard monthly minimum. However, ambassador accounts with zero activity for 6 consecutive months may be moved to inactive status and their referral link deactivated. Gold and Diamond tiers have an optional quarterly sales target that unlocks bonus incentives — hitting these is encouraged but never mandatory.</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -894,6 +1058,17 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   <details class="disc-acc"><summary>Disclaimer</summary><p>LufaLight® red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness, temporary muscle relaxation, and temporary relief of minor muscle and joint discomfort. These products are not intended to diagnose, treat, cure, or prevent any disease. Results may vary. Not a medical device. The ambassador program grand prize (Vancouver experience and Audi R8 drive) is offered to the top 3 ambassadors by total confirmed sales by December 31, 2027. Full terms and conditions available on request.</p></details>
 </div></footer>
 
+<!-- Sticky mobile apply bar -->
+<div id="mob-apply-bar">
+  <div class="bar-inner">
+    <div class="bar-text">
+      <div class="bar-t">🏆 Join the Ambassador Program</div>
+      <div class="bar-s">Free application — instant LPQS score</div>
+    </div>
+    <button class="bar-btn" onclick="document.getElementById('apply-section').scrollIntoView({behavior:'smooth'});document.getElementById('mob-apply-bar').classList.remove('visible')">Apply Now →</button>
+  </div>
+</div>
+
 <button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <button id="chat-fab" onclick="document.getElementById('chat-panel').classList.toggle('open')" aria-label="Open chat">💬</button>
 <div id="chat-panel">
@@ -926,8 +1101,26 @@ document.querySelectorAll('.nav-item').forEach(function(it){
   it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open');},300);});
 });
 
+/* ── FAQ ACCORDION ── */
+function toggleFaq(el){
+  var item=el.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open')});
+  if(!isOpen)item.classList.add('open');
+}
+
 /* ── BACK TO TOP ── */
-window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('show',window.scrollY>400);});
+window.addEventListener('scroll',function(){
+  document.getElementById('back-to-top').classList.toggle('show',window.scrollY>400);
+  /* Sticky apply bar: show after hero, hide once user reaches the form */
+  var bar=document.getElementById('mob-apply-bar');
+  var hero=document.querySelector('.amb-hero');
+  var form=document.getElementById('apply-section');
+  if(!bar||!hero||!form)return;
+  var heroBottom=hero.getBoundingClientRect().bottom;
+  var formTop=form.getBoundingClientRect().top;
+  bar.classList.toggle('visible', heroBottom<0 && formTop>80);
+});
 
 /* ── CHAT (stub) ── */
 function sendChat(){
