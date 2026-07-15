@@ -38,6 +38,10 @@
   /* Secondary CTA — lead-capture (pre-sale questions) */
   .lufa-interest-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#14151A;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:13px 23px;border-radius:7px;border:1.5px solid rgba(20,21,26,.18);cursor:pointer;transition:all .2s;white-space:nowrap}
   .lufa-interest-btn:hover{border-color:#E82D2D;background:rgba(232,45,45,.06)}
+  /* Floating vertical Consult tab — left edge, frees up the nav for other icons */
+  #consult-tab{position:fixed;top:55%;left:0;transform:translateY(-50%);z-index:950;background:#14151A;color:#fff;border:none;writing-mode:vertical-rl;text-orientation:mixed;padding:16px 10px;border-radius:0 10px 10px 0;font-family:"Inter Tight",sans-serif;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;gap:6px;transition:padding .2s,background .2s}
+  #consult-tab:hover{background:#E82D2D;padding-left:14px}
+  @media(max-width:860px){#consult-tab{display:none}}
   `;
   var styleEl = document.createElement('style');
   styleEl.textContent = css;
@@ -86,6 +90,13 @@
     </div>
   `;
   document.body.appendChild(ov);
+
+  var tab = document.createElement('button');
+  tab.id = 'consult-tab';
+  tab.setAttribute('aria-label', 'Open free consultation form');
+  tab.innerHTML = '📩 Free Consult';
+  tab.onclick = function(){ openLead(); };
+  document.body.appendChild(tab);
 
   function openLead(productName){
     var pill = document.getElementById('leadProductPill');

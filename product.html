@@ -61,8 +61,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
 .nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
 .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
-@media(max-width:960px){nav{padding:0 18px}.nav-links{gap:12px}.cart-btn{display:none}}
-.nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+@media(max-width:960px){nav{padding:0 18px}.nav-links{gap:12px}}
+.nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s;white-space:nowrap}
 .nav-links a:hover,.nav-links a.on{color:var(--white)}
 .nav-links a.on{color:var(--redl)}
 .nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:6px;border:none;transition:background .2s;cursor:pointer}
@@ -74,6 +74,18 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 @media(max-width:860px){nav{padding:0 16px;gap:8px}.nav-sun{width:34px;height:34px}.nav-wm{font-size:1.25rem}.nav-tl{font-size:.5rem}.nav-cta{padding:8px 12px;font-size:10.5px;white-space:nowrap}.theme-toggle{width:34px!important;height:34px!important;font-size:13px!important;margin-left:2px!important}.nav-ham{width:34px!important;height:34px!important;font-size:15px!important;margin-left:4px!important}}
 @media(max-width:480px){.nav-cta{display:none}}
 @media(max-width:360px){nav{padding:0 10px;gap:4px}.nav-sun{width:28px;height:28px}.nav-wm{font-size:1.05rem}.theme-toggle,.nav-ham{width:30px!important;height:30px!important;margin-left:0!important}}
+/* mid-width squeeze: keep nav-links on one line without pushing the icon cluster off-screen */
+@media(min-width:861px) and (max-width:1240px){
+  nav{padding:0 12px;gap:5px}
+  .nav-tl{display:none}
+  .nav-wm{font-size:1.1rem}
+  .nav-links{gap:6px}
+  .nav-links a{font-size:9.5px;letter-spacing:0}
+  .nav-sun{width:30px;height:30px}
+  .mega-caret{width:12px;margin-left:0}
+  .theme-toggle,#search-toggle,#lc-cart-btn,.nav-ham{width:34px!important;height:34px!important;font-size:13px!important;margin-left:2px!important;margin-right:2px!important}
+  #currency-btn{height:34px!important;padding:0 8px!important}
+}
 #mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:none;justify-content:flex-end}
 #mob-overlay.open{display:flex}
 #mob-drawer{width:min(320px,90vw);background:var(--bg2);border-left:1px solid var(--line);height:100%;overflow-y:auto;display:flex;flex-direction:column;padding:22px 20px;animation:mobSlideIn .22s ease}
@@ -94,8 +106,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 .mob-cta-shop:hover{background:var(--redd)}
 .mob-cta-quiz{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white)}
 .mob-cta-quiz:hover{background:rgba(10,10,15,.12)}
-.cart-btn{position:relative;background:rgba(10,10,15,.06);border:1px solid var(--line);color:var(--white);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border-radius:6px;display:flex;align-items:center;gap:8px}
-.cart-btn:hover{border-color:var(--red)}
+
+
 .cart-count{background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:50px;padding:1px 6px;min-width:16px;text-align:center}
 
 /* BREADCRUMB */
@@ -231,10 +243,13 @@ nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:b
 
 /* BUNDLE COMPONENTS */
 .bundle-comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
-.bundle-comp-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;text-align:center}
+.bundle-comp-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;text-align:center;cursor:pointer;transition:border-color .2s,transform .2s}
+.bundle-comp-card:hover{border-color:var(--red);transform:translateY(-2px)}
 .bundle-comp-card img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:8px;background:#fff}
 .bundle-comp-name{font-size:13.5px;font-weight:700}
 .bundle-comp-price{font-size:12.5px;color:var(--muted)}
+.bundle-comp-strike{text-decoration:line-through;opacity:.6}
+.bundle-comp-sale{color:var(--red);font-weight:700}
 .bundle-comp-card .btn-g{font-size:11.5px;padding:10px 14px;width:100%}
 
 /* CERTIFICATIONS */
@@ -330,7 +345,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 .disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:left}
 
 
-.nav-item{position:relative}
+.nav-item{position:relative;display:flex;align-items:center;white-space:nowrap}
 
 .mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
 .mega-caret:hover{color:var(--white)}
@@ -485,7 +500,6 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     <a href="our-story.html">Our Story</a>
     <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a><a href="blog.html">📰 Health Blog</a></div></div>
     <div class="nav-item"><a href="quiz.html">🎯 Find My Device</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it2=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it2)o.classList.remove('open')});it2.classList.toggle('open')" role="button" aria-label="Toggle Find My Device menu">&#9662;</span><div class="mega-menu mini-menu"><a href="quiz.html">🎯 Take the Quiz</a><a href="compare.html">⚖️ Compare Devices</a><a href="index.html#goals">🧭 Shop by Goal</a></div></div><a href="ambassador.html">🏆 Ambassadors</a>
-    <a href="#" class="cart-btn" onclick="event.preventDefault();openLead()">📩 Consult</a>
   </div>
   <button class="nav-cta" onclick="openLead()">📩 Consult</button>
 
@@ -1514,13 +1528,19 @@ function init(){
   const bcSection = document.getElementById('bundleComponentsSection');
   if(detail.components && detail.components.length){
     const comps = detail.components.map(sku=>PRODUCTS.find(p=>p.id===sku)).filter(Boolean);
-    document.getElementById('bundleComponentsGrid').innerHTML = comps.map(cp=>`
-      <div class="bundle-comp-card">
+    const promoOn = window.LUFA_PROMO && window.LUFA_PROMO.active;
+    document.getElementById('bundleComponentsGrid').innerHTML = comps.map(cp=>{
+      const priceHtml = promoOn
+        ? `<span class="bundle-comp-strike">${fmt(cp.price)}</span> <span class="bundle-comp-sale">${fmt(window.salePrice(cp.price))}</span>`
+        : `${fmt(cp.price)}`;
+      return `
+      <div class="bundle-comp-card" onclick="window.location.href='product.html#${cp.id}'" role="link" tabindex="0" onkeypress="if(event.key==='Enter')window.location.href='product.html#${cp.id}'">
         <img src="${cp.img}" alt="${plainName(cp.name)}" loading="lazy">
         <div class="bundle-comp-name">${plainName(cp.name)}</div>
-        <div class="bundle-comp-price">${fmt(cp.price)} separately</div>
-        <button class="btn-g" onclick="window.location.href='product.html#${cp.id}'">View Product →</button>
-      </div>`).join('');
+        <div class="bundle-comp-price">${priceHtml} separately</div>
+        <button class="btn-g" onclick="event.stopPropagation();window.location.href='product.html#${cp.id}'">View Product →</button>
+      </div>`;
+    }).join('');
     bcSection.style.display = comps.length ? '' : 'none';
   } else {
     bcSection.style.display = 'none';
