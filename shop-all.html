@@ -577,8 +577,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 <script src="currency.js"></script>
 <script>
 /* promo.js loads after this block — define the config early so card rendering can read it */
-if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
-if(!window.salePrice) window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.15, bundlePct: 0.20, label: 'Big Summer Deal' };
+if(!window.salePrice) window.salePrice = function(p, coll){ if(!window.LUFA_PROMO.active) return p; var pct = coll==='bundle' ? window.LUFA_PROMO.bundlePct : window.LUFA_PROMO.pct; return Math.round(p * (1 - pct)); };
 /* ── PRODUCT CATALOG — all 14 SKUs from LUFALIGHT_Catalog_v12.pdf, RETAIL prices (CAD) ── */
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
 const PRODUCTS = [
@@ -758,7 +758,7 @@ function render(){
       "url":"https://www.lufalight.com/shop-all.html",
       "numberOfItems": items.length,
       "itemListElement": items.map(function(p,i){
-        var price = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(p.price) : p.price;
+        var price = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(p.price, p.coll) : p.price;
         return {
           "@type":"ListItem",
           "position": i+1,
@@ -789,7 +789,7 @@ function render(){
       <div class="pc-body">
         <div class="pc-line">${p.goal}</div>
         <div class="pc-name">${p.name}</div>
-        <div class="pc-price">${(window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span class="orig">${fmt(p.price)}</span>${fmt(window.salePrice(p.price))}<span class="pc-save-badge">-20%</span>`:fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:'')}</div>
+        <div class="pc-price">${(window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span class="orig">${fmt(p.price)}</span>${fmt(window.salePrice(p.price, p.coll))}<span class="pc-save-badge">-${Math.round((p.coll==='bundle'?window.LUFA_PROMO.bundlePct:window.LUFA_PROMO.pct)*100)}%</span>`:fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:'')}</div>
         <div class="pc-waves">${p.waves}</div>
         <div class="pc-act">
           

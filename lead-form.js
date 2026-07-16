@@ -55,7 +55,7 @@
       <div class="lead-ic">☀️</div>
       <h3>Interested in this product?</h3>
       <p class="lead-sub">Leave your info and the <b>Lufalight</b> team will reach out with a free consultation within 24 hours — no payment required.</p>
-      <div id="leadPromoNote" style="display:none;background:rgba(232,45,45,.08);border:1.5px solid rgba(232,45,45,.28);border-radius:9px;padding:10px 14px;margin-bottom:12px;font-size:12.5px;font-weight:700;color:#C91F1F;text-align:center">🔥 Big Summer Deal — your quote will include 20% off</div>
+      <div id="leadPromoNote" style="display:none;background:rgba(232,45,45,.08);border:1.5px solid rgba(232,45,45,.28);border-radius:9px;padding:10px 14px;margin-bottom:12px;font-size:12.5px;font-weight:700;color:#C91F1F;text-align:center">🔥 Big Summer Deal — your quote will include 15% off (20% off bundles)</div>
       <div id="leadProductPill" class="lead-product-pill" style="display:none">🛍️ <span id="leadProductName"></span></div>
       <div id="leadError">⚠️ Something went wrong. Please try again or email us directly at lufalight@gmail.com</div>
       <form id="leadForm">

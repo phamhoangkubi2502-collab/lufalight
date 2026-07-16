@@ -108,7 +108,7 @@
   var input = document.getElementById('search-input');
 
   function fmt(n){ return window.lufaFmt ? window.lufaFmt(n) : ('$' + n.toLocaleString('en-CA') + ' CAD'); }
-  function priceOf(p){ return window.salePrice ? window.salePrice(p.price) : p.price; }
+  function priceOf(p){ return window.salePrice ? window.salePrice(p.price, p.coll) : p.price; }
 
   function render(list){
     if(!list.length){

@@ -1,6 +1,7 @@
-﻿/* ── SUMMER PROMO CONFIG — set before any page JS runs card rendering ── */
-window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
-window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+﻿/* ── SUMMER PROMO CONFIG — set before any page JS runs card rendering ──
+   pct applies sitewide; bundlePct overrides it for coll==='bundle' products. */
+window.LUFA_PROMO = { active: true, pct: 0.15, bundlePct: 0.20, label: 'Big Summer Deal' };
+window.salePrice = function(p, coll){ if(!window.LUFA_PROMO.active) return p; var pct = coll==='bundle' ? window.LUFA_PROMO.bundlePct : window.LUFA_PROMO.pct; return Math.round(p * (1 - pct)); };
 
 /* ── LUFALIGHT PROMO WIDGETS ── WIP Notice + Discount Popup + Exit Intent Popup ──
    Timing/frequency notes (see conversation for full reasoning):
@@ -69,9 +70,9 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
     ov.innerHTML = '<div id="ei-card">'+
       '<button id="ei-close" aria-label="Close">✕</button>'+
       '<div class="ei-ic">🎁</div>'+
-      '<h3>Wait — Don\'t Miss 20% Off!</h3>'+
-      '<p>Get <b>20% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
-      '<div id="ei-code"><span>WELCOME20</span><button id="ei-copy">Copy</button></div>'+
+      '<h3>Wait — Don\'t Miss 15% Off!</h3>'+
+      '<p>Get <b>15% off</b> your first Lufalight order. Use this code at checkout — limited time only.</p>'+
+      '<div id="ei-code"><span>WELCOME15</span><button id="ei-copy">Copy</button></div>'+
       '<div id="ei-timer">Expires in <span id="ei-mm">09</span>:<span id="ei-ss">59</span></div>'+
       '<a id="ei-cta" href="shop-all.html">Shop Now &rarr;</a>'+
       '</div>';
@@ -99,7 +100,7 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
       },1000);
       document.getElementById('ei-close').onclick = function(){ ov.classList.remove('open'); clearInterval(iv); };
       document.getElementById('ei-copy').onclick = function(){
-        navigator.clipboard && navigator.clipboard.writeText('WELCOME20');
+        navigator.clipboard && navigator.clipboard.writeText('WELCOME15');
         var b = document.getElementById('ei-copy'); b.textContent='Copied!'; setTimeout(function(){b.textContent='Copy';},1500);
       };
       ov.addEventListener('click', function(e){ if(e.target===ov) ov.classList.remove('open'); });
@@ -141,8 +142,8 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
       '<div id="so-card">' +
       '<button id="so-close" aria-label="Close">✕</button>' +
       '<div id="so-badge">Big Summer Discount</div>' +
-      '<h2><span>20% Off</span></h2>' +
-      '<p>Our full range of red light therapy devices. Limited-time offer starts today!</p>' +
+      '<h2><span>15% Off</span></h2>' +
+      '<p>Our full range of red light therapy devices — 20% off bundles. Limited-time offer starts today!</p>' +
       '<a id="so-cta" href="shop-all.html">Shop All Deals &rarr;</a>' +
       '<button id="so-skip">Maybe later</button>' +
       '</div>';
@@ -159,8 +160,8 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
   }
 
   /* ── SUMMER PROMO CONFIG ── toggle active:false to turn off sitewide */
-  window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
-  window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+  window.LUFA_PROMO = { active: true, pct: 0.15, bundlePct: 0.20, label: 'Big Summer Deal' };
+  window.salePrice = function(p, coll){ if(!window.LUFA_PROMO.active) return p; var pct = coll==='bundle' ? window.LUFA_PROMO.bundlePct : window.LUFA_PROMO.pct; return Math.round(p * (1 - pct)); };
 
   /* ── inject promo into existing topbar ── */
   function setupPromoBar(){
@@ -169,9 +170,9 @@ window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p *
     if(!tb) return;
     tb.style.background = '#E82D2D';
     tb.innerHTML =
-      '<span>🔥 <strong>Big Summer Deal</strong> — 20% Off All Devices</span>' +
+      '<span>🔥 <strong>Big Summer Deal</strong> — 15% Off All Devices (20% Off Bundles)</span>' +
       '<span class="tb-sep">|</span>' +
-      '<span>Add to inquiry list &amp; receive your <strong>20%-off quote</strong> within 24 h</span>' +
+      '<span>Add to inquiry list &amp; receive your <strong>discounted quote</strong> within 24 h</span>' +
       '<span class="tb-sep">|</span>' +
       '<span>🚚 Free Shipping on Canada orders CA$300+</span>';
   }

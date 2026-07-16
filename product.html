@@ -738,8 +738,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
 
 <script src="currency.js"></script>
 <script>
-if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.20, label: 'Big Summer Deal' };
-if(!window.salePrice) window.salePrice = function(p){ return window.LUFA_PROMO.active ? Math.round(p * (1 - window.LUFA_PROMO.pct)) : p; };
+if(!window.LUFA_PROMO) window.LUFA_PROMO = { active: true, pct: 0.15, bundlePct: 0.20, label: 'Big Summer Deal' };
+if(!window.salePrice) window.salePrice = function(p, coll){ if(!window.LUFA_PROMO.active) return p; var pct = coll==='bundle' ? window.LUFA_PROMO.bundlePct : window.LUFA_PROMO.pct; return Math.round(p * (1 - pct)); };
 /* ── PRODUCT BROCHURES — per-SKU PDF brochure path ── */
 const BROCHURES = {
   G240:      'brochures/G240-brochure.pdf',
@@ -1366,7 +1366,7 @@ function init(){
   document.getElementById('twImage').setAttribute('content', pageImg);
 
   const rd = RATING_DATA[product.id] || {r:4.8,n:50};
-  const offerPrice = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(product.price) : product.price;
+  const offerPrice = (window.LUFA_PROMO && window.LUFA_PROMO.active) ? window.salePrice(product.price, product.coll) : product.price;
   const isFinalSale = CATEGORY_B_SKUS.has(product.id);
   const offerObj = {
     "@type":"Offer",
@@ -1443,12 +1443,13 @@ function init(){
   const origEl = document.getElementById('pdpOriginalPrice');
   const saveEl = document.getElementById('pdpSaveBadge');
   if (window.LUFA_PROMO && window.LUFA_PROMO.active) {
-    const sale = window.salePrice(product.price);
+    const sale = window.salePrice(product.price, product.coll);
+    const pctUsed = product.coll==='bundle' ? window.LUFA_PROMO.bundlePct : window.LUFA_PROMO.pct;
     document.getElementById('pdpPrice').textContent = fmt(sale);
     document.getElementById('pdpCurLabel').textContent = (window.lufaCurrency || 'CAD') + ' · Sale Price';
     origEl.textContent = fmt(product.price);
     origEl.style.display = '';
-    saveEl.textContent = `Save ${fmt(product.price - sale)} (20% Off)`;
+    saveEl.textContent = `Save ${fmt(product.price - sale)} (${Math.round(pctUsed*100)}% Off)`;
     saveEl.style.display = '';
   } else if (product.originalPrice && product.originalPrice > product.price) {
     document.getElementById('pdpPrice').textContent = fmt(product.price);
@@ -1531,7 +1532,7 @@ function init(){
     const promoOn = window.LUFA_PROMO && window.LUFA_PROMO.active;
     document.getElementById('bundleComponentsGrid').innerHTML = comps.map(cp=>{
       const priceHtml = promoOn
-        ? `<span class="bundle-comp-strike">${fmt(cp.price)}</span> <span class="bundle-comp-sale">${fmt(window.salePrice(cp.price))}</span>`
+        ? `<span class="bundle-comp-strike">${fmt(cp.price)}</span> <span class="bundle-comp-sale">${fmt(window.salePrice(cp.price, cp.coll))}</span>`
         : `${fmt(cp.price)}`;
       return `
       <div class="bundle-comp-card" onclick="window.location.href='product.html#${cp.id}'" role="link" tabindex="0" onkeypress="if(event.key==='Enter')window.location.href='product.html#${cp.id}'">
