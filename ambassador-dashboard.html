@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ambassador Dashboard Preview | Lufalight</title>
+<meta name="description" content="See what's inside your Lufalight Ambassador account — referral links, commission tracking, marketing assets, and tier progress. A preview for current and prospective ambassadors."/>
+<link rel="canonical" href="https://www.lufalight.com/ambassador-dashboard.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Lufalight"/>
+<meta property="og:title" content="Ambassador Dashboard Preview | Lufalight"/>
+<meta property="og:description" content="A look inside the Lufalight Ambassador account — referral links, commission tracking, marketing assets, training, and tier progress."/>
+<meta property="og:image" content="https://www.lufalight.com/images/ambassador/audi-r8-flyer.jpg"/>
+<meta property="og:url" content="https://www.lufalight.com/ambassador-dashboard.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Ambassador Dashboard Preview | Lufalight"/>
+<meta name="twitter:description" content="A look inside the Lufalight Ambassador account — referral links, commission tracking, marketing assets, training, and tier progress."/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.lufalight.com/"},
+    {"@type":"ListItem","position":2,"name":"Ambassador Program","item":"https://www.lufalight.com/ambassador.html"},
+    {"@type":"ListItem","position":3,"name":"Dashboard Preview","item":"https://www.lufalight.com/ambassador-dashboard.html"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E82D2D;--redl:#F05555;--redd:#C91F1F;--bg:#FFFFFF;--bg2:#F6F6F8;--card:#FFFFFF;--line:rgba(0,0,0,.1);--muted:#5C606B;--white:#14151A;--gold:#A8761E;--goldb:#D4A24E;--r:14px;--hd:"Inter Tight",sans-serif;--bd:"Plus Jakarta Sans",sans-serif;--navbg:rgba(255,255,255,.82);--text2:rgba(20,21,26,.62);--text3:rgba(20,21,26,.6)}
+:root[data-theme="dark"]{--bg:#0B0B0F;--bg2:#15161C;--card:#1B1C24;--line:rgba(255,255,255,.12);--muted:#9A9DAA;--white:#F5F5F7;--gold:#D4A24E;--goldb:#F0C070;--navbg:rgba(11,11,15,.82);--text2:rgba(245,245,247,.62);--text3:rgba(245,245,247,.6)}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:var(--bd);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:var(--bd)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}.sec{padding:56px 0 96px}
+.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.hl{height:2px;width:44px;background:linear-gradient(90deg,var(--red),var(--redl));margin-bottom:20px}
+h2{font-family:var(--hd);font-weight:800;font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.1;letter-spacing:-.025em}
+.sub{color:var(--muted);font-size:.975rem;max-width:580px;margin-top:12px;line-height:1.75}
+.red{color:var(--red)}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ── TOPBAR ── */
+#topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em}
+#topbar span{margin:0 14px}
+@media(max-width:860px){#topbar{display:flex;flex-direction:column;gap:6px;padding:12px 16px;font-size:11.5px}#topbar span{margin:0}#topbar .tb-sep{display:none}}
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:1000;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:24px}
+.nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
+.sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
+.sun-rays{position:absolute;inset:0;animation:spin 10s linear infinite}
+.nav-brand{display:flex;flex-direction:column}
+.nav-wm{font-family:var(--hd);font-size:1.65rem;font-weight:900;letter-spacing:-.03em;line-height:1}
+.nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
+.nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav-links a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--white)}.nav-links a.on{color:var(--redl)}
+@media(max-width:860px){.nav-links{display:none}}
+.nav-ham{display:none;background:none;border:1px solid var(--line);color:var(--white);width:40px;height:40px;border-radius:8px;place-items:center;font-size:18px;cursor:pointer;margin-left:12px;flex-shrink:0}
+@media(max-width:860px){.nav-ham{display:grid};nav{padding:0 16px;gap:8px}.nav-sun{width:34px;height:34px}.nav-wm{font-size:1.25rem}.nav-tl{font-size:.5rem}}
+@media(min-width:861px) and (max-width:1240px){
+  nav{padding:0 12px;gap:5px}
+  .nav-tl{display:none}
+  .nav-wm{font-size:1.1rem}
+  .nav-links{gap:6px}
+  .nav-links a{font-size:9.5px;letter-spacing:0}
+  .nav-sun{width:30px;height:30px}
+  .mega-caret{width:12px;margin-left:0}
+  .theme-toggle,.nav-ham{width:34px!important;height:34px!important;font-size:13px!important;margin-left:2px!important;margin-right:2px!important}
+}
+.theme-toggle{background:none;border:1px solid var(--line);color:var(--white);width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-size:15px;cursor:pointer;margin-left:8px;flex-shrink:0;transition:border-color .2s}
+.theme-toggle:hover{border-color:var(--red)}
+.nav-item{position:relative;display:flex;align-items:center;white-space:nowrap}
+.mega-caret{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:9px;color:var(--muted);cursor:pointer;margin-left:2px}
+.mega-caret:hover{color:var(--white)}
+.mega-menu{position:absolute;top:calc(100% + 14px);left:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:none;grid-template-columns:repeat(5,168px);gap:20px;box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:300}
+.mega-menu.mini-menu{grid-template-columns:1fr;min-width:200px;padding:14px}
+.mini-menu a{padding:9px 8px!important}
+.nav-item:hover .mega-menu,.nav-item.open .mega-menu{display:grid}
+.mega-h{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--redl);margin-bottom:10px;white-space:nowrap}
+.mega-menu a{display:block;font-size:12px;color:var(--muted);padding:4px 0;text-transform:none;letter-spacing:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-menu a:hover{color:var(--white)}.mega-all{color:var(--red)!important;font-weight:700;margin-top:6px}
+@media(max-width:1100px){.mega-menu{display:none!important}}
+/* ── MOBILE DRAWER ── */
+#mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:none;justify-content:flex-end}
+#mob-overlay.open{display:flex}
+#mob-drawer{width:min(320px,90vw);background:var(--bg2);border-left:1px solid var(--line);height:100%;overflow-y:auto;display:flex;flex-direction:column;padding:22px 20px;animation:mobSlideIn .22s ease}
+@keyframes mobSlideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mob-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.mob-brand{font-family:var(--hd);font-size:1.3rem;font-weight:900;letter-spacing:-.02em}
+.mob-x{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white);width:34px;height:34px;border-radius:50%;font-size:14px;display:grid;place-items:center;cursor:pointer}
+.mob-section{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.mob-sub{display:flex;flex-direction:column}
+.mob-sub a{padding:9px 0 9px 12px;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(10,10,15,.04);display:block;transition:color .15s}
+.mob-sub a:hover{color:var(--redl)}
+.mob-link{display:flex;align-items:center;gap:8px;padding:13px 0;font-size:14px;font-weight:600;color:var(--white);border-bottom:1px solid var(--line);transition:color .15s;text-decoration:none}
+.mob-link:hover{color:var(--redl)}.mob-link.on{color:var(--redl)}
+.mob-cta{margin-top:auto;padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.mob-cta a{display:block;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;transition:background .15s}
+.mob-cta-shop{background:var(--red);color:#fff}.mob-cta-shop:hover{background:var(--redd)}
+.mob-cta-quiz{background:rgba(10,10,15,.07);border:1px solid var(--line);color:var(--white)}.mob-cta-quiz:hover{background:rgba(10,10,15,.12)}
+/* ── PAGE HEADER ── */
+.pg-head{padding:44px 0 0}
+.pg-head h1{font-family:var(--hd);font-weight:900;font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:-.03em;max-width:680px}
+.crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.crumb a{color:var(--muted)}.crumb a:hover{color:var(--redl)}
+.pg-sub{color:var(--muted);font-size:.98rem;max-width:600px;margin-top:12px;line-height:1.75}
+/* ── FAQ (shared component) ── */
+.amb-faq{max-width:760px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px;transition:border-color .2s}
+.faq-item.open{border-color:rgba(232,45,45,.35)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;cursor:pointer;user-select:none;list-style:none;font-size:14px;font-weight:700;color:var(--white);line-height:1.45;background:var(--card);transition:background .15s}
+.faq-q:hover{background:rgba(232,45,45,.04)}
+.faq-q .faq-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;font-weight:400;color:var(--muted);transition:all .25s;line-height:1}
+.faq-item.open .faq-q .faq-icon{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;padding:0 22px 18px;display:none}
+.faq-a a{color:var(--redl);text-decoration:underline}
+.faq-item.open .faq-a{display:block;animation:fpIn .22s ease}
+@keyframes fpIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+@media(max-width:760px){.ft-grid{grid-template-columns:1fr 1fr}}
+.ft-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.ft-sun{width:30px;height:30px;position:relative;flex-shrink:0}
+.ft-core{position:absolute;inset:5px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%}
+.ft-rays{position:absolute;inset:0;animation:spin 10s linear infinite}
+.ft-wm{font-family:var(--hd);font-size:1.25rem;font-weight:900;letter-spacing:-.02em}
+.ft-tl{font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.ft-desc{font-size:12px;color:var(--muted);max-width:250px;line-height:1.7;margin-bottom:16px}
+.ft-social{display:flex;gap:8px}
+.soc{width:32px;height:32px;border-radius:7px;background:rgba(10,10,15,.04);border:1px solid var(--line);display:grid;place-items:center;font-size:13px;transition:all .2s}
+.soc:hover{background:rgba(232,45,45,.1);border-color:rgba(232,45,45,.3)}
+.ft-col-t{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.ft-links{display:flex;flex-direction:column;gap:8px}
+.ft-links a{font-size:12px;color:var(--text2);transition:color .2s}.ft-links a:hover{color:var(--red)}
+.ft-bottom{padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.ft-copy{font-size:11px;color:var(--muted)}.ft-leg{display:flex;gap:18px}
+.ft-leg a{font-size:11px;color:var(--muted)}.ft-leg a:hover{color:var(--white)}
+.disc-acc{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);max-width:820px}
+.disc-acc summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.disc-acc summary::-webkit-details-marker{display:none}
+.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
+.disc-acc[open] summary::after{content:'\2212'}
+.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px}
+#back-to-top{position:fixed;bottom:90px;right:22px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--white);font-size:16px;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s}
+#back-to-top.show{opacity:1;transform:none;pointer-events:auto}
+#back-to-top:hover{border-color:var(--red);background:rgba(232,45,45,.12)}
+#chat-fab{position:fixed;bottom:28px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:#fff;font-size:22px;display:grid;place-items:center;cursor:pointer;z-index:901;box-shadow:0 8px 24px rgba(232,45,45,.4);transition:transform .2s,background .2s}
+#chat-fab:hover{background:var(--redl);transform:translateY(-3px)}
+#chat-panel{position:fixed;bottom:98px;right:22px;width:300px;max-width:calc(100vw - 44px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 56px rgba(0,0,0,.5);z-index:901;display:none;flex-direction:column;overflow:hidden;max-height:min(420px,calc(100vh - 180px))}
+#chat-panel.open{display:flex}
+.chat-head{background:var(--red);padding:16px 18px;display:flex;align-items:center;gap:10px}
+.chat-head-t{font-size:13.5px;font-weight:800;color:#fff}.chat-head-s{font-size:11px;color:rgba(255,255,255,.85)}
+.chat-close{margin-left:auto;background:none;border:none;color:#fff;font-size:18px;cursor:pointer;line-height:1;padding:4px}
+.chat-msgs{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.msg-row-bot{display:flex;justify-content:flex-start}
+.msg-bot{background:rgba(10,10,15,.05);border:1px solid var(--line);border-radius:12px 12px 12px 2px;padding:10px 13px;font-size:12.5px;color:var(--white);line-height:1.65;max-width:92%}
+.msg-bot a{color:var(--redl)}
+.chat-input-row{display:flex;align-items:center;gap:6px;padding:10px 12px;border-top:1px solid var(--line);background:var(--bg2)}
+.chat-inp{flex:1;background:rgba(10,10,15,.05);border:1px solid var(--line);border-radius:20px;padding:9px 14px;font-size:12.5px;color:var(--white);font-family:var(--bd);outline:none}
+.chat-inp:focus{border-color:var(--red)}
+.chat-send{background:var(--red);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;display:grid;place-items:center;flex-shrink:0}
+
+/* ══════════════════════════════════════
+   DASHBOARD — PAGE-SPECIFIC (db- prefix)
+══════════════════════════════════════ */
+:root{
+  --db-card2:#FAFAFB; --db-line-soft:rgba(20,21,26,.06); --db-faint:#8B8E99;
+  --db-good:#1E8E5A; --db-good-bg:rgba(30,142,90,.12); --db-good-line:rgba(30,142,90,.35);
+  --db-info:#2454C7; --db-info-bg:rgba(36,84,199,.10); --db-info-line:rgba(36,84,199,.30);
+  --db-warn:#B45309; --db-warn-bg:rgba(180,83,9,.12); --db-warn-line:rgba(180,83,9,.32);
+  --db-gold-bg:rgba(168,118,30,.13); --db-gold-line:rgba(168,118,30,.35);
+  --db-mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Roboto Mono",monospace;
+}
+:root[data-theme="dark"]{
+  --db-card2:#1F2027; --db-line-soft:rgba(245,245,247,.06); --db-faint:#6E7180;
+  --db-good:#2FA872; --db-good-bg:rgba(47,168,114,.16); --db-good-line:rgba(47,168,114,.34);
+  --db-info:#4C7FE0; --db-info-bg:rgba(76,127,224,.16); --db-info-line:rgba(76,127,224,.34);
+  --db-warn:#C08423; --db-warn-bg:rgba(192,132,35,.18); --db-warn-line:rgba(192,132,35,.36);
+}
+.db-preview-note{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(212,162,78,.1) 0%,rgba(168,118,30,.06) 100%);border:1px solid rgba(168,118,30,.3);border-radius:12px;padding:16px 22px;margin:28px 0 8px}
+.db-preview-note p{font-size:12.5px;color:var(--text2);line-height:1.6;max-width:640px}
+.db-preview-note strong{color:var(--gold)}
+.db-preview-note a{color:var(--red);font-weight:700;white-space:nowrap}
+.db-preview-note a:hover{text-decoration:underline}
+
+.db-shell{display:flex;gap:28px;align-items:flex-start;margin-top:32px}
+.db-rail{width:256px;flex-shrink:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 16px;position:sticky;top:90px}
+.db-profile{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;padding-bottom:18px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.db-avatar-wrap{position:relative;width:64px;height:64px}
+.db-avatar-init{position:absolute;inset:6px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font-family:var(--hd);font-weight:800;font-size:1rem;color:var(--white)}
+.db-p-name{font-weight:700;font-size:.92rem}
+.db-tier-pill{display:inline-flex;align-items:center;gap:6px;background:var(--db-gold-bg);border:1px solid var(--db-gold-line);color:var(--gold);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.db-lpqs-line{font-size:11px;color:var(--muted)}
+.db-lpqs-line b{color:var(--white);font-variant-numeric:tabular-nums}
+
+.db-nav{display:flex;flex-direction:column;gap:2px}
+.db-nav-btn{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:none;border:none;border-radius:8px;padding:9px 10px;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,color .15s;font-family:var(--bd)}
+.db-nav-btn svg{width:17px;height:17px;flex-shrink:0;opacity:.8}
+.db-nav-btn:hover{background:var(--db-line-soft);color:var(--white)}
+.db-nav-btn.active{background:rgba(232,45,45,.10);color:var(--red)}
+.db-nav-btn.active svg{opacity:1}
+.db-rail-foot{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.db-rail-foot a{display:block;padding:8px 10px;font-size:12px;color:var(--muted);border-radius:8px}
+.db-rail-foot a:hover{background:var(--db-line-soft);color:var(--white)}
+
+.db-mnav{display:none;position:sticky;top:72px;z-index:20;background:var(--navbg);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);overflow-x:auto;padding:10px 12px;gap:6px;margin:0 -28px 20px;min-width:0}
+.db-mnav .db-nav-btn{flex-shrink:0;white-space:nowrap}
+
+.db-content{flex:1;min-width:0}
+.db-panel{display:none}
+.db-panel.active{display:block;animation:fpIn .22s ease}
+.db-panel-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.db-panel-head h2{font-size:1.5rem}
+.db-panel-sub{color:var(--muted);font-size:13px;margin-top:2px;margin-bottom:24px;max-width:560px;line-height:1.7}
+
+.db-welcome h2{font-size:1.65rem}
+.db-welcome p{color:var(--muted);margin-top:4px}
+
+.db-grid{display:grid;gap:14px}
+.db-g3{grid-template-columns:repeat(3,1fr)}
+.db-g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:760px){.db-g3,.db-g2{grid-template-columns:1fr}}
+
+.db-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.db-stat-label{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--db-faint);margin-bottom:10px}
+.db-stat-value{font-family:var(--hd);font-weight:800;font-size:1.65rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.db-stat-value.gold{color:var(--gold)}
+.db-stat-sub{font-size:12px;color:var(--muted);margin-top:4px}
+
+.db-section-title{font-size:1.02rem;font-weight:800;margin:32px 0 14px;letter-spacing:-.01em;font-family:var(--hd)}
+.db-section-title:first-of-type{margin-top:0}
+
+.db-link-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:var(--db-card2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.db-link-row .db-url{font-family:var(--db-mono);font-size:13.5px;color:var(--red);word-break:break-all}
+.db-copy-btn{flex-shrink:0;background:none;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:8px 14px;border-radius:7px;cursor:pointer;transition:.15s;font-family:var(--bd)}
+.db-copy-btn:hover{border-color:var(--red);color:var(--red)}
+.db-copy-btn.copied{border-color:var(--db-good);color:var(--db-good)}
+.db-link-help{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+.db-qr-block{display:flex;gap:20px;align-items:center;margin-top:16px;background:var(--db-card2);border:1px solid var(--line);border-radius:10px;padding:16px}
+.db-qr-img{width:84px;height:84px;flex-shrink:0;border-radius:8px;background:#fff;padding:6px;border:1px solid var(--line)}
+.db-qr-text b{display:block;font-size:13px;margin-bottom:3px}
+.db-qr-text span{font-size:12px;color:var(--muted)}
+.db-qr-text .db-copy-btn{margin-top:10px}
+@media(max-width:480px){.db-qr-block{flex-direction:column;text-align:center}}
+
+.db-code-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.db-code-box{display:flex;align-items:center;gap:14px;background:var(--db-card2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;flex:1;min-width:220px}
+.db-code-box .db-url{font-family:var(--db-mono);font-size:14px;color:var(--red);font-weight:700}
+.db-tier-lock{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--db-gold-bg);border:1px solid var(--db-gold-line);color:var(--gold);padding:4px 9px;border-radius:20px;white-space:nowrap}
+
+.db-plat-table{display:flex;flex-direction:column;gap:8px}
+.db-plat-row{display:grid;grid-template-columns:auto 1fr auto auto auto;align-items:center;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 16px}
+@media(max-width:640px){.db-plat-row{grid-template-columns:auto 1fr}.db-plat-row .db-pstats{grid-column:2;display:flex;gap:16px}.db-plat-row .db-copy-btn{grid-column:2;justify-self:start}}
+.db-plat-icon{width:36px;height:36px;border-radius:9px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:11px;color:var(--muted)}
+.db-plat-name{font-weight:700;font-size:13px}
+.db-plat-url{font-family:var(--db-mono);font-size:11.5px;color:var(--muted);margin-top:1px}
+.db-pstat{text-align:right}
+.db-pstat b{display:block;font-size:15px;font-variant-numeric:tabular-nums}
+.db-pstat span{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--db-faint)}
+.db-insight{display:flex;gap:9px;align-items:flex-start;margin-top:16px;background:var(--db-info-bg);border:1px solid var(--db-info-line);border-radius:10px;padding:13px 15px;font-size:12.5px;color:var(--white)}
+.db-insight svg{flex-shrink:0;color:var(--db-info);width:16px;height:16px;margin-top:1px}
+
+.db-chart-card{padding:20px 22px 14px}
+.db-chart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;flex-wrap:wrap;gap:8px}
+.db-sync-note{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--db-faint)}
+.db-sync-dot{width:6px;height:6px;border-radius:50%;background:var(--db-good);box-shadow:0 0 0 3px var(--db-good-bg)}
+.db-chart-svg{width:100%;height:180px;overflow:visible}
+.db-bar{fill:var(--red);opacity:.28;transition:opacity .15s}
+.db-bar.now{opacity:1}
+.db-bar-g:hover .db-bar{opacity:.85}
+.db-bar-g.now:hover .db-bar{opacity:1}
+.db-chart-val{font-size:10.5px;font-weight:700;fill:var(--white);opacity:0;transition:opacity .12s}
+.db-bar-g:hover .db-chart-val,.db-bar-g.now .db-chart-val{opacity:1}
+.db-chart-tip{position:absolute;pointer-events:none;background:var(--white);color:var(--bg);font-size:11.5px;font-weight:600;padding:6px 9px;border-radius:6px;transform:translate(-50%,-130%);white-space:nowrap;opacity:0;transition:opacity .1s;z-index:5}
+.db-chart-tip.show{opacity:1}
+.db-chart-wrap{position:relative}
+
+.db-tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
+.db-tbl{width:100%;border-collapse:collapse;min-width:640px}
+.db-tbl thead th{text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--db-faint);padding:12px 16px;background:var(--db-card2);border-bottom:1px solid var(--line);white-space:nowrap}
+.db-tbl thead th.num,.db-tbl td.num{text-align:right}
+.db-tbl tbody td{padding:13px 16px;border-bottom:1px solid var(--db-line-soft);font-size:13px;white-space:nowrap}
+.db-tbl tbody tr:last-child td{border-bottom:none}
+.db-tbl td.ordno{font-family:var(--db-mono);color:var(--muted)}
+.db-tbl td.val,.db-tbl td.pct,.db-tbl td.earn{font-variant-numeric:tabular-nums}
+.db-tbl td.earn{font-weight:700}
+.db-status-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
+.db-status-pill::before{content:"";width:6px;height:6px;border-radius:50%}
+.db-status-pill.pending{background:var(--db-warn-bg);border:1px solid var(--db-warn-line);color:var(--db-warn)}
+.db-status-pill.pending::before{background:var(--db-warn)}
+.db-status-pill.approved{background:var(--db-info-bg);border:1px solid var(--db-info-line);color:var(--db-info)}
+.db-status-pill.approved::before{background:var(--db-info)}
+.db-status-pill.paid{background:var(--db-good-bg);border:1px solid var(--db-good-line);color:var(--db-good)}
+.db-status-pill.paid::before{background:var(--db-good)}
+.db-tbl-actions{display:flex;gap:8px}
+.db-foot-note{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.7}
+.db-foot-note a{color:var(--red);font-weight:600}
+
+.db-asset-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.db-asset-thumb{height:92px;background:linear-gradient(135deg,var(--bg2),var(--db-card2));display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.db-asset-thumb svg{width:28px;height:28px;color:var(--db-faint)}
+.db-asset-body{padding:14px 16px 16px}
+.db-asset-body b{display:block;font-size:13.5px;margin-bottom:3px}
+.db-asset-body span{font-size:12px;color:var(--muted)}
+.db-asset-dl{margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--white);padding:7px 12px;border-radius:7px;cursor:pointer;font-family:var(--bd)}
+.db-asset-dl:hover{border-color:var(--red);color:var(--red)}
+
+.db-course-row{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:8px}
+.db-course-badge{width:38px;height:38px;flex-shrink:0;border-radius:9px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--db-mono);font-size:10px;font-weight:700;color:var(--muted)}
+.db-course-name{font-weight:700;font-size:13.5px;flex:1}
+.db-course-stat{font-size:12px;font-weight:700}
+.db-course-stat.done{color:var(--db-good)}
+.db-course-stat.mid{color:var(--db-warn)}
+.db-course-stat.none{color:var(--db-faint);font-weight:600}
+.db-progress-track{width:70px;height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:5px}
+.db-progress-fill{height:100%;background:var(--db-warn);border-radius:3px}
+
+.db-video-card{display:flex;gap:12px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.db-play-btn{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--red);display:grid;place-items:center;color:#fff}
+.db-play-btn svg{width:13px;height:13px;margin-left:2px}
+.db-video-info b{font-size:13px;display:block}
+.db-video-info p{font-size:12px;color:var(--muted);margin:3px 0 6px}
+.db-video-dur{font-size:10.5px;color:var(--db-faint);font-family:var(--db-mono)}
+
+.db-updates-list{display:flex;flex-direction:column}
+.db-update-row{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--db-line-soft)}
+.db-update-row:last-child{border-bottom:none}
+.db-update-tag{flex-shrink:0;width:44px;text-align:center;font-size:9.5px;font-weight:800;letter-spacing:.04em;background:var(--bg2);border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 0;height:fit-content}
+.db-update-body b{font-size:13px;font-weight:600}
+.db-update-body span{display:block;font-size:11px;color:var(--db-faint);margin-top:2px}
+
+.db-launch-card{border:1px solid var(--db-gold-line);background:var(--db-gold-bg)}
+.db-launch-date{font-family:var(--hd);font-weight:800;font-size:1.35rem;color:var(--gold)}
+.db-launch-card b{display:block;margin:8px 0 3px;font-size:13.5px}
+.db-launch-card p{font-size:12px;color:var(--muted);margin:0 0 12px}
+.db-embargo{font-size:11.5px;color:var(--muted);margin-top:14px;padding:11px 14px;background:var(--db-card2);border:1px solid var(--line);border-radius:8px;line-height:1.6}
+
+.db-cert-card{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,var(--db-gold-bg),transparent);border:1px solid var(--db-gold-line)}
+.db-cert-badge{width:46px;height:46px;flex-shrink:0;border-radius:50%;background:var(--card);border:2px solid var(--goldb);display:grid;place-items:center}
+.db-cert-badge svg{width:22px;height:22px;color:var(--gold)}
+.db-cert-text b{display:block;font-size:14px}
+.db-cert-text span{font-size:12px;color:var(--muted)}
+
+.db-field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--db-faint);margin-bottom:7px}
+.db-field input{width:100%;background:var(--db-card2);border:1px solid var(--line);border-radius:7px;padding:11px 13px;font-size:13.5px;color:var(--white);font-family:var(--bd)}
+.db-field input:focus{outline:none;border-color:var(--red)}
+
+.db-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--db-line-soft)}
+.db-toggle-row:last-child{border-bottom:none}
+.db-toggle-row b{font-size:13.5px;display:block}
+.db-toggle-row span{font-size:12px;color:var(--muted)}
+.db-switch{position:relative;width:42px;height:24px;flex-shrink:0;background:var(--line);border:none;border-radius:20px;cursor:pointer;transition:background .15s}
+.db-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .15s}
+.db-switch.on{background:var(--red)}
+.db-switch.on::after{transform:translateX(18px)}
+
+.db-payout-row{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;flex-wrap:wrap}
+.db-pm-badge{width:38px;height:38px;flex-shrink:0;border-radius:9px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--db-mono);font-size:9.5px;font-weight:700;color:var(--muted)}
+.db-pm-name{font-weight:700;font-size:13.5px}
+.db-pm-detail{font-size:12px;color:var(--muted);font-family:var(--db-mono)}
+.db-primary-tag{font-size:10.5px;font-weight:700;color:var(--db-good);margin-left:auto}
+.db-make-primary{margin-left:auto;background:none;border:1px solid var(--line);font-size:11px;font-weight:700;padding:6px 12px;border-radius:7px;cursor:pointer;color:var(--muted);font-family:var(--bd)}
+.db-make-primary:hover{border-color:var(--red);color:var(--red)}
+.db-btn-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.db-btn-ghost{background:none;border:1px solid var(--line);font-size:12px;font-weight:700;padding:9px 16px;border-radius:8px;cursor:pointer;color:var(--white);font-family:var(--bd)}
+.db-btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.db-btn-solid{background:var(--red);color:#fff;border:none;font-size:12px;font-weight:700;padding:9px 16px;border-radius:8px;cursor:pointer;font-family:var(--bd)}
+.db-btn-solid:hover{background:var(--redl)}
+
+.db-tier-hero{text-align:center;padding:28px 20px}
+.db-tier-hero .db-tname{font-family:var(--hd);font-weight:800;font-size:1.9rem;color:var(--gold);letter-spacing:-.02em}
+.db-tier-hero h3{font-size:1.02rem;margin-top:10px;font-family:var(--hd)}
+.db-tier-hero p{font-size:12.5px;color:var(--muted);max-width:460px;margin:6px auto 0;line-height:1.7}
+
+.db-mstep-wrap{position:relative;margin:38px 10px 60px}
+.db-mstep-track{position:relative;height:6px;background:var(--line);border-radius:3px}
+.db-mstep-fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--goldb));border-radius:3px}
+.db-mstep{position:absolute;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--line)}
+.db-mstep.filled{border-color:var(--goldb)}
+.db-mstep.current{border-color:var(--red);box-shadow:0 0 0 4px rgba(232,45,45,.15)}
+.db-mstep-label{position:absolute;top:16px;transform:translateX(-50%);text-align:center;font-size:10.5px;width:96px}
+.db-mstep-label b{display:block;font-size:12px}
+.db-mstep-label span{color:var(--muted)}
+.db-mstep-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px}
+.db-mstep-note strong{color:var(--red)}
+
+.db-benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:18px}
+@media(max-width:600px){.db-benefit-grid{grid-template-columns:1fr}}
+.db-benefit{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.5}
+.db-benefit svg{width:16px;height:16px;color:var(--db-good);flex-shrink:0;margin-top:2px}
+
+.db-support-card{text-align:center;padding:26px 20px}
+.db-support-card svg{width:24px;height:24px;color:var(--red);margin-bottom:12px}
+.db-support-card b{display:block;font-size:14px;margin-bottom:6px}
+.db-support-card p{font-size:12.5px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+
+@media(max-width:960px){
+  .db-rail{display:none}
+  .db-mnav{display:flex}
+  .db-mnav .db-nav-btn{width:auto}
+  .db-shell{margin-top:0;flex-direction:column;align-items:stretch}
+}
+</style>
+</head>
+<body>
+
+<div id="topbar"><span>🏆 Ambassador Program — Top 3 in Sales Win the <strong>Audi R8 Vancouver Experience</strong></span><span class="tb-sep">|</span><span>✉️ lufalight@gmail.com</span></div>
+
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
+    <div class="nav-sun">
+      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg>
+      <div class="sun-core"></div>
+    </div>
+    <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item"><a href="shop-all.html">Shop All</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it)o.classList.remove('open')});it.classList.toggle('open')" role="button" aria-label="Toggle Shop All menu">&#9662;</span><div class="mega-menu">
+        <div class="mega-col"><div class="mega-h">Face &amp; Skin</div><a href="product.html#EM04">GlowEM04 — Sleep Mask</a><a href="product.html#G15P">BeauMask + BeauNeck-Décolleté</a><a href="product.html#G15">BeauMask</a><a href="shop-all.html?coll=face-skin" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Body &amp; Recovery</div><a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a><a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Specialty</div><a href="product.html#C01">LUMENOVA PRO</a><a href="product.html#G240">AuraDome</a><a href="shop-all.html?coll=specialty" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Full-Body Panels</div><a href="product.html#BK300">Solaris9 BK300</a><a href="product.html#MAX1800">LUFAMAX 1800</a><a href="product.html#MAX4800">LUFAMAX 4800</a><a href="product.html#ESPRO3000">LUFAESPRO 3000</a><a href="shop-all.html?coll=full-body" class="mega-all">View All →</a></div>
+        <div class="mega-col"><div class="mega-h">Accessories</div><a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a><a href="shop-all.html?coll=accessory" class="mega-all">View All →</a></div>
+      </div></div>
+    <a href="our-story.html">Our Story</a>
+    <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a><a href="blog.html">📰 Health Blog</a></div></div>
+    <div class="nav-item"><a href="quiz.html">🎯 Find My Device</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it2=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it2)o.classList.remove('open')});it2.classList.toggle('open')" role="button" aria-label="Toggle Find menu">&#9662;</span><div class="mega-menu mini-menu"><a href="quiz.html">🎯 Take the Quiz</a><a href="compare.html">⚖️ Compare Devices</a><a href="index.html#goals">🧭 Shop by Goal</a></div></div>
+    <a href="ambassador.html" class="on">🏆 Ambassadors</a>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button class="nav-ham" onclick="document.getElementById('mob-overlay').classList.add('open')" aria-label="Open menu">&#9776;</button>
+</nav>
+
+<div id="mob-overlay" onclick="if(event.target===this)closeMob()">
+  <div id="mob-drawer">
+    <div class="mob-top">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="nav-sun" style="width:32px;height:32px"><svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg><div class="sun-core"></div></div>
+        <div><div class="mob-brand"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div><div class="nav-tl" style="margin-top:1px">Revive · Restore · Radiate</div></div>
+      </div>
+      <button class="mob-x" onclick="closeMob()" aria-label="Close menu">&#10005;</button>
+    </div>
+    <div class="mob-section">Shop by Device</div>
+    <div class="mob-sub">
+      <a href="shop-all.html">&#128722; All Devices</a>
+      <a href="shop-all.html?coll=face-skin">&#10024; Face &amp; Skin</a>
+      <a href="shop-all.html?coll=body-recovery">&#128170; Body &amp; Recovery</a>
+      <a href="shop-all.html?coll=specialty">&#9889; Specialty</a>
+      <a href="shop-all.html?coll=full-body">&#127775; Full-Body Panels</a>
+      <a href="shop-all.html?coll=accessory">&#128268; Accessories</a>
+    </div>
+    <div class="mob-section">Explore</div>
+    <a href="our-story.html" class="mob-link">&#128218; Our Story</a>
+    <a href="quiz.html" class="mob-link">&#127919; Find My Device</a>
+    <a href="blog.html" class="mob-link">&#128218; Health Blog</a>
+    <a href="wholesale.html" class="mob-link">&#129309; Wholesale Partners</a>
+    <a href="ambassador.html" class="mob-link on">&#127942; Ambassador Program</a>
+    <a href="index.html#faq" class="mob-link">&#10067; FAQ</a>
+    <div class="mob-cta">
+      <a href="shop-all.html" class="mob-cta-shop">Shop All Devices &#8594;</a>
+      <a href="quiz.html" class="mob-cta-quiz">&#127919; Find My Device</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE HEADER ══ -->
+<section class="pg-head wrap">
+  <div class="crumb"><a href="index.html">Home</a> / <a href="ambassador.html">Ambassador Program</a> / Dashboard Preview</div>
+  <h1>Your Ambassador <span class="red">Dashboard</span></h1>
+  <p class="pg-sub">Once you're approved, this is where you'll track referrals, commission, and everything else your tier unlocks. The walkthrough below uses sample data so you can see it before you apply.</p>
+
+  <div class="db-preview-note">
+    <p><strong>Preview only</strong> — the account below belongs to a sample Diamond Ambassador. Your real dashboard fills in with your own links, sales, and tier the moment you're approved.</p>
+    <a href="ambassador.html#apply-section">Apply for Your Own Account →</a>
+  </div>
+</section>
+
+<section class="sec"><div class="wrap">
+  <div class="db-shell">
+    <aside class="db-rail">
+      <div class="db-profile">
+        <div class="db-avatar-wrap">
+          <svg viewBox="0 0 70 70" style="position:absolute;inset:0">
+            <circle cx="35" cy="35" r="29" fill="none" stroke="var(--line)" stroke-width="5"/>
+            <circle cx="35" cy="35" r="29" fill="none" stroke="var(--goldb)" stroke-width="5" stroke-linecap="round" stroke-dasharray="182.2" stroke-dashoffset="7.3" transform="rotate(-90 35 35)"/>
+          </svg>
+          <div class="db-avatar-init">AN</div>
+        </div>
+        <div>
+          <div class="db-p-name">Alex Nguyen</div>
+          <div class="db-lpqs-line">LPQS <b>96</b>/100</div>
+        </div>
+        <span class="db-tier-pill">◆ Diamond Ambassador</span>
+      </div>
+      <div class="db-nav" id="railNav" role="navigation" aria-label="Dashboard sections"></div>
+      <div class="db-rail-foot">
+        <a href="ambassador-terms.html">Agreement &amp; Terms</a>
+        <a href="ambassador.html">← Back to Ambassador Program</a>
+      </div>
+    </aside>
+
+    <div class="db-mnav" id="mobileNav" role="navigation" aria-label="Dashboard sections"></div>
+
+    <main class="db-content">
+
+      <!-- OVERVIEW -->
+      <section class="db-panel" data-panel="overview">
+        <div class="db-welcome" style="margin-bottom:26px">
+          <h2>Welcome back, Alex</h2>
+          <p>Here's how your Ambassador account is performing.</p>
+        </div>
+
+        <div class="db-grid db-g3" style="margin-bottom:28px">
+          <div class="db-card">
+            <div class="db-stat-label">Tier &amp; LPQS Score</div>
+            <div class="db-stat-value gold">Diamond</div>
+            <div class="db-stat-sub">Score 96 / 100</div>
+          </div>
+          <div class="db-card">
+            <div class="db-stat-label">Commission — this month</div>
+            <div class="db-stat-value">$1,240 <span style="font-size:.9rem;font-weight:700;color:var(--muted)">CAD</span></div>
+            <div class="db-stat-sub">14 orders</div>
+          </div>
+          <div class="db-card">
+            <div class="db-stat-label">Commission — this quarter</div>
+            <div class="db-stat-value">$3,890 <span style="font-size:.9rem;font-weight:700;color:var(--muted)">CAD</span></div>
+            <div class="db-stat-sub">All-time: $18,650 CAD</div>
+          </div>
+        </div>
+
+        <div class="db-section-title">Your referral link</div>
+        <div class="db-link-row">
+          <span class="db-url">lufalight.com/ref/ALEXN2027</span>
+          <button class="db-copy-btn" data-copy="lufalight.com/ref/ALEXN2027">Copy link</button>
+        </div>
+        <div class="db-link-help">Every order placed through your link is automatically attributed to your account — no code needed at checkout. You can monitor clicks, conversions, and commission balance here at any time.</div>
+
+        <div class="db-qr-block">
+          <img class="db-qr-img" alt="QR code linking to lufalight.com/ref/ALEXN2027" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 29' shape-rendering='crispEdges'%3E%3Crect width='29' height='29' fill='%23fff'/%3E%3Cg fill='%23000'%3E%3Crect x='0' y='0' width='7' height='7'/%3E%3Crect x='1' y='1' width='5' height='5' fill='%23fff'/%3E%3Crect x='2' y='2' width='3' height='3'/%3E%3Crect x='22' y='0' width='7' height='7'/%3E%3Crect x='23' y='1' width='5' height='5' fill='%23fff'/%3E%3Crect x='24' y='2' width='3' height='3'/%3E%3Crect x='0' y='22' width='7' height='7'/%3E%3Crect x='1' y='23' width='5' height='5' fill='%23fff'/%3E%3Crect x='2' y='24' width='3' height='3'/%3E%3Crect x='9' y='1' width='1' height='1'/%3E%3Crect x='11' y='1' width='2' height='1'/%3E%3Crect x='15' y='1' width='1' height='1'/%3E%3Crect x='18' y='1' width='2' height='1'/%3E%3Crect x='9' y='3' width='2' height='2'/%3E%3Crect x='13' y='3' width='1' height='3'/%3E%3Crect x='16' y='4' width='3' height='1'/%3E%3Crect x='9' y='6' width='1' height='2'/%3E%3Crect x='11' y='6' width='3' height='1'/%3E%3Crect x='16' y='6' width='1' height='2'/%3E%3Crect x='18' y='6' width='2' height='1'/%3E%3Crect x='9' y='9' width='4' height='1'/%3E%3Crect x='14' y='9' width='1' height='4'/%3E%3Crect x='16' y='9' width='1' height='1'/%3E%3Crect x='19' y='9' width='1' height='2'/%3E%3Crect x='9' y='11' width='1' height='4'/%3E%3Crect x='11' y='11' width='2' height='1'/%3E%3Crect x='17' y='11' width='3' height='1'/%3E%3Crect x='9' y='16' width='1' height='3'/%3E%3Crect x='11' y='16' width='1' height='1'/%3E%3Crect x='13' y='16' width='3' height='2'/%3E%3Crect x='18' y='16' width='1' height='3'/%3E%3Crect x='11' y='18' width='2' height='1'/%3E%3Crect x='15' y='19' width='2' height='1'/%3E%3Crect x='20' y='19' width='2' height='2'/%3E%3Crect x='9' y='21' width='3' height='1'/%3E%3Crect x='13' y='21' width='1' height='2'/%3E%3Crect x='17' y='21' width='1' height='3'/%3E%3Crect x='19' y='21' width='4' height='1'/%3E%3Crect x='24' y='21' width='1' height='4'/%3E%3Crect x='9' y='24' width='2' height='2'/%3E%3Crect x='15' y='24' width='1' height='2'/%3E%3Crect x='21' y='24' width='2' height='1'/%3E%3Crect x='27' y='9' width='2' height='2'/%3E%3Crect x='27' y='13' width='1' height='3'/%3E%3Crect x='27' y='18' width='2' height='1'/%3E%3C/g%3E%3C/svg%3E"/>
+          <div class="db-qr-text">
+            <b>QR code</b>
+            <span>Scan to open your referral link — great for stories &amp; name cards.</span>
+            <div><button class="db-copy-btn">Download QR</button></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINKS & CODES -->
+      <section class="db-panel" data-panel="links">
+        <div class="db-panel-head"><h2>Links &amp; Codes</h2></div>
+        <p class="db-panel-sub">Your personal referral surfaces, split by platform so you can see what's converting.</p>
+
+        <div class="db-code-row">
+          <div class="db-code-box">
+            <div style="flex:1">
+              <div class="db-stat-label" style="margin-bottom:6px">Your discount code</div>
+              <span class="db-url">DIAMOND-ALEXN15</span>
+            </div>
+            <span class="db-tier-lock">Diamond / Gold only</span>
+          </div>
+          <button class="db-copy-btn" data-copy="DIAMOND-ALEXN15">Copy code</button>
+        </div>
+
+        <div class="db-section-title" style="margin-top:8px">Platform links — see which channel converts best</div>
+        <div class="db-plat-table">
+          <div class="db-plat-row">
+            <div class="db-plat-icon">IG</div>
+            <div><div class="db-plat-name">Instagram Bio</div><div class="db-plat-url">lufalight.com/ref/ALEXN-ig</div></div>
+            <div class="db-pstats" style="display:flex;gap:20px">
+              <div class="db-pstat"><b>245</b><span>Clicks</span></div>
+              <div class="db-pstat"><b>12</b><span>Orders</span></div>
+            </div>
+            <button class="db-copy-btn" data-copy="lufalight.com/ref/ALEXN-ig">Copy</button>
+          </div>
+          <div class="db-plat-row">
+            <div class="db-plat-icon">TT</div>
+            <div><div class="db-plat-name">TikTok</div><div class="db-plat-url">lufalight.com/ref/ALEXN-tt</div></div>
+            <div class="db-pstats" style="display:flex;gap:20px">
+              <div class="db-pstat"><b>890</b><span>Clicks</span></div>
+              <div class="db-pstat"><b>31</b><span>Orders</span></div>
+            </div>
+            <button class="db-copy-btn" data-copy="lufalight.com/ref/ALEXN-tt">Copy</button>
+          </div>
+          <div class="db-plat-row">
+            <div class="db-plat-icon">WEB</div>
+            <div><div class="db-plat-name">Website / Other</div><div class="db-plat-url">lufalight.com/ref/ALEXN2027</div></div>
+            <div class="db-pstats" style="display:flex;gap:20px">
+              <div class="db-pstat"><b>156</b><span>Clicks</span></div>
+              <div class="db-pstat"><b>9</b><span>Orders</span></div>
+            </div>
+            <button class="db-copy-btn" data-copy="lufalight.com/ref/ALEXN2027">Copy</button>
+          </div>
+        </div>
+
+        <div class="db-insight">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+          <span>TikTok is Alex's best-converting channel this month, at a <b>3.5%</b> click-to-order rate.</span>
+        </div>
+      </section>
+
+      <!-- SALES & COMMISSION -->
+      <section class="db-panel" data-panel="sales">
+        <div class="db-panel-head"><h2>Sales &amp; Commission</h2></div>
+        <p class="db-panel-sub">Every order placed through your links, and what you earned from it.</p>
+
+        <div class="db-card db-chart-card" style="margin-top:6px">
+          <div class="db-chart-head">
+            <div class="db-stat-label" style="margin-bottom:0">Monthly commission trend</div>
+            <div class="db-sync-note"><span class="db-sync-dot"></span> Synced with your orders · updated 2 min ago</div>
+          </div>
+          <div class="db-chart-wrap">
+            <svg class="db-chart-svg" viewBox="0 0 640 180" preserveAspectRatio="none" id="trendChart"></svg>
+            <div class="db-chart-tip" id="chartTip"></div>
+          </div>
+        </div>
+
+        <div class="db-section-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+          <span>Recent orders <span style="font-weight:400;color:var(--muted);font-size:12px">(last 7 shown)</span></span>
+          <span class="db-tbl-actions"><button class="db-btn-ghost">Export PDF</button><button class="db-btn-ghost">Export Excel</button></span>
+        </div>
+        <div class="db-tbl-wrap">
+          <table class="db-tbl">
+            <thead><tr><th>Date</th><th>Order #</th><th class="num">Value</th><th class="num">Rate</th><th class="num">Earned</th><th>Status</th></tr></thead>
+            <tbody id="ordersBody"></tbody>
+          </table>
+        </div>
+        <p class="db-foot-note">Commissions are calculated monthly and paid on the 15th of the following month via Interac e-Transfer (Canada) or PayPal (international). Orders are held for 30 days before release — this matches our 30-day return window. Minimum payout is CA$50.</p>
+      </section>
+
+      <!-- MARKETING ASSETS -->
+      <section class="db-panel" data-panel="assets">
+        <div class="db-panel-head"><h2>Marketing Assets</h2></div>
+        <p class="db-panel-sub">Ready-to-post photography, video, and brand files for your channels.</p>
+        <div class="db-grid db-g3" id="assetsGrid" style="margin-top:6px"></div>
+      </section>
+
+      <!-- TRAINING -->
+      <section class="db-panel" data-panel="training">
+        <div class="db-panel-head"><h2>Training &amp; Certification</h2></div>
+        <p class="db-panel-sub">Product knowledge, partner conduct, and profession-specific coaching.</p>
+
+        <div class="db-section-title">Courses</div>
+        <div id="coursesList"></div>
+
+        <div class="db-section-title">Video library</div>
+        <div class="db-grid db-g2" id="videoGrid"></div>
+
+        <div class="db-section-title">Knowledge updates</div>
+        <div class="db-updates-list" id="updatesList"></div>
+
+        <div class="db-section-title">Upcoming product launches <span class="db-tier-lock" style="margin-left:8px;vertical-align:middle">Diamond early access</span></div>
+        <div class="db-grid db-g3" id="launchGrid"></div>
+        <div class="db-embargo">Confidential — available to Diamond &amp; Gold ambassadors under embargo. Do not publish or share before the listed launch date.</div>
+
+        <div class="db-card db-cert-card" style="margin-top:26px">
+          <div class="db-cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M8 13l-1.5 7L12 18l5.5 2L16 13"/></svg></div>
+          <div class="db-cert-text" style="flex:1">
+            <b>Certified Lufalight Ambassador</b>
+            <span>Issued March 2026 · based on completed courses + a 94% quiz score</span>
+          </div>
+          <button class="db-btn-ghost">Download certificate</button>
+        </div>
+      </section>
+
+      <!-- PROFILE & SETTINGS -->
+      <section class="db-panel" data-panel="profile">
+        <div class="db-panel-head"><h2>Profile &amp; Settings</h2></div>
+        <p class="db-panel-sub">Contact details, notification preferences, and where your commission gets paid.</p>
+
+        <div class="db-section-title">Contact information</div>
+        <div class="db-grid db-g2">
+          <div class="db-field"><label>Full name</label><input value="Alex Nguyen" disabled></div>
+          <div class="db-field"><label>Email</label><input value="alex.nguyen@example.com" disabled></div>
+          <div class="db-field"><label>Phone</label><input value="+1 (604) 555-0148" disabled></div>
+          <div class="db-field"><label>Instagram</label><input value="@alexn.wellness" disabled></div>
+          <div class="db-field"><label>TikTok</label><input value="@alexnwellness" disabled></div>
+          <div class="db-field"><label>Location</label><input value="Vancouver, BC, Canada" disabled></div>
+        </div>
+        <div class="db-btn-row"><button class="db-btn-solid">Edit profile</button></div>
+
+        <div class="db-section-title">Notifications</div>
+        <div class="db-card" style="padding:6px 18px">
+          <div class="db-toggle-row">
+            <div><b>New order email</b><span>Get notified the moment a referral order is placed</span></div>
+            <button class="db-switch on" data-toggle></button>
+          </div>
+          <div class="db-toggle-row">
+            <div><b>Commission approved email</b><span>Get notified when a commission clears the 30-day hold</span></div>
+            <button class="db-switch on" data-toggle></button>
+          </div>
+          <div class="db-toggle-row">
+            <div><b>Monthly summary</b><span>A recap of your performance on the 1st of each month</span></div>
+            <button class="db-switch on" data-toggle></button>
+          </div>
+        </div>
+
+        <div class="db-section-title">Payout methods</div>
+        <div class="db-payout-row">
+          <div class="db-pm-badge">IET</div>
+          <div><div class="db-pm-name">Interac e-Transfer</div><div class="db-pm-detail">alex.n••••@gmail.com</div></div>
+          <span class="db-primary-tag">Primary</span>
+        </div>
+        <div class="db-payout-row">
+          <div class="db-pm-badge">PP</div>
+          <div><div class="db-pm-name">PayPal</div><div class="db-pm-detail">a•••••@gmail.com</div></div>
+          <button class="db-make-primary">Make primary</button>
+        </div>
+        <p class="db-foot-note">Interac e-Transfer is available for Canadian ambassadors; PayPal for international ambassadors. Payouts run monthly on the 15th, once an order clears its 30-day hold, with a CA$50 minimum — see the <a href="ambassador-terms.html">Agreement</a> for full payment terms.</p>
+        <div class="db-btn-row"><button class="db-btn-ghost">Update payment info</button><button class="db-btn-ghost">Add payment method</button></div>
+
+        <div class="db-section-title">Tier progress</div>
+        <div class="db-card db-tier-hero">
+          <div class="db-tname">Diamond</div>
+          <h3>You've reached Diamond — the highest tier.</h3>
+          <p>15% commission, rising to 18% as your sales grow. Alex is also working toward the Annual Milestone Rewards below.</p>
+        </div>
+
+        <div class="db-mstep-wrap">
+          <div class="db-mstep-track"><div class="db-mstep-fill" style="width:37.3%"></div></div>
+          <div class="db-mstep filled" style="left:0%"></div>
+          <div class="db-mstep filled" style="left:20%"></div>
+          <div class="db-mstep current" style="left:40%"></div>
+          <div class="db-mstep" style="left:60%"></div>
+          <div class="db-mstep" style="left:80%"></div>
+          <div class="db-mstep" style="left:100%"></div>
+          <div class="db-mstep-label" style="left:0%"><b>$5K</b><span>Apparel ✓</span></div>
+          <div class="db-mstep-label" style="left:20%"><b>$10K</b><span>$100 Credit ✓</span></div>
+          <div class="db-mstep-label" style="left:40%"><b>$25K</b><span>$500 Credit</span></div>
+          <div class="db-mstep-label" style="left:60%"><b>$50K</b><span>VIP Launch</span></div>
+          <div class="db-mstep-label" style="left:80%"><b>$100K</b><span>Elite Status</span></div>
+          <div class="db-mstep-label" style="left:100%"><b>$250K</b><span>Exec. Retreat</span></div>
+        </div>
+        <p class="db-mstep-note">Alex has referred <strong>$18,650</strong> in verified sales this program year — <strong>$6,350</strong> away from the next milestone.</p>
+
+        <div class="db-section-title">Your unlocked Diamond benefits</div>
+        <div class="db-benefit-grid" id="benefitGrid"></div>
+      </section>
+
+      <!-- SUPPORT -->
+      <section class="db-panel" data-panel="support">
+        <div class="db-panel-head"><h2>Support</h2></div>
+        <p class="db-panel-sub">Help with an order, a technical question, or the program's rules.</p>
+
+        <div class="db-grid db-g2" style="margin-top:6px">
+          <div class="db-card db-support-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <b>Chat with Lufalight</b>
+            <p>Questions about an order, a product, or something technical? Our team replies within 24 hours.</p>
+            <button class="db-btn-solid" onclick="document.getElementById('chat-panel').classList.add('open')">Contact support</button>
+          </div>
+          <div class="db-card db-support-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
+            <b>Ambassador Agreement</b>
+            <p>Review the full terms — commission structure, payout schedule, and program rules.</p>
+            <a class="db-btn-ghost" href="ambassador-terms.html" style="display:inline-block">Read agreement</a>
+          </div>
+        </div>
+
+        <div class="db-section-title">Ambassador FAQ</div>
+        <div class="amb-faq" id="faqList"></div>
+      </section>
+
+    </main>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">
+        <div class="ft-sun"><svg class="ft-rays" viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(16,16)"><line x1="0" y1="-9" x2="0" y2="-14" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="5.29" y1="-7.28" x2="8.23" y2="-11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="8.56" y1="-2.78" x2="13.32" y2="-4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="8.56" y1="2.78" x2="13.32" y2="4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="5.29" y1="7.28" x2="8.23" y2="11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="0" y1="9" x2="0" y2="14" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-5.29" y1="7.28" x2="-8.23" y2="11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-8.56" y1="2.78" x2="-13.32" y2="4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-8.56" y1="-2.78" x2="-13.32" y2="-4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-5.29" y1="-7.28" x2="-8.23" y2="-11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/></g></svg><div class="ft-core"></div></div>
+        <div><div class="ft-wm"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div><div class="ft-tl">Revive · Restore · Radiate</div></div>
+      </div>
+      <p class="ft-desc">Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery. Dedicated English-language support.</p>
+      <div class="ft-social">
+        <a class="soc" href="https://www.facebook.com/profile.php?id=61591770831140" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="17" height="17" fill="#1877F2"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33v7.03C18.343 21.243 22 17.079 22 12.06z"/></svg></a>
+        <a class="soc" href="https://www.instagram.com/lufalight/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="soc" href="https://www.tiktok.com/@hughlu1" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+      </div>
+    </div>
+    <div><div class="ft-col-t">Shop</div><div class="ft-links"><a href="shop-all.html">Shop All</a><a href="shop-all.html?coll=face-skin">Face &amp; Skin Care</a><a href="shop-all.html?coll=body-recovery">Body &amp; Pain Recovery</a><a href="shop-all.html?coll=full-body">Full-Body Panels</a></div></div>
+    <div><div class="ft-col-t">Company</div><div class="ft-links"><a href="our-story.html">Our Story</a><a href="index.html#science">PBM Science</a><a href="blog.html">Health Blog</a><a href="wholesale.html">Wholesale Partners</a><a href="ambassador.html">Ambassador Program</a></div></div>
+    <div><div class="ft-col-t">Support</div><div class="ft-links"><a href="mailto:lufalight@gmail.com">Contact Us</a><a href="index.html#faq">FAQ</a><a href="shipping-returns.html">Shipping &amp; Returns</a><a href="warranty.html">Warranty</a></div></div>
+  </div>
+  <div class="ft-bottom"><div class="ft-copy">© 2025 Lufalight Inc. | Canada &amp; USA</div><div class="ft-leg"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
+  <details class="disc-acc">
+    <summary>Disclaimer</summary>
+    <p>LufaLight® red light therapy and near-infrared (NIR) therapy products are intended to provide topical warming and light exposure designed to support general wellness. These products are not intended to diagnose, treat, cure, or prevent any disease. Results may vary. Not a medical device. The dashboard on this page uses sample data for illustration — figures shown are not real ambassador earnings.</p>
+  </details>
+</div></footer>
+
+<button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="chat-fab" onclick="document.getElementById('chat-panel').classList.toggle('open')" aria-label="Open chat">💬</button>
+<div id="chat-panel">
+  <div class="chat-head"><span style="font-size:22px;line-height:1">☀️</span><div><div class="chat-head-t">LufaLight Support</div><div class="chat-head-s">Typically replies within minutes</div></div><button class="chat-close" onclick="document.getElementById('chat-panel').classList.remove('open')">✕</button></div>
+  <div class="chat-msgs"><div class="msg-row-bot"><div class="msg-bot">Hi! 👋 Questions about the Ambassador Dashboard or how to apply? I'm happy to help. You can also email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a>.</div></div></div>
+  <div class="chat-input-row"><input class="chat-inp" placeholder="Ask a question…" id="chat-input"/><button class="chat-send" onclick="sendChat()">➤</button></div>
+</div>
+
+<script src="theme.js"></script>
+<script src="promo.js"></script>
+<script src="inquiry-cart.js"></script>
+<script>
+/* ── NAV / DRAWER (shared pattern) ── */
+window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('show',window.scrollY>400)});
+function closeMob(){document.getElementById('mob-overlay').classList.remove('open')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMob()});
+document.querySelectorAll('#mob-drawer a').forEach(function(a){a.addEventListener('click',closeMob)});
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))document.querySelectorAll('.nav-item.open').forEach(o=>o.classList.remove('open'))});
+document.querySelectorAll('.nav-item').forEach(function(it){
+  var ct;
+  it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open')});
+  it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open')},300)});
+});
+function sendChat(){
+  var inp=document.getElementById('chat-input');
+  var v=inp.value.trim();if(!v)return;
+  var msgs=document.querySelector('.chat-msgs');
+  msgs.innerHTML+='<div style="display:flex;justify-content:flex-end"><div style="background:var(--red);border-radius:12px 12px 2px 12px;padding:9px 13px;font-size:12.5px;color:#fff;max-width:82%">'+v+'</div></div>';
+  inp.value='';
+  setTimeout(function(){msgs.innerHTML+='<div class="msg-row-bot"><div class="msg-bot">Thanks for your message! Please email <a href="mailto:lufalight@gmail.com">lufalight@gmail.com</a> and we\'ll get back to you quickly.</div></div>';msgs.scrollTop=msgs.scrollHeight;},700);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+document.getElementById('chat-input').addEventListener('keydown',function(e){if(e.key==='Enter')sendChat()});
+
+/* ── DASHBOARD APP ── */
+(function(){
+  var TABS = [
+    {id:"overview", label:"Overview", icon:'<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>'},
+    {id:"links", label:"Links & Codes", icon:'<path d="M9 12a3 3 0 003 3h3a4 4 0 000-8h-1"/><path d="M15 12a3 3 0 00-3-3H9a4 4 0 000 8h1"/>'},
+    {id:"sales", label:"Sales & Commission", icon:'<path d="M3 21h18"/><rect x="5" y="12" width="4" height="8"/><rect x="10.5" y="7" width="4" height="13"/><rect x="16" y="3" width="4" height="17"/>'},
+    {id:"assets", label:"Marketing Assets", icon:'<rect x="3" y="4" width="18" height="15" rx="2"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="M21 15l-5.5-5.5L4 21"/>'},
+    {id:"training", label:"Training & Certification", icon:'<path d="M2 8l10-5 10 5-10 5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/>'},
+    {id:"profile", label:"Profile & Settings", icon:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 01-4 0v-.09a1.7 1.7 0 00-1-1.56 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.55-1H3a2 2 0 010-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34H9a1.7 1.7 0 001-1.55V3a2 2 0 014 0v.09a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87V9a1.7 1.7 0 001.55 1H21a2 2 0 010 4h-.09a1.7 1.7 0 00-1.55 1z"/>'},
+    {id:"support", label:"Support", icon:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.3"/><path d="M5.1 5.1l3.7 3.7M19 5.1l-3.7 3.7M5.1 19l3.7-3.7M19 19l-3.7-3.7"/>'}
+  ];
+
+  function navHTML(){
+    return TABS.map(function(t){
+      return '<button type="button" class="db-nav-btn" data-tab="'+t.id+'">'+
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+t.icon+'</svg>'+
+        '<span>'+t.label+'</span></button>';
+    }).join('');
+  }
+  document.getElementById('railNav').innerHTML = navHTML();
+  document.getElementById('mobileNav').innerHTML = navHTML();
+
+  function setTab(id){
+    document.querySelectorAll('.db-panel').forEach(function(p){ p.classList.toggle('active', p.dataset.panel===id); });
+    document.querySelectorAll('.db-nav-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===id); });
+    var active = document.querySelector('.db-mnav .db-nav-btn.active');
+    if(active) active.scrollIntoView({block:'nearest', inline:'center'});
+  }
+  document.querySelectorAll('.db-nav-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      setTab(b.dataset.tab);
+      document.querySelector('.db-shell').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  setTab('overview');
+
+  /* copy buttons */
+  function toast(msg){
+    var t = document.getElementById('dbToast');
+    if(!t){
+      t = document.createElement('div'); t.id='dbToast';
+      t.style.cssText = 'position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(10px);background:var(--white);color:var(--bg);font-size:12.5px;font-weight:600;padding:10px 18px;border-radius:30px;box-shadow:0 12px 32px rgba(0,0,0,.28);opacity:0;transition:opacity .18s,transform .18s;z-index:2500;pointer-events:none';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    requestAnimationFrame(function(){ t.style.opacity='1'; t.style.transform='translateX(-50%) translateY(0)'; });
+    clearTimeout(t._h);
+    t._h = setTimeout(function(){ t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(10px)'; }, 1500);
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.db-copy-btn');
+    if(!btn) return;
+    var text = btn.getAttribute('data-copy');
+    var label = btn.textContent;
+    function done(){
+      btn.classList.add('copied'); btn.textContent='Copied';
+      toast(text ? 'Copied "'+text+'"' : 'Downloaded (demo)');
+      setTimeout(function(){ btn.classList.remove('copied'); btn.textContent=label; }, 1400);
+    }
+    if(text && navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(done);
+    } else { done(); }
+  });
+
+  document.addEventListener('click', function(e){
+    var sw = e.target.closest('[data-toggle]');
+    if(sw) sw.classList.toggle('on');
+  });
+
+  /* orders table */
+  var ORDERS = [
+    ["Jul 14, 2026","#LF-10482","$1,942","16%","$310.72","pending","Pending"],
+    ["Jul 09, 2026","#LF-10441","$559","16%","$89.44","pending","Pending"],
+    ["Jun 28, 2026","#LF-10390","$725","16%","$116.00","approved","Approved"],
+    ["Jun 20, 2026","#LF-10355","$349","16%","$55.84","approved","Approved"],
+    ["Jun 03, 2026","#LF-10298","$1,399","15%","$209.85","paid","Paid"],
+    ["May 22, 2026","#LF-10231","$479","15%","$71.85","paid","Paid"],
+    ["May 11, 2026","#LF-10184","$599","15%","$89.85","paid","Paid"]
+  ];
+  document.getElementById('ordersBody').innerHTML = ORDERS.map(function(o){
+    return '<tr><td>'+o[0]+'</td><td class="ordno">'+o[1]+'</td><td class="num val">'+o[2]+'</td><td class="num pct">'+o[3]+'</td><td class="num earn">'+o[4]+'</td>'+
+      '<td><span class="db-status-pill '+o[5]+'">'+o[6]+'</span></td></tr>';
+  }).join('');
+
+  /* trend chart */
+  var MONTHS = [["Feb",680],["Mar",910],["Apr",1050],["May",1180],["Jun",980],["Jul",1240]];
+  (function(){
+    var svg = document.getElementById('trendChart');
+    var W=640,H=180, padB=26, padT=24, n=MONTHS.length, gap=22;
+    var barW = (W - gap*(n-1))/n;
+    var max = Math.max.apply(null, MONTHS.map(function(m){return m[1];}));
+    var ns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs){ var e=document.createElementNS(ns,tag); for(var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    svg.appendChild(el('line',{x1:0,y1:H-padB,x2:W,y2:H-padB,stroke:'var(--line)','stroke-width':1}));
+    var tip = document.getElementById('chartTip');
+    MONTHS.forEach(function(m, i){
+      var x = i*(barW+gap);
+      var h = (m[1]/max) * (H-padB-padT);
+      var y = H-padB-h;
+      var isNow = i===n-1;
+      var g = el('g',{class:'db-bar-g'+(isNow?' now':'')});
+      var r = el('rect',{class:'db-bar'+(isNow?' now':''), x:x, y:y, width:barW, height:h, rx:5});
+      var val = el('text',{class:'db-chart-val', x:x+barW/2, y:y-9, 'text-anchor':'middle'}); val.textContent = '$'+m[1].toLocaleString();
+      var lbl = el('text',{x:x+barW/2, y:H-8, 'text-anchor':'middle', 'font-size':'11px', fill:'var(--db-faint)'}); lbl.textContent = m[0];
+      g.appendChild(r); g.appendChild(val); g.appendChild(lbl);
+      g.addEventListener('mouseenter', function(){ tip.textContent = m[0]+' 2026 — $'+m[1].toLocaleString()+' CAD'; tip.classList.add('show'); });
+      g.addEventListener('mousemove', function(evt){
+        var rect = svg.getBoundingClientRect();
+        tip.style.left = (evt.clientX - rect.left) + 'px';
+        tip.style.top = (evt.clientY - rect.top) + 'px';
+      });
+      g.addEventListener('mouseleave', function(){ tip.classList.remove('show'); });
+      svg.appendChild(g);
+    });
+  })();
+
+  /* marketing assets */
+  var ASSETS = [
+    ["Product Photos","42 high-res images · all SKUs",".zip"],
+    ["Demo & How-To Videos","8 videos · MP4, 1080p",".zip"],
+    ["Caption Templates","15 ready-to-post templates",".docx"],
+    ["Logo & Brand Guide","Logo pack + basic guidelines",".zip"],
+    ["Ad Banners","IG Story · FB Cover · more sizes",".zip"],
+    ["Lifestyle Photos","Model & in-use shots",".zip"]
+  ];
+  document.getElementById('assetsGrid').innerHTML = ASSETS.map(function(a){
+    return '<div class="db-card db-asset-card"><div class="db-asset-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="15" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 15.5L15.5 10 4 21"/></svg></div>'+
+      '<div class="db-asset-body"><b>'+a[0]+'</b><span>'+a[1]+'</span><div><button class="db-asset-dl">Download '+a[2]+'</button></div></div></div>';
+  }).join('');
+
+  /* courses */
+  var COURSES = [
+    ["SCI","PBM Science Fundamentals","done","Complete",100],
+    ["DOC","Partner Code of Conduct","done","Complete",100],
+    ["DIA","Diamond Ambassador Masterclass","mid","60% done",60],
+    ["MED","Profession Track: Aesthetics & Skincare","none","Not started",0]
+  ];
+  document.getElementById('coursesList').innerHTML = COURSES.map(function(c){
+    return '<div class="db-course-row"><div class="db-course-badge">'+c[0]+'</div><div class="db-course-name">'+c[1]+
+      (c[4]>0 && c[4]<100 ? '<div class="db-progress-track"><div class="db-progress-fill" style="width:'+c[4]+'%"></div></div>' : '')+
+      '</div><div class="db-course-stat '+c[2]+'">'+c[3]+'</div></div>';
+  }).join('');
+
+  /* videos */
+  var VIDEOS = [
+    ["Understanding PBM & Wavelengths","Core science, explained simply","8 min"],
+    ["Talking About FDA Clearance","What you can & can't claim","6 min"],
+    ["Objection Handling: Price & Skepticism","Scripts for the 5 most common pushbacks","11 min"],
+    ["New Product Walkthrough: LUFAMAX 4800","Features, specs & who it's for","5 min"]
+  ];
+  document.getElementById('videoGrid').innerHTML = VIDEOS.map(function(v){
+    return '<div class="db-video-card"><div class="db-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg></div>'+
+      '<div class="db-video-info"><b>'+v[0]+'</b><p>'+v[1]+'</p><span class="db-video-dur">'+v[2]+'</span></div></div>';
+  }).join('');
+
+  /* knowledge updates */
+  var UPDATES = [
+    ["NEW","New clinical study added: NIR & sleep quality (12-week RCT)","Jul 10, 2026"],
+    ["DATA","Updated wavelength & irradiance chart now in Marketing Assets","Jun 28, 2026"],
+    ["FDA","FDA clearance renewed for the G15P Face & Neck line","Jun 15, 2026"],
+    ["TIP","New script added: \"Is this just a trend?\" objection response","May 30, 2026"]
+  ];
+  document.getElementById('updatesList').innerHTML = UPDATES.map(function(u){
+    return '<div class="db-update-row"><div class="db-update-tag">'+u[0]+'</div><div class="db-update-body"><b>'+u[1]+'</b><span>'+u[2]+'</span></div></div>';
+  }).join('');
+
+  /* launches */
+  var LAUNCHES = [
+    ["Sep 15","LUFAMAX 5200 Pro","Next-gen full-body panel — 30% more coverage"],
+    ["Oct 1","GlowStrip Neck Wrap","Flexible wearable NIR wrap for neck & shoulders"],
+    ["Nov 2026","Ambassador-Exclusive Bundle","Early-access pricing for your audience"]
+  ];
+  document.getElementById('launchGrid').innerHTML = LAUNCHES.map(function(l){
+    return '<div class="db-card db-launch-card"><div class="db-launch-date">'+l[0]+'</div><b>'+l[1]+'</b><p>'+l[2]+'</p><button class="db-btn-ghost">View prep kit</button></div>';
+  }).join('');
+
+  /* Diamond benefits — exact wording from the Ambassador Tiers section */
+  var BENEFITS = [
+    "15% commission — up to 18% as your sales grow",
+    "CAD $2,000 Demo Credit — try any Lufalight device risk-free",
+    "Keep your demo products free after CAD $15,000 in sales (60-day loan period)",
+    "Early access to new product launches",
+    "Featured on the Lufalight website",
+    "Dedicated Account Manager",
+    "Co-branded marketing campaigns",
+    "Invitation to the Annual Ambassador Summit",
+    "Eligible for all Global Ambassador Awards"
+  ];
+  document.getElementById('benefitGrid').innerHTML = BENEFITS.map(function(b){
+    return '<div class="db-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg><span>'+b+'</span></div>';
+  }).join('');
+
+  /* FAQ — same facts as the Ambassador Program FAQ, focused on the account itself */
+  var FAQ = [
+    ["How does referral tracking work?","Each approved ambassador receives a unique referral link and promo code. Every order placed through your link is automatically attributed to your account. You can monitor your clicks, conversions, and commission balance at any time through your personal ambassador dashboard."],
+    ["When and how are commissions paid out?","Commissions are calculated monthly and paid on the 15th of the following month via Interac e-Transfer (Canada) or PayPal (international). There is a 30-day order hold before commissions are released — this aligns with our 30-day return window. Minimum payout threshold is CA$50."],
+    ["Can I move up to a higher tier?","Yes. All ambassador tiers are reviewed annually based on your LPQS score. If your platform or sales performance has grown, you can request a re-evaluation at any time — tier upgrades are automatic for top performers at each annual review."]
+  ];
+  document.getElementById('faqList').innerHTML = FAQ.map(function(f){
+    return '<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">'+f[0]+'<span class="faq-icon">+</span></div><div class="faq-a">'+f[1]+'</div></div>';
+  }).join('');
+  window.toggleFaq = function(el){
+    var item = el.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('#faqList .faq-item.open').forEach(function(o){ o.classList.remove('open'); });
+    if(!isOpen) item.classList.add('open');
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,15 +1,15 @@
 /* ── LUFALIGHT PRODUCT SEARCH ── nav search icon + overlay, Kala-style ── */
 (function(){
   var PRODUCTS = [
-    { id:'EM04', name:'GlowEM04', price:199, img:'images/products/EM04-9.png', coll:'face-skin',
+    { id:'EM04', name:'GlowEM04', price:229, img:'images/products/EM04-9.png', coll:'face-skin',
       tags:['sleep','sleep mask','eye mask','mask','face','skin','face & skin','rest','insomnia'] },
     { id:'G15P', name:'BeauMask + BeauNeck-Décolleté', price:599, img:'images/products/G15P-11.png', coll:'face-skin',
       tags:['skin','mask','face mask','face','neck','décolleté','decollete','anti-aging','wrinkle','face & skin'] },
     { id:'G15', name:'BeauMask', price:499, img:'images/products/G15-5.png', coll:'face-skin',
       tags:['skin','mask','face mask','face','acne','clear','blemish','face & skin'] },
-    { id:'P40B', name:'RecoverPro40B', price:209, img:'images/products/P40B-3.jpg', coll:'body-recovery',
+    { id:'P40B', name:'RecoverPro40B', price:249, img:'images/products/P40B-3.jpg', coll:'body-recovery',
       tags:['body','recovery','pain','desktop','muscle','body & recovery'] },
-    { id:'MINI60PRO', name:'GlowMini60Pro', price:349, img:'images/products/MINI60PRO-1.jpg', coll:'body-recovery',
+    { id:'MINI60PRO', name:'GlowMini60Pro', price:399, img:'images/products/MINI60PRO-1.jpg', coll:'body-recovery',
       tags:['body','pain','relief','portable','handheld','muscle','joint','body & recovery'] },
     { id:'E300', name:'GlowE300', price:499, img:'images/products/E300-1.jpg', coll:'body-recovery',
       tags:['body','mind','clinical','full spectrum','brain','recovery','body & recovery'] },

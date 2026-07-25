@@ -418,6 +418,31 @@ body.apply-bar-open #chat-panel{bottom:172px}
 #mob-apply-bar .bar-s{font-size:11px;color:rgba(255,255,255,.78);margin-top:2px}
 #mob-apply-bar .bar-btn{flex-shrink:0;background:#fff;color:#A8761E;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:11px 20px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .15s}
 #mob-apply-bar .bar-btn:hover{background:rgba(255,255,255,.9)}
+
+/* ── R8 ENTRY POPUP ── */
+#r8-pop-ov{position:fixed;inset:0;background:rgba(8,6,4,.6);backdrop-filter:blur(6px);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+#r8-pop-ov.open{display:flex}
+.r8-card{position:relative;background:#fff;border-radius:20px;overflow-y:auto;overflow-x:hidden;max-width:1180px;max-height:94vh;width:100%;box-shadow:0 40px 90px rgba(0,0,0,.5);display:grid;grid-template-columns:0.86fr 1.14fr;animation:r8Pop .4s cubic-bezier(.22,1,.36,1)}
+@keyframes r8Pop{from{transform:scale(.92) translateY(16px);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:760px){.r8-card{grid-template-columns:1fr;max-height:90vh}}
+.r8-close{position:absolute;top:14px;right:14px;z-index:2;width:32px;height:32px;border-radius:50%;background:rgba(20,21,26,.55);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:14px;display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.r8-close:hover{background:rgba(20,21,26,.8)}
+.r8-text{background:linear-gradient(155deg,#FFF8ED 0%,#FDECD8 55%,#FBE1C4 100%);padding:32px 34px;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:760px){.r8-text{padding:24px 22px;order:2}}
+.r8-brand{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.r8-brand .nav-tl{color:#8a7f6d;font-size:.5rem}
+.r8-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(168,118,30,.12);border:1px solid rgba(168,118,30,.35);color:#8A621A;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:30px;margin-bottom:10px;width:fit-content}
+.r8-h{font-family:"Inter Tight",sans-serif;font-size:clamp(1.25rem,2.2vw,1.7rem);font-weight:900;line-height:1.15;letter-spacing:-.03em;color:#14151A;margin-bottom:8px}
+.r8-sub{font-size:12.5px;color:#5C606B;line-height:1.6;margin-bottom:16px;max-width:400px}
+.r8-sub strong{color:#14151A}
+.r8-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.r8-btn-primary{display:inline-flex;align-items:center;gap:8px;background:#E82D2D;color:#fff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:11px 20px;border-radius:8px;border:none;cursor:pointer;transition:background .2s,transform .2s;white-space:nowrap}
+.r8-btn-primary:hover{background:#F05555;transform:translateY(-2px)}
+.r8-btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#14151A;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:10px 18px;border-radius:8px;border:1.5px solid rgba(20,21,26,.22);cursor:pointer;transition:all .2s;white-space:nowrap}
+.r8-btn-secondary:hover{border-color:#14151A;background:rgba(20,21,26,.04)}
+.r8-img{position:relative;min-height:220px;background:#0c0a08;display:flex;align-items:center;justify-content:center}
+@media(max-width:760px){.r8-img{order:1;min-height:220px}}
+.r8-img img{width:100%;height:100%;object-fit:contain;display:block}
 </style>
 </head>
 <body>
@@ -427,7 +452,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
 <nav>
   <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
     <div class="nav-sun">
-      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-19" x2="0" y2="-13" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-19" y1="0" x2="-13" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="0" x2="19" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-13" y1="-13" x2="-9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="9" x2="13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="-13" x2="9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-9" y1="9" x2="-13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/></g></svg>
+      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg>
       <div class="sun-core"></div>
     </div>
     <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
@@ -453,7 +478,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
   <div id="mob-drawer">
     <div class="mob-top">
       <div style="display:flex;align-items:center;gap:10px">
-        <div class="nav-sun" style="width:32px;height:32px"><svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-19" x2="0" y2="-13" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-19" y1="0" x2="-13" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="0" x2="19" y2="0" stroke="#E82D2D" stroke-width="2.5" stroke-linecap="round"/><line x1="-13" y1="-13" x2="-9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="9" x2="13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="-13" x2="9" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-9" y1="9" x2="-13" y2="13" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/></g></svg><div class="sun-core"></div></div>
+        <div class="nav-sun" style="width:32px;height:32px"><svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg><div class="sun-core"></div></div>
         <div><div class="mob-brand"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div><div class="nav-tl" style="margin-top:1px">Revive · Restore · Radiate</div></div>
       </div>
       <button class="mob-x" onclick="closeMob()" aria-label="Close menu">&#10005;</button>
@@ -478,6 +503,33 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <a href="shop-all.html" class="mob-cta-shop">Shop All Devices &#8594;</a>
       <a href="quiz.html" class="mob-cta-quiz">&#127919; Find My Device</a>
     </div>
+  </div>
+</div>
+
+<!-- ══ R8 ENTRY POPUP ══ -->
+<div id="r8-pop-ov" onclick="if(event.target===this)closeR8Pop()" role="dialog" aria-modal="true" aria-labelledby="r8-pop-h">
+  <div class="r8-card">
+    <button class="r8-close" onclick="closeR8Pop()" aria-label="Close">&#10005;</button>
+    <div class="r8-text">
+      <div class="r8-brand">
+        <div class="nav-sun" style="width:32px;height:32px">
+          <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg>
+          <div class="sun-core"></div>
+        </div>
+        <div>
+          <div class="nav-wm" style="font-size:1.1rem"><span style="color:#14151A">LUFA</span><span class="light">LIGHT</span></div>
+          <div class="nav-tl">Revive · Restore · Radiate</div>
+        </div>
+      </div>
+      <span class="r8-tag">🏆 Ambassador Program</span>
+      <h2 class="r8-h" id="r8-pop-h">Would you like the chance to drive an Audi&nbsp;R8?</h2>
+      <p class="r8-sub">The <strong>Top 3 Ambassadors in sales</strong> by December 31, 2027 win an all-expenses-paid Vancouver experience — and the keys to the Boss' Audi R8 V10.</p>
+      <div class="r8-ctas">
+        <button class="r8-btn-primary" onclick="r8PopGo('apply-section')">Apply Now</button>
+        <button class="r8-btn-secondary" onclick="r8PopGo('tiers-section')">Explore the Benefits</button>
+      </div>
+    </div>
+    <div class="r8-img"><img src="images/ambassador/audi-r8-flyer.jpg" alt="LufaLight Ambassador Program — Earn the Keys to the Boss' Audi R8" loading="eager"/></div>
   </div>
 </div>
 
@@ -639,44 +691,6 @@ body.apply-bar-open #chat-panel{bottom:172px}
   </div>
 </section>
 
-<!-- ══ OFFICIAL FLYER ══ -->
-<section class="sec" style="text-align:center">
-  <div class="wrap">
-    <span class="tag">🤝 Official Flyer &amp; Referral Program</span>
-    <div class="hl" style="margin:10px auto 20px"></div>
-    <h2>Share the <span class="red">Challenge</span></h2>
-    <p class="sub" style="margin:14px auto 32px">Download and share this flyer on social media to spread the word about the Ambassador Program — or refer a fellow creator directly and earn a bonus once they're approved and generate CAD $2,500 in verified sales within their first 90 days.</p>
-    <a href="images/ambassador/audi-r8-flyer.jpg" target="_blank" rel="noopener" style="display:inline-block;max-width:380px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
-      <img src="images/ambassador/audi-r8-flyer.jpg" alt="LufaLight Ambassador Program — Earn the Keys to the Boss' Audi R8" style="width:100%;display:block" loading="lazy"/>
-    </a>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
-      <a href="images/ambassador/audi-r8-flyer.jpg" download="LufaLight-Ambassador-Flyer.jpg" class="btn-r">⬇️ Download Image</a>
-      <a href="images/ambassador/audi-r8-flyer.pdf" download="LufaLight-Ambassador-Flyer.pdf" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s">⬇️ Download PDF</a>
-    </div>
-
-    <div style="margin-top:64px;padding-top:56px;border-top:1px solid var(--line)">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin-left:auto;margin-right:auto">
-        <div style="background:var(--card);border:1px solid rgba(180,180,180,.3);border-radius:14px;padding:24px 22px;text-align:center">
-          <div style="font-size:22px;margin-bottom:8px">🥈</div>
-          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;margin-bottom:4px">CAD $100</div>
-          <div style="font-size:12.5px;color:var(--muted)">Silver ambassador referral</div>
-        </div>
-        <div style="background:var(--card);border:1px solid rgba(255,200,0,.3);border-radius:14px;padding:24px 22px;text-align:center">
-          <div style="font-size:22px;margin-bottom:8px">🥇</div>
-          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;margin-bottom:4px">CAD $250</div>
-          <div style="font-size:12.5px;color:var(--muted)">Gold ambassador referral</div>
-        </div>
-        <div style="background:linear-gradient(135deg,rgba(212,162,78,.12) 0%,rgba(168,118,30,.08) 100%);border:1px solid rgba(168,118,30,.4);border-radius:14px;padding:24px 22px;text-align:center">
-          <div style="font-size:22px;margin-bottom:8px">💎</div>
-          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;color:var(--gold);margin-bottom:4px">CAD $500</div>
-          <div style="font-size:12.5px;color:var(--muted)">Diamond ambassador referral</div>
-        </div>
-      </div>
-      <p class="sub" style="margin:18px auto 0;text-align:center;font-size:11.5px">No limit to how many ambassadors you can refer. Reward tier is based on your referral's confirmed tier.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ══ AMBASSADOR TIERS ══ -->
 <section class="sec" id="tiers-section">
   <div class="wrap">
@@ -794,77 +808,6 @@ body.apply-bar-open #chat-panel{bottom:172px}
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div style="text-align:center">
-      <span class="tag">FAQ</span>
-      <div class="hl" style="margin:10px auto 14px"></div>
-      <h2>Common <span class="red">Questions</span></h2>
-      <p class="sub" style="margin:12px auto 0;text-align:center">Everything you need to know before applying.</p>
-    </div>
-    <div class="amb-faq">
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          How does referral tracking work?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">Each approved ambassador receives a unique referral link and promo code. Every order placed through your link is automatically attributed to your account. You can monitor your clicks, conversions, and commission balance at any time through your personal ambassador dashboard.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          When and how are commissions paid out?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">Commissions are calculated monthly and paid on the 15th of the following month via Interac e-Transfer (Canada) or PayPal (international). There is a 30-day order hold before commissions are released — this aligns with our 30-day return window. Minimum payout threshold is CA$50.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Can I apply if I live outside Canada or the USA?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">Yes — the Ambassador Program is open internationally. Our LPQS scoring system already accounts for 30+ countries. Commissions are paid in CAD via PayPal for international ambassadors. Note that the Audi R8 prize experience takes place in Vancouver, Canada; travel logistics will be arranged for international winners. Return airfare is capped at a maximum of $1,000 CAD for all winners, whether within Canada/USA or international — any amount above this cap is the responsibility of the winner.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          What happens if my score is below 50 (Waitlist)?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">A Waitlist result means your profile is not quite ready yet — typically due to audience size or engagement rate. You are welcome to grow your platform and re-apply after 6 months. Our team will send you specific feedback on which scoring categories to focus on. Many of our strongest ambassadors started on the Waitlist.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Can I move up to a higher tier after joining?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">Absolutely. All ambassador tiers are reviewed annually. If your platform has grown significantly — more followers, higher engagement, or stronger sales performance — you can request a re-evaluation at any time. Tier upgrades are automatic for top performers at each annual review.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Can I be both a Wholesale Partner and an Ambassador?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">Yes, the two programs are separate and compatible. Wholesale Partners purchase inventory at volume pricing for resale, while Ambassadors earn referral commissions on sales through their unique link — no inventory required. Many clinic owners and practitioners participate in both. Apply to whichever fits your business model, or both.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Is there a minimum sales requirement to stay active?
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a">There is no hard monthly minimum. However, ambassador accounts with zero activity for 6 consecutive months may be moved to inactive status and their referral link deactivated. Gold and Diamond tiers have an optional quarterly sales target that unlocks bonus incentives — hitting these is encouraged but never mandatory.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ══ APPLY SECTION ══ -->
 <section class="apply-sec" id="apply-section">
   <div class="wrap" style="text-align:center;margin-bottom:40px">
@@ -924,6 +867,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
           </div>
         </div>
         <div class="fg"><label for="f-website">Website / Blog / Social Profile URL (optional)</label><input type="url" id="f-website" placeholder="https://yoursite.com"/></div>
+        <div class="fg"><label for="f-referral">Referred by an existing Ambassador? (optional)</label><input type="text" id="f-referral" placeholder="Their name or referral link"/></div>
         <div class="form-nav" style="justify-content:flex-end">
           <button class="btn-next" onclick="goStep(2)">Next: Your Profession →</button>
         </div>
@@ -1176,6 +1120,44 @@ body.apply-bar-open #chat-panel{bottom:172px}
   </div>
 </section>
 
+<!-- ══ OFFICIAL FLYER ══ -->
+<section class="sec" style="text-align:center">
+  <div class="wrap">
+    <span class="tag">🤝 Official Flyer &amp; Referral Program</span>
+    <div class="hl" style="margin:10px auto 20px"></div>
+    <h2>Share the <span class="red">Challenge</span></h2>
+    <p class="sub" style="margin:14px auto 32px">Download and share this flyer on social media to spread the word about the Ambassador Program — or refer a fellow creator directly and earn a bonus once they're approved and generate CAD $2,500 in verified sales within their first 90 days.</p>
+    <a href="images/ambassador/audi-r8-flyer.jpg" target="_blank" rel="noopener" style="display:inline-block;max-width:380px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
+      <img src="images/ambassador/audi-r8-flyer.jpg" alt="LufaLight Ambassador Program — Earn the Keys to the Boss' Audi R8" style="width:100%;display:block" loading="lazy"/>
+    </a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+      <a href="images/ambassador/audi-r8-flyer.jpg" download="LufaLight-Ambassador-Flyer.jpg" class="btn-r">⬇️ Download Image</a>
+      <a href="images/ambassador/audi-r8-flyer.pdf" download="LufaLight-Ambassador-Flyer.pdf" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s">⬇️ Download PDF</a>
+    </div>
+
+    <div style="margin-top:64px;padding-top:56px;border-top:1px solid var(--line)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin-left:auto;margin-right:auto">
+        <div style="background:var(--card);border:1px solid rgba(180,180,180,.3);border-radius:14px;padding:24px 22px;text-align:center">
+          <div style="font-size:22px;margin-bottom:8px">🥈</div>
+          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;margin-bottom:4px">CAD $100</div>
+          <div style="font-size:12.5px;color:var(--muted)">Silver ambassador referral</div>
+        </div>
+        <div style="background:var(--card);border:1px solid rgba(255,200,0,.3);border-radius:14px;padding:24px 22px;text-align:center">
+          <div style="font-size:22px;margin-bottom:8px">🥇</div>
+          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;margin-bottom:4px">CAD $250</div>
+          <div style="font-size:12.5px;color:var(--muted)">Gold ambassador referral</div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(212,162,78,.12) 0%,rgba(168,118,30,.08) 100%);border:1px solid rgba(168,118,30,.4);border-radius:14px;padding:24px 22px;text-align:center">
+          <div style="font-size:22px;margin-bottom:8px">💎</div>
+          <div style="font-family:var(--hd);font-weight:900;font-size:1.3rem;color:var(--gold);margin-bottom:4px">CAD $500</div>
+          <div style="font-size:12.5px;color:var(--muted)">Diamond ambassador referral</div>
+        </div>
+      </div>
+      <p class="sub" style="margin:18px auto 0;text-align:center;font-size:11.5px">No limit to how many ambassadors you can refer. Reward tier is based on your referral's confirmed tier.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ══ AMBASSADOR TERMS PREVIEW ══ -->
 <section style="padding:72px 0 80px;background:var(--bg);border-top:1px solid var(--line)" id="terms-preview">
   <div class="wrap" style="max-width:900px">
@@ -1279,12 +1261,83 @@ body.apply-bar-open #chat-panel{bottom:172px}
   </div>
 </section>
 
+<!-- ══ FAQ ══ -->
+<section class="sec">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="tag">FAQ</span>
+      <div class="hl" style="margin:10px auto 14px"></div>
+      <h2>Common <span class="red">Questions</span></h2>
+      <p class="sub" style="margin:12px auto 0;text-align:center">Everything you need to know before applying.</p>
+    </div>
+    <div class="amb-faq">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How does referral tracking work?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Each approved ambassador receives a unique referral link and promo code. Every order placed through your link is automatically attributed to your account. You can monitor your clicks, conversions, and commission balance at any time through your personal ambassador dashboard.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          When and how are commissions paid out?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Commissions are calculated monthly and paid on the 15th of the following month via Interac e-Transfer (Canada) or PayPal (international). There is a 30-day order hold before commissions are released — this aligns with our 30-day return window. Minimum payout threshold is CA$50.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I apply if I live outside Canada or the USA?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes — the Ambassador Program is open internationally. Our LPQS scoring system already accounts for 30+ countries. Commissions are paid in CAD via PayPal for international ambassadors. Note that the Audi R8 prize experience takes place in Vancouver, Canada; travel logistics will be arranged for international winners. Return airfare is capped at a maximum of $1,000 CAD for all winners, whether within Canada/USA or international — any amount above this cap is the responsibility of the winner.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What happens if my score is below 50 (Waitlist)?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">A Waitlist result means your profile is not quite ready yet — typically due to audience size or engagement rate. You are welcome to grow your platform and re-apply after 6 months. Our team will send you specific feedback on which scoring categories to focus on. Many of our strongest ambassadors started on the Waitlist.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I move up to a higher tier after joining?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Absolutely. All ambassador tiers are reviewed annually. If your platform has grown significantly — more followers, higher engagement, or stronger sales performance — you can request a re-evaluation at any time. Tier upgrades are automatic for top performers at each annual review.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I be both a Wholesale Partner and an Ambassador?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes, the two programs are separate and compatible. Wholesale Partners purchase inventory at volume pricing for resale, while Ambassadors earn referral commissions on sales through their unique link — no inventory required. Many clinic owners and practitioners participate in both. Apply to whichever fits your business model, or both.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is there a minimum sales requirement to stay active?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">There is no hard monthly minimum. However, ambassador accounts with zero activity for 6 consecutive months may be moved to inactive status and their referral link deactivated. Gold and Diamond tiers have an optional quarterly sales target that unlocks bonus incentives — hitting these is encouraged but never mandatory.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ FOOTER ══ -->
 <footer><div class="wrap">
   <div class="ft-grid">
     <div>
       <div class="ft-brand">
-        <div class="ft-sun"><svg class="ft-rays" viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(16,16)"><line x1="0" y1="-14" x2="0" y2="-9" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="9" x2="0" y2="14" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-14" y1="0" x2="-9" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="0" x2="14" y2="0" stroke="#E82D2D" stroke-width="2" stroke-linecap="round"/><line x1="-9" y1="-9" x2="-6" y2="-6" stroke="#E82D2D" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="6" x2="9" y2="9" stroke="#E82D2D" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="-9" x2="6" y2="-6" stroke="#E82D2D" stroke-width="1.5" stroke-linecap="round"/><line x1="-6" y1="6" x2="-9" y2="9" stroke="#E82D2D" stroke-width="1.5" stroke-linecap="round"/></g></svg><div class="ft-core"></div></div>
+        <div class="ft-sun"><svg class="ft-rays" viewBox="0 0 32 32" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(16,16)"><line x1="0" y1="-9" x2="0" y2="-14" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="5.29" y1="-7.28" x2="8.23" y2="-11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="8.56" y1="-2.78" x2="13.32" y2="-4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="8.56" y1="2.78" x2="13.32" y2="4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="5.29" y1="7.28" x2="8.23" y2="11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="0" y1="9" x2="0" y2="14" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-5.29" y1="7.28" x2="-8.23" y2="11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-8.56" y1="2.78" x2="-13.32" y2="4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-8.56" y1="-2.78" x2="-13.32" y2="-4.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/><line x1="-5.29" y1="-7.28" x2="-8.23" y2="-11.33" stroke="#E82D2D" stroke-width="1.8" stroke-linecap="round"/></g></svg><div class="ft-core"></div></div>
         <div><div class="ft-wm"><span style="color:var(--white)">LUFA</span><span style="color:var(--red)">LIGHT</span></div><div class="ft-tl">Revive · Restore · Radiate</div></div>
       </div>
       <p class="ft-desc">Premium red &amp; near-infrared light therapy devices. Canada &amp; USA Delivery. Dedicated English-language support.</p>
@@ -1327,6 +1380,14 @@ body.apply-bar-open #chat-panel{bottom:172px}
   t.addEventListener('click',function(){d=!d;localStorage.setItem('lufa-theme',d?'dark':'light');applyTheme(d);});
 })();
 
+/* ── REFERRED-BY AUTO-FILL ── e.g. ambassador.html?ref=JaneDoe#apply-section */
+(function(){
+  var ref=new URLSearchParams(window.location.search).get('ref');
+  if(!ref)return;
+  var f=document.getElementById('f-referral');
+  if(f)f.value=decodeURIComponent(ref);
+})();
+
 /* ── MOBILE NAV ── */
 (function(){
   function closeMob(){document.getElementById('mob-overlay').classList.remove('open');}
@@ -1340,6 +1401,28 @@ document.querySelectorAll('.nav-item').forEach(function(it){
   it.addEventListener('mouseenter',function(){clearTimeout(ct);it.classList.add('open');});
   it.addEventListener('mouseleave',function(){ct=setTimeout(function(){it.classList.remove('open');},300);});
 });
+
+/* ── R8 ENTRY POPUP ── shows once per browser session on landing */
+(function(){
+  var KEY='lufa_r8pop_shown';
+  var ov=document.getElementById('r8-pop-ov');
+  function open(){
+    if(sessionStorage.getItem(KEY))return;
+    sessionStorage.setItem(KEY,'1');
+    ov.classList.add('open');
+    /* avoid stacking with the sitewide discount popup (promo.js) */
+    try{localStorage.setItem('lufa_soft_suppress_until',String(Date.now()+3*86400000));}catch(e){}
+  }
+  function close(){ov.classList.remove('open');}
+  window.closeR8Pop=close;
+  window.r8PopGo=function(id){
+    close();
+    var el=document.getElementById(id);
+    if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth'});},250);
+  };
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  setTimeout(open,1200);
+})();
 
 /* ── FAQ ACCORDION ── */
 function toggleFaq(el){
@@ -1555,6 +1638,7 @@ function submitForm(){
     'Phone':gv('f-phone'),
     'Country':gv('f-country'),
     'Website':gv('f-website'),
+    'Referred By':gv('f-referral')||'Not provided',
     'Profession':gv('f-profession'),
     'Years Experience':gv('f-years'),
     'Previous Wellness Promotion':gv('f-wellness'),

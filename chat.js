@@ -7,7 +7,7 @@
 
     /* ── PRODUCT SELECTION ── */
     {k:['which.*right','which.*best','help.*choose','not sure','recommend','suggest','what should','find.*device','fit'],
-     r:'<b>🎯 Find Your Device</b><br>Best by goal:<br>&bull; <b>Skin/wrinkles:</b> <a href="product.html?sku=G15P">G15P</a> ($599) or <a href="product.html?sku=G15">G15</a> ($499)<br>&bull; <b>Pain/recovery:</b> <a href="product.html?sku=P40B">P40B</a> ($209) or <a href="product.html?sku=MINI60PRO">MINI60PRO</a> ($336)<br>&bull; <b>Full-body:</b> <a href="product.html?sku=BK300">BK300</a> (flagship) or <a href="product.html?sku=MAX1800">MAX1800</a><br>&bull; <b>Hair growth:</b> <a href="product.html?sku=C01">HGrowCap C01</a> ($690)<br>&bull; <b>Sleep:</b> <a href="product.html?sku=EM04">SleepGlow EM04</a> ($199)<br><a href="quiz.html">🎯 Take the 60-sec Quiz →</a>'},
+     r:'<b>🎯 Find Your Device</b><br>Best by goal:<br>&bull; <b>Skin/wrinkles:</b> <a href="product.html?sku=G15P">G15P</a> ($599) or <a href="product.html?sku=G15">G15</a> ($499)<br>&bull; <b>Pain/recovery:</b> <a href="product.html?sku=P40B">P40B</a> ($249) or <a href="product.html?sku=MINI60PRO">MINI60PRO</a> ($399)<br>&bull; <b>Full-body:</b> <a href="product.html?sku=BK300">BK300</a> (flagship) or <a href="product.html?sku=MAX1800">MAX1800</a><br>&bull; <b>Hair growth:</b> <a href="product.html?sku=C01">HGrowCap C01</a> ($690)<br>&bull; <b>Sleep:</b> <a href="product.html?sku=EM04">SleepGlow EM04</a> ($229)<br><a href="quiz.html">🎯 Take the 60-sec Quiz →</a>'},
 
     /* ── WHAT IS RED LIGHT THERAPY ── */
     {k:['what is red light','what is pbm','photobiomodulation','how does.*work','how.*light.*work','how it works','how.*work','red light therapy'],
@@ -43,15 +43,15 @@
 
     /* ── SKIN / FACE ── */
     {k:['skin','face','collagen','wrinkle','anti.ag','glow','brighten','fine line','rejuven'],
-     r:'<b>✨ Skin & Face</b><br>&bull; <a href="product.html?sku=G15P">BeauMask + BeauNeck-Décolleté</a> — $599 — Face + Neck (660nm Red + NIR)<br>&bull; <a href="product.html?sku=G15">BeauMask</a> — $499 — Full face (415nm Blue + 660nm Red)<br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow</a> — $199 — Eye area + sleep support'},
+     r:'<b>✨ Skin & Face</b><br>&bull; <a href="product.html?sku=G15P">BeauMask + BeauNeck-Décolleté</a> — $599 — Face + Neck (660nm Red + NIR)<br>&bull; <a href="product.html?sku=G15">BeauMask</a> — $499 — Full face (415nm Blue + 660nm Red)<br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow</a> — $229 — Eye area + sleep support'},
 
     /* ── SLEEP ── */
     {k:['sleep','insomnia','melatonin','relax','rest','bedtime'],
-     r:'<b>😴 Sleep Support</b><br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow Eye Mask</a> — $199<br>630nm red light supports natural melatonin production for deeper sleep. Wireless + 20-min auto-off timer. Use 20 min before bed.'},
+     r:'<b>😴 Sleep Support</b><br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow Eye Mask</a> — $229<br>630nm red light supports natural melatonin production for deeper sleep. Wireless + 20-min auto-off timer. Use 20 min before bed.'},
 
     /* ── PAIN / RECOVERY ── */
     {k:['pain','recover','recovery','muscle','joint','injur','ache','sore','back','arthrit','inflam'],
-     r:'<b>💪 Pain & Recovery</b><br>&bull; <a href="product.html?sku=P40B">RecoverPro40B</a> — $209 (desktop, 40 LEDs)<br>&bull; <a href="product.html?sku=MINI60PRO">Glow60MiniPro</a> — $336 (handheld, targeted relief)<br>&bull; <a href="product.html?sku=PE01">VitalityPro PEMF Mat</a> — $899 (full-body + PEMF)<br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Bundle</a> — $479 (save $66)'},
+     r:'<b>💪 Pain & Recovery</b><br>&bull; <a href="product.html?sku=P40B">RecoverPro40B</a> — $249 (desktop, 40 LEDs)<br>&bull; <a href="product.html?sku=MINI60PRO">Glow60MiniPro</a> — $399 (handheld, targeted relief)<br>&bull; <a href="product.html?sku=PE01">VitalityPro PEMF Mat</a> — $899 (full-body + PEMF)<br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Bundle</a> — $582 (save $66)'},
 
     /* ── HAIR GROWTH ── */
     {k:['hair','grow','growth','bald','scalp','alopec','thinning'],
@@ -147,11 +147,11 @@
 
     /* ── PRICE / BUDGET ── */
     {k:['price','cost','how much','budget','afford','cheap','expens'],
-     r:'<b>💰 Pricing</b><br>&bull; Entry: $199 (GlowEM04 Eye Mask)<br>&bull; Mid: $209–$599 (RecoverPro40B, Glow60MiniPro, BeauMask, BeauMask+BeauNeck)<br>&bull; Pro: $499–$1,399 (LUMENOVA PRO, AuraDome, Solaris9 BK300)<br>&bull; Clinic: $1,942–$5,299 (LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000)<br>&bull; Bundles from $479 (save up to $268)<br><a href="shop-all.html">Browse All →</a>'},
+     r:'<b>💰 Pricing</b><br>&bull; Entry: $229 (GlowEM04 Eye Mask)<br>&bull; Mid: $249–$599 (RecoverPro40B, Glow60MiniPro, BeauMask, BeauMask+BeauNeck)<br>&bull; Pro: $499–$1,399 (LUMENOVA PRO, AuraDome, Solaris9 BK300)<br>&bull; Clinic: $1,942–$5,299 (LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000)<br>&bull; Bundles from $582 (save up to $268)<br><a href="shop-all.html">Browse All →</a>'},
 
     /* ── BUNDLES ── */
     {k:['bundle','combo','package','save','deal','kit'],
-     r:'<b>🎁 Bundles & Save</b><br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Essentials</a> — $479 (save $66)<br>&bull; <a href="product.html?sku=BUNDLE-GLOW">Glow & Restore</a> — $699 (save $99)<br>&bull; <a href="product.html?sku=BUNDLE-FULLBODY">Full-Body Recovery</a> — $2,399 (save $268)'},
+     r:'<b>🎁 Bundles & Save</b><br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Essentials</a> — $582 (save $66)<br>&bull; <a href="product.html?sku=BUNDLE-GLOW">Glow & Restore</a> — $729 (save $99)<br>&bull; <a href="product.html?sku=BUNDLE-FULLBODY">Full-Body Recovery</a> — $2,399 (save $268)'},
 
     /* ── QUIZ ── */
     {k:['quiz','finder','60.sec','find my','which is right','which one','tool'],
