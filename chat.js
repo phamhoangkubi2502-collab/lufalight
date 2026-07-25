@@ -51,7 +51,7 @@
 
     /* ── PAIN / RECOVERY ── */
     {k:['pain','recover','recovery','muscle','joint','injur','ache','sore','back','arthrit','inflam'],
-     r:'<b>💪 Pain & Recovery</b><br>&bull; <a href="product.html?sku=P40B">RecoverPro40B</a> — $249 (desktop, 40 LEDs)<br>&bull; <a href="product.html?sku=MINI60PRO">Glow60MiniPro</a> — $399 (handheld, targeted relief)<br>&bull; <a href="product.html?sku=PE01">VitalityPro PEMF Mat</a> — $899 (full-body + PEMF)<br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Bundle</a> — $582 (save $66)'},
+     r:'<b>💪 Pain & Recovery</b><br>&bull; <a href="product.html?sku=P40B">RecoverPro40B</a> — $249 (desktop, 40 LEDs)<br>&bull; <a href="product.html?sku=MINI60PRO">Glow60MiniPro</a> — $399 (handheld, targeted relief)<br>&bull; <a href="product.html?sku=PE01">VitalityPro PEMF Mat</a> — $899 (full-body + PEMF)<br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Bundle</a> — $518 (save $130)'},
 
     /* ── HAIR GROWTH ── */
     {k:['hair','grow','growth','bald','scalp','alopec','thinning'],
@@ -147,11 +147,11 @@
 
     /* ── PRICE / BUDGET ── */
     {k:['price','cost','how much','budget','afford','cheap','expens'],
-     r:'<b>💰 Pricing</b><br>&bull; Entry: $229 (GlowEM04 Eye Mask)<br>&bull; Mid: $249–$599 (RecoverPro40B, Glow60MiniPro, BeauMask, BeauMask+BeauNeck)<br>&bull; Pro: $499–$1,399 (LUMENOVA PRO, AuraDome, Solaris9 BK300)<br>&bull; Clinic: $1,942–$5,299 (LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000)<br>&bull; Bundles from $582 (save up to $268)<br><a href="shop-all.html">Browse All →</a>'},
+     r:'<b>💰 Pricing</b><br>&bull; Entry: $229 (GlowEM04 Eye Mask)<br>&bull; Mid: $249–$599 (RecoverPro40B, Glow60MiniPro, BeauMask, BeauMask+BeauNeck)<br>&bull; Pro: $499–$1,399 (LUMENOVA PRO, AuraDome, Solaris9 BK300)<br>&bull; Clinic: $1,942–$5,299 (LUFAMAX 1800, LUFAMAX 4800, LUFAESPRO 3000)<br>&bull; Bundles from $518 (save up to $533)<br><a href="shop-all.html">Browse All →</a>'},
 
     /* ── BUNDLES ── */
     {k:['bundle','combo','package','save','deal','kit'],
-     r:'<b>🎁 Bundles & Save</b><br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Essentials</a> — $582 (save $66)<br>&bull; <a href="product.html?sku=BUNDLE-GLOW">Glow & Restore</a> — $729 (save $99)<br>&bull; <a href="product.html?sku=BUNDLE-FULLBODY">Full-Body Recovery</a> — $2,399 (save $268)'},
+     r:'<b>🎁 Bundles & Save</b><br>&bull; <a href="product.html?sku=BUNDLE-RECOVERY">Recovery Essentials</a> — $518 (save $130)<br>&bull; <a href="product.html?sku=BUNDLE-GLOW">Glow & Restore</a> — $662 (save $166)<br>&bull; <a href="product.html?sku=BUNDLE-FULLBODY">Full-Body Recovery</a> — $2,134 (save $533)'},
 
     /* ── QUIZ ── */
     {k:['quiz','finder','60.sec','find my','which is right','which one','tool'],

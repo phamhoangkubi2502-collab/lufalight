@@ -407,7 +407,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
   <div class="prod-grid">
     <div class="pc" onclick="window.location.href='product.html#BUNDLE-RECOVERY'">
       <div class="pc-img">
-        <span class="pc-bdg bg">Save $66</span>
+        <span class="pc-bdg bg">Save $130</span>
         <span class="pc-coll">Bundle</span>
         <div class="pc-combo">
           <div class="pc-combo-item"><img src="images/products/P40B-3.jpg" alt="RecoverPro40B" loading="lazy"></div>
@@ -418,7 +418,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">RECOVERY + RELIEF</div>
         <div class="pc-name">Recovery Essentials Bundle</div>
-        <div class="pc-price"><span class="orig">$582 CAD</span>$466 CAD<span class="pc-save-badge">-20%</span></div>
+        <div class="pc-price"><span class="orig">$648 CAD</span>$518 CAD</div>
         <div class="pc-waves">RecoverPro40B Desktop Panel + GlowMini60Pro</div>
         <div class="pc-act">
 
@@ -430,7 +430,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     </div>
     <div class="pc" onclick="window.location.href='product.html#BUNDLE-GLOW'">
       <div class="pc-img">
-        <span class="pc-bdg bg">Save $99</span>
+        <span class="pc-bdg bg">Save $166</span>
         <span class="pc-coll">Bundle</span>
         <div class="pc-combo">
           <div class="pc-combo-item"><img src="images/products/G15P-11.png" alt="BeauMask + BeauNeck-Décolleté" loading="lazy"></div>
@@ -441,7 +441,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">SKIN + SLEEP</div>
         <div class="pc-name">Glow &amp; Restore Bundle</div>
-        <div class="pc-price"><span class="orig">$729 CAD</span>$583 CAD<span class="pc-save-badge">-20%</span></div>
+        <div class="pc-price"><span class="orig">$828 CAD</span>$662 CAD</div>
         <div class="pc-waves">BeauMask+BeauNeck Face &amp; Neck Set + GlowEM04 Sleep Mask</div>
         <div class="pc-act">
 
@@ -453,7 +453,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
     </div>
     <div class="pc" onclick="window.location.href='product.html#BUNDLE-FULLBODY'">
       <div class="pc-img">
-        <span class="pc-bdg bg">Save $268</span>
+        <span class="pc-bdg bg">Save $533</span>
         <span class="pc-coll">Bundle</span>
         <div class="pc-combo">
           <div class="pc-combo-item"><img src="images/products/MAX1800-1.jpg" alt="LUFAMAX 1800" loading="lazy"></div>
@@ -464,10 +464,10 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:64px 0 24p
       <div class="pc-body">
         <div class="pc-line">FULL-BODY RECOVERY</div>
         <div class="pc-name">Full-Body Recovery Bundle</div>
-        <div class="pc-price"><span class="orig">$2,399 CAD</span>$1,919 CAD<span class="pc-save-badge">-20%</span></div>
+        <div class="pc-price"><span class="orig">$2,667 CAD</span>$2,134 CAD</div>
         <div class="pc-waves">LUFAMAX 1800 Full-Body Panel + ProStand Adjustable Stand</div>
         <div class="pc-act">
-          
+
           <button class="pc-buy lufa-add-cart" onclick="event.stopPropagation()"
             data-item-id="BUNDLE-FULLBODY" data-item-name="Full-Body Recovery Bundle" data-item-price="2134"
             data-item-image="images/products/MAX1800-1.jpg">+ Add to Inquiry List</button>
@@ -789,7 +789,7 @@ function render(){
       <div class="pc-body">
         <div class="pc-line">${p.goal}</div>
         <div class="pc-name">${p.name}</div>
-        <div class="pc-price">${(window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span class="orig">${fmt(p.price)}</span>${fmt(window.salePrice(p.price, p.coll))}<span class="pc-save-badge">-${Math.round((p.coll==='bundle'?window.LUFA_PROMO.bundlePct:window.LUFA_PROMO.pct)*100)}%</span>`:fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:'')}</div>
+        <div class="pc-price">${p.coll==='bundle'?fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:''):((window.LUFA_PROMO&&window.LUFA_PROMO.active)?`<span class="orig">${fmt(p.price)}</span>${fmt(window.salePrice(p.price, p.coll))}<span class="pc-save-badge">-${Math.round(window.LUFA_PROMO.pct*100)}%</span>`:fmt(p.price)+(p.originalPrice?`<span class="orig">${fmt(p.originalPrice)}</span>`:''))}</div>
         <div class="pc-waves">${p.waves}</div>
         <div class="pc-act">
           
