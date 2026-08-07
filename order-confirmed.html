@@ -9,23 +9,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{--red:#E82D2D;--redl:#F05555;--redd:#C91F1F;--bg:#FFFFFF;--bg2:#F6F6F8;--card:#FFFFFF;--line:rgba(0,0,0,.1);--muted:#5C606B;--white:#14151A;--gold:#A8761E;--r:14px;--hd:"Inter Tight",sans-serif;--bd:"Plus Jakarta Sans",sans-serif;}
-html{scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:var(--bd);overflow-x:hidden;line-height:1.6}
+html{scroll-behavior:smooth}
 a{color:inherit;text-decoration:none}
-@keyframes spin{to{transform:rotate(360deg)}}
+
 #topbar{background:var(--red);padding:9px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#fff}
 #topbar .tb-sep{margin:0 8px}
 @media(max-width:640px){#topbar{display:flex;flex-direction:column;gap:6px;padding:12px 16px}#topbar .tb-sep{display:none}}
 @media(max-width:380px){#topbar{font-size:11px;padding:12px 10px}}
 nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 32px;gap:14px}
 .nav-sun{width:42px;height:42px;position:relative;flex-shrink:0}
-.sun-core{position:absolute;inset:8px;background:radial-gradient(circle,var(--redl),var(--red));border-radius:50%;box-shadow:0 0 16px rgba(232,45,45,.6)}
-.sun-rays{position:absolute;inset:0;animation:spin 10s linear infinite}
-.nav-brand{display:flex;flex-direction:column}
+
 .nav-wm{font-family:var(--hd);font-size:1.65rem;font-weight:900;letter-spacing:-.03em;line-height:1}
-.nav-wm .lufa{color:var(--white)}.nav-wm .light{color:var(--red)}
+
 .nav-tl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
 .wrap{max-width:680px;margin:0 auto;padding:0 28px}
 .sec{padding:72px 0 96px;text-align:center}
@@ -35,17 +34,10 @@ h1{font-family:var(--hd);font-weight:900;font-size:clamp(1.9rem,4vw,2.6rem);lett
 .session-box{margin:28px auto 0;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;font-size:12.5px;color:var(--muted);word-break:break-all}
 .session-box strong{color:var(--white)}
 .cta-row{display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap}
-.btn-r{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:14px 30px;border-radius:7px;border:none;transition:background .2s,transform .2s;white-space:nowrap;cursor:pointer}
-.btn-r:hover{background:var(--redl);transform:translateY(-2px)}
-.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:13px 26px;border-radius:7px;border:1px solid var(--line);transition:all .2s;white-space:nowrap;cursor:pointer}
-.btn-g:hover{border-color:var(--red);background:rgba(232,45,45,.08)}
+
 footer{background:var(--bg2);border-top:1px solid var(--line);padding:32px 0;text-align:center}
 .disc-acc{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);max-width:600px}
-.disc-acc summary{display:flex;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;list-style:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.disc-acc summary::-webkit-details-marker{display:none}
-.disc-acc summary::after{content:'+';font-size:18px;font-weight:400;line-height:1;flex-shrink:0}
-.disc-acc[open] summary::after{content:'\2212'}
-.disc-acc p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px;text-align:left}
+
 .ft-copy{font-size:11px;color:var(--muted)}
 </style>
 </head>
@@ -98,5 +90,6 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:32px 0;tex
   }
 })();
 </script>
+<script src="shared.js"></script>
 </body>
 </html>

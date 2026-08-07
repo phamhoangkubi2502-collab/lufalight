@@ -1,0 +1,44 @@
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none">
+    <div class="nav-sun">
+      <svg class="sun-rays" viewBox="0 0 42 42" style="position:absolute;inset:0;width:100%;height:100%"><g transform="translate(21,21)"><line x1="0" y1="-13" x2="0" y2="-19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="-10.52" x2="11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="-4.02" x2="18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="12.36" y1="4.02" x2="18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="7.64" y1="10.52" x2="11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="13" x2="0" y2="19" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="10.52" x2="-11.17" y2="15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="4.02" x2="-18.07" y2="5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-12.36" y1="-4.02" x2="-18.07" y2="-5.87" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/><line x1="-7.64" y1="-10.52" x2="-11.17" y2="-15.37" stroke="#E82D2D" stroke-width="2.2" stroke-linecap="round"/></g></svg>
+      <div class="sun-core"></div>
+    </div>
+    <div class="nav-brand"><div class="nav-wm"><span class="lufa">LUFA</span><span class="light">LIGHT</span></div><div class="nav-tl">Revive · Restore · Radiate</div></div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item"><a href="shop-all.html" class="nav-mega-trigger">Shop All</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it)o.classList.remove('open')});it.classList.toggle('open')" role="button" aria-label="Toggle Shop All menu">&#9662;</span><div class="mega-menu">
+        <div class="mega-col">
+          <div class="mega-h">Face &amp; Skin</div>
+          <a href="product.html#EM04">GlowEM04 — Sleep Mask</a><a href="product.html#G15P">BeauMask + BeauNeck-Décolleté</a><a href="product.html#G15">BeauMask</a>
+          <a href="shop-all.html?coll=face-skin" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Body &amp; Recovery</div>
+          <a href="product.html#P40B">RecoverPro40B</a><a href="product.html#MINI60PRO">GlowMini60Pro</a><a href="product.html#E300">GlowE300</a>
+          <a href="shop-all.html?coll=body-recovery" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Specialty</div>
+          <a href="product.html#C01">LUMENOVA PRO</a><a href="product.html#G240">AuraDome</a>
+          <a href="shop-all.html?coll=specialty" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Full-Body Panels</div>
+          <a href="product.html#BK300">Solaris9 BK300 Executive Edition</a><a href="product.html#MAX1800">LUFAMAX 1800</a><a href="product.html#MAX4800">LUFAMAX 4800</a><a href="product.html#ESPRO3000">LUFAESPRO 3000</a>
+          <a href="shop-all.html?coll=full-body" class="mega-all">View All →</a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h">Accessories</div>
+          <a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a>
+          <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
+        </div>
+      </div></div>
+    <a href="our-story.html">Our Story</a>
+    <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a><a href="blog.html">📰 Health Blog</a></div></div>
+    <div class="nav-item"><a href="quiz.html">🎯 Find My Device</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it2=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it2)o.classList.remove('open')});it2.classList.toggle('open')" role="button" aria-label="Toggle Find My Device menu">&#9662;</span><div class="mega-menu mini-menu"><a href="quiz.html">🎯 Take the Quiz</a><a href="compare.html">⚖️ Compare Devices</a><a href="index.html#goals">🧭 Shop by Goal</a></div></div><a href="ambassador.html">🏆 Ambassadors</a>
+  </div>
+  <button class="nav-cta" onclick="openLead()">📩 Consult</button>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button class="nav-ham" onclick="document.getElementById('mob-overlay').classList.add('open')" aria-label="Open menu">&#9776;</button>
+</nav>
