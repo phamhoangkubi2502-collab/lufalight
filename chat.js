@@ -7,7 +7,7 @@
 
     /* ── PRODUCT SELECTION ── */
     {k:['which.*right','which.*best','help.*choose','not sure','recommend','suggest','what should','find.*device','fit'],
-     r:'<b>🎯 Find Your Device</b><br>Best by goal:<br>&bull; <b>Skin/wrinkles:</b> <a href="product.html?sku=G15P">G15P</a> ($599) or <a href="product.html?sku=G15">G15</a> ($499)<br>&bull; <b>Pain/recovery:</b> <a href="product.html?sku=P40B">P40B</a> ($249) or <a href="product.html?sku=MINI60PRO">MINI60PRO</a> ($399)<br>&bull; <b>Full-body:</b> <a href="product.html?sku=BK300">BK300</a> (flagship) or <a href="product.html?sku=MAX1800">MAX1800</a><br>&bull; <b>Hair growth:</b> <a href="product.html?sku=C01">HGrowCap C01</a> ($690)<br>&bull; <b>Sleep:</b> <a href="product.html?sku=EM04">SleepGlow EM04</a> ($229)<br><a href="quiz.html">🎯 Take the 60-sec Quiz →</a>'},
+     r:`<b>🎯 Find Your Device</b><br>Best by goal:<br>&bull; <b>Skin/wrinkles:</b> <a href="product.html?sku=G15P">G15P</a> ($599) or <a href="product.html?sku=G15">G15</a> ($499)<br>&bull; <b>Pain/recovery:</b> <a href="product.html?sku=P40B">P40B</a> ($249) or <a href="product.html?sku=MINI60PRO">MINI60PRO</a> ($399)<br>&bull; <b>Full-body:</b> <a href="product.html?sku=BK300">BK300</a> (flagship) or <a href="product.html?sku=MAX1800">MAX1800</a><br>&bull; <b>Hair growth:</b> <a href="product.html?sku=C01">${PRODUCT_NAMES.C01} (C01)</a> ($690)<br>&bull; <b>Sleep:</b> <a href="product.html?sku=EM04">${PRODUCT_NAMES.EM04} (EM04)</a> ($229)<br><a href="quiz.html">🎯 Take the 60-sec Quiz →</a>`},
 
     /* ── WHAT IS RED LIGHT THERAPY ── */
     {k:['what is red light','what is pbm','photobiomodulation','how does.*work','how.*light.*work','how it works','how.*work','red light therapy'],
@@ -23,7 +23,7 @@
 
     /* ── BK300 SPECIFIC ── */
     {k:['bk300','bioshield','flagship','uvb','1060','ultra.deep','immune'],
-     r:'<b>🛡️ BioShield BK300 — Flagship</b><br>Only device in its class with:<br>&bull; Dual UVB (295nm + 311nm certified)<br>&bull; 1060nm Ultra-Deep NIR (exclusive to LUFALIGHT)<br>&bull; 150 mW/cm² irradiance<br>&bull; FDA-Cleared 510(k) + ISO 13485 + IEC 60601<br>No competitor offers this wavelength combination at any price.<br><a href="product.html?sku=BK300">BK300 Details →</a>'},
+     r:`<b>🛡️ ${PRODUCT_NAMES.BK300} — Flagship</b><br>Only device in its class with:<br>&bull; Dual UVB (295nm + 311nm certified)<br>&bull; 1060nm Ultra-Deep NIR (exclusive to LUFALIGHT)<br>&bull; 150 mW/cm² irradiance<br>&bull; FDA-Cleared 510(k) + ISO 13485 + IEC 60601<br>No competitor offers this wavelength combination at any price.<br><a href="product.html?sku=BK300">BK300 Details →</a>`},
 
     /* ── SAFETY ── */
     {k:['safe','danger','side effect','risk','uv radiation','pregnant','photosensit'],
@@ -43,11 +43,11 @@
 
     /* ── SKIN / FACE ── */
     {k:['skin','face','collagen','wrinkle','anti.ag','glow','brighten','fine line','rejuven'],
-     r:'<b>✨ Skin & Face</b><br>&bull; <a href="product.html?sku=G15P">BeauMask + BeauNeck-Décolleté</a> — $599 — Face + Neck (660nm Red + NIR)<br>&bull; <a href="product.html?sku=G15">BeauMask</a> — $499 — Full face (415nm Blue + 660nm Red)<br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow</a> — $229 — Eye area + sleep support'},
+     r:`<b>✨ Skin & Face</b><br>&bull; <a href="product.html?sku=G15P">${PRODUCT_NAMES.G15P}</a> — $599 — Face + Neck (660nm Red + NIR)<br>&bull; <a href="product.html?sku=G15">${PRODUCT_NAMES.G15}</a> — $499 — Full face (415nm Blue + 660nm Red)<br>&bull; <a href="product.html?sku=EM04">${PRODUCT_NAMES.EM04}</a> — $229 — Eye area + sleep support`},
 
     /* ── SLEEP ── */
     {k:['sleep','insomnia','melatonin','relax','rest','bedtime'],
-     r:'<b>😴 Sleep Support</b><br>&bull; <a href="product.html?sku=EM04">GlowEM04 SleepGlow Eye Mask</a> — $229<br>630nm red light supports natural melatonin production for deeper sleep. Wireless + 20-min auto-off timer. Use 20 min before bed.'},
+     r:`<b>😴 Sleep Support</b><br>&bull; <a href="product.html?sku=EM04">${PRODUCT_NAMES.EM04} Sleep Mask</a> — $229<br>630nm red light supports natural melatonin production for deeper sleep. Wireless + 20-min auto-off timer. Use 20 min before bed.`},
 
     /* ── PAIN / RECOVERY ── */
     {k:['pain','recover','recovery','muscle','joint','injur','ache','sore','back','arthrit','inflam'],
@@ -59,7 +59,7 @@
 
     /* ── ACNE / CLEAR SKIN ── */
     {k:['acne','clear.*skin','breakout','pimple','sebum','blemish'],
-     r:'<b>🌿 Acne & Clear Skin</b><br>&bull; <a href="product.html?sku=G15">G15 ClearGlow Face Mask</a> — $499<br>415nm Blue targets acne bacteria + 630nm Red reduces inflammation. Clinically studied: -76% acne reduction.'},
+     r:`<b>🌿 Acne & Clear Skin</b><br>&bull; <a href="product.html?sku=G15">${PRODUCT_NAMES.G15}</a> — $499<br>415nm Blue targets acne bacteria + 630nm Red reduces inflammation. Clinically studied: -76% acne reduction.`},
 
     /* ── BRAIN / MENTAL ── */
     {k:['brain','focus','mental','cognitive','memory','fog','e300'],
@@ -131,7 +131,7 @@
 
     /* ── MULTIPLE DEVICES ── */
     {k:['multiple','two.*device','combine','same time','together.*device'],
-     r:'<b>🔀 Using Multiple Devices</b><br>Yes — many users combine devices (e.g., SleepGlow Eye Mask during a full-body panel session). Keep total session times within recommended limits per each device\'s protocol guide.'},
+     r:`<b>🔀 Using Multiple Devices</b><br>Yes — many users combine devices (e.g., ${PRODUCT_NAMES.EM04} Sleep Mask during a full-body panel session). Keep total session times within recommended limits per each device's protocol guide.`},
 
     /* ── DEVICE REGISTRATION ── */
     {k:['register','serial','registrat'],

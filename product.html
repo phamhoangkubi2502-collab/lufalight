@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<script src="product-names.js"></script>
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title id="pageTitle">Product — Lufalight</title>
@@ -644,58 +645,58 @@ const CATEGORY_B_SKUS = new Set(['EM04','G15P','G15','C01','G240','PE01','MRS45'
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
 const PRODUCTS = [
   { id:'EM04', coll:'face-skin', goal:'SLEEP', icon:'😴', badge:'FDA-Registered', badgeClass:'bg',
-    name:'GlowEM04', price:229, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
+    name:PRODUCT_NAMES.EM04, price:229, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
     img:'images/products/EM04-9.png', gallery:['images/products/EM04-9.png','images/products/EM04-1.jpg','images/products/EM04-2.jpg','images/products/EM04-3.jpg','images/products/EM04-4.png','images/products/EM04-5.png','images/products/EM04-6.png','images/products/EM04-7.png','images/products/EM04-8.png','images/products/EM04-10.png','images/products/EM04-11.jpg','images/products/EM04-12.jpg','images/products/EM04-15.jpg'] },
   { id:'G15P', coll:'face-skin', goal:'SKIN', icon:'💆', badge:'Best Seller', badgeClass:'br', fda:true,
-    name:'BeauMask + BeauNeck-Décolleté', price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
+    name:PRODUCT_NAMES.G15P, price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
     img:'images/products/G15P-2.jpg', gallery:['images/products/G15P-2.jpg','images/products/G15P-11.png','images/products/G15P-5.png','images/products/G15P-1.jpg','images/products/G15P-3.jpg','images/products/G15P-9.png','images/products/G15P-10.png','images/products/G15P-12.png'] },
   { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:null, badgeClass:'', fda:true,
-    name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
+    name:PRODUCT_NAMES.G15, price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
     img:'images/products/G15-5.png', gallery:['images/products/G15-5.png','images/products/G15-11.png','images/products/G15-12.png','images/products/G15-1.jpg','images/products/G15-2.jpg','images/products/G15-3.jpg','images/products/G15-4.jpg','images/products/G15-6.png'] },
   { id:'P40B', coll:'body-recovery', goal:'RECOVER', icon:'💪', badge:'Flicker-Free', badgeClass:'bb',
-    name:'RecoverPro40B', price:249, waves:'660nm Red + 850nm NIR',
+    name:PRODUCT_NAMES.P40B, price:249, waves:'660nm Red + 850nm NIR',
     img:'images/products/P40B-3.jpg', gallery:['images/products/P40B-3.jpg','images/products/P40B-1.jpg','images/products/P40B-2.jpg','images/products/P40B-4.jpg','images/products/P40B-7.jpg','images/products/P40B-15.png','images/products/P40B-17.png','images/products/P40B-18.png','images/products/P40B-19.png'] },
   { id:'MINI60PRO', coll:'body-recovery', goal:'RELIEF', icon:'🩹', badge:null, badgeClass:'',
-    name:'GlowMini60Pro', price:399, waves:'630 · 660 · 830 · 850nm | Red + NIR',
+    name:PRODUCT_NAMES.MINI60PRO, price:399, waves:'630 · 660 · 830 · 850nm | Red + NIR',
     img:'images/products/MINI60PRO-1.jpg', gallery:['images/products/MINI60PRO-1.jpg','images/products/MINI60PRO-2.jpg','images/products/MINI60PRO-3.jpg','images/products/MINI60PRO-4.jpg','images/products/MINI60PRO-5.jpg','images/products/MINI60PRO-6.jpg','images/products/MINI60PRO-7.jpg','images/products/MINI60PRO-8.jpg','images/products/MINI60PRO-9.jpg','images/products/MINI60PRO-10.jpg','images/products/MINI60PRO-11.jpg','images/products/MINI60PRO-12.jpg','images/products/MINI60PRO-13.jpg'] },
   { id:'E300', coll:'body-recovery', goal:'MIND', icon:'🧠', badge:'Clinical Grade', badgeClass:'bo',
-    name:'GlowE300', price:499, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
+    name:PRODUCT_NAMES.E300, price:499, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
     img:'images/products/E300-1.jpg', gallery:['images/products/E300-1.jpg','images/products/E300-2.jpg','images/products/E300-3.jpg','images/products/E300-4.png','images/products/E300-5.jpg','images/products/E300-10.jpg','images/products/E300-11.jpg','images/products/E300-12.jpg','images/products/E300-13.jpg','images/products/E300-14.jpg','images/products/E300-15.png','images/products/E300-16.png','images/products/E300-17.png','images/products/E300-18.png','images/products/E300-19.png'] },
   { id:'C01', coll:'specialty', goal:'GROW', icon:'👨‍🦲', badge:'New', badgeClass:'bg',
-    name:'LUMENOVA PRO', price:449, waves:'660nm Follicle Red + 830nm Scalp NIR',
+    name:PRODUCT_NAMES.C01, price:449, waves:'660nm Follicle Red + 830nm Scalp NIR',
     img:'images/products/C01-9.jpg', gallery:['images/products/C01-9.jpg','images/products/C01-2.jpg','images/products/C01-4.jpg','images/products/C01-10.jpg','images/products/C01-12.jpg','images/products/C01-13.png','images/products/C01-19.jpg','images/products/C01-20.jpg','images/products/C01-21.jpg','images/products/C01-22.jpg'] },
   { id:'G240', coll:'specialty', goal:'GROW', icon:'🪖', badge:null, badgeClass:'',
-    name:'AuraDome', price:1199, waves:'415 · 590 · 630 · 850nm | Arch Dome Full Spectrum',
+    name:PRODUCT_NAMES.G240, price:1199, waves:'415 · 590 · 630 · 850nm | Arch Dome Full Spectrum',
     img:'images/products/G240-1.jpg', gallery:['images/products/G240-1.jpg','images/products/G240-5.jpg','images/products/G240-6.jpg','images/products/G240-7.png','images/products/G240-8.png','images/products/G240-9.png','images/products/G240-10.png','images/products/G240-11.jpg','images/products/G240-12.jpg','images/products/G240-13.jpg','images/products/G240-14.jpg','images/products/G240-15.jpg','images/products/G240-16.png','images/products/G240-17.png','images/products/G240-18.png','images/products/G240-19.png','images/products/G240-20.png'] },
   { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'Executive Edition', badgeClass:'bp', fda:true,
-    name:'Solaris9 BK300 Executive Edition', price:1399, waves:'630 · 660 · 810 · 830 · 850 · 1060nm + 295/311nm UVB | 9-Wavelength Full Spectrum',
+    name:PRODUCT_NAMES.BK300, price:1399, waves:'630 · 660 · 810 · 830 · 850 · 1060nm + 295/311nm UVB | 9-Wavelength Full Spectrum',
     img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-video.mp4','images/products/BK300-1.jpg','images/products/BK300-3.jpg','images/products/BK300-4.jpg','images/products/BK300-5.jpg','images/products/BK300-6.jpg','images/products/BK300-7.jpg','images/products/BK300-8.jpg','images/products/BK300-9.jpg','images/products/BK300-10.jpg','images/products/BK300-11.jpg'] },
   { id:'MAX1800', coll:'full-body', goal:'RECOVER', icon:'🟥', badge:'1,800W', badgeClass:'bb',
-    name:'LUFAMAX 1800', price:1942, waves:'660nm Red + 850nm NIR',
+    name:PRODUCT_NAMES.MAX1800, price:1942, waves:'660nm Red + 850nm NIR',
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MAX1800-2.jpg','images/products/MAX1800-3.jpg','images/products/MAX1800-4.jpg','images/products/MAX1800-5.jpg','images/products/MAX1800-6.jpg','images/products/MAX1800-7.jpg','images/products/MAX1800-8.jpg','images/products/MAX1800-9.jpg','images/products/MAX1800-10.jpg','images/products/MAX1800-11.jpg'] },
   { id:'MAX4800', coll:'full-body', goal:'RECOVER', icon:'🏋️', badge:'Flagship', badgeClass:'bp',
-    name:'LUFAMAX 4800', price:4999, waves:'630 · 660 · 810 · 850nm | Head-to-Toe 1832mm',
+    name:PRODUCT_NAMES.MAX4800, price:4999, waves:'630 · 660 · 810 · 850nm | Head-to-Toe 1832mm',
     img:'images/products/MAX4800-1.jpg', gallery:['images/products/MAX4800-1.jpg','images/products/MAX4800-2.jpg','images/products/MAX4800-3.jpg','images/products/MAX4800-4.jpg','images/products/MAX4800-5.jpg','images/products/MAX4800-6.jpg'] },
   { id:'ESPRO3000', coll:'full-body', goal:'RECOVER', icon:'⚕️', badge:'Clinic Grade', badgeClass:'bo',
-    name:'LUFAESPRO 3000', price:5299, waves:'630 · 660 · 810 · 830 · 850 · 1060nm | Full Spectrum + Ultra-Deep NIR',
+    name:PRODUCT_NAMES.ESPRO3000, price:5299, waves:'630 · 660 · 810 · 830 · 850 · 1060nm | Full Spectrum + Ultra-Deep NIR',
     img:'images/products/ESPRO3000-1.jpg', gallery:['images/products/ESPRO3000-1.jpg','images/products/ESPRO3000-2.jpg','images/products/ESPRO3000-3.jpg','images/products/ESPRO3000-4.jpg','images/products/ESPRO3000-5.jpg','images/products/ESPRO3000-6.jpg'] },
   { id:'PE01', coll:'accessory', goal:'RELIEF', icon:'🧘', badge:'New', badgeClass:'bg',
-    name:'VitalityPro PEMF Mat', price:899, waves:'PEMF + Amethyst &amp; Far-Infrared Heat (No Light Wavelengths)',
+    name:PRODUCT_NAMES.PE01, price:899, waves:'PEMF + Amethyst &amp; Far-Infrared Heat (No Light Wavelengths)',
     img:'images/products/PE01-1.jpg', gallery:['images/products/PE01-1.jpg','images/products/PE01-2.jpg','images/products/PE01-3.jpg','images/products/PE01-4.jpg','images/products/PE01-5.jpg','images/products/PE01-6.jpg','images/products/PE01-7.jpg','images/products/PE01-8.jpg'] },
   { id:'MRS45', coll:'accessory', goal:'ACCESSORY', icon:'🦾', badge:null, badgeClass:'',
-    name:'ProStand', price:725, waves:'78–150cm Adjustable Stand for LUFAMAX 1800 / LUFAMAX 4800 / LUFAESPRO 3000',
+    name:PRODUCT_NAMES.MRS45, price:725, waves:'78–150cm Adjustable Stand for LUFAMAX 1800 / LUFAMAX 4800 / LUFAESPRO 3000',
     img:'images/products/MRS45-1.jpg', gallery:['images/products/MRS45-1.jpg','images/products/MRS45-2.jpg','images/products/MRS45-3.jpg','images/products/MRS45-4.jpg','images/products/MRS45-5.jpg','images/products/MRS45-6.jpg','images/products/MRS45-7.jpg','images/products/MRS45-8.jpg','images/products/MRS45-9.png','images/products/MRS45-10.png'] },
 
   { id:'BUNDLE-RECOVERY', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Recovery Essentials Bundle (RecoverPro40B + GlowMini60Pro)', price:518, originalPrice:648,
+    name:`Recovery Essentials Bundle (${PRODUCT_NAMES.P40B} + ${PRODUCT_NAMES.MINI60PRO})`, price:518, originalPrice:648,
     waves:'660nm Red + 850nm NIR Desktop Panel + 635 · 660 · 830 · 850nm Targeted Relief Device',
     img:'images/products/P40B-2.jpg', gallery:['images/products/P40B-2.jpg','images/products/MINI60PRO-1.jpg'] },
   { id:'BUNDLE-GLOW', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Glow &amp; Restore Bundle (BeauMask+BeauNeck + GlowEM04)', price:662, originalPrice:828,
+    name:`Glow &amp; Restore Bundle (${PRODUCT_NAMES.G15P} + ${PRODUCT_NAMES.EM04})`, price:662, originalPrice:828,
     waves:'415 · 590 · 660 · 850nm Face &amp; Neck Mask + 630 · 660 · 850nm Sleep Mask',
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/EM04-9.png'] },
   { id:'BUNDLE-FULLBODY', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Full-Body Recovery Bundle (LUFAMAX 1800 + ProStand)', price:2134, originalPrice:2667,
+    name:`Full-Body Recovery Bundle (${PRODUCT_NAMES.MAX1800} + ${PRODUCT_NAMES.MRS45})`, price:2134, originalPrice:2667,
     waves:'660nm Red + 850nm NIR 1800W Full-Body Panel + Adjustable Stand',
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MRS45-1.jpg'] },
 ];
@@ -739,7 +740,7 @@ const DETAILS = {
       { icon:'✨', t:'630/660nm — Reduces Fine Lines & Dark Spots', d:'Surface red wavelengths target the appearance of fine lines and dark spots around the eyes.' },
     ],
     specs:[ ['Wavelengths','630/660nm Surface Red + 850nm Deep NIR'],['LEDs','24 LEDs'],['Irradiance','35+ mW/cm²'],['Modes','3 modes'],['Battery Life','60 min per charge'],['Battery','1000mAh'],['Power','3W'],['Dimensions','31 × 8.5 × 1.2 cm'] ],
-    included:[ ['🎭','EM04 SleepGlow Eye Mask'],['🔌','USB-C Charging Cable'],['🎗️','Adjustable Comfort Strap'],['📖','Quick Start Guide'] ],
+    included:[ ['🎭',`${PRODUCT_NAMES.EM04} Sleep Mask`],['🔌','USB-C Charging Cable'],['🎗️','Adjustable Comfort Strap'],['📖','Quick Start Guide'] ],
   },
   P40B: {
     desc:'A compact desktop red light therapy panel delivering clinical-strength Red + NIR output for targeted muscle recovery and joint pain relief.',
@@ -761,7 +762,7 @@ const DETAILS = {
       { icon:'🎛️', t:'6 Modes + LCD Timer + 3-Level Dimming', d:'Repair · Rejuvenate · Anti-age · Anti-acne modes with built-in session timer.' },
     ],
     specs:[ ['Wavelengths','415nm · 590nm · 660nm · 850nm (1:1:1:1)'],['LEDs','122 LEDs (4 chips in 1 LED)'],['Beam Angle','105°'],['Power','8W'],['Weight','0.22 kg'],['Dimensions','310 × 207 × 4.5 mm'] ],
-    included:[ ['🎭','G15 ClearGlow Face Mask'],['🔌','USB-C Charging Cable'],['👜','Protective Pouch'],['📖','Quick Start Guide'] ],
+    included:[ ['🎭',`${PRODUCT_NAMES.G15} Face Mask`],['🔌','USB-C Charging Cable'],['👜','Protective Pouch'],['📖','Quick Start Guide'] ],
   },
   MINI60PRO: {
     desc:'A wireless, rechargeable pain-relief panel built for joints, knees, back and muscle recovery — anywhere, anytime.',
@@ -794,7 +795,7 @@ const DETAILS = {
       { icon:'🏃', t:'Ideal for Athletes & Chronic Pain', d:'Built for post-injury rehab and performance recovery protocols.' },
     ],
     specs:[ ['Wavelengths','630 · 660 · 810 · 850nm'],['LEDs','60 high-density LEDs'],['Irradiance','150+ mW/cm²'],['Dimming Channels','5 independent channels'],['Power','300W'],['Beam Angle','30°'],['Dimensions','47 × 32 × 24 cm'],['Weight','3.3 kg'] ],
-    included:[ ['📦','E300 ClinicalEdge Panel'],['🦯','Folding Stand'],['🔌','Power Cable'],['🥽','Protective Eyewear'],['📖','User Manual'] ],
+    included:[ ['📦',`${PRODUCT_NAMES.E300} Panel`],['🦯','Folding Stand'],['🔌','Power Cable'],['🥽','Protective Eyewear'],['📖','User Manual'] ],
   },
   C01: {
     desc:'A full scalp wrap-around LED helmet using a 4-in-1 protocol to support hair regrowth and scalp health.',
@@ -805,7 +806,7 @@ const DETAILS = {
       { icon:'🌿', t:'Non-Invasive, Drug-Free Alternative', d:'No medications needed — a clinically studied, low-level light therapy approach.' },
     ],
     specs:[ ['Wavelengths','660nm Red + 830nm NIR'],['LEDs','120 LEDs'],['Power','9W'],['Cover','Fabric cover'],['Charge Port','Type-C, 5V/2A'],['Dimensions','28 × 20 × 13 cm'],['Weight','1.5 kg'] ],
-    included:[ ['🪖','C01 HGrowCap'],['🔌','Power Adapter'],['🧽','Comfort Padding'],['📖','User Manual'] ],
+    included:[ ['🪖',`${PRODUCT_NAMES.C01} Cap`],['🔌','Power Adapter'],['🧽','Comfort Padding'],['📖','User Manual'] ],
   },
   G240: {
     desc:'A hands-free arch-dome panel delivering full-spectrum light therapy to the scalp, face or back with memory-saved settings.',
@@ -827,7 +828,7 @@ const DETAILS = {
       { icon:'🔀', t:'Exclusive Private Mould — 2-in-1 Device', d:'Phototherapy + tanning combined in a single piece of equipment, exclusive to Lufalight.' },
     ],
     specs:[ ['Wavelengths','630/660/810/830/850/1060nm + 295/311nm UVB'],['Irradiance','150+ mW/cm²'],['Deep NIR','1060nm included'],['Dimensions','36 × 22 × 6.5 cm'],['Weight','3.8 kg'] ],
-    included:[ ['🛡️','BK300 BioShield Standee'],['🥽','Protective UVB Goggles'],['🔌','Power Adapter'],['📖','User Manual'] ],
+    included:[ ['🛡️',`${PRODUCT_NAMES.BK300} Standee`],['🥽','Protective UVB Goggles'],['🔌','Power Adapter'],['📖','User Manual'] ],
     warning:'⚠️ <strong>UVB Exclusive Device:</strong> The BK300 is the only device in the Lufalight lineup that contains a regulated UVB lamp (295nm/311nm). UVB exposure must follow the included guidelines — always wear the provided protective goggles and do not exceed recommended session times.',
   },
   MAX1800: {
@@ -896,7 +897,7 @@ const DETAILS = {
       { icon:'💰', t:'Bundle Savings', d:'Save $130 compared to purchasing the RecoverPro40B and GlowMini60Pro separately at launch prices.' },
     ],
     specs:[ ['Includes','RecoverPro40B Desktop Panel + GlowMini60Pro'],['Wavelengths','660 · 850nm (Panel) + 630 · 660 · 830 · 850nm (Mini)'] ],
-    included:[ ['📦','1x P40B RecoverPro Desktop Panel'],['📦','1x MINI60PRO PainRelief Mini Pro'],['🔌','Power Adapters &amp; Cables'],['📖','User Manuals'],['🛡️','Manufacturer Warranty (per device)'] ],
+    included:[ ['📦',`1x ${PRODUCT_NAMES.P40B} Desktop Panel`],['📦',`1x ${PRODUCT_NAMES.MINI60PRO}`],['🔌','Power Adapters &amp; Cables'],['📖','User Manuals'],['🛡️','Manufacturer Warranty (per device)'] ],
     components:['P40B','MINI60PRO'],
   },
   'BUNDLE-GLOW': {
@@ -908,7 +909,7 @@ const DETAILS = {
       { icon:'💰', t:'Bundle Savings', d:'Save $166 compared to purchasing the BeauMask+BeauNeck set and GlowEM04 separately at launch prices.' },
     ],
     specs:[ ['Includes','BeauMask + BeauNeck-Décolleté Set + GlowEM04 Sleep Mask'],['Wavelengths','415 · 590 · 660 · 850nm (Face &amp; Neck) + 630 · 660 · 850nm (Sleep Mask)'] ],
-    included:[ ['🎭','1x G15P ClearGlow Pro Face &amp; Neck Mask'],['🎭','1x EM04 SleepGlow Eye Mask'],['🔌','Power Adapters &amp; Cables'],['📖','User Manuals'],['🛡️','Manufacturer Warranty (per device)'] ],
+    included:[ ['🎭',`1x ${PRODUCT_NAMES.G15P}`],['🎭',`1x ${PRODUCT_NAMES.EM04} Sleep Mask`],['🔌','Power Adapters &amp; Cables'],['📖','User Manuals'],['🛡️','Manufacturer Warranty (per device)'] ],
     components:['G15P','EM04'],
   },
   'BUNDLE-FULLBODY': {
@@ -920,7 +921,7 @@ const DETAILS = {
       { icon:'💰', t:'Bundle Savings', d:'Save $533 compared to purchasing the LUFAMAX 1800 and ProStand separately at launch prices.' },
     ],
     specs:[ ['Includes','LUFAMAX 1800 Full-Body Panel + ProStand Adjustable Stand'],['Wavelengths','660nm Red + 850nm NIR'] ],
-    included:[ ['📦','1x MAX1800 BodyMax 1800 Full-Body Panel'],['🦯','1x MRS45 Adjustable Stand'],['🔌','Power Adapter &amp; Cables'],['📖','User Manuals &amp; Assembly Instructions'],['🛡️','Manufacturer Warranty (per device)'] ],
+    included:[ ['📦',`1x ${PRODUCT_NAMES.MAX1800} Full-Body Panel`],['🦯','1x MRS45 Adjustable Stand'],['🔌','Power Adapter &amp; Cables'],['📖','User Manuals &amp; Assembly Instructions'],['🛡️','Manufacturer Warranty (per device)'] ],
     components:['MAX1800','MRS45'],
   },
 };
@@ -1153,9 +1154,9 @@ const PRODUCT_FAQ = {
 
 /* ── UPSELL DATA ── */
 const UPSELL = {
-  G15P:{sku:'EM04',headline:'Complete your day & night routine',sub:'Pair the G15P with the SleepGlow Eye Mask — skin renewal in the morning, deeper sleep at night.',bundle:'BUNDLE-GLOW',bundleSave:'Save $166 with the Glow & Restore Bundle →'},
-  G15:{sku:'EM04',headline:'Add sleep recovery to your routine',sub:'The G15 handles your skin — the EM04 SleepGlow Eye Mask handles deep, restorative sleep.',bundle:null},
-  EM04:{sku:'G15P',headline:'Add daytime skin therapy',sub:'Use the EM04 at night and the G15P ClearGlow Pro during the day for a complete light therapy routine.',bundle:'BUNDLE-GLOW',bundleSave:'Save $166 with the Glow & Restore Bundle →'},
+  G15P:{sku:'EM04',headline:'Complete your day & night routine',sub:`Pair the G15P with the ${PRODUCT_NAMES.EM04} Sleep Mask — skin renewal in the morning, deeper sleep at night.`,bundle:'BUNDLE-GLOW',bundleSave:'Save $166 with the Glow & Restore Bundle →'},
+  G15:{sku:'EM04',headline:'Add sleep recovery to your routine',sub:`The G15 handles your skin — the ${PRODUCT_NAMES.EM04} Sleep Mask handles deep, restorative sleep.`,bundle:null},
+  EM04:{sku:'G15P',headline:'Add daytime skin therapy',sub:`Use the EM04 at night and the ${PRODUCT_NAMES.G15P} during the day for a complete light therapy routine.`,bundle:'BUNDLE-GLOW',bundleSave:'Save $166 with the Glow & Restore Bundle →'},
   P40B:{sku:'MINI60PRO',headline:'Cover every area — broad + targeted',sub:'The P40B handles large muscle groups; the MINI60PRO reaches knees, wrists and ankles precisely.',bundle:'BUNDLE-RECOVERY',bundleSave:'Save $130 with the Recovery Essentials Bundle →'},
   MINI60PRO:{sku:'P40B',headline:'Add full-panel power for larger areas',sub:'The MINI60PRO targets small joints; the P40B covers your back, shoulders and legs.',bundle:'BUNDLE-RECOVERY',bundleSave:'Save $130 with the Recovery Essentials Bundle →'},
   E300:{sku:'BK300',headline:'Full-spectrum biohacking stack',sub:'The E300 targets brain & muscle performance; the BK300 adds exclusive 1060nm NIR and dual UVB therapy.'},
@@ -1168,7 +1169,7 @@ const UPSELL = {
   MRS45:{sku:'MAX1800',headline:'Pair with a full-body panel',sub:'The MRS45 is designed for the MAX1800, MAX4800 and ESPRO3000 — the MAX1800 is the most popular pairing.',bundle:'BUNDLE-FULLBODY',bundleSave:'Save $533 with the Full-Body Recovery Bundle →'},
   PE01:{sku:'P40B',headline:'Add focused panel therapy',sub:'The PE01 Mat covers the whole body; the P40B RecoverPro adds focused, high-irradiance intensity to specific areas.'},
   'BUNDLE-RECOVERY':{sku:'BK300',headline:'Add full-body coverage',sub:'The Recovery Bundle handles targeted therapy — add the BK300 for full-body, full-spectrum light treatment.'},
-  'BUNDLE-GLOW':{sku:'C01',headline:'Add hair growth therapy',sub:'Your Glow Bundle handles skin and sleep — the C01 HGrowCap adds laser+LED scalp therapy to your routine.'},
+  'BUNDLE-GLOW':{sku:'C01',headline:'Add hair growth therapy',sub:`Your Glow Bundle handles skin and sleep — the ${PRODUCT_NAMES.C01} adds laser+LED scalp therapy to your routine.`},
   'BUNDLE-FULLBODY':{sku:'BK300',headline:'Complete the full-body protocol',sub:'Your full-body panel pairs perfectly with the BK300\'s unique UVB + exclusive 1060nm Ultra-Deep NIR capabilities.'},
 };
 

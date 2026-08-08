@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<script src="product-names.js"></script>
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Lufalight — Red Light Therapy Devices | Canada &amp; USA</title>
@@ -882,7 +883,7 @@ function sendToFormspree(fields){
 const fmt = n => window.lufaFmt ? window.lufaFmt(n) : '$' + n.toLocaleString('en-CA') + ' CAD';
 const PD  = {
 "SKIN": {
-  "l":"SKIN","n":"BeauMask + BeauNeck-Décolleté — ClearGlow Pro Face & Neck Set","dev":"Model: G15P | Lufalight",
+  "l":"SKIN","n":PRODUCT_NAMES.G15P,"dev":"Model: G15P | Lufalight",
   "price":599,"ps":"$599 CAD",
   "pill":"✨ Supports +200% Collagen",
   "specs":["415 · 590 · 660 · 850nm","Blue, Amber, Red & NIR","Face + Neck","Medical Silicone","45W","10–20 min/day"],
@@ -890,7 +891,7 @@ const PD  = {
   "desc":"Full-face & neck silicone mask set — supports collagen production, reduces fine lines, brightens skin tone. 10 min/day. <em>* Wellness device. Not intended to diagnose or treat disease.</em>"
 },
 "MIND": {
-  "l":"MIND","n":"GlowE300 — ClinicalEdge E300","dev":"Model: E300 | Lufalight",
+  "l":"MIND","n":PRODUCT_NAMES.E300,"dev":"Model: E300 | Lufalight",
   "price":499,"ps":"$499 CAD",
   "pill":"🧠 Supports +25% Brain Blood Flow",
   "specs":["630 · 660 · 810 · 830 · 850nm","Full Spectrum NIR","5–7cm penetration","LCD Timer","300W","Adjustable Stand"],
@@ -898,7 +899,7 @@ const PD  = {
   "desc":"Desktop full-spectrum NIR panel with LCD timer — supports cerebral circulation and mental focus. <em>* Wellness device. Not intended to diagnose or treat disease.</em>"
 },
 "RECOVER": {
-  "l":"RECOVER","n":"RecoverPro40B — RecoverPro Desktop Panel","dev":"Model: P40B | Lufalight",
+  "l":"RECOVER","n":PRODUCT_NAMES.P40B,"dev":"Model: P40B | Lufalight",
   "price":249,"ps":"$249 CAD",
   "pill":"💪 Supports -55% Muscle Soreness",
   "specs":["660nm Red + 850nm NIR","40-Diode","Desktop Panel","Matte Black","150W","Built-in Timer"],
@@ -906,7 +907,7 @@ const PD  = {
   "desc":"40-diode Red + NIR desktop panel — supports post-workout muscle recovery and reduces DOMS. <em>* Based on general PBM research.</em>"
 },
 "CLEAR": {
-  "l":"CLEAR","n":"BeauMask — ClearGlow Face Mask","dev":"Model: G15 | Lufalight",
+  "l":"CLEAR","n":PRODUCT_NAMES.G15,"dev":"Model: G15 | Lufalight",
   "price":499,"ps":"$499 CAD",
   "pill":"🌿 Supports -76% Acne Inflammation",
   "specs":["415 · 590 · 660 · 850nm","Blue, Amber, Red & NIR","Full Face","Medical Silicone","35W","10–15 min/day"],
@@ -914,7 +915,7 @@ const PD  = {
   "desc":"Blue (415nm) targets acne bacteria + Red (660nm) reduces inflammation — supports clearer skin without medication. <em>* Wellness device. Not a drug treatment.</em>"
 },
 "SLEEP": {
-  "l":"SLEEP","n":"GlowEM04 — SleepGlow Eye Mask","dev":"Model: EM04 | Lufalight",
+  "l":"SLEEP","n":PRODUCT_NAMES.EM04,"dev":"Model: EM04 | Lufalight",
   "price":229,"ps":"$229 CAD",
   "pill":"🌙 Supports +58% Melatonin",
   "specs":["630 · 660nm · 850nm","Red + Deep NIR","Sleep Mask Design","USB Rechargeable","Wireless","20-min Timer"],
@@ -922,7 +923,7 @@ const PD  = {
   "desc":"LED sleep mask — supports natural melatonin production and deeper sleep. <em>* Not a sleep medication. General wellness support.</em>"
 },
 "RELIEF": {
-  "l":"RELIEF","n":"GlowMini60Pro","dev":"Model: MINI60PRO | Lufalight",
+  "l":"RELIEF","n":PRODUCT_NAMES.MINI60PRO,"dev":"Model: MINI60PRO | Lufalight",
   "price":399,"ps":"$399 CAD",
   "pill":"🩹 Supports -70% Chronic Pain",
   "specs":["635 · 660 · 830 · 850nm","Red + NIR","Up to 10cm depth","Rechargeable Battery","Handheld","10-min Timer"],
@@ -930,7 +931,7 @@ const PD  = {
   "desc":"Compact Red + NIR handheld — supports relief for joint, back, and muscle pain. <em>* Wellness support. Not a substitute for medical care.</em>"
 },
 "SHIELD": {
-  "l":"SHIELD","n":"Solaris9 BK300 Executive Edition — BioShield 60-LED Standee","dev":"Model: BK300 | Lufalight",
+  "l":"SHIELD","n":PRODUCT_NAMES.BK300,"dev":"Model: BK300 | Lufalight",
   "price":1399,"ps":"$1,399 CAD",
   "pill":"🛡️ Supports Immunity & Vitamin D",
   "specs":["415 · 630-660 · 810-1060nm + 295/311nm UVB","60-Diode Full Spectrum","⚠️ Regulated UVB Lamp","Adjustable Stand","200W","Timer + Distance Guide"],
@@ -938,7 +939,7 @@ const PD  = {
   "desc":"Full-spectrum standee with regulated UVB — supports Vitamin D synthesis and NK immune cell activity. <em>⚠️ Contains UVB lamp. Follow all FDA/Health Canada exposure limits. Do not look directly at lamp.</em>"
 },
 "GROW": {
-  "l":"GROW","n":"AuraDome — AuraDome G240","dev":"Model: G240 | Lufalight",
+  "l":"GROW","n":PRODUCT_NAMES.G240,"dev":"Model: G240 | Lufalight",
   "price":1199,"ps":"$1,199 CAD",
   "pill":"💆 Supports +39% Hair Density",
   "specs":["415 · 590 · 660 · 850nm","Full Spectrum Arch Dome","Head + Face Dome","Hands-Free","240W","10–20 min/day"],
@@ -960,7 +961,7 @@ const MODAL_GAL = {
 };
 /* ── FDA-CLEARED SKUs — same set as product.html's fda:true flag ── */
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
-const SS  = [{"id": "SHIELD", "n": "SHIELD \u2014 BK300", "w": "660 \u00b7 850nm \u00b7 UVB"}, {"id": "SKIN", "n": "SKIN \u2014 G15P", "w": "630 \u00b7 660nm"}, {"id": "CLEAR", "n": "CLEAR \u2014 G15", "w": "415 \u00b7 660nm"}, {"id": "RELIEF", "n": "RELIEF \u2014 MINI60PRO", "w": "820 \u00b7 1064nm"}, {"id": "MIND", "n": "MIND \u2014 E300", "w": "810 \u00b7 830 \u00b7 1064nm"}, {"id": "MAX1800", "n": "FULL-BODY \u2014 MAX1800", "w": "660 \u00b7 850nm"}, {"id": "MAX4800", "n": "FULL-BODY \u2014 MAX4800", "w": "660 \u00b7 850nm"}, {"id": "RECOVER", "n": "RECOVER \u2014 P40B", "w": "850 \u00b7 905nm"}, {"id": "SLEEP", "n": "SLEEP \u2014 Eye Mask", "w": "630 \u00b7 850nm"}, {"id": "C01", "n": "GROW \u2014 C01 HGrowCap", "w": "660 \u00b7 830nm"}, {"id": "ESPRO3000", "n": "CLINIC \u2014 ESPRO3000", "w": "630 \u00b7 660 \u00b7 810 \u00b7 1060nm"}, {"id": "PE01", "n": "RELIEF \u2014 PE01 PEMF Mat", "w": "635 \u00b7 850nm + PEMF"}, {"id": "MRS45", "n": "STAND \u2014 MRS45 ProStand", "w": "Adjustable Panel Stand"}];
+const SS  = [{"id": "SHIELD", "n": "SHIELD \u2014 BK300", "w": "660 \u00b7 850nm \u00b7 UVB"}, {"id": "SKIN", "n": "SKIN \u2014 G15P", "w": "630 \u00b7 660nm"}, {"id": "CLEAR", "n": "CLEAR \u2014 G15", "w": "415 \u00b7 660nm"}, {"id": "RELIEF", "n": "RELIEF \u2014 MINI60PRO", "w": "820 \u00b7 1064nm"}, {"id": "MIND", "n": "MIND \u2014 E300", "w": "810 \u00b7 830 \u00b7 1064nm"}, {"id": "MAX1800", "n": "FULL-BODY \u2014 MAX1800", "w": "660 \u00b7 850nm"}, {"id": "MAX4800", "n": "FULL-BODY \u2014 MAX4800", "w": "660 \u00b7 850nm"}, {"id": "RECOVER", "n": "RECOVER \u2014 P40B", "w": "850 \u00b7 905nm"}, {"id": "SLEEP", "n": "SLEEP \u2014 Eye Mask", "w": "630 \u00b7 850nm"}, {"id": "C01", "n": "GROW \u2014 C01", "w": "660 \u00b7 830nm"}, {"id": "ESPRO3000", "n": "CLINIC \u2014 ESPRO3000", "w": "630 \u00b7 660 \u00b7 810 \u00b7 1060nm"}, {"id": "PE01", "n": "RELIEF \u2014 PE01 PEMF Mat", "w": "635 \u00b7 850nm + PEMF"}, {"id": "MRS45", "n": "STAND \u2014 MRS45 ProStand", "w": "Adjustable Panel Stand"}];
 const GAL_DATA = [{s:"images/products/BK300-1.jpg",l:"BK300 Multi-color"},{s:"images/products/G15-3.jpg",l:"G15 Purple"},{s:"images/products/G15P-3.jpg",l:"G15P Orange"},{s:"images/products/G240-1.jpg",l:"G240 Pink"},{s:"images/products/EM04-3.jpg",l:"Eye Mask White"},{s:"images/products/E300-3.jpg",l:"E300 Red"},{s:"images/products/MINI60PRO-3.jpg",l:"MINI60PRO Lit"},{s:"images/products/P40B-3.jpg",l:"P40B Lit"},{s:"images/products/BK300-3.jpg",l:"BK300 Red"}];
 
 /* ── SLIDESHOW ── */

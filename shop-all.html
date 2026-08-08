@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<script src="product-names.js"></script>
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Shop All — Lufalight | Red &amp; Near-Infrared Light Therapy Devices</title>
@@ -453,62 +454,62 @@ if(!window.salePrice) window.salePrice = function(p, coll){ if(!window.LUFA_PROM
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
 const PRODUCTS = [
   { id:'EM04', coll:'face-skin', goal:'SLEEP', icon:'😴', badge:'FDA-Registered', badgeClass:'bg',
-    name:'GlowEM04', price:229, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
+    name:PRODUCT_NAMES.EM04, price:229, waves:'630 · 660nm Surface Red + 850nm Deep NIR',
     img:'images/products/EM04-9.png', gallery:['images/products/EM04-9.png','images/products/EM04-1.jpg','images/products/EM04-2.jpg','images/products/EM04-3.jpg'] },
   { id:'G15P', coll:'face-skin', goal:'SKIN', icon:'💆', badge:'Best Seller', badgeClass:'br', fda:true,
-    name:'BeauMask + BeauNeck-Décolleté', price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
+    name:PRODUCT_NAMES.G15P, price:599, waves:'415 · 590 · 660 · 850nm | Red, NIR &amp; LED Light Therapy',
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/G15P-11.png','images/products/G15P-2.jpg','images/products/G15P-3.jpg'] },
   { id:'G15', coll:'face-skin', goal:'CLEAR', icon:'✨', badge:null, badgeClass:'', fda:true,
-    name:'BeauMask', price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
+    name:PRODUCT_NAMES.G15, price:499, waves:'415 · 590 · 660 · 850nm | Blue, Red & NIR',
     img:'images/products/G15-3.jpg', gallery:['images/products/G15-3.jpg','images/products/G15-1.jpg','images/products/G15-2.jpg'] },
 
   { id:'P40B', coll:'body-recovery', goal:'RECOVER', icon:'💪', badge:'Flicker-Free', badgeClass:'bb',
-    name:'RecoverPro40B', price:249, waves:'660nm Red + 850nm NIR',
+    name:PRODUCT_NAMES.P40B, price:249, waves:'660nm Red + 850nm NIR',
     img:'images/products/P40B-3.jpg', gallery:['images/products/P40B-3.jpg','images/products/P40B-1.jpg','images/products/P40B-2.jpg'] },
   { id:'MINI60PRO', coll:'body-recovery', goal:'RELIEF', icon:'🩹', badge:null, badgeClass:'',
-    name:'GlowMini60Pro', price:399, waves:'635 · 660 · 830 · 850nm | Red + NIR',
+    name:PRODUCT_NAMES.MINI60PRO, price:399, waves:'635 · 660 · 830 · 850nm | Red + NIR',
     img:'images/products/MINI60PRO-1.jpg', gallery:['images/products/MINI60PRO-1.jpg','images/products/MINI60PRO-2.jpg','images/products/MINI60PRO-3.jpg'] },
   { id:'E300', coll:'body-recovery', goal:'MIND', icon:'🧠', badge:'Clinical Grade', badgeClass:'bo',
-    name:'GlowE300', price:499, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
+    name:PRODUCT_NAMES.E300, price:499, waves:'630 · 660 · 810 · 830 · 850nm | Full Spectrum NIR',
     img:'images/products/E300-1.jpg', gallery:['images/products/E300-1.jpg','images/products/E300-2.jpg','images/products/E300-3.jpg'] },
 
   { id:'C01', coll:'specialty', goal:'GROW', icon:'👨‍🦲', badge:'New', badgeClass:'bg',
-    name:'LUMENOVA PRO', price:449, waves:'660nm Follicle Red + 830nm Scalp NIR',
+    name:PRODUCT_NAMES.C01, price:449, waves:'660nm Follicle Red + 830nm Scalp NIR',
     img:'images/products/C01-13.png', gallery:['images/products/C01-13.png','images/products/C01-2.jpg','images/products/C01-3.jpg'] },
   { id:'G240', coll:'specialty', goal:'GROW', icon:'🪖', badge:null, badgeClass:'',
-    name:'AuraDome', price:1199, waves:'415 · 590 · 660 · 850nm | Arch Dome Full Spectrum',
+    name:PRODUCT_NAMES.G240, price:1199, waves:'415 · 590 · 660 · 850nm | Arch Dome Full Spectrum',
     img:'images/products/G240-1.jpg', gallery:['images/products/G240-1.jpg'] },
 
   { id:'BK300', coll:'full-body', goal:'SHIELD', icon:'🛡️', badge:'Executive Edition', badgeClass:'bp', fda:true,
-    name:'Solaris9 BK300 Executive Edition', price:1399, waves:'415 · 630-660 · 810-1060nm + 295/311nm UVB | Full Spectrum',
+    name:PRODUCT_NAMES.BK300, price:1399, waves:'415 · 630-660 · 810-1060nm + 295/311nm UVB | Full Spectrum',
     img:'images/products/BK300-1.jpg', gallery:['images/products/BK300-1.jpg','images/products/BK300-3.jpg'] },
   { id:'MAX1800', coll:'full-body', goal:'RECOVER', icon:'🟥', badge:'1,800W', badgeClass:'bb',
-    name:'LUFAMAX 1800', price:1942, waves:'660nm Red + 850nm NIR',
+    name:PRODUCT_NAMES.MAX1800, price:1942, waves:'660nm Red + 850nm NIR',
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MAX1800-2.jpg','images/products/MAX1800-3.jpg'] },
   { id:'MAX4800', coll:'full-body', goal:'RECOVER', icon:'🏋️', badge:'Flagship', badgeClass:'bp',
-    name:'LUFAMAX 4800', price:4999, waves:'660nm Red + 850nm NIR | Head-to-Toe 1814mm',
+    name:PRODUCT_NAMES.MAX4800, price:4999, waves:'660nm Red + 850nm NIR | Head-to-Toe 1814mm',
     img:'images/products/MAX4800-1.jpg', gallery:['images/products/MAX4800-1.jpg','images/products/MAX4800-2.jpg','images/products/MAX4800-3.jpg'] },
   { id:'ESPRO3000', coll:'full-body', goal:'RECOVER', icon:'⚕️', badge:'Clinic Grade', badgeClass:'bo',
-    name:'LUFAESPRO 3000', price:5299, waves:'630 · 660 · 810 · 830 · 850 · 1060nm | Full Spectrum + Ultra-Deep NIR',
+    name:PRODUCT_NAMES.ESPRO3000, price:5299, waves:'630 · 660 · 810 · 830 · 850 · 1060nm | Full Spectrum + Ultra-Deep NIR',
     img:'images/products/ESPRO3000-1.jpg', gallery:['images/products/ESPRO3000-1.jpg','images/products/ESPRO3000-2.jpg','images/products/ESPRO3000-3.jpg'] },
 
   { id:'PE01', coll:'accessory', goal:'RELIEF', icon:'🧘', badge:'New', badgeClass:'bg',
-    name:'VitalityPro PEMF Mat', price:899, waves:'PEMF + Amethyst &amp; Far-Infrared Heat (No Light Wavelengths)',
+    name:PRODUCT_NAMES.PE01, price:899, waves:'PEMF + Amethyst &amp; Far-Infrared Heat (No Light Wavelengths)',
     img:'images/products/PE01-1.jpg', gallery:['images/products/PE01-1.jpg','images/products/PE01-2.jpg','images/products/PE01-3.jpg'] },
   { id:'MRS45', coll:'accessory', goal:'ACCESSORY', icon:'🦾', badge:null, badgeClass:'',
-    name:'ProStand', price:725, waves:'Adjustable Stand for MAX1800 / MAX4800 / ESPRO3000',
+    name:PRODUCT_NAMES.MRS45, price:725, waves:'Adjustable Stand for MAX1800 / MAX4800 / ESPRO3000',
     img:'images/products/MRS45-1.jpg', gallery:['images/products/MRS45-1.jpg','images/products/MRS45-2.jpg'] },
 
   { id:'BUNDLE-RECOVERY', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Recovery Essentials Bundle (RecoverPro40B + GlowMini60Pro)', price:518, originalPrice:648,
+    name:`Recovery Essentials Bundle (${PRODUCT_NAMES.P40B} + ${PRODUCT_NAMES.MINI60PRO})`, price:518, originalPrice:648,
     waves:'660nm Red + 850nm NIR Desktop Panel + 635 · 660 · 830 · 850nm Targeted Relief Device',
     img:'images/products/P40B-3.jpg', gallery:['images/products/P40B-3.jpg','images/products/MINI60PRO-1.jpg'] },
   { id:'BUNDLE-GLOW', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Glow &amp; Restore Bundle (BeauMask+BeauNeck + GlowEM04)', price:662, originalPrice:828,
+    name:`Glow &amp; Restore Bundle (${PRODUCT_NAMES.G15P} + ${PRODUCT_NAMES.EM04})`, price:662, originalPrice:828,
     waves:'415 · 590 · 660 · 850nm Face &amp; Neck Mask + 630 · 660 · 850nm Sleep Mask',
     img:'images/products/G15P-11.png', gallery:['images/products/G15P-11.png','images/products/EM04-9.png'] },
   { id:'BUNDLE-FULLBODY', coll:'bundle', goal:'BUNDLE', icon:'🎁', badge:'Bundle &amp; Save', badgeClass:'bg',
-    name:'Full-Body Recovery Bundle (LUFAMAX 1800 + ProStand)', price:2134, originalPrice:2667,
+    name:`Full-Body Recovery Bundle (${PRODUCT_NAMES.MAX1800} + ${PRODUCT_NAMES.MRS45})`, price:2134, originalPrice:2667,
     waves:'660nm Red + 850nm NIR 1800W Full-Body Panel + Adjustable Stand',
     img:'images/products/MAX1800-1.jpg', gallery:['images/products/MAX1800-1.jpg','images/products/MRS45-1.jpg'] },
 ];
