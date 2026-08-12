@@ -59,32 +59,28 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 }
 
 /* HERO */
-#hero{min-height:100vh;display:block;padding:0;position:relative;overflow:hidden}
+#hero{min-height:100vh;display:flex;align-items:center;padding:0;position:relative;overflow:hidden;background-image:url('images/hero-mobile.jpg');background-size:cover;background-position:center 22%}
+@media(min-width:861px){#hero{background-image:url('images/hero-desktop.jpg');background-position:center}}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,8,.32) 0%,rgba(6,6,8,.5) 55%,rgba(6,6,8,.86) 100%);z-index:1}
+@media(min-width:861px){#hero::before{background:linear-gradient(90deg,rgba(6,6,8,.82) 0%,rgba(6,6,8,.5) 42%,rgba(6,6,8,.1) 75%)}}
 @media(max-width:860px){#hero{text-align:center}}
-.hero-bg-glow{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.09),transparent 65%);pointer-events:none}
-.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,45,45,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,45,45,.04) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
-.hero-rays{position:absolute;right:2%;top:50%;transform:translateY(-50%);width:min(520px,46%);aspect-ratio:1;opacity:.055;pointer-events:none}
-.hero-rays svg{animation:rayspin 36s linear infinite}
-.hero-left{position:relative;z-index:2;min-width:0}
-.hero-pill{display:inline-flex;align-items:center;gap:9px;background:rgba(232,45,45,.11);border:1px solid rgba(232,45,45,.28);color:#ff8080;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:100px;margin-bottom:26px;animation:fadeUp .6s ease both}
+.hero-left{position:relative;z-index:2;min-width:0;max-width:640px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.32);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:100px;margin-bottom:26px;animation:fadeUp .6s ease both;backdrop-filter:blur(6px)}
 .pdot{width:7px;height:7px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
-.hero-h1{font-family:var(--hd);font-size:clamp(3rem,6vw,5.4rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
-.hero-h1 em{font-style:italic;color:var(--red)}
-.hero-tl{font-family:var(--hd);font-size:1.05rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;animation:fadeUp .6s .15s ease both}
-.hero-desc{font-size:1rem;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:36px;animation:fadeUp .6s .2s ease both}
-@media(max-width:860px){.hero-desc{margin:0 auto 36px}} @media(max-width:860px){.wrap[style*="grid-template-columns:1.05fr"]{grid-template-columns:1fr!important;padding:88px 28px 56px!important}}
+.hero-h1{font-family:var(--hd);font-size:clamp(3rem,6vw,5.4rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;margin-bottom:8px;animation:fadeUp .6s .1s ease both;color:#fff}
+.hero-h1 em{font-style:italic;color:var(--redl)}
+.hero-tl{font-family:var(--hd);font-size:1.05rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:28px;animation:fadeUp .6s .15s ease both}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,.85);max-width:500px;line-height:1.75;margin-bottom:36px;animation:fadeUp .6s .2s ease both}
+.hero-desc strong{color:#fff}
+@media(max-width:860px){.hero-left{max-width:100%;width:100%}.hero-desc{margin:0 auto 36px;max-width:100%}}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .6s .25s ease both}
 @media(max-width:860px){.hero-btns{justify-content:center}}
+#hero .btn-g{color:#fff;border-color:rgba(255,255,255,.4)}
+#hero .btn-g:hover{background:rgba(255,255,255,.1)}
 .hero-stats{display:flex;gap:36px;margin-top:40px;animation:fadeUp .6s .3s ease both}
 @media(max-width:860px){.hero-stats{justify-content:center}}
-.hstat-n{font-family:var(--hd);font-size:1.7rem;font-weight:900;color:var(--redl)}
-.hstat-l{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;min-width:0}
-.ss-wrap{position:relative;width:100%;max-width:500px;margin:0 auto}
-.ss-halo{position:absolute;top:50%;left:50%;width:120%;height:120%;border-radius:50%;background:radial-gradient(circle,rgba(232,45,45,.18),transparent 70%);animation:halo 3.5s ease-in-out infinite;pointer-events:none;z-index:0;transform:translate(-50%,-50%)}
-.ss-frame{position:relative;width:100%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#FAFAFB,#F0F0F3 60%,#E9E9ED);border:1px solid rgba(232,45,45,.22);box-shadow:0 0 60px rgba(232,45,45,.14),0 32px 80px rgba(0,0,0,.65);z-index:1}
-.ss-frame img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96%;height:96%;object-fit:contain;opacity:0;transition:opacity .85s ease;animation:kenburns 14s ease-in-out infinite}
-.ss-frame img.on{opacity:1}
+.hstat-n{font-family:var(--hd);font-size:1.7rem;font-weight:900;color:#fff}
+.hstat-l{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.65)}
 .ss-info{position:absolute;bottom:14px;left:14px;right:14px;background:rgba(12,6,6,.92);backdrop-filter:blur(16px);border:1px solid rgba(232,45,45,.22);border-radius:10px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;z-index:2}
 .ss-name{font-family:var(--hd);font-size:.95rem;font-weight:700}
 .ss-wave{font-size:11px;color:var(--redl);font-weight:600}
@@ -564,14 +560,12 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
       
 </div>
 <section id="hero" style="position:relative;overflow:hidden">
-  <div class="hero-bg-glow"></div><div class="hero-bg-grid"></div>
-  <div class="hero-rays"><svg viewBox="0 0 560 560" style="width:100%;height:100%"><g transform="translate(280,280)"><line x1="0" y1="0" x2="270" y2="0" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="260" y2="69" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="233" y2="134" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="190" y2="190" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="135" y2="233" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="69" y2="260" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="270" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-69" y2="260" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-134" y2="233" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-190" y2="190" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-233" y2="134" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-260" y2="69" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-270" y2="0" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-260" y2="-69" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-233" y2="-135" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-190" y2="-190" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-135" y2="-233" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="-69" y2="-260" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-270" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="69" y2="-260" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="135" y2="-233" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="190" y2="-190" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="233" y2="-135" stroke="#E82D2D" stroke-width="1"/><line x1="0" y1="0" x2="260" y2="-69" stroke="#E82D2D" stroke-width="1"/></g></svg></div>
-  <div class="wrap" style="display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:100px clamp(28px,6vw,140px) 72px;max-width:1560px;position:relative;z-index:2;min-height:100vh">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:flex-start;padding:100px clamp(24px,4vw,90px) 72px;max-width:1560px;width:100%;box-sizing:border-box;margin:0;position:relative;z-index:2;min-height:100vh">
     <div class="hero-left">
       <div class="hero-pill"><span class="pdot"></span>5,000+ Peer-Reviewed PBM Studies</div>
       <h1 class="hero-h1">Light That<br/><em>Transforms.</em></h1>
       <div class="hero-tl">Revive · Restore · Radiate</div>
-      <p class="hero-desc">Premium red &amp; near-infrared light therapy devices — supporting recovery, skin health, pain relief &amp; better sleep. Delivered across <strong style="color:var(--white)">Canada &amp; USA</strong>.</p>
+      <p class="hero-desc">Premium red &amp; near-infrared light therapy devices — supporting recovery, skin health, pain relief &amp; better sleep. Delivered across <strong>Canada &amp; USA</strong>.</p>
       <div class="hero-btns">
         <button class="btn-r" onclick="window.location.href='shop-all.html'">Explore Products →</button>
         <button class="btn-g" onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})">Learn More</button>
@@ -581,28 +575,6 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
         <div><div class="hstat-n">4.9★</div><div class="hstat-l">Rating</div></div>
         <div><div class="hstat-n">14</div><div class="hstat-l">Products</div></div>
         <div><div class="hstat-n">3yr</div><div class="hstat-l">Max Warranty</div></div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="ss-wrap">
-        <div class="ss-halo"></div>
-        <div class="ss-frame" id="ssFrame">
-          <img id="s0" class="on" src="images/products/BK300-1.jpg" alt="BK300-1.jpg"/>
-          <img id="s1" src="images/products/G15P-9.png" alt="G15P-9.png"/>
-          <img id="s2" src="images/products/G15-2.jpg" alt="G15-2.jpg"/>
-          <img id="s3" src="images/products/MINI60PRO-2.jpg" alt="MINI60PRO-2.jpg"/>
-          <img id="s4" src="images/products/E300-2.jpg" alt="E300-2.jpg"/>
-          <img id="s5" src="images/products/MAX1800-2.jpg" alt="MAX1800-2.jpg"/>
-          <img id="s6" src="images/products/MAX4800-2.jpg" alt="MAX4800-2.jpg"/>
-          <img id="s7" src="images/products/P40B-2.jpg" alt="P40B-2.jpg"/>
-          <img id="s8" src="images/products/EM04-2.jpg" alt="EM04-2.jpg"/>
-          <img id="s9" src="images/products/C01-2.jpg" alt="C01-2.jpg"/>
-          <img id="s10" src="images/products/ESPRO3000-2.jpg" alt="ESPRO3000-2.jpg"/>
-          <img id="s11" src="images/products/PE01-2.jpg" alt="PE01-2.jpg"/>
-          <img id="s12" src="images/products/MRS45-2.jpg" alt="MRS45-2.jpg"/>
-        </div>
-        <div class="ss-info"><span class="ss-name" id="ssN">SKIN — G15P</span><span class="ss-wave" id="ssW">630 · 660nm</span></div>
-        <div class="ss-dots" id="ssDots"></div>
       </div>
     </div>
   </div>
@@ -961,28 +933,7 @@ const MODAL_GAL = {
 };
 /* ── FDA-CLEARED SKUs — same set as product.html's fda:true flag ── */
 const FDA_CLEARED_SKUS = new Set(['G15P','G15']);
-const SS  = [{"id": "SHIELD", "n": "SHIELD \u2014 BK300", "w": "660 \u00b7 850nm \u00b7 UVB"}, {"id": "SKIN", "n": "SKIN \u2014 G15P", "w": "630 \u00b7 660nm"}, {"id": "CLEAR", "n": "CLEAR \u2014 G15", "w": "415 \u00b7 660nm"}, {"id": "RELIEF", "n": "RELIEF \u2014 MINI60PRO", "w": "820 \u00b7 1064nm"}, {"id": "MIND", "n": "MIND \u2014 E300", "w": "810 \u00b7 830 \u00b7 1064nm"}, {"id": "MAX1800", "n": "FULL-BODY \u2014 MAX1800", "w": "660 \u00b7 850nm"}, {"id": "MAX4800", "n": "FULL-BODY \u2014 MAX4800", "w": "660 \u00b7 850nm"}, {"id": "RECOVER", "n": "RECOVER \u2014 P40B", "w": "850 \u00b7 905nm"}, {"id": "SLEEP", "n": "SLEEP \u2014 Eye Mask", "w": "630 \u00b7 850nm"}, {"id": "C01", "n": "GROW \u2014 C01", "w": "660 \u00b7 830nm"}, {"id": "ESPRO3000", "n": "CLINIC \u2014 ESPRO3000", "w": "630 \u00b7 660 \u00b7 810 \u00b7 1060nm"}, {"id": "PE01", "n": "RELIEF \u2014 PE01 PEMF Mat", "w": "635 \u00b7 850nm + PEMF"}, {"id": "MRS45", "n": "STAND \u2014 MRS45 ProStand", "w": "Adjustable Panel Stand"}];
 const GAL_DATA = [{s:"images/products/BK300-13.jpg",l:"BK300 Lifestyle"},{s:"images/products/G15-13.jpg",l:"BeauMask Lifestyle"},{s:"images/products/G15P-3.jpg",l:"G15P Orange"},{s:"images/products/G240-21.jpg",l:"AuraDome Lifestyle"},{s:"images/products/EM04-16.jpg",l:"GlowEM04 Lifestyle"},{s:"images/products/E300-21.jpg",l:"GlowE300 Lifestyle"},{s:"images/products/MINI60PRO-3.jpg",l:"MINI60PRO Lit"},{s:"images/products/P40B-21.jpg",l:"RecoverPro40B Lifestyle"},{s:"images/products/BK300-12.jpg",l:"BK300 Lifestyle 2"}];
-
-/* ── SLIDESHOW ── */
-let cur=0;
-const dotsEl=document.getElementById('ssDots');
-SS.forEach((_,i)=>{
-  const d=document.createElement('button');
-  d.className='dot'+(i===0?' on':'');
-  d.onclick=()=>goSlide(i);
-  dotsEl.appendChild(d);
-});
-function goSlide(n){
-  document.querySelectorAll('#ssFrame img')[cur].classList.remove('on');
-  document.querySelectorAll('.dot')[cur].classList.remove('on');
-  cur=n;
-  document.querySelectorAll('#ssFrame img')[cur].classList.add('on');
-  document.querySelectorAll('.dot')[cur].classList.add('on');
-  document.getElementById('ssN').textContent=SS[cur].n;
-  document.getElementById('ssW').textContent=SS[cur].w;
-}
-setInterval(()=>goSlide((cur+1)%SS.length),4000);
 
 /* ── GALLERY ── */
 (function(){
