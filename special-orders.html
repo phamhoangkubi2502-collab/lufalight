@@ -108,6 +108,23 @@ html{scroll-behavior:smooth}
 :root[data-theme="dark"] .so-moq{color:#7FA6FF}
 .so-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.04em;border:1px solid var(--line);border-radius:7px;padding:10px 16px;cursor:pointer;transition:all .2s;width:100%;justify-content:center}
 .so-btn:hover{border-color:var(--red);background:rgba(232,45,45,.06)}
+.so-btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line);margin-top:8px}
+.so-btn-ghost:hover{border-color:#2E6FFF;color:#2E6FFF;background:rgba(46,111,255,.06)}
+.so-img{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--bg2);margin-bottom:16px;cursor:pointer;position:relative}
+.so-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.so-card:hover .so-img img{transform:scale(1.04)}
+
+/* Special-order item photo gallery (lightbox) */
+#so-gal-ov{position:fixed;inset:0;background:rgba(6,6,10,.9);z-index:3000;display:none;align-items:center;justify-content:center;padding:24px}
+#so-gal-ov.open{display:flex}
+.so-gal-box{position:relative;max-width:900px;width:100%;max-height:88vh;display:flex;flex-direction:column;align-items:center}
+.so-gal-box img{max-width:100%;max-height:74vh;border-radius:10px;object-fit:contain;background:#0b0b0f}
+.so-gal-close{position:absolute;top:-44px;right:0;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:15px;display:grid;place-items:center;cursor:pointer}
+.so-gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer}
+.so-gal-prev{left:-8px}
+.so-gal-next{right:-8px}
+@media(max-width:640px){.so-gal-nav{width:36px;height:36px;font-size:15px}.so-gal-prev{left:2px}.so-gal-next{right:2px}}
+.so-gal-count{color:rgba(255,255,255,.6);font-size:12px;margin-top:12px}
 
 .wh-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
 @media(max-width:860px){.wh-steps{grid-template-columns:1fr 1fr}}
@@ -284,18 +301,21 @@ body.apply-bar-open #chat-panel{bottom:172px}
   </div>
   <div class="so-grid rv">
     <div class="so-card">
-      <div class="so-ic">🌀</div>
+      <div class="so-img" onclick="openSoGal('roller',0)"><img src="images/special-orders/facial-roller-spectrum.jpg" alt="Infrared Face Roller" loading="lazy"/></div>
       <h3>Infrared Face Roller</h3>
       <span class="so-moq">MOQ 100 pcs</span>
-      <p>Compact handheld infrared roller for facial massage, warmth, and at-home skin routines.</p>
+      <p>Handheld infrared + EMS roller with 7-color light spectrum for facial massage, lifting &amp; at-home skin routines.</p>
       <button class="so-btn" onclick="requestItem('Infrared Face Roller')">Request This Item</button>
+      <button class="so-btn so-btn-ghost" onclick="openSoGal('roller',0)">🖼️ View Photos</button>
     </div>
     <div class="so-card">
-      <div class="so-ic">🛏️</div>
+      <div class="so-img" onclick="openSoGal('bed',0)"><img src="images/special-orders/infrared-bed-model1.jpg" alt="Infrared Bed" loading="lazy"/></div>
       <h3>Infrared Bed</h3>
       <span class="so-moq">MOQ 1 bed</span>
-      <p>Full-body infrared treatment bed built for clinics, spas &amp; recovery studios.</p>
+      <p>Full-body infrared treatment bed with 9-wavelength app control — built for clinics, spas &amp; recovery studios.</p>
       <button class="so-btn" onclick="requestItem('Infrared Bed')">Request This Item</button>
+      <button class="so-btn so-btn-ghost" onclick="openSoGal('bed',0)">🖼️ View Photos</button>
+      <a class="so-btn so-btn-ghost" href="brochures/infrared-bed-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
     <div class="so-card">
       <div class="so-ic">🐾</div>
@@ -439,6 +459,17 @@ body.apply-bar-open #chat-panel{bottom:172px}
     <button class="bar-btn" onclick="document.getElementById('apply-section').scrollIntoView({behavior:'smooth'});document.getElementById('mob-apply-bar').classList.remove('visible')">Request Now →</button>
   </div>
 </div>
+
+<div id="so-gal-ov" onclick="if(event.target===this)closeSoGal()">
+  <div class="so-gal-box">
+    <button class="so-gal-close" onclick="closeSoGal()" aria-label="Close">&#10005;</button>
+    <button class="so-gal-nav so-gal-prev" onclick="soGalStep(-1)" aria-label="Previous photo">&#8249;</button>
+    <img id="so-gal-img" src="" alt="Infrared Face Roller photo"/>
+    <button class="so-gal-nav so-gal-next" onclick="soGalStep(1)" aria-label="Next photo">&#8250;</button>
+    <div class="so-gal-count" id="so-gal-count"></div>
+  </div>
+</div>
+
 <script src="theme.js"></script>
 <script src="shared.js"></script>
 <script src="search.js"></script>
@@ -457,6 +488,69 @@ function requestItem(name){
   }
   document.getElementById('apply-section').scrollIntoView({behavior:'smooth'});
 }
+
+/* ── Special-order item photo galleries ── */
+var SO_GAL_SETS = {
+  roller: [
+    'images/special-orders/facial-roller-spectrum.jpg',
+    'images/special-orders/facial-roller-model1.jpg',
+    'images/special-orders/facial-roller-model2.jpg',
+    'images/special-orders/facial-roller-model3.jpg',
+    'images/special-orders/facial-roller-model4.jpg',
+    'images/special-orders/facial-roller-model5.jpg',
+    'images/special-orders/facial-roller-model6.jpg',
+    'images/special-orders/facial-roller-product1.jpg',
+    'images/special-orders/facial-roller-product2.jpg',
+    'images/special-orders/facial-roller-product3.jpg',
+    'images/special-orders/facial-roller-product4.jpg',
+    'images/special-orders/facial-roller-product5.jpg',
+    'images/special-orders/facial-roller-guide.jpg'
+  ],
+  bed: [
+    'images/special-orders/infrared-bed-model1.jpg',
+    'images/special-orders/infrared-bed-model2.jpg',
+    'images/special-orders/infrared-bed-model3.jpg',
+    'images/special-orders/infrared-bed-product1.jpg',
+    'images/special-orders/infrared-bed-product2.jpg',
+    'images/special-orders/infrared-bed-product3.jpg',
+    'images/special-orders/infrared-bed-bodymap.jpg',
+    'images/special-orders/infrared-bed-wavelengths.jpg',
+    'images/special-orders/infrared-bed-benefits1.jpg',
+    'images/special-orders/infrared-bed-benefits2.jpg',
+    'images/special-orders/infrared-bed-comparison.jpg',
+    'images/special-orders/infrared-bed-upgrade.jpg'
+  ]
+};
+var soGalKey = 'roller';
+var soGalIdx = 0;
+function renderSoGal(){
+  var set = SO_GAL_SETS[soGalKey];
+  document.getElementById('so-gal-img').src = set[soGalIdx];
+  document.getElementById('so-gal-count').textContent = (soGalIdx+1) + ' / ' + set.length;
+}
+function openSoGal(key, startIdx){
+  soGalKey = key;
+  soGalIdx = startIdx || 0;
+  renderSoGal();
+  document.getElementById('so-gal-ov').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSoGal(){
+  document.getElementById('so-gal-ov').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function soGalStep(dir){
+  var len = SO_GAL_SETS[soGalKey].length;
+  soGalIdx = (soGalIdx + dir + len) % len;
+  renderSoGal();
+}
+document.addEventListener('keydown', function(e){
+  var ov = document.getElementById('so-gal-ov');
+  if(!ov || !ov.classList.contains('open')) return;
+  if(e.key==='Escape') closeSoGal();
+  if(e.key==='ArrowLeft') soGalStep(-1);
+  if(e.key==='ArrowRight') soGalStep(1);
+});
 </script>
 <script>
 (function(){
