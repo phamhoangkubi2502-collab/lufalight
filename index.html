@@ -143,6 +143,14 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 #flagship{background:var(--bg)}
 .flagship-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 @media(max-width:860px){.flagship-grid{grid-template-columns:1fr;gap:36px}}
+.sop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 28px}
+@media(max-width:760px){.sop-grid{grid-template-columns:1fr 1fr}}
+.sop-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1;display:block;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.sop-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.sop-card:hover img{transform:scale(1.06)}
+.sop-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(6,6,10,.88) 0%,rgba(6,6,10,.35) 65%,transparent 100%);padding:24px 12px 10px;text-align:left}
+.sop-cap-n{color:#fff;font-size:12px;font-weight:800;line-height:1.25;margin-bottom:2px}
+.sop-cap-m{color:#7FA6FF;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .flagship-img{position:relative;border-radius:var(--r);overflow:hidden;background:radial-gradient(circle at 50% 35%,#1c1c22,#0a0a0d);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
 .flagship-img.flagship-img-light{background:radial-gradient(circle at 50% 40%,#F8F7F3,#EAE7DE)}
 .flagship-img img{width:100%;max-width:340px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.55))}
@@ -695,11 +703,11 @@ table.ctbl tr:hover td{background:rgba(10,10,15,.016)}
     <div class="hl" style="margin:10px auto 14px;background:#2E6FFF"></div>
     <h2>Need Something <span style="color:#2E6FFF">Built to Order?</span></h2>
     <p class="sub" style="max-width:560px;margin:14px auto 26px">Infrared face rollers, beds, pet devices &amp; saunas — special-order items with MOQ and production lead time. Perfect for clinics, retailers &amp; bulk buyers.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:28px">
-      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(46,111,255,.08);border:1px solid rgba(46,111,255,.24);color:var(--white);font-size:11px;font-weight:600;padding:7px 13px;border-radius:8px">🌀 Face Roller — MOQ 100 pcs</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(46,111,255,.08);border:1px solid rgba(46,111,255,.24);color:var(--white);font-size:11px;font-weight:600;padding:7px 13px;border-radius:8px">🛏️ Infrared Bed — MOQ 1 bed</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(46,111,255,.08);border:1px solid rgba(46,111,255,.24);color:var(--white);font-size:11px;font-weight:600;padding:7px 13px;border-radius:8px">🐾 Pet Infrared — MOQ 100 units</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(46,111,255,.08);border:1px solid rgba(46,111,255,.24);color:var(--white);font-size:11px;font-weight:600;padding:7px 13px;border-radius:8px">🧖 Infrared Sauna — MOQ 1 unit</span>
+    <div class="sop-grid">
+      <a href="special-orders.html" class="sop-card"><img src="images/special-orders/facial-roller-spectrum.jpg" alt="Infrared Face Roller" loading="lazy"/><div class="sop-cap"><div class="sop-cap-n">Infrared Face Roller</div><div class="sop-cap-m">MOQ 100 pcs</div></div></a>
+      <a href="special-orders.html" class="sop-card"><img src="images/special-orders/infrared-bed-model1.jpg" alt="Infrared Bed" loading="lazy"/><div class="sop-cap"><div class="sop-cap-n">Infrared Bed</div><div class="sop-cap-m">MOQ 1 bed</div></div></a>
+      <a href="special-orders.html" class="sop-card"><img src="images/special-orders/lumawand-7.jpg" alt="LumaWand - Mini Light Therapy" loading="lazy"/><div class="sop-cap"><div class="sop-cap-n">LumaWand</div><div class="sop-cap-m">MOQ 100 pcs</div></div></a>
+      <a href="special-orders.html" class="sop-card"><img src="images/special-orders/infrared-sauna-1.jpg" alt="Infrared Sauna" loading="lazy"/><div class="sop-cap"><div class="sop-cap-n">Infrared Sauna</div><div class="sop-cap-m">MOQ 1 unit</div></div></a>
     </div>
     <a href="special-orders.html" class="btn-r" style="background:#2E6FFF">Request a Special Order →</a>
   </div>

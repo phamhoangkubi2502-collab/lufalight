@@ -6,7 +6,7 @@
 <script>(function(){try{if(localStorage.getItem('lufa-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Special Orders — Pre-Order &amp; Custom Devices | Lufalight</title>
-<meta name="description" content="Reserve select specialty Lufalight devices — Infrared Face Roller, Infrared Bed, Pet Infrared, and Infrared Sauna — built to order with MOQ and lead time."/>
+<meta name="description" content="Reserve select specialty Lufalight devices — Infrared Face Roller, Infrared Bed, Pet Infrared, Infrared Sauna, and LumaWand Mini Light Therapy — built to order with MOQ and lead time."/>
 <link rel="canonical" href="https://www.lufalight.com/special-orders.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Lufalight"/>
@@ -96,7 +96,7 @@ html{scroll-behavior:smooth}
 .wpl-s{font-size:10.5px;color:rgba(255,255,255,.48);line-height:1.45}
 
 /* Special-order item cards */
-.so-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.so-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:44px}
 @media(max-width:900px){.so-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.so-grid{grid-template-columns:1fr}}
 .so-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column}
@@ -106,10 +106,10 @@ html{scroll-behavior:smooth}
 .so-card p{color:var(--muted);font-size:12.5px;line-height:1.65;margin-bottom:16px;flex:1}
 .so-moq{display:inline-flex;align-items:center;gap:6px;background:rgba(46,111,255,.1);border:1px solid rgba(46,111,255,.3);color:#2E6FFF;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:20px;margin-bottom:16px;width:fit-content}
 :root[data-theme="dark"] .so-moq{color:#7FA6FF}
-.so-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.04em;border:1px solid var(--line);border-radius:7px;padding:10px 16px;cursor:pointer;transition:all .2s;width:100%;justify-content:center}
-.so-btn:hover{border-color:var(--red);background:rgba(232,45,45,.06)}
-.so-btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line);margin-top:8px}
-.so-btn-ghost:hover{border-color:#2E6FFF;color:#2E6FFF;background:rgba(46,111,255,.06)}
+.so-btn{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--red);border-radius:7px;padding:11px 16px;cursor:pointer;transition:all .2s;width:100%;justify-content:center;box-shadow:0 6px 16px rgba(232,45,45,.24)}
+.so-btn:hover{background:var(--redl);border-color:var(--redl);transform:translateY(-1px);box-shadow:0 10px 22px rgba(232,45,45,.32)}
+.so-btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line);margin-top:8px;text-transform:none;font-weight:600;box-shadow:none}
+.so-btn-ghost:hover{border-color:#2E6FFF;color:#2E6FFF;background:rgba(46,111,255,.06);transform:none;box-shadow:none}
 .so-img{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--bg2);margin-bottom:16px;cursor:pointer;position:relative}
 .so-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .so-card:hover .so-img img{transform:scale(1.04)}
@@ -307,6 +307,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <p>Handheld infrared + EMS roller with 7-color light spectrum for facial massage, lifting &amp; at-home skin routines.</p>
       <button class="so-btn" onclick="requestItem('Infrared Face Roller')">Request This Item</button>
       <button class="so-btn so-btn-ghost" onclick="openSoGal('roller',0)">🖼️ View Photos</button>
+      <a class="so-btn so-btn-ghost" href="brochures/facial-roller-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
     <div class="so-card">
       <div class="so-img" onclick="openSoGal('bed',0)"><img src="images/special-orders/infrared-bed-model1.jpg" alt="Infrared Bed" loading="lazy"/></div>
@@ -318,18 +319,28 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <a class="so-btn so-btn-ghost" href="brochures/infrared-bed-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
     <div class="so-card">
+      <div class="so-img" onclick="openSoGal('lumawand',0)"><img src="images/special-orders/lumawand-7.jpg" alt="LumaWand - Mini Light Therapy" loading="lazy"/></div>
+      <h3>LumaWand - Mini Light Therapy</h3>
+      <span class="so-moq">MOQ 100 pcs</span>
+      <p>Compact handheld red/NIR + blue light wand (417 · 630 · 850nm) for acne, anti-aging &amp; on-the-go touch-ups.</p>
+      <button class="so-btn" onclick="requestItem('LumaWand')">Request This Item</button>
+      <button class="so-btn so-btn-ghost" onclick="openSoGal('lumawand',0)">🖼️ View Photos</button>
+      <a class="so-btn so-btn-ghost" href="brochures/lumawand-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
+    </div>
+    <div class="so-card">
+      <div class="so-img" onclick="openSoGal('sauna',0)"><img src="images/special-orders/infrared-sauna-1.jpg" alt="Infrared Sauna" loading="lazy"/></div>
+      <h3>Infrared Sauna</h3>
+      <span class="so-moq">MOQ 1 unit</span>
+      <p>3-person natural wood infrared sauna cabin for home wellness spaces or professional studios.</p>
+      <button class="so-btn" onclick="requestItem('Infrared Sauna')">Request This Item</button>
+      <button class="so-btn so-btn-ghost" onclick="openSoGal('sauna',0)">🖼️ View Photos</button>
+    </div>
+    <div class="so-card">
       <div class="so-ic">🐾</div>
       <h3>Pet Infrared</h3>
       <span class="so-moq">MOQ 100 units</span>
       <p>Infrared therapy device designed for veterinary clinics and pet wellness use.</p>
       <button class="so-btn" onclick="requestItem('Pet Infrared')">Request This Item</button>
-    </div>
-    <div class="so-card">
-      <div class="so-ic">🧖</div>
-      <h3>Infrared Sauna</h3>
-      <span class="so-moq">MOQ 1 unit</span>
-      <p>Personal infrared sauna cabin for home wellness spaces or professional studios.</p>
-      <button class="so-btn" onclick="requestItem('Infrared Sauna')">Request This Item</button>
     </div>
   </div>
 </div></section>
@@ -384,6 +395,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
               <option>Infrared Bed (MOQ 1 bed)</option>
               <option>Pet Infrared (MOQ 100 units)</option>
               <option>Infrared Sauna (MOQ 1 unit)</option>
+              <option>LumaWand - Mini Light Therapy (MOQ 100 pcs)</option>
               <option>Other / Not Sure</option>
             </select>
           </div>
@@ -519,6 +531,24 @@ var SO_GAL_SETS = {
     'images/special-orders/infrared-bed-benefits2.jpg',
     'images/special-orders/infrared-bed-comparison.jpg',
     'images/special-orders/infrared-bed-upgrade.jpg'
+  ],
+  sauna: [
+    'images/special-orders/infrared-sauna-1.jpg',
+    'images/special-orders/infrared-sauna-2.jpg',
+    'images/special-orders/infrared-sauna-3.jpg',
+    'images/special-orders/infrared-sauna-4.jpg'
+  ],
+  lumawand: [
+    'images/special-orders/lumawand-7.jpg',
+    'images/special-orders/lumawand-1.jpg',
+    'images/special-orders/lumawand-2.jpg',
+    'images/special-orders/lumawand-3.jpg',
+    'images/special-orders/lumawand-4.jpg',
+    'images/special-orders/lumawand-5.jpg',
+    'images/special-orders/lumawand-6.jpg',
+    'images/special-orders/lumawand-8.jpg',
+    'images/special-orders/lumawand-9.jpg',
+    'images/special-orders/lumawand-10.jpg'
   ]
 };
 var soGalKey = 'roller';
