@@ -101,7 +101,11 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 #goals{background:var(--bg)}
 .goals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
 @media(max-width:900px){.goals-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.goals-grid{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .goals-grid{display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;gap:14px;padding:2px 2px 14px;margin:44px -2px 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .goals-grid::-webkit-scrollbar{display:none}
+  .goals-grid .gc{flex:0 0 76%;scroll-snap-align:start}
+}
 .gc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 20px;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;text-align:center}
 .gc:hover{border-color:rgba(232,45,45,.45);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
 .gc-icon{font-size:32px;margin-bottom:10px;display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}.gc:hover .gc-icon{transform:scale(1.22) rotate(-8deg)}.gc-title{font-family:var(--hd);font-weight:700;font-size:1rem;margin-bottom:5px}
@@ -229,7 +233,11 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 /* REVIEWS */
 #reviews{background:var(--bg2)}
 .rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
-@media(max-width:640px){.rev-grid{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .rev-grid{display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;gap:16px;padding:2px 2px 14px;margin:44px -2px 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .rev-grid::-webkit-scrollbar{display:none}
+  .rev-grid .rev-card{flex:0 0 85%;scroll-snap-align:start}
+}
 .rev-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative}
 .rev-card:hover{border-color:rgba(232,45,45,.3)}
 .rev-stars{color:var(--red);font-size:14px;letter-spacing:2px;margin-bottom:10px}
