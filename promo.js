@@ -168,13 +168,35 @@ window.salePrice = function(p, coll){ if(!window.LUFA_PROMO.active) return p; va
     if(!window.LUFA_PROMO.active) return;
     var tb = document.getElementById('topbar');
     if(!tb) return;
-    tb.style.background = '#E82D2D';
+    var KEY = 'lufa_topbar_dismissed';
+    if(sessionStorage.getItem(KEY)){ tb.style.display = 'none'; return; }
+
+    var css = `
+    #topbar{background:#0B0B0B!important;padding:0!important;text-align:left!important}
+    #topbar .tb-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:1400px;margin:0 auto;padding:11px 44px 11px 20px;position:relative}
+    #topbar .tb-msg{margin:0!important}
+    #topbar .tb-msg{color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em}
+    #topbar .tb-shop{color:#fff;font-size:12.5px;font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+    #topbar .tb-shop:hover{color:rgba(255,255,255,.8)}
+    #topbar .tb-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.6);font-size:15px;cursor:pointer;width:24px;height:24px;display:grid;place-items:center;line-height:1}
+    #topbar .tb-close:hover{color:#fff}
+    @media(max-width:480px){#topbar .tb-inner{padding:10px 40px 10px 14px;gap:10px}#topbar .tb-msg,#topbar .tb-shop{font-size:11px}}
+    `;
+    var styleEl = document.createElement('style');
+    styleEl.textContent = css;
+    document.head.appendChild(styleEl);
+
     tb.innerHTML =
-      '<span>🔥 <strong>Big Summer Deal</strong> — 15% Off All Devices (20% Off Bundles)</span>' +
-      '<span class="tb-sep">|</span>' +
-      '<span>Add to inquiry list &amp; receive your <strong>discounted quote</strong> within 24 h</span>' +
-      '<span class="tb-sep">|</span>' +
-      '<span>🚚 Free Shipping on Canada orders CA$300+</span>';
+      '<div class="tb-inner">' +
+        '<span class="tb-msg">Big Summer Deal — 15% Off All Devices</span>' +
+        '<a class="tb-shop" href="shop-all.html">Shop Now →</a>' +
+        '<button class="tb-close" aria-label="Dismiss">&#10005;</button>' +
+      '</div>';
+
+    tb.querySelector('.tb-close').onclick = function(){
+      sessionStorage.setItem(KEY, '1');
+      tb.style.display = 'none';
+    };
   }
 
   setupWipBadge();
