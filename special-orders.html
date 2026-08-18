@@ -99,7 +99,7 @@ html{scroll-behavior:smooth}
 .so-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:44px}
 @media(max-width:900px){.so-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.so-grid{grid-template-columns:1fr}}
-.so-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column}
+.so-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;scroll-margin-top:110px}
 .so-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.12);border-color:rgba(46,111,255,.3)}
 .so-ic{width:56px;height:56px;border-radius:14px;background:rgba(46,111,255,.1);display:grid;place-items:center;font-size:26px;margin-bottom:16px}
 .so-card h3{font-size:15px;margin-bottom:8px}
@@ -120,7 +120,8 @@ html{scroll-behavior:smooth}
 .so-gal-box{position:relative;max-width:900px;width:100%;max-height:88vh;display:flex;flex-direction:column;align-items:center}
 .so-gal-box img{max-width:100%;max-height:74vh;border-radius:10px;object-fit:contain;background:#0b0b0f}
 .so-gal-close{position:absolute;top:-44px;right:0;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:15px;display:grid;place-items:center;cursor:pointer}
-.so-gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer}
+.so-gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(15,15,18,.72);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4);transition:background .2s,border-color .2s}
+.so-gal-nav:hover{background:rgba(30,30,35,.9);border-color:rgba(255,255,255,.6)}
 .so-gal-prev{left:-8px}
 .so-gal-next{right:-8px}
 @media(max-width:640px){.so-gal-nav{width:36px;height:36px;font-size:15px}.so-gal-prev{left:2px}.so-gal-next{right:2px}}
@@ -213,6 +214,11 @@ body.apply-bar-open #chat-panel{bottom:172px}
           <a href="product.html#PE01">VitalityPro PEMF Mat</a><a href="product.html#MRS45">ProStand</a>
           <a href="shop-all.html?coll=accessory" class="mega-all">View All →</a>
         </div>
+        <div class="mega-col">
+          <div class="mega-h">📦 Special Orders</div>
+          <a href="special-orders.html#face-roller">Infrared Face Roller</a><a href="special-orders.html#infrared-bed">Infrared Bed</a><a href="special-orders.html#lumawand">LumaWand</a><a href="special-orders.html#infrared-sauna">Infrared Sauna</a>
+          <a href="special-orders.html" class="mega-all">View All →</a>
+        </div>
       </div></div>
     <a href="our-story.html">Our Story</a>
     <div class="nav-item"><a href="index.html#science">Science</a><span class="mega-caret" onclick="event.preventDefault();event.stopPropagation();const it3=this.closest('.nav-item');document.querySelectorAll('.nav-item.open').forEach(o=>{if(o!==it3)o.classList.remove('open')});it3.classList.toggle('open')" role="button" aria-label="Toggle Science menu">&#9662;</span><div class="mega-menu mini-menu"><a href="index.html#science">🔬 The Science</a><a href="index.html#faq">❓ FAQ</a><a href="blog.html">📰 Health Blog</a></div></div>
@@ -300,7 +306,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
     <p class="sub" style="max-width:600px;margin:14px auto 0">Not part of our standard catalog — these devices are produced in batches once MOQ is reached.</p>
   </div>
   <div class="so-grid rv">
-    <div class="so-card">
+    <div class="so-card" id="face-roller">
       <div class="so-img" onclick="openSoGal('roller',0)"><img src="images/special-orders/facial-roller-spectrum.jpg" alt="Infrared Face Roller" loading="lazy"/></div>
       <h3>Infrared Face Roller</h3>
       <span class="so-moq">MOQ 100 pcs</span>
@@ -309,7 +315,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <button class="so-btn so-btn-ghost" onclick="openSoGal('roller',0)">🖼️ View Photos</button>
       <a class="so-btn so-btn-ghost" href="brochures/facial-roller-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
-    <div class="so-card">
+    <div class="so-card" id="infrared-bed">
       <div class="so-img" onclick="openSoGal('bed',0)"><img src="images/special-orders/infrared-bed-model1.jpg" alt="Infrared Bed" loading="lazy"/></div>
       <h3>Infrared Bed</h3>
       <span class="so-moq">MOQ 1 bed</span>
@@ -318,7 +324,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <button class="so-btn so-btn-ghost" onclick="openSoGal('bed',0)">🖼️ View Photos</button>
       <a class="so-btn so-btn-ghost" href="brochures/infrared-bed-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
-    <div class="so-card">
+    <div class="so-card" id="lumawand">
       <div class="so-img" onclick="openSoGal('lumawand',0)"><img src="images/special-orders/lumawand-7.jpg" alt="LumaWand - Mini Light Therapy" loading="lazy"/></div>
       <h3>LumaWand - Mini Light Therapy</h3>
       <span class="so-moq">MOQ 100 pcs</span>
@@ -327,7 +333,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <button class="so-btn so-btn-ghost" onclick="openSoGal('lumawand',0)">🖼️ View Photos</button>
       <a class="so-btn so-btn-ghost" href="brochures/lumawand-brochure.pdf" target="_blank" rel="noopener" style="text-decoration:none">📄 Download Catalog</a>
     </div>
-    <div class="so-card">
+    <div class="so-card" id="infrared-sauna">
       <div class="so-img" onclick="openSoGal('sauna',0)"><img src="images/special-orders/infrared-sauna-1.jpg" alt="Infrared Sauna" loading="lazy"/></div>
       <h3>Infrared Sauna</h3>
       <span class="so-moq">MOQ 1 unit</span>
@@ -335,7 +341,7 @@ body.apply-bar-open #chat-panel{bottom:172px}
       <button class="so-btn" onclick="requestItem('Infrared Sauna')">Request This Item</button>
       <button class="so-btn so-btn-ghost" onclick="openSoGal('sauna',0)">🖼️ View Photos</button>
     </div>
-    <div class="so-card">
+    <div class="so-card" id="pet-infrared">
       <div class="so-ic">🐾</div>
       <h3>Pet Infrared</h3>
       <span class="so-moq">MOQ 100 units</span>
