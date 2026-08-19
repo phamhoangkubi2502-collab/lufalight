@@ -408,6 +408,10 @@ body.apply-bar-open #chat-panel{bottom:172px}
           </div>
           <div class="form-group"><label for="sf-qty">Quantity Needed</label><input type="text" id="sf-qty" placeholder="e.g. 100 pcs"/></div>
         </div>
+        <div class="form-row">
+          <div class="form-group"><label for="sf-location">Country / Region *</label><input type="text" id="sf-location" placeholder="e.g. United States" required/></div>
+          <div class="form-group"><label for="sf-city">City / State (optional)</label><input type="text" id="sf-city"/></div>
+        </div>
         <div class="form-group"><label for="sf-message">Message</label><textarea id="sf-message" placeholder="Tell us more about your special order…"></textarea></div>
         <button type="submit" class="btn-r" style="width:100%;justify-content:center">Submit Request</button>
       </form>
@@ -640,6 +644,8 @@ document.addEventListener('keydown', function(e){
     fd.append('phone', phoneEl.value.trim());
     fd.append('item_of_interest', document.getElementById('sf-item').value);
     fd.append('quantity_needed', document.getElementById('sf-qty').value.trim());
+    fd.append('location', document.getElementById('sf-location').value.trim());
+    fd.append('city_state', document.getElementById('sf-city').value.trim());
     fd.append('message', document.getElementById('sf-message').value.trim());
     fetch('https://formspree.io/f/mwvdlyky', {
       method: 'POST',
