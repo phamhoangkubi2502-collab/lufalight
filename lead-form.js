@@ -66,6 +66,7 @@
         <div class="lead-field"><label>Phone Number</label><input type="tel" name="phone" id="leadPhone"/>
           <div class="lead-hint">Please provide at least one — email or phone.</div>
         </div>
+        <div class="lead-field"><label>Country / Region</label><input type="text" name="location" id="leadLocation" placeholder="e.g. United States"/></div>
         <div class="lead-field">
           <label>Area / Goal You'd Like to Improve</label>
           <select name="goal">

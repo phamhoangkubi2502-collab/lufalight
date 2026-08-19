@@ -103,8 +103,10 @@
     var name  = document.getElementById('lc-fn').value.trim();
     var email = document.getElementById('lc-em').value.trim();
     var phone = document.getElementById('lc-ph').value.trim();
+    var loc   = document.getElementById('lc-loc').value.trim();
     var msg   = document.getElementById('lc-msg').value.trim();
     if(!name||!email){ alert('Please enter your name and email.'); return; }
+    if(!loc){ alert('Please enter your country / region.'); return; }
 
     var itemsText = cart.map(function(i){
       return '• '+i.name+' (x'+i.qty+') — '+fmtPrice(i.price);
@@ -121,6 +123,7 @@
         _subject:'New Product Inquiry — Lufalight',
         name:name, email:email,
         phone:phone||'Not provided',
+        location:loc,
         products:itemsText,
         estimated_total:fmtPrice(total),
         message:msg||'Please contact me about these products.',
@@ -142,19 +145,19 @@
         clearCart();
       } else {
         btn.textContent='✉️ Send Inquiry'; btn.disabled=false;
-        fallbackMailto(name,email,phone,itemsText,total,msg);
+        fallbackMailto(name,email,phone,loc,itemsText,total,msg);
       }
     })
     .catch(function(){
       btn.textContent='✉️ Send Inquiry'; btn.disabled=false;
-      fallbackMailto(name,email,phone,itemsText,total,msg);
+      fallbackMailto(name,email,phone,loc,itemsText,total,msg);
     });
   }
 
-  function fallbackMailto(name,email,phone,itemsText,total,msg){
+  function fallbackMailto(name,email,phone,loc,itemsText,total,msg){
     var sub = encodeURIComponent('Product Inquiry — Lufalight');
     var body = encodeURIComponent(
-      'Name: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'N/A')
+      'Name: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'N/A')+'\nLocation: '+loc
       +'\n\nProducts Interested In:\n'+itemsText
       +'\nEstimated Total: '+fmtPrice(total)
       +'\n\nMessage: '+(msg||'Please contact me about these products.')
@@ -225,6 +228,7 @@
             +'<div class="lc-field"><label>Your Name *</label><input id="lc-fn" type="text" placeholder="Jane Smith" required></div>'
             +'<div class="lc-field"><label>Email *</label><input id="lc-em" type="email" placeholder="jane@email.com" required></div>'
             +'<div class="lc-field"><label>Phone (optional)</label><input id="lc-ph" type="tel" placeholder="+1 (416) 555-0100"></div>'
+            +'<div class="lc-field"><label>Country / Region *</label><input id="lc-loc" type="text" placeholder="e.g. United States" required></div>'
             +'<div class="lc-field"><label>Message (optional)</label><textarea id="lc-msg" placeholder="Any questions about these products?"></textarea></div>'
             +'<button type="submit" id="lc-submit">✉️ Send Inquiry</button>'
           +'</form>'
